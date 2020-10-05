@@ -1,0 +1,24 @@
+main{
+    .videoFrame{
+        height: calc(100vh - var(--navbar-height));
+        width: 100%;
+
+        background-image: url('../../src/img/background-main-screen.jpg');
+        background-repeat: no-repeat;
+        background-position: 20% 20%;
+        background-size: cover, contain;
+
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        overflow: hidden;
+
+        section{
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 300rem 25rem 0;
+            border-color: transparent transparent #222222 transparent;
+        }
+    }
+}
