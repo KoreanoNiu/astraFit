@@ -1,4 +1,15 @@
 :root{
     --navbar-height: 2.6rem;
     --colorHeader: #161616;
+    --colorSectionInformation: #222222;
+}
+
+@font-face{
+    font-family: Roboto-black;
+    src: url('../../src/fonts/Roboto-Black.ttf');
+}
+
+@font-face{
+    font-family: Roboto-italic;
+    src: url('../../src/fonts/Roboto-BlackItalic.ttf');
 }
