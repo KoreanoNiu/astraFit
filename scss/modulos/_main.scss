@@ -22,8 +22,8 @@ main{
             position: absolute;
             margin: 0px;
             width: 100%;
-            height: auto;
-            backdrop-filter: saturate(120%) brightness(90%);
+            height: calc(100vh - var(--navbar-height));
+            backdrop-filter: saturate(140%) brightness(90%) blur(1px);
         }
 
         div{
@@ -31,7 +31,7 @@ main{
             font-family: Roboto-italic;
             margin: 7rem 0 0 22rem;
             position: absolute;
-            color: black;
+            color: #ffffff;
         
             h1{
                 font-size: 4.5rem;
@@ -69,6 +69,8 @@ main{
         }
     }
     section.divider{
+        overflow: hidden;
+        position: absolute;
         margin-top: -12vw;
         width: 0;
         height: 0;
