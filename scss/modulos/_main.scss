@@ -1,7 +1,10 @@
 main{
-
+    margin: 0;
     width: 100%;
     overflow: hidden;
+    margin-top: var(--navbar-height);
+    position: absolute;
+    z-index: 1;
 
     section.background{
 
@@ -16,9 +19,11 @@ main{
         background-size: cover, contain;
 
         div.background-filter{
+            position: absolute;
+            margin: 0px;
             width: 100%;
-            height: min-content;
-            backdrop-filter: saturate(150%) brightness(90%);
+            height: auto;
+            backdrop-filter: saturate(120%) brightness(90%);
         }
 
         div{
@@ -79,7 +84,7 @@ main{
     }
 }
 
-@media(max-width: 778px){
+@media(max-width: 860px){
     main{
         section.background{
             background-position: 75% 50%;
@@ -87,6 +92,7 @@ main{
             justify-content: center;
 
             div{
+                
                 align-self: center;
                 width: 20rem;
                 margin: 0;
