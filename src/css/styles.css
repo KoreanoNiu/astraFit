@@ -1,7 +1,7 @@
 :root {
   --navbar-height: 2.6rem;
   --colorHeader: #161616;
-  --colorSectionInformation: #222222; }
+  --colorSectionInformation: #333333; }
 
 @font-face {
   font-family: Roboto-black;
@@ -223,6 +223,9 @@ nav {
       margin: 50%; }
     @media (max-width: 768px) {
       nav .sidenav-trigger.right {
+        margin: 90%; } }
+    @media (max-width: 425px) {
+      nav .sidenav-trigger.right {
         margin: 85%; } }
     @media (min-width: 769px) {
       nav .sidenav-trigger.right {
@@ -293,6 +296,58 @@ nav {
   stroke-dasharray: 90 207;
   stroke-dashoffset: -134;
   stroke-width: 6; }
+
+.opened {
+  transform: translateX(-13rem);
+  -webkit-transform: translateX(-13rem);
+  -moz-transform: translateX(-13rem);
+  -ms-transform: translateX(-13rem);
+  -o-transform: translateX(-13rem);
+  transition-duration: 0.3s; }
+  .opened .sidenav-trigger {
+    transform: translateX(5vw);
+    -webkit-transform: translateX(5vw);
+    -moz-transform: translateX(5vw);
+    -ms-transform: translateX(5vw);
+    -o-transform: translateX(5vw); }
+  .opened .brand-logo {
+    transform: translateX(25vw);
+    -webkit-transform: translateX(25vw);
+    -moz-transform: translateX(25vw);
+    -ms-transform: translateX(25vw);
+    -o-transform: translateX(25vw); }
+
+.closed {
+  transform: translateX(0%);
+  -webkit-transform: translateX(0%);
+  -moz-transform: translateX(0%);
+  -ms-transform: translateX(0%);
+  -o-transform: translateX(0%);
+  transition-duration: 0.3s; }
+  .closed .sidenav-trigger {
+    transform: translateX(0vw);
+    -webkit-transform: translateX(0vw);
+    -moz-transform: translateX(0vw);
+    -ms-transform: translateX(0vw);
+    -o-transform: translateX(0vw); }
+  .closed .brand-logo {
+    transform: translateX(0vw);
+    -webkit-transform: translateX(0vw);
+    -moz-transform: translateX(0vw);
+    -ms-transform: translateX(0vw);
+    -o-transform: translateX(0vw); }
+
+aside {
+  position: absolute;
+  top: 0;
+  margin: auto 100%;
+  width: 13rem;
+  height: 100vh;
+  background-color: var(--colorHeader);
+  color: #ffffff; }
+  aside ul li {
+    font-size: 1rem;
+    margin: 1.5rem 0 0 0; }
 
 main {
   margin: 0;
