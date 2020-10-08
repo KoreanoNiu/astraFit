@@ -54,10 +54,41 @@
                     <a href="entrenamiento.html">EMPIEZA YA!</a>
                 </div>
             </section>
-            <section class="divider hide-on-small-and-down"></section>
-            <section class="information">
+            <section class="divider hide-on-small-and-down">
             </section>
-            <section class="footerInformation"></section>
+            <section class="information">
+                <div class="cards">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="src/img/background-main-screen.jpg" alt="">
+                        </div>
+                        <div class="card-content">
+                            <h2>Hola mundo</h2>
+                            <p>Aqui va información acerca de este apartado</p>
+                        </div>
+                    </div>
+                    <div class="card text-align-end">
+                        <div class="card-image">
+                            <img src="src/img/background2.jpg" alt="">
+                        </div>
+                        <div class="card-content">
+                            <h2>Hola mundo</h2>
+                            <p>Aqui va información acerca de este apartado</p>
+                        </div>
+                    </div>
+                    <div class="card text-align-center">
+                        <div class="card-image">
+                            <img src="src/img/background2.jpg" alt="">
+                        </div>
+                        <div class="card-content">
+                            <h2>Hola mundo</h2>
+                            <p>Aqui va información acerca de este apartado</p>
+                        </div>
+                    </div>
+                  </div>
+            </section>
+            <section class="footerInformation">
+            </section>
             <footer></footer>
         </main>
     </body>

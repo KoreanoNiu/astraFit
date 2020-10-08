@@ -22,6 +22,18 @@
     position: absolute;
 }
 
+.text-align{
+    &-start{
+        text-align: start;
+    }
+    &-center{
+        text-align: center;
+    }
+    &-end{
+        text-align: end;
+    }
+}
+
 .hide{
     display: none;
     

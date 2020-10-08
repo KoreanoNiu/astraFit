@@ -460,6 +460,15 @@ main {
 .absolute {
   position: absolute; }
 
+.text-align-start {
+  text-align: start; }
+
+.text-align-center {
+  text-align: center; }
+
+.text-align-end {
+  text-align: end; }
+
 .hide {
   display: none; }
   @media (max-width: 575px) {
@@ -526,8 +535,7 @@ main {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   font-family: Oxygen;
-  overflow: hidden;
-  text-align: start; }
+  overflow: hidden; }
   .card div.card-image {
     height: min-content; }
     .card div.card-image img {
