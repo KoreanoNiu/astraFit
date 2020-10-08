@@ -11,7 +11,12 @@
   font-family: Roboto-italic;
   src: url("../../src/fonts/Roboto-BlackItalic.ttf"); }
 
+@font-face {
+  font-family: Oxygen;
+  src: url("../../src/fonts/Oxygen-Bold.ttf"); }
+
 * {
+  scroll-behavior: smooth;
   box-sizing: border-box; }
 
 html {
@@ -194,6 +199,7 @@ template {
   display: none; }
 
 nav {
+  will-change: transform;
   position: absolute;
   font-family: Roboto-black;
   width: 100%;
@@ -344,7 +350,9 @@ aside {
   width: 13rem;
   height: 100vh;
   background-color: var(--colorHeader);
-  color: #ffffff; }
+  color: #ffffff;
+  filter: drop-shadow(4px 0px 4px rgba(0, 0, 0, 0.25));
+  -webkit-filter: drop-shadow(4px 0px 4px rgba(0, 0, 0, 0.25)); }
   aside ul li {
     font-size: 1rem;
     margin: 1.5rem 0 0 0; }
@@ -412,10 +420,12 @@ main {
     border-style: solid;
     border-width: 0 220rem 12vw 0;
     border-color: transparent transparent var(--colorSectionInformation) transparent; }
-  main section.information {
+  main section.information, main .footerInformation {
     width: 100%;
-    height: 30rem;
+    height: auto;
     background-color: var(--colorSectionInformation); }
+  main section.footerInformation {
+    background-color: #ffffff; }
 
 @media (max-width: 860px) {
   main section.background {
@@ -497,3 +507,55 @@ main {
   @media (min-width: 778px) {
     .show-on-small-and-up {
       display: inline; } }
+
+.cards {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 2rem; }
+
+.card {
+  background-color: #ffffff;
+  color: black;
+  height: auto;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  font-family: Oxygen;
+  overflow: hidden;
+  text-align: start; }
+  .card div.card-image {
+    height: min-content; }
+    .card div.card-image img {
+      width: 100%; }
+  .card div.card-content {
+    padding: 1rem; }
+
+@media (max-width: 900px) {
+  .cards {
+    grid-template-columns: repeat(1, 1fr); }
+    .cards .card:nth-child(1) {
+      margin: 5% 5% 0 5%; }
+    .cards .card {
+      margin: 0% 5% 0 5%;
+      width: 90%; } }
+
+@media (min-width: 900px) {
+  .cards {
+    grid-template-columns: repeat(3, 2fr);
+    grid-gap: 3rem; }
+    .cards .card {
+      margin: 5% 5% 0 5%;
+      width: 92%; } }
+
+@media (min-width: 1244px) {
+  .cards {
+    grid-template-columns: repeat(3, 2fr);
+    grid-gap: 4rem; }
+    .cards .card {
+      margin: 5% 5% 0 5%;
+      width: 100%; } }

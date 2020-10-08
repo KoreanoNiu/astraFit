@@ -17,7 +17,6 @@ main{
         background-repeat: no-repeat;
         background-position: 20% 20%;
         background-size: cover, contain;
-
         div.background-filter{
             position: absolute;
             margin: 0px;
@@ -79,10 +78,13 @@ main{
         border-color: transparent transparent var(--colorSectionInformation) transparent;
     }
 
-    section.information{
+    section.information, .footerInformation{
         width: 100%;
-        height: 30rem;
+        height: auto;
         background-color: var(--colorSectionInformation);
+    }
+    section.footerInformation{
+        background-color: #ffffff;
     }
 }
 
