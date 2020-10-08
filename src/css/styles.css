@@ -199,7 +199,6 @@ template {
   display: none; }
 
 nav {
-  will-change: transform;
   position: absolute;
   font-family: Roboto-black;
   width: 100%;
@@ -345,6 +344,7 @@ nav {
 
 aside {
   position: absolute;
+  z-index: 996;
   top: 0;
   margin: auto 100%;
   width: 13rem;
@@ -364,6 +364,26 @@ main {
   margin-top: var(--navbar-height);
   position: absolute;
   z-index: 1; }
+  main a {
+    width: min-content;
+    background-color: #126fbb;
+    padding: 1rem 5rem 1rem 5rem;
+    text-decoration: none;
+    color: white;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    transition: background-color, 0.7s;
+    -webkit-transition: background-color, 0.7s;
+    -moz-transition: background-color, 0.7s;
+    -ms-transition: background-color, 0.7s;
+    -o-transition: background-color, 0.7s; }
+    main a:hover {
+      background-color: #1250dc; }
   main section.background {
     height: calc(100vh - var(--navbar-height));
     width: 100%;
@@ -391,26 +411,6 @@ main {
       main section.background div h2 {
         margin-top: 0;
         font-size: 2rem; }
-      main section.background div a {
-        width: min-content;
-        background-color: #126fbb;
-        padding: 1rem 5rem 1rem 5rem;
-        text-decoration: none;
-        color: white;
-        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-        -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-        border-radius: 4px;
-        -webkit-border-radius: 4px;
-        -moz-border-radius: 4px;
-        -ms-border-radius: 4px;
-        -o-border-radius: 4px;
-        transition: background-color, 0.7s;
-        -webkit-transition: background-color, 0.7s;
-        -moz-transition: background-color, 0.7s;
-        -ms-transition: background-color, 0.7s;
-        -o-transition: background-color, 0.7s; }
-        main section.background div a:hover {
-          background-color: #1250dc; }
   main section.divider {
     overflow: hidden;
     position: absolute;
@@ -423,7 +423,8 @@ main {
   main section.information, main .footerInformation {
     width: 100%;
     height: auto;
-    background-color: var(--colorSectionInformation); }
+    background-color: var(--colorSectionInformation);
+    padding-bottom: 8rem; }
   main section.footerInformation {
     background-color: #ffffff; }
 
@@ -550,7 +551,21 @@ main {
       margin: 5% 5% 0 5%; }
     .cards .card {
       margin: 0% 5% 0 5%;
-      width: 90%; } }
+      width: 90%; }
+  .footerInformation {
+    grid-template-columns: repeat(1, 2fr);
+    text-align: center; }
+    .footerInformation div {
+      width: 100%;
+      margin: auto; }
+    .footerInformation div:nth-child(1) {
+      margin-bottom: -8%; }
+      .footerInformation div:nth-child(1) img {
+        width: 60%; }
+    .footerInformation div:nth-child(3) {
+      margin-top: 8%; }
+      .footerInformation div:nth-child(3) img {
+        width: 90%; } }
 
 @media (min-width: 900px) {
   .cards {
@@ -558,7 +573,24 @@ main {
     grid-gap: 3rem; }
     .cards .card {
       margin: 5% 5% 0 5%;
-      width: 92%; } }
+      width: 92%; }
+  .footerInformation {
+    grid-template-columns: repeat(3, 2fr); }
+    .footerInformation div {
+      width: 100%;
+      margin: auto; }
+    .footerInformation div:nth-child(1) {
+      margin-left: 5%; }
+      .footerInformation div:nth-child(1) img {
+        width: 70%; }
+    .footerInformation div:nth-child(2) {
+      margin-left: -25%;
+      margin-right: 0;
+      text-align: center; }
+    .footerInformation div:nth-child(3) {
+      margin-left: -30%; }
+      .footerInformation div:nth-child(3) img {
+        width: 120%; } }
 
 @media (min-width: 1244px) {
   .cards {
@@ -567,3 +599,28 @@ main {
     .cards .card {
       margin: 5% 5% 0 5%;
       width: 100%; } }
+
+.footerInformation {
+  display: grid;
+  width: 100%;
+  margin-top: 1rem;
+  font-family: Roboto-italic; }
+  .footerInformation img {
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); }
+  .footerInformation h2 {
+    margin-bottom: 2rem; }
+
+/*  .container{
+    position: relative;
+    margin: auto;
+    width: 100%;
+    height: auto;
+  }
+
+  .row{
+    position: relative;
+    margin: auto;
+    width: 100%;
+    height: auto;
+} */

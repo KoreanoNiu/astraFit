@@ -1,6 +1,5 @@
 
 nav{
-    will-change: transform;
     position: absolute;
     font-family: Roboto-black;
     width: 100%;
@@ -174,10 +173,11 @@ nav{
 
   aside{
       position: absolute;
+      z-index: 996;
       top: 0;
       margin: auto 100%;
       width: 13rem;
-      height: 100vh;
+      height: 100vh; 
       background-color: var(--colorHeader);
       color: #ffffff;
       ul{
