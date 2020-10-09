@@ -11,7 +11,7 @@
     <body>
         <header>
             <nav class="fixed closed">
-                <a href = "" class = "brand-logo center">LOGO</a>
+                <a href = "" class = "brand-logo center"><img src="src/img/logo.png" alt=""></a>
                 <div class="sidenav-trigger hide show-on-small-and-down right">
                     <button class="menu" onclick="this.parentNode.parentNode.classList.toggle('opened');this.parentNode.parentNode.classList.toggle('closed');this.setAttribute('aria-expanded', this.classList.contains('opened'))" aria-label="Main Menu">
                         <svg width="40" height="40" viewBox="0 0 100 100">
@@ -29,7 +29,7 @@
                     <div>
                         <ul>
                             <li><a href="">Entrenamiento</a></li>
-                            <li><a href="">Dieta</a></li>
+                            <li><a href="">Nutrcición</a></li>
                             <li><a href="">Nosotros</a></li>
                             <li><a href="">Contacto</a></li>
                         </ul>
@@ -39,7 +39,7 @@
                 </aside>
                 <ul class="hide-on-small-and-down">
                     <li><a href="">Entrenamiento</a></li>
-                    <li><a href="">Dieta</a></li>
+                    <li><a href="">Nutrcición</a></li>
                     <li><a href="">Nosotros</a></li>
                     <li><a href="">Contacto</a></li>
                 </ul>
@@ -93,13 +93,37 @@
                 </div>
                 <div>
                     <h2>ENTRENA CUANDO Y DONDE QUIERAS CON ASTRAFIT</h2>
-                    <a href="">EMPIEZA YA</a>
+                    <a href="">¡EMPIEZA YA!</a>
                 </div>
                 <div>
                     <img src="src/img/laptop-template2.png" alt="">
                 </div>
             </section>
-            <footer></footer>
+            <footer>
+                <div>
+                    <h3>Productos</h3>
+                    <ul>
+                        <li><a href="">ENTRENAMIENTO</a></li>
+                        <li><a href="">NUTRICIÓN</a> </li>
+                        <li><a href="">SUPLEMENTOS</a></li>
+                        <li><a href="">CALCULADORAS</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Avisos</h3>
+                    <ul>
+                        <li><a href="">AVISO DE PRIVACIDAD</a></li>
+                        <li><a href="">AVISO LEGAL</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Contacto</h3>
+                    <ul>
+                        <li><a href="">QUIENES SOMOS</a></li>
+                        <li><a href="">PONTE EN CONTACTO CON NOSOTROS</a></li>
+                    </ul>
+                </div>
+            </footer>
         </main>
     </body>
     <script src =""></script>
