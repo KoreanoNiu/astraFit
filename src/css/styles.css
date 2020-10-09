@@ -221,7 +221,8 @@ nav {
     nav .brand-logo:hover {
       color: white; }
     nav .brand-logo img {
-      height: 2vw; }
+      margin: 0 50%;
+      width: 8%; }
   nav .sidenav-trigger {
     z-index: 999;
     position: absolute;
