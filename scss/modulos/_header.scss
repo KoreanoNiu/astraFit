@@ -14,7 +14,8 @@ nav{
         color: #8d8d8d;
         font-size: 2rem;
         position: relative;
-
+        display: flex;
+        justify-content: center;
         transition: color 0.5s;
         -webkit-transition: color 0.5s;
         -moz-transition: color 0.5s;
@@ -25,7 +26,6 @@ nav{
         }
 
         img{
-            margin: 0 50%;
             width: 8%;
         }
     }
