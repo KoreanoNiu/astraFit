@@ -1,6 +1,6 @@
 :root {
   --navbar-height: 2.6rem;
-  --colorHeader: #161616;
+  --colorHeader: #ffffff;
   --colorSectionInformation: #333333; }
 
 @font-face {
@@ -220,6 +220,8 @@ nav {
     -o-transition: color 0.5s; }
     nav .brand-logo:hover {
       color: white; }
+    nav .brand-logo img {
+      height: 2vw; }
   nav .sidenav-trigger {
     z-index: 999;
     position: absolute;
@@ -628,7 +630,7 @@ footer {
   display: grid; }
   footer div {
     text-align: start;
-    margin: 2rem auto;
+    margin: 3rem auto;
     width: 50%; }
     footer div h3 {
       color: #d4d4d4;
