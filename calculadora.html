@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang = es>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel = "stylesheet" href = "src/css/styles.css" type ="TEXT/CSS">
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
+<title>CALCULADORA CALORICA</title>
+</head>
+<body>
+<header>
+            <nav class="fixed closed">
+                <a href = "" class = "brand-logo center"><img src="src/img/logo.png" alt=""></a>
+                <div class="sidenav-trigger hide show-on-small-and-down right">
+                    <button class="menu" onclick="this.parentNode.parentNode.classList.toggle('opened');this.parentNode.parentNode.classList.toggle('closed');this.setAttribute('aria-expanded', this.classList.contains('opened'))" aria-label="Main Menu">
+                        <svg width="40" height="40" viewBox="0 0 100 100">
+                          <path class="line line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
+                          <path class="line line2" d="M 20,50 H 80" />
+                          <path class="line line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
+                        </svg>
+                      </button>
+                </div>
+                <div class="sidenav-trigger right">
+                    <!--Aqui iria el icono del carrito xd-->
+                </div>
+                <!--ESta cerrado por el hide-->
+                <aside class="show">
+                    <div>
+                        <ul>
+                            <li><a href="">Entrenamiento</a></li>
+                            <li><a href="">Nutrcición</a></li>
+                            <li><a href="">Nosotros</a></li>
+                            <li><a href="">Contacto</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                    </div>
+                </aside>
+                <ul class="hide-on-small-and-down">
+                    <li><a href="">Entrenamiento</a></li>
+                    <li><a href="">Nutrcición</a></li>
+                    <li><a href="">Nosotros</a></li>
+                    <li><a href="">Contacto</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>                
+                <div class="cards2">
+<div class="card2">
+                    <div class="card2-image">
+                        <h1 style="font-family:Roboto-italic;">-CALCULADORA DE CALORIAS Y MACROS PERSONALIZADOS-</h1>
+                    </div>
+                    <div class="card2-content">
+                        <h2>¡Bienvenido!</h2>
+                        <p>Para lograr conseguir tu dieta con tus macronutrientes personalizados, necesitamos que rellenes los campos vacíos.</p>
+<hr>
+                   
+ <h4>PESO EN KG</h4>
+<input class="card4" type="text" id="peso">
+<h4>ESTATURA EN CM</h4>
+<input  class="card4" type="text" id="estatura">
+<h4>AÑOS</h4>
+<input type="text" id="edad">
+<h4>NIVEL DE ACTIVIDAD FÍSICA</h4>
+<select id="actividad">
+<option>Nada de ejercicio</option>
+<option>Poco activo (1 hora de ejercicio y el resto del día sedentario)</option>
+<option>Ligeramente activo(Parte del día en movimiento y 1 o más horas de ejercicio)</option>
+<option>Muy activo(La mayoria parte del día activo y +1 hora de ejercicio)</option>
+<option>Extremadamente activo(Todo el día activo y +2 horas de ejercicio)</option>
+</select>
+<h4>PORCENTAJE DE GRASA CORPORAL</h4>
+<input type="text" id="grasa">
+<h3>Si no sabes cual es tu porcentaje de grasa corporal, aquí te colocamos una imágen para que lo estimes si no lo sabes: </h3>
+<div class="cards3">
+    <div class="card3">
+        <div class="card3-image">
+    <h4>HOMBRES / MUJERES</h4>
+    </div>
+    <div class="card3-content">
+        <img style="padding:10px;border-radius: 20px;" src="src/img/GRASA2.jpg" height="250px">
+        <img style="padding:10px; border-radius: 20px;" src="src/img/GRASA1.jpg" height="250px">
+        </div>
+</div>
+<h4>¿Cómo quieres que sea tu dieta?</h4>
+<select id="tipo">
+<option>Alta en carbohidratos (bajarán los gramos de grasa)</option>
+<option>Baja en carbohidratos (subirán los gramos de grasa)</option>
+<option>Alta en proteína (bajarán los gramos de carbohidratos)</option>
+</select>
+<h4>¿Para qué objetivo quieres tu dieta?</h4>
+<select id="tipo2">
+<option >Mantenerte</option>
+<option >Definirte (Bajar grasa corporal)</option>
+<option >Volumen (Aumentar músculo)</option>
+</select>
+    <h4>¿Qué fórmula quieres usar?</h4>
+    <select id="formula">
+        <option>Fórmula sin usar porcentaje de grasa corporal</option>
+        <option>Fórmula usando porcentaje de grasa corporal</option>
+    </select>
+    <div>
+<button class="botonon" id="dieta">OBTENER DIETA</button>
+    </div>
+
+
+<h4 id="gastadas"></h4>
+    <div id="mostrar" class="card3" style="display: none;">
+        <div class="card3-image">
+    <h4>DIETA:</h4>
+    </div>
+    <div class="card3-content">
+        <h4 id="proteina"></h4>
+        <h4 id="grasa2"></h4>
+        <h4 id="carbohidratos"></h4>
+        <h4 id="calorias"></h4>
+        </div>
+
+        <div id="mostrar2" class="card5" style="display: none;">
+            <div class="card5-image">
+        <h4>¡ERROR!</h4>
+        </div>
+        <div class="card5-content">
+            <h4 id="error">UNO O MÁS CAMPOS ESTÁ/N VACÍO/S</h4>
+            </div>
+
+
+<script type="text/javascript">
+    document.getElementById("dieta").onclick=function(){
+        document.getElementById("mostrar").style.display="block";
+     var peso;
+     var grasa;
+     var actividad;
+     var tipo;
+     var tipo2;
+     var calorias;
+     var masaMagra;
+     var masaMagra2;
+     var proteina;
+     var grasa2;
+     var formula;
+     var edad;
+     var estatura;
+     formula=document.getElementById("formula").value;
+     edad=document.getElementById("edad").value;
+     estatura=document.getElementById("estatura").value;
+     peso=document.getElementById("peso").value;
+     grasa=document.getElementById("grasa").value;
+     grasa2=document.getElementById("grasa2").value;
+     actividad=document.getElementById("actividad").value;
+     tipo=document.getElementById("tipo").value;
+     tipo2=document.getElementById("tipo2").value;
+if (formula=="Fórmula sin usar porcentaje de grasa corporal"){
+    
+    if (actividad=="Nada de ejercicio"){
+        calorias=peso*22*1.2;
+    }
+    if (actividad=="Poco activo (1 hora de ejercicio y el resto del día sedentario)"){
+        calorias=peso*22*1.3;
+        document.getElementById("gastadas").innerHTML="Gastas: "+Math.round(calorias)+" calorías diarias aproximadamente.";
+    }
+    if (actividad=="Ligeramente activo(Parte del día en movimiento y 1 o más horas de ejercicio)"){
+        calorias=peso*22*1.5;
+        document.getElementById("gastadas").innerHTML="Gastas: "+Math.round(calorias)+" calorías diarias aproximadamente.";
+    }
+    if (actividad=="Muy activo(La mayoria parte del día activo y +1 hora de ejercicio)"){
+        calorias=peso*22*1.8;
+        document.getElementById("gastadas").innerHTML="Gastas: "+Math.round(calorias)+" calorías diarias aproximadamente.";
+    }
+    if (actividad=="Extremadamente activo(Todo el día activo y +2 horas de ejercicio)"){
+        calorias=peso*22*2.2;
+        document.getElementById("gastadas").innerHTML="Gastas: "+Math.round(calorias)+" calorías diarias aproximadamente.";
+    }
+//______________________________
+var comida;
+var grasita;
+var carbos;
+if (tipo=="Alta en carbohidratos (bajarán los gramos de grasa)"&&tipo2=="Mantenerte"){
+    proteina=Math.round(peso*1.8);
+      calorias2=Math.round(calorias);
+    comida=Math.round(calorias2-(proteina*4));
+        carbos=Math.round((comida*0.70)/4);
+        grasita=Math.round((comida*0.30)/9);
+        document.getElementById("proteina").innerHTML=Math.round(proteina)+" gramos de proteína diarios.";
+        document.getElementById("grasa2").innerHTML=Math.round(grasita)+" gramos de grasa diarios.";
+        document.getElementById("carbohidratos").innerHTML=Math.round(carbos)+" gramos de carbohidrato diarios.";
+        document.getElementById("calorias").innerHTML=proteina*4+grasita*9+carbos*4+" calorías diarias.";
+    }
+    if (tipo=="Alta en carbohidratos (bajarán los gramos de grasa)"&&tipo2=="Definirte (Bajar grasa corporal)"){
+        proteina=Math.round(peso*2);
+      calorias2=Math.round(calorias-500);
+    comida=Math.round(calorias2-(proteina*4));
+        carbos=Math.round((comida*0.70)/4);
+        grasita=Math.round((comida*0.30)/9);
+        document.getElementById("proteina").innerHTML=Math.round(proteina)+" gramos de proteína diarios.";
+        document.getElementById("grasa2").innerHTML=Math.round(grasita)+" gramos de grasa diarios.";
+        document.getElementById("carbohidratos").innerHTML=Math.round(carbos)+" gramos de carbohidrato diarios.";
+        document.getElementById("calorias").innerHTML=proteina*4+grasita*9+carbos*4+" calorías diarias.";
+    }
+    if (tipo=="Alta en carbohidratos (bajarán los gramos de grasa)"&&tipo2=="Volumen (Aumentar músculo)"){
+        proteina=Math.round(peso*2.2);
+      calorias2=Math.round(calorias+500);
+    comida=Math.round(calorias2-(proteina*4));
+        carbos=Math.round((comida*0.70)/4);
+        grasita=Math.round((comida*0.30)/9);
+        document.getElementById("proteina").innerHTML=Math.round(proteina)+" gramos de proteína diarios.";
+        document.getElementById("grasa2").innerHTML=Math.round(grasita)+" gramos de grasa diarios.";
+        document.getElementById("carbohidratos").innerHTML=Math.round(carbos)+" gramos de carbohidrato diarios.";
+        document.getElementById("calorias").innerHTML=proteina*4+grasita*9+carbos*4+" calorías diarias.";
+    }
+//_____________________________
+
+    if (tipo=="Baja en carbohidratos (subirán los gramos de grasa)"&&tipo2=="Mantenerte"){
+        proteina=Math.round(peso*1.8);
+      calorias2=Math.round(calorias);
+    comida=Math.round(calorias2-(proteina*4));
+        grasita=Math.round((comida*0.70)/9);
+        carbos=Math.round((comida*0.30)/4);
+        document.getElementById("proteina").innerHTML=Math.round(proteina)+" gramos de proteína diarios.";
+        document.getElementById("grasa2").innerHTML=Math.round(grasita)+" gramos de grasa diarios.";
+        document.getElementById("carbohidratos").innerHTML=Math.round(carbos)+" gramos de carbohidrato diarios.";
+        document.getElementById("calorias").innerHTML=proteina*4+grasita*9+carbos*4+" calorías diarias.";
+    }
+    if (tipo=="Baja en carbohidratos (subirán los gramos de grasa)"&&tipo2=="Definirte (Bajar grasa corporal)"){
+        proteina=Math.round(peso*2);
+      calorias2=Math.round(calorias-500);
+    comida=Math.round(calorias2-(proteina*4));
+    grasita=Math.round((comida*0.70)/9);
+        carbos=Math.round((comida*0.30)/4);
+        document.getElementById("proteina").innerHTML=Math.round(proteina)+" gramos de proteína diarios.";
+        document.getElementById("grasa2").innerHTML=Math.round(grasita)+" gramos de grasa diarios.";
+        document.getElementById("carbohidratos").Math.round(innerHTML=carbos)+" gramos de carbohidrato diarios.";
+        document.getElementById("calorias").innerHTML=proteina*4+grasita*9+carbos*4+" calorías diarias.";
+    }
+    if (tipo=="Baja en carbohidratos (subirán los gramos de grasa)"&&tipo2=="Volumen (Aumentar músculo)"){
+        proteina=Math.round(peso*2.2);
+      calorias2=Math.round(calorias+500);
+    comida=Math.round(calorias2-(proteina*4));
+    grasita=Math.round((comida*0.70)/9);
+        carbos=Math.round((comida*0.30)/4);
+        document.getElementById("proteina").innerHTML=Math.round(proteina)+" gramos de proteína diarios.";
+        document.getElementById("grasa2").innerHTML=Math.round(grasita)+" gramos de grasa diarios.";
+        document.getElementById("carbohidratos").innerHTML=Math.round(carbos)+" gramos de carbohidrato diarios.";
+        document.getElementById("calorias").innerHTML=proteina*4+grasita*9+carbos*4+" calorías diarias.";
+    }
+
+//_________________________
+
+    if (tipo=="Alta en proteína (bajarán los gramos de carbohidratos)"&&tipo2=="Mantenerte"){
+        proteina=Math.round(peso*2.3);
+      calorias2=Math.round(calorias);
+    comida=Math.round(calorias2-(proteina*4));
+    grasita=Math.round((comida*0.60)/9);
+        carbos=Math.round((comida*0.40)/4);
+        document.getElementById("proteina").innerHTML=Math.round(proteina)+" gramos de proteína diarios.";
+        document.getElementById("grasa2").innerHTML=Math.round(grasita)+" gramos de grasa diarios.";
+        document.getElementById("carbohidratos").innerHTML=Math.round(carbos)+" gramos de carbohidrato diarios.";
+        document.getElementById("calorias").innerHTML=proteina*4+grasita*9+carbos*4+" calorías diarias.";
+    }
+    if (tipo=="Alta en proteína (bajarán los gramos de carbohidratos)"&&tipo2=="Definirte (Bajar grasa corporal)"){
+        proteina=Math.round(peso*2.4);
+      calorias2=Math.round(calorias-500);
+    comida=Math.round(calorias2-(proteina*4));
+    grasita=Math.round((comida*0.60)/9);
+        carbos=Math.round((comida*0.40)/4);
+        document.getElementById("proteina").innerHTML=Math.round(proteina)+" gramos de proteína diarios.";
+        document.getElementById("grasa2").innerHTML=Math.round(grasita)+" gramos de grasa diarios.";
+        document.getElementById("carbohidratos").innerHTML=Math.round(carbos)+" gramos de carbohidrato diarios.";
+        document.getElementById("calorias").innerHTML=proteina*4+grasita*9+carbos*4+" calorías diarias.";
+    }
+    if (tipo=="Alta en proteína (bajarán los gramos de carbohidratos)"&&tipo2=="Volumen (Aumentar músculo)"){
+        proteina=Math.round(peso*2.5);
+      calorias2=Math.round(calorias+500);
+    comida=Math.round(calorias2-(proteina*4));
+    grasita=Math.round((comida*0.60)/9);
+        carbos=Math.round((comida*0.40)/4);
+        document.getElementById("proteina").innerHTML=Math.round(proteina)+" gramos de proteína diarios.";
+        document.getElementById("grasa2").innerHTML=Math.round(grasita)+" gramos de grasa diarios.";
+        document.getElementById("carbohidratos").innerHTML=Math.round(carbos)+" gramos de carbohidrato diarios.";
+        document.getElementById("calorias").innerHTML=proteina*4+grasita*9+carbos*4+" calorías diarias.";
+    }
+}
+if (formula=="Fórmula usando porcentaje de grasa corporal"){
+    masaMagra=(peso*grasa)/100;
+    masaMagra2=peso-masaMagra;
+    if (actividad=="Nada de ejercicio"){
+        calorias=(370+(21.6*masaMagra2))*1.2;
+    }
+    if (actividad=="Poco activo (1 hora de ejercicio y el resto del día sedentario)"){
+        calorias=(370+(21.6*masaMagra2))*1.3;
+        document.getElementById("gastadas").innerHTML="Gastas: "+Math.round(calorias)+" calorías diarias aproximadamente.";
+    }
+    if (actividad=="Ligeramente activo(Parte del día en movimiento y 1 o más horas de ejercicio)"){
+        calorias=(370+(21.6*masaMagra2))*1.5;
+        document.getElementById("gastadas").innerHTML="Gastas: "+Math.round(calorias)+" calorías diarias aproximadamente.";
+    }
+    if (actividad=="Muy activo(La mayoria parte del día activo y +1 hora de ejercicio)"){
+        calorias=(370+(21.6*masaMagra2))*1.8;
+        document.getElementById("gastadas").innerHTML="Gastas: "+Math.round(calorias)+" calorías diarias aproximadamente.";
+    }
+    if (actividad=="Extremadamente activo(Todo el día activo y +2 horas de ejercicio)"){
+        calorias=(370+(21.6*masaMagra2))*2.2;
+        document.getElementById("gastadas").innerHTML="Gastas: "+Math.round(calorias)+" calorías diarias aproximadamente.";
+    }
+//______________________________
+var comida;
+var grasita;
+var carbos;
+if (tipo=="Alta en carbohidratos (bajarán los gramos de grasa)"&&tipo2=="Mantenerte"){
+    proteina=Math.round(peso*1.8);
+      calorias2=Math.round(calorias);
+    comida=Math.round(calorias2-(proteina*4));
+    carbos=Math.round((comida*0.70)/4);
+        grasita=Math.round((comida*0.30)/9);
+        
+        document.getElementById("proteina").innerHTML=Math.round(proteina)+" gramos de proteína diarios.";
+        document.getElementById("grasa2").innerHTML=Math.round(grasita)+" gramos de grasa diarios.";
+        document.getElementById("carbohidratos").innerHTML=Math.round(carbos)+" gramos de carbohidrato diarios.";
+        document.getElementById("calorias").innerHTML=proteina*4+grasita*9+carbos*4+" calorías diarias.";
+    }
+    if (tipo=="Alta en carbohidratos (bajarán los gramos de grasa)"&&tipo2=="Definirte (Bajar grasa corporal)"){
+        proteina=Math.round(peso*2);
+      calorias2=Math.round(calorias-500);
+    comida=Math.round(calorias2-(proteina*4));
+    carbos=Math.round((comida*0.70)/4);
+        grasita=Math.round((comida*0.30)/9);
+       
+        document.getElementById("proteina").innerHTML=Math.round(proteina)+" gramos de proteína diarios.";
+        document.getElementById("grasa2").innerHTML=Math.round(grasita)+" gramos de grasa diarios.";
+        document.getElementById("carbohidratos").innerHTML=Math.round(carbos)+" gramos de carbohidrato diarios.";
+        document.getElementById("calorias").innerHTML=proteina*4+grasita*9+carbos*4+" calorías diarias.";
+    }
+    if (tipo=="Alta en carbohidratos (bajarán los gramos de grasa)"&&tipo2=="Volumen (Aumentar músculo)"){
+        proteina=Math.round(peso*2.2);
+      calorias2=Math.round(calorias+500);
+    comida=Math.round(calorias2-(proteina*4));
+    carbos=Math.round((comida*0.70)/4);
+        grasita=Math.round((comida*0.30)/9);
+       
+        document.getElementById("proteina").innerHTML=Math.round(proteina)+" gramos de proteína diarios.";
+        document.getElementById("grasa2").innerHTML=Math.round(grasita)+" gramos de grasa diarios.";
+        document.getElementById("carbohidratos").innerHTML=Math.round(carbos)+" gramos de carbohidrato diarios.";
+        document.getElementById("calorias").innerHTML=proteina*4+grasita*9+carbos*4+" calorías diarias.";
+    }
+//_____________________________
+
+    if (tipo=="Baja en carbohidratos (subirán los gramos de grasa)"&&tipo2=="Mantenerte"){
+        proteina=Math.round(peso*1.8);
+      calorias2=Math.round(calorias);
+    comida=Math.round(calorias2-(proteina*4));
+    grasita=Math.round((comida*0.70)/9);
+        carbos=Math.round((comida*0.30)/4);
+     
+        document.getElementById("proteina").innerHTML=Math.round(proteina)+" gramos de proteína diarios.";
+        document.getElementById("grasa2").innerHTML=Math.round(grasita)+" gramos de grasa diarios.";
+        document.getElementById("carbohidratos").innerHTML=Math.round(carbos)+" gramos de carbohidrato diarios.";
+        document.getElementById("calorias").innerHTML=proteina*4+grasita*9+carbos*4+" calorías diarias.";
+    }
+    if (tipo=="Baja en carbohidratos (subirán los gramos de grasa)"&&tipo2=="Definirte (Bajar grasa corporal)"){
+        proteina=Math.round(peso*2);
+      calorias2=Math.round(calorias-500);
+    comida=Math.round(calorias2-(proteina*4));
+    grasita=Math.round((comida*0.70)/9);
+        carbos=Math.round((comida*0.30)/4);
+        
+        document.getElementById("proteina").innerHTML=Math.round(proteina)+" gramos de proteína diarios.";
+        document.getElementById("grasa2").innerHTML=Math.round(grasita)+" gramos de grasa diarios.";
+        document.getElementById("carbohidratos").innerHTML=Math.round(carbos)+" gramos de carbohidrato diarios.";
+        document.getElementById("calorias").innerHTML=proteina*4+grasita*9+carbos*4+" calorías diarias.";
+    }
+    if (tipo=="Baja en carbohidratos (subirán los gramos de grasa)"&&tipo2=="Volumen (Aumentar músculo)"){
+        proteina=Math.round(peso*2.2);
+      calorias2=Math.round(calorias+500);
+    comida=Math.round(calorias2-(proteina*4));
+    grasita=Math.round((comida*0.70)/9);
+        carbos=Math.round((comida*0.30)/4);
+       
+        document.getElementById("proteina").innerHTML=Math.round(proteina)+" gramos de proteína diarios.";
+        document.getElementById("grasa2").innerHTML=Math.round(grasita)+" gramos de grasa diarios.";
+        document.getElementById("carbohidratos").innerHTML=Math.round(carbos)+" gramos de carbohidrato diarios.";
+        document.getElementById("calorias").innerHTML=proteina*4+grasita*9+carbos*4+" calorías diarias.";
+    }
+
+//_________________________
+
+    if (tipo=="Alta en proteína (bajarán los gramos de carbohidratos)"&&tipo2=="Mantenerte"){
+        proteina=Math.round(peso*2.3);
+      calorias2=Math.round(calorias);
+    comida=Math.round(calorias2-(proteina*4));
+    grasita=Math.round((comida*0.60)/9);
+        carbos=Math.round((comida*0.40)/4);
+
+        document.getElementById("proteina").innerHTML=Math.round(proteina)+" gramos de proteína diarios.";
+        document.getElementById("grasa2").innerHTML=Math.round(grasita)+" gramos de grasa diarios.";
+        document.getElementById("carbohidratos").innerHTML=Math.round(carbos)+" gramos de carbohidrato diarios.";
+        document.getElementById("calorias").innerHTML=proteina*4+grasita*9+carbos*4+" calorías diarias.";
+    }
+    if (tipo=="Alta en proteína (bajarán los gramos de carbohidratos)"&&tipo2=="Definirte (Bajar grasa corporal)"){
+        proteina=Math.round(peso*2.4);
+      calorias2=Math.round(calorias-500);
+    comida=Math.round(calorias2-(proteina*4));
+    grasita=Math.round((comida*0.60)/9);
+        carbos=Math.round((comida*0.40)/4);
+        document.getElementById("proteina").innerHTML=Math.round(proteina)+" gramos de proteína diarios.";
+        document.getElementById("grasa2").innerHTML=Math.round(grasita)+" gramos de grasa diarios.";
+        document.getElementById("carbohidratos").innerHTML=Math.roundMath.round(carbos)+" gramos de carbohidrato diarios.";
+        document.getElementById("calorias").innerHTML=proteina*4+grasita*9+carbos*4+" calorías diarias.";
+    }
+    if (tipo=="Alta en proteína (bajarán los gramos de carbohidratos)"&&tipo2=="Volumen (Aumentar músculo)"){
+        proteina=Math.round(peso*2.5);
+      calorias2=Math.round(calorias+500);
+    comida=Math.round(calorias2-(proteina*4));
+    grasita=Math.round((comida*0.60)/9);
+        carbos=Math.round((comida*0.40)/4);
+        
+        document.getElementById("proteina").innerHTML=Math.round(proteina)+" gramos de proteína diarios.";
+        document.getElementById("grasa2").innerHTML=Math.round(grasita)+" gramos de grasa diarios.";
+        document.getElementById("carbohidratos").innerHTML=Math.round(carbos)+" gramos de carbohidrato diarios.";
+        document.getElementById("calorias").innerHTML=proteina*4+grasita*9+carbos*4+" calorías diarias.";
+    }
+}
+   
+    }
+</script>
+                    </div>
+           
+           
+        </main>
+</body>
+</html>

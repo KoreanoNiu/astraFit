@@ -804,3 +804,140 @@ footer {
     .form-container form {
       margin: auto;
       width: 80%; } }
+
+
+
+      /*De Carlitos*/
+      .cards2 {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-gap: 2rem; 
+        padding: 20px;
+        text-align:center;
+      }
+      
+      .card2 {
+        background-color: whitesmoke;
+        color: black;
+        height: auto;
+        border-radius: 4px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        -o-border-radius: 4px;
+        filter: drop-shadow(0px 4px 4px black);
+        -webkit-filter: drop-shadow(0px 8px 8px black);
+        font-family: Oxygen;
+        overflow: hidden; }
+        .card div.card2-image {
+          height: min-content; }
+          .card div.card2-image img {
+            width: 100%; }
+        .card div.card2-content {
+          padding: 1rem;
+          font-size: 0.9rem; }
+      
+      
+          .cards3 {
+            max-width: 650px;
+            margin: 0 auto;
+            display: grid;
+            grid-gap: 2rem; 
+            padding: 50px;
+            text-align:center;
+          }
+          
+          .card3 {
+            background-color: whitesmoke;
+            color: black;
+            height: auto;
+            border-radius: 4px;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            -ms-border-radius: 4px;
+            -o-border-radius: 4px;
+            filter: drop-shadow(0px 4px 4px black);
+            -webkit-filter: drop-shadow(0px 8px 8px black);
+            font-family: Oxygen;
+            overflow: hidden; }
+            .card div.card3-image {
+              height: min-content; }
+              .card div.card3-image img {
+                width: 100%; }
+            .card div.card3-content {
+              padding: 1rem;
+              font-size: 0.9rem; }
+      
+              .botonon{
+                width: min-content;
+                background-color: darkcyan;
+                padding: 1rem 5rem 1rem 5rem;
+                text-decoration: none;
+                color: white;
+                filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+                -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+                border-radius: 4px;
+                -webkit-border-radius: 4px;
+                -moz-border-radius: 4px;
+                -ms-border-radius: 4px;
+                -o-border-radius: 4px;
+                transition: background-color, 0.7s;
+                -webkit-transition: background-color, 0.7s;
+                -moz-transition: background-color, 0.7s;
+                -ms-transition: background-color, 0.7s;
+                -o-transition: background-color, 0.7s; 
+              font-family: Roboto-italic;
+              }
+                .botonon a:hover {
+                  background-color: #1250dc; 
+                }
+                input{
+                  text-align: center;
+                  background-color: whitesmoke;
+                  color: black;
+                  height: auto;
+                  border-radius: 4px;
+                  -webkit-border-radius: 4px;
+                  -moz-border-radius: 4px;
+                  -ms-border-radius: 4px;
+                  -o-border-radius: 4px;
+                  filter: drop-shadow(0px 4px 4px black);
+                  -webkit-filter: drop-shadow(0px 3px 3px black);
+                  font-family: Oxygen;
+                }
+                select{
+                  text-align: center;
+                  background-color: whitesmoke;
+                  color: black;
+                  height: auto;
+                  border-radius: 4px;
+                  -webkit-border-radius: 4px;
+                  -moz-border-radius: 4px;
+                  -ms-border-radius: 4px;
+                  -o-border-radius: 4px;
+                  filter: drop-shadow(0px 4px 4px black);
+                  -webkit-filter: drop-shadow(0px 3px 3px black);
+                  font-family: Oxygen;
+                }
+                .card5 {
+                  background-color: whitesmoke;
+                  color: black;
+                  height: auto;
+                  border-radius: 4px;
+                  -webkit-border-radius: 4px;
+                  -moz-border-radius: 4px;
+                  -ms-border-radius: 4px;
+                  -o-border-radius: 4px;
+                  filter: drop-shadow(0px 4px 4px black);
+                  -webkit-filter: drop-shadow(0px 8px 8px black);
+                  font-family: Oxygen;
+                  overflow: hidden; }
+                  .card div.card5-image {
+                    height: min-content; }
+                    .card div.card5-image img {
+                      width: 100%; }
+                  .card div.card5-content {
+                    padding: 1rem;
+                    font-size: 0.9rem; }
+              
