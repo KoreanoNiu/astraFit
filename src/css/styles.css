@@ -241,6 +241,18 @@ nav {
         margin: 88%; } }
     nav .sidenav-trigger.left {
       margin: 5%; }
+    nav .sidenav-trigger button.backForm {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      padding: 0;
+      outline: none;
+      fill: #ffffff; }
+      nav .sidenav-trigger button.backForm svg {
+        height: 1.1rem; }
+      nav .sidenav-trigger button.backForm:hover {
+        fill: #8D8D8D; }
   nav ul {
     position: absolute;
     list-style: none;
