@@ -52,6 +52,24 @@ nav{
         &.left{
             margin: 5%;
         }
+
+        button.backForm{
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            padding: 0;
+            outline: none;
+
+            fill: #ffffff;
+
+            svg{
+                height: 1.1rem;
+            }
+            &:hover{
+                fill: #8D8D8D;
+            }
+        }
     }
 
     ul{
