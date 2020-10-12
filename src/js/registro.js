@@ -35,6 +35,9 @@ function siguiente(){
             formularioFinal.append("fecha", datosFormulario[0].value);
             formularioFinal.append("altura", datosFormulario[1].value);
             formularioFinal.append("peso", datosFormulario[2].value);
+            var IMC = (datosFormulario[1].value / 100)(datosFormulario[1].value / 100);
+            IMC = datosFormulario / IMC;
+            formularioFinal.append("IMC", IMC);
 
             nextForm(this);
         }
@@ -105,15 +108,17 @@ function siguiente(){
             document.querySelector('.status-bar').querySelector('div').style.width = null;
             document.querySelector('.status-bar').querySelector('div').classList.add('loading-bar');
 
-            setTimeout(function(){
-                const xhr = new XMLHttpRequest();
+            const xhr = new XMLHttpRequest();
     
-                xhr.onload = function(){
-                    const serverResponse = document.querySelector('#ServerResponse');
-                    console.log(this.responseText);
-                }
-                xhr.open("POST", "registro.php");
-                xhr.send(formularioFinal);
+            xhr.onload = function(){
+                const serverResponse = document.querySelector('#ServerResponse');
+                console.log(this.responseText);
+            }
+            xhr.open("POST", "registro.php");
+            xhr.send(formularioFinal);
+
+            setTimeout(function(){
+                window.location.replace("astraFit/miprogreso.php");
             }, 10000);
         }
 

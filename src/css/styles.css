@@ -400,12 +400,17 @@ main {
     -o-transition: background-color, 0.7s; }
     main section a:hover {
       background-color: #1250dc; }
+  main section.background-image-1 {
+    background-image: url("../../src/img/background-main-screen.jpg"); }
+  main section.background-image-2 {
+    background-image: url("../../src/img/background4.jpg"); }
+    main section.background-image-2 div.image-2 h1 {
+      font-size: 3.5rem; }
   main section.background {
     height: calc(100vh - var(--navbar-height));
     width: 100%;
     display: flex;
     align-items: flex-start;
-    background-image: url("../../src/img/background4.jpg");
     background-repeat: no-repeat;
     background-position: 20% 20%;
     background-size: cover, contain; }
@@ -958,7 +963,7 @@ footer {
     .register-container .form-container form.columns-form {
       grid-template-columns: repeat(2, 2fr); }
     .register-container .form-container .sucess {
-      color: #000000;
+      color: #ffffff;
       filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); }
       .register-container .form-container .sucess h1 {
         font-size: 2.9rem; }

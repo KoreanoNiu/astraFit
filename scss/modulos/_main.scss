@@ -32,6 +32,18 @@ main{
         }
     }
 
+    section.background-image-1{
+        background-image: url('../../src/img/background-main-screen.jpg');
+    }
+    section.background-image-2{
+        background-image: url('../../src/img/background4.jpg');
+
+        div.image-2{
+            h1{
+                font-size: 3.5rem;
+            }
+        }
+    }
     section.background{
 
         height: calc(100vh - var(--navbar-height));
@@ -39,7 +51,6 @@ main{
         display: flex;
         align-items: flex-start;
     
-        background-image: url('../../src/img/background4.jpg');
         background-repeat: no-repeat;
         background-position: 20% 20%;
         background-size: cover, contain;
