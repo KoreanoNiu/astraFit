@@ -51,7 +51,7 @@
                 <div>
                     <h1>ASTRAFIT</h1>
                     <H2>LA SALUD NO LO ES TODO, PERO SIN ELLA TODO LO DEMÁS ES NADA</H2>
-                    <a href="entrenamiento.html">¡EMPIEZA YA!</a>
+                    <a href="registro.php">¡EMPIEZA YA!</a>
                 </div>
             </section>
             <section class="divider hide-on-small-and-down">
@@ -93,7 +93,7 @@
                 </div>
                 <div>
                     <h2>ENTRENA CUANDO Y DONDE QUIERAS CON ASTRAFIT</h2>
-                    <a href="">¡EMPIEZA YA!</a>
+                    <a href="registro.php">¡EMPIEZA YA!</a>
                 </div>
                 <div>
                     <img src="src/img/laptop-template2.png" alt="">
