@@ -32,6 +32,7 @@
                             <li><a href="calculadora.html">Nutrición</a></li>
                             <li><a href="motivacion.html">Motivación</a></li>
                             <li><a href="">Contacto</a></li>
+                            <li><a href="calculadora.html">Calculadora</a></li>
                         </ul>
                     </div>
                     <div>
@@ -106,7 +107,7 @@
                         <li><a href="">ENTRENAMIENTO</a></li>
                         <li><a href="">NUTRICIÓN</a> </li>
                         <li><a href="">SUPLEMENTOS</a></li>
-                        <li><a href="">CALCULADORAS</a></li>
+                        <li><a href="calculadora.html">CALCULADORAS</a></li>
                     </ul>
                 </div>
                 <div>

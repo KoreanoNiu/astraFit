@@ -274,6 +274,7 @@ background-image:none;
     -ms-transition: background-color, 0.7s;
     -o-transition: background-color, 0.7s;
                       }
+                      
 
 
                       .cardF {
@@ -300,3 +301,32 @@ background-image:none;
                         .card div.cardF-content {
                           padding: 1rem;
                           font-size: 0.9rem; }
+
+                          .card9 {
+                            background-color: whitesmoke;
+                            color: black;
+                            height: auto;
+                           width: 50%;
+                        
+                           text-align: center;
+                           position: fixed;
+                           margin-left: 245px;
+                           margin-bottom: 40px;
+                           bottom: 130px;
+                           transition: 1s;
+                           transform: scale(1.1);
+                           
+                           
+                            border-radius: 4px;
+                            -webkit-border-radius: 4px;
+                            -moz-border-radius: 4px;
+                            -ms-border-radius: 4px;
+                            -o-border-radius: 4px;
+                            filter: drop-shadow(0px 4px 4px black);
+                            -webkit-filter: drop-shadow(0px 8px 8px black);
+                            font-family: Oxygen;
+                            overflow: hidden; }
+                          
+                            .card div.card5-content {
+                              padding: 1rem;
+                              font-size: 0.9rem; }

@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel = "stylesheet" href = "src/css/stails.css" type ="TEXT/CSS">
         <link rel = "stylesheet" href = "src/css/styles.css" type ="TEXT/CSS">
+        <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
 <title>ENTRENAMIENTOS</title>
@@ -145,7 +146,7 @@
                             <div>
                                 <h4 id="jeje">Rutina para:</h4>
                                 <button class="botonon3" id="casa1" >CASA</button>
-                            <button class="botonon3" id="gym1" >GYM</button>
+                            <button class="botonon3" id="gym1" >GYM</button><br><br>
                         </div>
                         </div>
                     </div><br><br>
@@ -154,12 +155,45 @@
                             <div class="cardF">
                        
                                 <div class="cardF-content" style="text-align:center;"">
+                                    <h4>Demostración: </h4>
                                     <img id="foto" src="src/entrenamientos/burpees.gif" alt="" height="200px">
                                     
                                     <div>
                                         <h4 id="georgina">Burpees</h4>
                                         <h4 id="karla">12 repeticiones</h4>
-                                        <button class="botonon4" id="sig">SIGUIENTE</button><br><br>
+                                        <button class="botonon4" id="sig">SIGUIENTE</button>
+                                        <div id="sig2" style="display: none;">
+                                            <button class="botonon4" id="otro">SIGUIENTE</button>
+                                        </div>
+                                        <div id="sig3" style="display: none;">
+                                            <button class="botonon4" id="otro1">SIGUIENTE</button>
+                                        </div>
+                                         <div id="sig4" style="display: none;">
+                                            <button class="botonon4" id="otro2">SIGUIENTE</button>
+                                        </div>
+                                        <div id="sig5" style="display: none;">
+                                            <button class="botonon4" id="otro3">SIGUIENTE</button>
+                                        </div>
+                                        <div id="sig6" style="display: none;">
+                                            <button class="botonon4" id="otro4">SIGUIENTE</button>
+                                        </div>
+                                        <div id="sig7" style="display: none;">
+                                            <button class="botonon4" id="otro5">SIGUIENTE</button>
+                                        
+                                        </div>
+
+                                        <div id="mostrar2" style="display: none;">
+                                            <div class="card9">
+                                            <div class="card9-content">
+                                
+                                                <h4 id="calorias">¡Felicidades, has completado esta rutina!</h4><br>
+                                               <a href="entrenamiento.html">CERRAR</a> <br><br><br>
+                                            </div>
+                                               
+                                                </div>
+                                        </div>
+                                        
+                                      
                                 </div>
                                 </div>
                             </div>
@@ -179,11 +213,13 @@
                 document.getElementById("jeje").innerHTML="";
                 document.getElementById("rutinaCasa").style.display="block";
               
-var fotoMostrada="src/entrenamientos/burpees";
 
-               document.getElementById("sig").onclick=function(){
+                var fotoMostrada="src/entrenamientos/burpees";
+                function repetir(){
+                    document.getElementById("sig").onclick=function(){
                    var imagen=document.getElementById("foto");
-                   
+                  
+
                    if(fotoMostrada=="src/entrenamientos/burpees"){
                        imagen.src="src/entrenamientos/correr.gif";
                        fotoMostrada="src/entrenamientos/correr";
@@ -195,9 +231,123 @@ var fotoMostrada="src/entrenamientos/burpees";
                     fotoMostrada="src/entrenamientos/lagartijas";
                        document.getElementById("georgina").innerHTML="Lagartijas";
                        document.getElementById("karla").innerHTML="15 repeticiones";
+                       document.getElementById("sig").style.display="none"; 
+                       document.getElementById("sig2").style.display="block";
                    }
-               
+                   
                }
+               document.getElementById("otro").onclick=function(){
+                var imagen=document.getElementById("foto");
+              
+                   if(fotoMostrada=="src/entrenamientos/lagartijas"){
+                       imagen.src="src/entrenamientos/crunchs.gif";
+                       fotoMostrada="src/entrenamientos/crunchs";
+                       document.getElementById("georgina").innerHTML="Crunch abdominal";
+                       document.getElementById("karla").innerHTML="45 repeticiones";
+                   }
+                   else{
+                    imagen.src="src/entrenamientos/v.gif";
+                    fotoMostrada="src/entrenamientos/v";
+                       document.getElementById("georgina").innerHTML="Abdominal en V";
+                       document.getElementById("karla").innerHTML="15 repeticiones";
+                       document.getElementById("sig2").style.display="none"; 
+                       document.getElementById("sig3").style.display="block";
+                   }
+               }
+               document.getElementById("otro1").onclick=function(){
+                var imagen=document.getElementById("foto");
+              
+                   if(fotoMostrada=="src/entrenamientos/v"){
+                       imagen.src="src/entrenamientos/oblicuos.gif";
+                       fotoMostrada="src/entrenamientos/oblicuos";
+                       document.getElementById("georgina").innerHTML="Oblicuos";
+                       document.getElementById("karla").innerHTML="20 repeticiones de cada lado";
+                   }
+                   else{
+                    imagen.src="src/entrenamientos/patadas.gif";
+                    fotoMostrada="src/entrenamientos/patadas";
+                       document.getElementById("georgina").innerHTML="Abdominal bajo";
+                       document.getElementById("karla").innerHTML="40 repeticiones";
+                       document.getElementById("sig3").style.display="none"; 
+                       document.getElementById("sig4").style.display="block";
+                   }
+               }
+
+               document.getElementById("otro2").onclick=function(){
+                var imagen=document.getElementById("foto");
+              
+                   if(fotoMostrada=="src/entrenamientos/patadas"){
+                       imagen.src="src/entrenamientos/diamante.gif";
+                       fotoMostrada="src/entrenamientos/diamante";
+                       document.getElementById("georgina").innerHTML="Flexiones en diamante";
+                       document.getElementById("karla").innerHTML="20 repeticiones";
+                   }
+                   else{
+                    imagen.src="src/entrenamientos/rotacion.gif";
+                    fotoMostrada="src/entrenamientos/rotacion";
+                       document.getElementById("georgina").innerHTML="Flexión y rotación";
+                       document.getElementById("karla").innerHTML="20 repeticiones cada lado";
+                       document.getElementById("sig4").style.display="none"; 
+                       document.getElementById("sig5").style.display="block";
+                   }
+               }
+
+               document.getElementById("otro3").onclick=function(){
+                var imagen=document.getElementById("foto");
+              
+                   if(fotoMostrada=="src/entrenamientos/rotacion"){
+                       imagen.src="src/entrenamientos/apoyo.gif";
+                       fotoMostrada="src/entrenamientos/apoyo";
+                       document.getElementById("georgina").innerHTML="Flexiones con apoyo en base";
+                       document.getElementById("karla").innerHTML="20 repeticiones";
+                   }
+                   else{
+                    imagen.src="src/entrenamientos/squats.gif";
+                    fotoMostrada="src/entrenamientos/squats";
+                       document.getElementById("georgina").innerHTML="Zancadas";
+                       document.getElementById("karla").innerHTML="20 repeticiones cada lado";
+                       document.getElementById("sig5").style.display="none"; 
+                       document.getElementById("sig6").style.display="block";
+                   }
+               }
+               document.getElementById("otro4").onclick=function(){
+                var imagen=document.getElementById("foto");
+              
+                   if(fotoMostrada=="src/entrenamientos/squats"){
+                       imagen.src="src/entrenamientos/triceps.gif";
+                       fotoMostrada="src/entrenamientos/triceps";
+                       document.getElementById("georgina").innerHTML="Tríceps en suelo o silla";
+                       document.getElementById("karla").innerHTML="20 repeticiones";
+                   }
+                   else{
+                    imagen.src="src/entrenamientos/sentasalto.gif";
+                    fotoMostrada="src/entrenamientos/sentasalto";
+                       document.getElementById("georgina").innerHTML="Sentadilla con salto";
+                       document.getElementById("karla").innerHTML="25 repeticiones cada lado";
+                       document.getElementById("sig6").style.display="none"; 
+                       document.getElementById("sig7").style.display="block";
+                   }
+               }
+
+               document.getElementById("otro5").onclick=function(){
+                var imagen=document.getElementById("foto");
+              
+                   if(fotoMostrada=="src/entrenamientos/sentasalto"){
+                       imagen.src="src/entrenamientos/tijera.gif";
+                       fotoMostrada="src/entrenamientos/tijera";
+                       document.getElementById("georgina").innerHTML="Saltos de tijera";
+                       document.getElementById("karla").innerHTML="30 segundos";
+                       document.getElementById("sig7").style.display="none"; 
+                       document.getElementById("mostrar2").style.display="block";
+                   }
+               }
+               
+                }
+              repetir();
+              
+            
+
+           
 
             
 
