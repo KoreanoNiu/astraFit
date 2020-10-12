@@ -157,19 +157,12 @@
                                     <img id="foto" src="src/entrenamientos/burpees.gif" alt="" height="200px">
                                     
                                     <div>
-                                        <h4>Burpees</h4>
-                                        <h4>12 repeticiones</h4>
+                                        <h4 id="georgina">Burpees</h4>
+                                        <h4 id="karla">12 repeticiones</h4>
                                         <button class="botonon4" id="sig">SIGUIENTE</button><br><br>
                                 </div>
                                 </div>
                             </div>
-            
-
-
-
-
-
-
 
                     </div>
 
@@ -185,20 +178,29 @@
                 document.getElementById("gym1").style.display="none";
                 document.getElementById("jeje").innerHTML="";
                 document.getElementById("rutinaCasa").style.display="block";
-               var fotomostrada="burpees";
+              
+var fotoMostrada="src/entrenamientos/burpees";
 
                document.getElementById("sig").onclick=function(){
                    var imagen=document.getElementById("foto");
                    
-                   if(fotomostrada="burpees"){
-                       imagen.src="correr.gif";
-                       fotomostrada="correr";
+                   if(fotoMostrada=="src/entrenamientos/burpees"){
+                       imagen.src="src/entrenamientos/correr.gif";
+                       fotoMostrada="src/entrenamientos/correr";
+                       document.getElementById("georgina").innerHTML="Trotar";
+                       document.getElementById("karla").innerHTML="30 segundos";
                    }
                    else{
-                    imagen.src="burpees.gif";
-                       fotomostrada="burpees";
+                    imagen.src="src/entrenamientos/lagartijas.gif";
+                    fotoMostrada="src/entrenamientos/lagartijas";
+                       document.getElementById("georgina").innerHTML="Lagartijas";
+                       document.getElementById("karla").innerHTML="15 repeticiones";
                    }
+               
                }
+
+            
+
             }
         }
         
