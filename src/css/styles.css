@@ -724,12 +724,24 @@ footer {
         background-color: #126fbb;
         margin: 0;
         padding: 1%; }
+        .register-container .form-container .status-bar div.loading-bar {
+          animation-name: example;
+          animation-duration: 10s; }
+
+@keyframes example {
+  0% {
+    width: 0; }
+  100% {
+    width: 100%; } }
     .register-container .form-container header h1 {
       color: #ffffff;
       font-size: 1.8rem; }
     .register-container .form-container header p {
       color: #c8c8c8;
       font-size: 1.1rem; }
+    .register-container .form-container form label.selected {
+      background-color: #696969;
+      color: #000000; }
     .register-container .form-container form.inline-form, .register-container .form-container .columns-form {
       margin: 3rem auto;
       display: grid;
@@ -740,6 +752,7 @@ footer {
         width: 100%;
         text-align: start;
         height: min-content;
+        z-index: 10;
         transition: background-color, 0.5s;
         -webkit-transition: background-color, 0.5s;
         -moz-transition: background-color, 0.5s;
@@ -773,6 +786,9 @@ footer {
         .register-container .form-container form.inline-form div label svg {
           width: 2.5rem; }
         .register-container .form-container form.inline-form div label div {
+          z-index: 2;
+          overflow: hidden;
+          background-color: transparent;
           margin-left: 1.2rem; }
           .register-container .form-container form.inline-form div label div p:nth-child(1) {
             margin-top: 0.2rem; }
@@ -782,16 +798,185 @@ footer {
             font-size: 0.85rem;
             margin-top: -0.9rem;
             margin-bottom: 0; }
+    .register-container .form-container form.inline-form-text {
+      margin: 3rem auto;
+      display: grid;
+      grid-gap: 1rem;
+      width: 95%;
+      grid-template-columns: repeat(1, 2fr); }
+      .register-container .form-container form.inline-form-text div {
+        text-align: start;
+        margin: auto;
+        width: 100%;
+        height: min-content; }
+        .register-container .form-container form.inline-form-text div p {
+          color: #8D8D8D;
+          font-size: 0.8em;
+          margin-bottom: 0.3rem; }
+        .register-container .form-container form.inline-form-text div input[type="date"], .register-container .form-container form.inline-form-text div input[type="text"], .register-container .form-container form.inline-form-text div input[type="password"], .register-container .form-container form.inline-form-text div input[type="password"] {
+          border-top: 0;
+          border-left: 0;
+          border-right: 0;
+          padding: 0 0 0.5rem 0.7rem;
+          border-color: #126fbb;
+          color: #ffffff;
+          background-color: transparent;
+          width: 100%;
+          font-size: 1.2rem; }
+          .register-container .form-container form.inline-form-text div input[type="date"]:focus, .register-container .form-container form.inline-form-text div input[type="text"]:focus, .register-container .form-container form.inline-form-text div input[type="password"]:focus, .register-container .form-container form.inline-form-text div input[type="password"]:focus {
+            outline: none;
+            background-color: transparent;
+            border-color: #696969; }
+        .register-container .form-container form.inline-form-text div div {
+          display: inline-block; }
+          .register-container .form-container form.inline-form-text div div select {
+            position: absolute;
+            color: #ffffff;
+            font-size: 1rem;
+            padding: 0.4rem;
+            background-color: #353535;
+            border: 0;
+            margin-top: -0.7rem;
+            margin-left: -4.2rem;
+            padding-right: 1.2rem;
+            border-radius: 4px;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            -ms-border-radius: 4px;
+            -o-border-radius: 4px; }
+            .register-container .form-container form.inline-form-text div div select:focus {
+              outline: none; }
+      .register-container .form-container form.inline-form-text div.next {
+        margin: auto;
+        width: 60%;
+        height: 3rem;
+        margin-top: 1rem;
+        background-color: #126fbb;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        -o-border-radius: 4px;
+        transition: background-color, 0.7s;
+        -webkit-transition: background-color, 0.7s;
+        -moz-transition: background-color, 0.7s;
+        -ms-transition: background-color, 0.7s;
+        -o-transition: background-color, 0.7s; }
+        .register-container .form-container form.inline-form-text div.next label {
+          color: #ffffff; }
+          .register-container .form-container form.inline-form-text div.next label:hover {
+            cursor: pointer; }
+        .register-container .form-container form.inline-form-text div.next:hover {
+          background-color: #1250dc;
+          cursor: pointer; }
+    .register-container .form-container form.inline-form-checkbox {
+      margin: 3rem auto;
+      display: grid;
+      grid-gap: 1rem;
+      grid-template-columns: repeat(1, 2fr); }
+      .register-container .form-container form.inline-form-checkbox div {
+        height: 6rem;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        text-align: start;
+        background-color: #353535;
+        padding: 1.5rem 1rem 1rem 0;
+        border-radius: 4px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        -o-border-radius: 4px; }
+        .register-container .form-container form.inline-form-checkbox div input[type="checkbox"] {
+          display: none; }
+        .register-container .form-container form.inline-form-checkbox div input[type="checkbox"] + label {
+          margin-left: 1rem;
+          padding-bottom: 0.2rem;
+          display: block;
+          position: relative;
+          padding-left: 40px;
+          margin-bottom: 20px;
+          font-size: 0.9rem;
+          color: #ddd;
+          cursor: pointer;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none; }
+        .register-container .form-container form.inline-form-checkbox div input[type="checkbox"] + label:last-child {
+          margin-bottom: 0; }
+        .register-container .form-container form.inline-form-checkbox div input[type="checkbox"] + label:before {
+          content: '';
+          display: block;
+          width: 25px;
+          height: 25px;
+          border: 1px solid #126fbb;
+          position: absolute;
+          left: 0;
+          top: 0rem;
+          opacity: .6;
+          -webkit-transition: all .12s, border-color .08s;
+          transition: all .12s, border-color .08s; }
+        .register-container .form-container form.inline-form-checkbox div input[type="checkbox"]:checked + label:before {
+          width: 10px;
+          top: -5px;
+          left: 5px;
+          border-radius: 0;
+          opacity: 1;
+          border-top-color: transparent;
+          border-left-color: transparent;
+          -webkit-transform: rotate(45deg);
+          transform: rotate(45deg); }
+      .register-container .form-container form.inline-form-checkbox div.next {
+        margin: auto;
+        width: 60%;
+        height: 3rem;
+        margin-top: 1rem;
+        background-color: #126fbb;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        -o-border-radius: 4px;
+        transition: background-color, 0.7s;
+        -webkit-transition: background-color, 0.7s;
+        -moz-transition: background-color, 0.7s;
+        -ms-transition: background-color, 0.7s;
+        -o-transition: background-color, 0.7s; }
+        .register-container .form-container form.inline-form-checkbox div.next label {
+          color: #ffffff; }
+          .register-container .form-container form.inline-form-checkbox div.next label:hover {
+            cursor: pointer; }
+        .register-container .form-container form.inline-form-checkbox div.next:hover {
+          background-color: #1250dc;
+          cursor: pointer; }
     .register-container .form-container form.columns-form {
       grid-template-columns: repeat(2, 2fr); }
+    .register-container .form-container .sucess {
+      color: #000000;
+      filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); }
+      .register-container .form-container .sucess h1 {
+        font-size: 2.9rem; }
+      .register-container .form-container .sucess h3 {
+        font-size: 1.8rem; }
 
 @media (max-width: 900px) {
   .form-container {
-    margin: 4rem auto;
-    width: 100%; } }
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: 60%; } }
 
 @media (min-width: 900px) {
   .form-container {
+    background-size: 190%;
+    background-position: 75%;
     margin: 7rem auto;
     width: 35rem;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
