@@ -28,20 +28,22 @@
                 <aside class="show">
                     <div>
                         <ul>
-                            <li><a href="entrenamiento.html">Entrenamiento</a></li>
+                        <li><a href="entrenamiento.html">Entrenamiento</a></li>
                             <li><a href="">Nutrición</a></li>
-                            <li><a href="">Motivación</a></li>
+                            <li><a href="">Nosotros</a></li>
                             <li><a href="">Contacto</a></li>
+                            <li><a href="calculadora.html">Calculadora</a></li>
                         </ul>
                     </div>
                     <div>
                     </div>
                 </aside>
                 <ul class="hide-on-small-and-down">
-                    <li><a href="entrenamiento.html">Entrenamiento</a></li>
-                    <li><a href="">Nutrición</a></li>
-                    <li><a href="">Motivación</a></li>
-                    <li><a href="">Contacto</a></li>
+                <li><a href="entrenamiento.html">Entrenamiento</a></li>
+                            <li><a href="">Nutrición</a></li>
+                            <li><a href="">Nosotros</a></li>
+                            <li><a href="">Contacto</a></li>
+                            <li><a href="calculadora.html">Calculadora</a></li>
                 </ul>
             </nav>
         </header>
@@ -106,7 +108,7 @@
                         <li><a href="">ENTRENAMIENTO</a></li>
                         <li><a href="">NUTRICIÓN</a> </li>
                         <li><a href="">SUPLEMENTOS</a></li>
-                        <li><a href="">CALCULADORAS</a></li>
+                        <li><a href="calculadora.html">CALCULADORAS</a></li>
                     </ul>
                 </div>
                 <div>
