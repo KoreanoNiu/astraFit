@@ -406,6 +406,14 @@ main {
     background-image: url("../../src/img/background4.jpg"); }
     main section.background-image-2 div.image-2 h1 {
       font-size: 3.5rem; }
+  main section.background-image-3 {
+    background-image: url("../../src/img/background3.jpg"); }
+    main section.background-image-3 div.image-3 h1 {
+      font-size: 3.5rem; }
+  main section.background-image-4 {
+    background-image: url("../../src/img/background6.jpg"); }
+    main section.background-image-4 div.image-4 h1 {
+      font-size: 3.5rem; }
   main section.background {
     height: calc(100vh - var(--navbar-height));
     width: 100%;
@@ -593,7 +601,11 @@ main {
     footer div ul {
       font-size: 0.8rem; }
     footer div:nth-child(3) {
-      margin-top: -2rem; } }
+      margin-top: -2rem; }
+  .progress-container {
+    grid-template-columns: repeat(1, 2fr); }
+  .img-user-progress {
+    grid-template-columns: repeat(1, 2fr); } }
 
 @media (min-width: 900px) {
   .cards {
@@ -622,7 +634,12 @@ main {
   footer {
     grid-template-columns: repeat(3, 2fr); }
     footer div ul {
-      font-size: 0.9rem; } }
+      font-size: 0.9rem; }
+  .progress-container {
+    grid-template-columns: repeat(3, 2fr); }
+  .img-user-progress {
+    grid-template-columns: repeat(1, 2fr);
+    grid-gap: 1rem; } }
 
 @media (min-width: 1244px) {
   .cards {
@@ -671,6 +688,85 @@ footer {
           -o-transition: color 0.5s; }
           footer div ul li a:hover {
             color: white; }
+
+.progress-container {
+  max-width: 100%;
+  margin: 0 auto;
+  display: grid;
+  background-color: #333333;
+  font-family: Roboto-italic; }
+  .progress-container div.img-user-progress {
+    width: 95%;
+    margin: 0 auto;
+    display: grid; }
+    .progress-container div.img-user-progress input[type="file"] {
+      display: none; }
+    .progress-container div.img-user-progress .photoSelectButton {
+      margin-top: 1rem;
+      width: 100%;
+      height: 40rem;
+      overflow: hidden;
+      border-radius: 4px;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      -ms-border-radius: 4px;
+      -o-border-radius: 4px; }
+      .progress-container div.img-user-progress .photoSelectButton .photoInput {
+        height: 100%;
+        width: 100%;
+        border-style: dotted;
+        border-color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center; }
+    .progress-container div.img-user-progress div.buttonImg {
+      float: left;
+      width: 100%;
+      height: 3rem;
+      margin-top: 1rem;
+      background-color: #126fbb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      -ms-border-radius: 4px;
+      -o-border-radius: 4px;
+      transition: background-color, 0.7s;
+      -webkit-transition: background-color, 0.7s;
+      -moz-transition: background-color, 0.7s;
+      -ms-transition: background-color, 0.7s;
+      -o-transition: background-color, 0.7s; }
+      .progress-container div.img-user-progress div.buttonImg label {
+        color: #ffffff; }
+        .progress-container div.img-user-progress div.buttonImg label:hover {
+          cursor: pointer; }
+      .progress-container div.img-user-progress div.buttonImg:hover {
+        background-color: #1250dc;
+        cursor: pointer; }
+  .progress-container div {
+    margin: 0 auto;
+    width: 95%; }
+    .progress-container div form p {
+      color: #8D8D8D;
+      font-size: 0.8em;
+      margin-bottom: 0.3rem; }
+    .progress-container div form input[type="date"], .progress-container div form input[type="text"], .progress-container div form input[type="password"], .progress-container div form input[type="password"], .progress-container div form input[type="number"] {
+      border-top: 0;
+      border-left: 0;
+      border-right: 0;
+      padding: 0 0 0.5rem 0.7rem;
+      border-color: #126fbb;
+      color: #ffffff;
+      background-color: transparent;
+      width: 100%;
+      font-size: 1.2rem;
+      margin-bottom: 0.7rem; }
+      .progress-container div form input[type="date"]:focus, .progress-container div form input[type="text"]:focus, .progress-container div form input[type="password"]:focus, .progress-container div form input[type="password"]:focus, .progress-container div form input[type="number"]:focus {
+        outline: none;
+        background-color: transparent;
+        border-color: #696969; }
 
 /*  .container{
     position: relative;

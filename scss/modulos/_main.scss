@@ -44,6 +44,22 @@ main{
             }
         }
     }
+    section.background-image-3{
+        background-image: url('../../src/img/background3.jpg');
+        div.image-3{
+            h1{
+                font-size: 3.5rem;
+            }
+        }
+    }
+    section.background-image-4{
+        background-image: url('../../src/img/background6.jpg');
+        div.image-4{
+            h1{
+                font-size: 3.5rem;
+            }
+        }
+    }
     section.background{
 
         height: calc(100vh - var(--navbar-height));

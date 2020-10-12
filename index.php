@@ -29,8 +29,8 @@
                     <div>
                         <ul>
                             <li><a href="entrenamiento.html">Entrenamiento</a></li>
-                            <li><a href="">Nutrición</a></li>
-                            <li><a href="">Motivación</a></li>
+                            <li><a href="calculadora.html">Nutrición</a></li>
+                            <li><a href="motivacion.html">Motivación</a></li>
                             <li><a href="">Contacto</a></li>
                         </ul>
                     </div>
@@ -39,8 +39,8 @@
                 </aside>
                 <ul class="hide-on-small-and-down">
                     <li><a href="entrenamiento.html">Entrenamiento</a></li>
-                    <li><a href="">Nutrición</a></li>
-                    <li><a href="">Motivación</a></li>
+                    <li><a href="calculadora.html">Nutrición</a></li>
+                    <li><a href="motivacion.html">Motivación</a></li>
                     <li><a href="">Contacto</a></li>
                 </ul>
             </nav>
