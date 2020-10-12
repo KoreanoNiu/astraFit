@@ -1,5 +1,6 @@
-
-      
+body{
+    background-color: rgb(65, 64, 64);
+}
       .cardIm {
         background: none;
         color: black;
@@ -72,7 +73,7 @@ background-image:none;
         background-color: rgb(231, 226, 226);
         color: black;
         height: auto;
-        border-radius: 25px;
+        border-radius: 15px;
         border-color: black;
         -webkit-box-shadow: 0px 5px 15px 4px black;
         text-align: center;
@@ -209,3 +210,93 @@ background-image:none;
                         overflow: hidden; 
                     
                     }
+
+                    .botonon2{
+                        cursor: pointer;
+                        text-align: center;
+                        width: 5%;
+                        background-color: rgb(141, 24, 24);
+                        padding: 1rem 6.6rem 1rem 1rem;
+                        text-decoration: none;
+                        color: white;
+                        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+                        -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+                        border-radius: 4px;
+                        -webkit-border-radius: 4px;
+                        -moz-border-radius: 4px;
+                        -ms-border-radius: 4px;
+                        -o-border-radius: 4px;
+                        transition: background-color, 0.7s;
+                        -webkit-transition: background-color, 0.7s;
+                        -moz-transition: background-color, 0.7s;
+                        -ms-transition: background-color, 0.7s;
+                        -o-transition: background-color, 0.7s; 
+                      font-family: Roboto-italic;
+                      }
+                      .botonon3{
+                        cursor: pointer;
+                        text-align: center;
+                        width: 5%;
+                        background-color: rgb(141, 24, 24);
+                        padding: 1rem 3.5rem 1rem 1rem;
+                        text-decoration: none;
+                        color: white;
+                        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+                        -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+                        border-radius: 4px;
+                        -webkit-border-radius: 4px;
+                        -moz-border-radius: 4px;
+                        -ms-border-radius: 4px;
+                        -o-border-radius: 4px;
+                        transition: background-color, 0.7s;
+                        -webkit-transition: background-color, 0.7s;
+                        -moz-transition: background-color, 0.7s;
+                        -ms-transition: background-color, 0.7s;
+                        -o-transition: background-color, 0.7s; 
+                      font-family: Roboto-italic;
+                      }
+                      .botonon4{
+                        width: min-content;
+    background-color: #0f4775;
+    padding: 1rem 5rem 1rem 5rem;
+    text-decoration: none;
+    color: white;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    transition: background-color, 0.7s;
+    -webkit-transition: background-color, 0.7s;
+    -moz-transition: background-color, 0.7s;
+    -ms-transition: background-color, 0.7s;
+    -o-transition: background-color, 0.7s;
+                      }
+
+
+                      .cardF {
+                        background-color: #ffffff;
+                        color: black;
+                        height: auto;
+                        width: 70%;
+                        margin-left: auto;
+                        margin-right: auto;
+                        
+                        border-radius: 4px;
+                        -webkit-border-radius: 4px;
+                        -moz-border-radius: 4px;
+                        -ms-border-radius: 4px;
+                        -o-border-radius: 4px;
+                        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+                        -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+                        font-family: Oxygen;
+                        overflow: hidden; }
+                        .card div.cardF-image {
+                          height: min-content; }
+                          .card div.cardF-image img {
+                            width: 100%; }
+                        .card div.cardF-content {
+                          padding: 1rem;
+                          font-size: 0.9rem; }

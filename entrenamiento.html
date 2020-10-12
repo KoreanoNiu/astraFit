@@ -4,10 +4,11 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel = "stylesheet" href = "src/css/stails.css" type ="TEXT/CSS">
         <link rel = "stylesheet" href = "src/css/styles.css" type ="TEXT/CSS">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
-<title>CALCULADORA CALORICA</title>
+<title>ENTRENAMIENTOS</title>
 </head>
 <body>
 <header>
@@ -50,70 +51,160 @@
         </header>
 
         <main>                
-                <div class="cards2">
-<div class="card2">
-                    <div class="card2-image">
-                        <h1 style="font-family:Roboto-italic;">-CALCULADORA DE CALORIAS Y MACROS PERSONALIZADOS-</h1>
-                    </div>
-                    <div class="card2-content">
-                        <h2>¡Bienvenido!</h2>
-                        <p>Para lograr conseguir tu dieta con tus macronutrientes personalizados, necesitamos que rellenes los campos vacíos.</p>
-<hr>                
- <label for="peson">PESO EN KG</label><br><br>
-<input class="card4" type="number" id="peso" name="peson"><br><br>
-<label for="estatua">ESTATURA EN CM</h4></label><br><br>
-<input  class="card4" type="number" id="estatura" name="estatua"><br><br>
-<label for="edadita">AÑOS</label><br><br>
-<input type="number" id="edad" name="edadita">
-<h4>NIVEL DE ACTIVIDAD FÍSICA</h4>
-<select id="actividad">
-<option>Nada de ejercicio</option>
-<option>Poco activo (1 hora de ejercicio y el resto del día sedentario)</option>
-<option>Ligeramente activo(Parte del día en movimiento y 1 o más horas de ejercicio)</option>
-<option>Muy activo(La mayoria parte del día activo y +1 hora de ejercicio)</option>
-<option>Extremadamente activo(Todo el día activo y +2 horas de ejercicio)</option>
-</select><br><br>
-<label for="grason">PORCENTAJE DE GRASA CORPORAL</label><br><br>
-<input type="number" id="grasa" name="grason">
-<h3>Si no sabes cual es tu porcentaje de grasa corporal, aquí te colocamos una imágen para que lo estimes si no lo sabes: </h3>
-<div class="cards3">
-    <div class="card3">
-        <div class="card3-image">
-    <h4>HOMBRES / MUJERES</h4>
-    </div>
-    <div class="card3-content">
-        <img style="padding:10px;border-radius: 20px;" src="src/img/GRASA2.jpg" height="250px">
-        <img style="padding:10px; border-radius: 20px;" src="src/img/GRASA1.jpg" height="250px">
-        </div>
-</div>
-<h4>¿Cómo quieres que sea tu dieta?</h4>
-<select id="tipo">
-<option>Alta en carbohidratos (bajarán los gramos de grasa)</option>
-<option>Baja en carbohidratos (subirán los gramos de grasa)</option>
-<option>Alta en proteína (bajarán los gramos de carbohidratos)</option>
-</select>
-<h4>¿Para qué objetivo quieres tu dieta?</h4>
-<select id="tipo2">
-<option >Mantenerte</option>
-<option >Definirte (Bajar grasa corporal)</option>
-<option >Volumen (Aumentar músculo)</option>
-</select>
-    <h4>¿Qué fórmula quieres usar?</h4>
-    <select id="formula">
-        <option>Fórmula sin usar porcentaje de grasa corporal</option>
-        <option>Fórmula usando porcentaje de grasa corporal</option>
-    </select>
-    <div>
-<input type="submit" class="botonon" id="dieta" value="OBTENER DIETA"></input>
-    </div>
+            <section class="information">
     
-
-<script type="text/javascript">
-
-</script>
+                <div id="desaparecer" style="display: block;">
+                <div class="cards2">
+                    <div class="card2">
+                                        <div class="card2-image">
+                                            <h1 style="font-family:Roboto-italic;">-EJERCICIOS Y ENTRENAMIENTOS-</h1>
+                                            <h4>¿Qué rutina estás buscando?</h4>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    
+                <div class="cards">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="src/img/FULLBODY.jpg" alt="">
+                        </div>
+                        <div class="card-content" style="text-align:center;">
+                            <h2>FULLBODY</h2>
+                            <p>Rutina para absolutamente todo el cuerpo.</p>
+                            <button class="botonon2" id="fullbody">¡EMPEZEMOS!</button>
+                        </div>
                     </div>
-           
+
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="src/img/ABDOMEN.jpg" alt="">
+                        </div>
+                        <div class="card-content" style="text-align:center;">
+                            <h2>ABDOMEN</h2>
+                            <p>Ejercicios específicos para definir tu abdomen.</p>
+                            <button class="botonon2" id="abdomen">¡EMPEZEMOS!</button>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="src/img/PECHO.jpg" alt="">
+                        </div>
+                        <div class="card-content" style="text-align:center;">
+                            <h2>PECHO</h2>
+                            <p>Ejercicios para definir tu pecho.</p>
+                            <button class="botonon2" id="pecho">¡EMPEZEMOS!</button>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="src/img/BRAZO.jpg" alt="">
+                        </div>
+                        <div class="card-content" style="text-align:center;">
+                            <h2>BRAZO</h2>
+                            <p>¡Define tus brazos como nunca!</p>
+                            <button class="botonon2" id="brazo">¡EMPEZEMOS!</button>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="src/img/PIERNA.jpg" alt="">
+                        </div>
+                        <div class="card-content" style="text-align:center;">
+                            <h2>PIERNA</h2>
+                            <p>¡Llegó la hora de marcar esas piernas!</p>
+                            <button class="botonon2" id="pierna">¡EMPEZEMOS!</button>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="src/img/GLUTEO.jpg" alt="">
+                        </div>
+                        <div class="card-content" style="text-align:center;">
+                            <h2>GLÚTEO</h2>
+                            <p>Ejercicios para definir o aumentar tus glúteos.</p>
+                            <button class="botonon2" id="gluteo">¡EMPEZEMOS!</button>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+<br><br>
+
+                <div id="full" style="display: none; text-align: center;">
+                    <div class="cardF">
+                       
+                        <div class="cardF-content" style="text-align:center;"">
+                            <h2>-FULLBODY-</h2>
+                            <p>Rutina para absolutamente todo el cuerpo.</p>
+                            
+                            <div>
+                                <h4 id="jeje">Rutina para:</h4>
+                                <button class="botonon3" id="casa1" >CASA</button>
+                            <button class="botonon3" id="gym1" >GYM</button>
+                        </div>
+                        </div>
+                    </div><br><br>
+
+                        <div id="rutinaCasa" style="display:none;">
+                            <div class="cardF">
+                       
+                                <div class="cardF-content" style="text-align:center;"">
+                                    <img id="foto" src="src/entrenamientos/burpees.gif" alt="" height="200px">
+                                    
+                                    <div>
+                                        <h4>Burpees</h4>
+                                        <h4>12 repeticiones</h4>
+                                        <button class="botonon4" id="sig">SIGUIENTE</button><br><br>
+                                </div>
+                                </div>
+                            </div>
+            
+
+
+
+
+
+
+
+                    </div>
+
+            </section>
+          
+
+           <script type="text/javascript">
+        document.getElementById("fullbody").onclick=function(){
+            document.getElementById("desaparecer").style.display="none";
+            document.getElementById("full").style.display="block";
+            document.getElementById("casa1").onclick=function(){
+                document.getElementById("casa1").style.display="none";
+                document.getElementById("gym1").style.display="none";
+                document.getElementById("jeje").innerHTML="";
+                document.getElementById("rutinaCasa").style.display="block";
+               var fotomostrada="burpees";
+
+               document.getElementById("sig").onclick=function(){
+                   var imagen=document.getElementById("foto");
+                   
+                   if(fotomostrada="burpees"){
+                       imagen.src="correr.gif";
+                       fotomostrada="correr";
+                   }
+                   else{
+                    imagen.src="burpees.gif";
+                       fotomostrada="burpees";
+                   }
+               }
+            }
+        }
+        
+        </script>
            
         </main>
+        
 </body>
 </html>
