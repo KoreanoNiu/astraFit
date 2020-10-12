@@ -1,3 +1,8 @@
+<?php 
+    foreach ($_POST as $post_var){
+        echo $post_var . "<br/>";
+    }
+?>
 <!DOCTYPE html>
 <html lang = es>
 <html>
