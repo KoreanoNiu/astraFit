@@ -54,7 +54,7 @@
                     <div class="status-bar">
                         <div style="width: -0%"></div>
                     </div>
-                    <div class="form-content">
+                    <div class="form-content background-image-sucess">
                         <header>
                             <h1>¿Eres hombre o mujer?</h1>
                             <p>Tu entrenador personalizado te espera. Este es tu primer paso</p>

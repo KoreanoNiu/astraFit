@@ -1,7 +1,6 @@
 
 var presionada = document.querySelectorAll('.buttonLabel');
 var formularioFinal = new FormData();
-
 const regresarAnteriorBoton = document.querySelector('.backForm');
 var contadorEstadoFormulario = 0;
 
@@ -36,6 +35,9 @@ function siguiente(){
             formularioFinal.append("fecha", datosFormulario[0].value);
             formularioFinal.append("altura", datosFormulario[1].value);
             formularioFinal.append("peso", datosFormulario[2].value);
+            var IMC = (datosFormulario[1].value / 100)(datosFormulario[1].value / 100);
+            IMC = datosFormulario / IMC;
+            formularioFinal.append("IMC", IMC);
 
             nextForm(this);
         }
@@ -96,12 +98,10 @@ function siguiente(){
         if(contadorDiagnostico > 2){
             document.querySelector('.sucess').querySelector('h1').innerHTML = "Hubo un error";
             document.querySelector('.sucess').querySelector('h3').innerHTML = "Se recomiende que visite a su médico familiar para que evalue su estado de salud";
-            document.querySelector('.sucess').querySelector('h1').style.color = "#ffffff";
-            document.querySelector('.sucess').querySelector('h3').style.color = "#ffffff";
             nextForm(this);
         }else{
 
-            document.querySelector('.form-container').style.backgroundImage = "url('../../src/img/background4.jpg')";
+            document.querySelector('.form-container').style.backgroundImage = "url('./src/img/background4.jpg')";
             this.parentNode.parentNode.parentNode.classList.toggle('hide');
             this.parentNode.parentNode.parentNode.nextElementSibling.classList.toggle('hide');
             document.querySelector('.status-bar').style.marginTop = "15rem";
@@ -115,8 +115,11 @@ function siguiente(){
                 console.log(this.responseText);
             }
             xhr.open("POST", "registro.php");
-            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             xhr.send(formularioFinal);
+
+            setTimeout(function(){
+                window.location.replace("astraFit/miprogreso.php");
+            }, 10000);
         }
 
     }
