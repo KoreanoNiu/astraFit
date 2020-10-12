@@ -93,7 +93,7 @@
                             <label for="nombre">
                                 <p>IMC</p>
                             </label>
-                            <input type="number" name="IMC" value="22.49">
+                            <input type="number" name="IMC" value="22.49" readonly>
                         </form>
                     </div>
                     <div>
