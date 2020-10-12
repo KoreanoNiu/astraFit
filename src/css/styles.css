@@ -813,7 +813,7 @@ footer {
           color: #8D8D8D;
           font-size: 0.8em;
           margin-bottom: 0.3rem; }
-        .register-container .form-container form.inline-form-text div input[type="date"], .register-container .form-container form.inline-form-text div input[type="text"], .register-container .form-container form.inline-form-text div input[type="password"], .register-container .form-container form.inline-form-text div input[type="password"] {
+        .register-container .form-container form.inline-form-text div input[type="date"], .register-container .form-container form.inline-form-text div input[type="text"], .register-container .form-container form.inline-form-text div input[type="password"], .register-container .form-container form.inline-form-text div input[type="password"], .register-container .form-container form.inline-form-text div input[type="number"] {
           border-top: 0;
           border-left: 0;
           border-right: 0;
@@ -823,7 +823,7 @@ footer {
           background-color: transparent;
           width: 100%;
           font-size: 1.2rem; }
-          .register-container .form-container form.inline-form-text div input[type="date"]:focus, .register-container .form-container form.inline-form-text div input[type="text"]:focus, .register-container .form-container form.inline-form-text div input[type="password"]:focus, .register-container .form-container form.inline-form-text div input[type="password"]:focus {
+          .register-container .form-container form.inline-form-text div input[type="date"]:focus, .register-container .form-container form.inline-form-text div input[type="text"]:focus, .register-container .form-container form.inline-form-text div input[type="password"]:focus, .register-container .form-container form.inline-form-text div input[type="password"]:focus, .register-container .form-container form.inline-form-text div input[type="number"]:focus {
             outline: none;
             background-color: transparent;
             border-color: #696969; }
@@ -989,7 +989,3 @@ footer {
     .form-container form {
       margin: auto;
       width: 80%; } }
-
-
-
-      /*De Carlitos*/
