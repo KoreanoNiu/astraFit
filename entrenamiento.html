@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang = es>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel = "stylesheet" href = "src/css/styles.css" type ="TEXT/CSS">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
+<title>CALCULADORA CALORICA</title>
+</head>
+<body>
+<header>
+            <nav class="fixed closed">
+                <a href = "" class = "brand-logo center"><img src="src/img/logo.png" alt=""></a>
+                <div class="sidenav-trigger hide show-on-small-and-down right">
+                    <button class="menu" onclick="this.parentNode.parentNode.classList.toggle('opened');this.parentNode.parentNode.classList.toggle('closed');this.setAttribute('aria-expanded', this.classList.contains('opened'))" aria-label="Main Menu">
+                        <svg width="40" height="40" viewBox="0 0 100 100">
+                          <path class="line line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
+                          <path class="line line2" d="M 20,50 H 80" />
+                          <path class="line line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
+                        </svg>
+                      </button>
+                </div>
+                <div class="sidenav-trigger right">
+                    <!--Aqui iria el icono del carrito xd-->
+                </div>
+                <!--ESta cerrado por el hide-->
+                <aside class="show">
+                    <div>
+                        <ul>
+                            <li><a href="">Entrenamiento</a></li>
+                            <li><a href="">Nutrición</a></li>
+                            <li><a href="">Nosotros</a></li>
+                            <li><a href="">Contacto</a></li>
+                            <li><a href="index.html">Inicio</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                    </div>
+                </aside>
+                <ul class="hide-on-small-and-down">
+                    <li><a href="">Entrenamiento</a></li>
+                    <li><a href="">Nutrición</a></li>
+                    <li><a href="">Nosotros</a></li>
+                    <li><a href="">Contacto</a></li>
+                    <li><a href="index.html">Inicio</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>                
+                <div class="cards2">
+<div class="card2">
+                    <div class="card2-image">
+                        <h1 style="font-family:Roboto-italic;">-CALCULADORA DE CALORIAS Y MACROS PERSONALIZADOS-</h1>
+                    </div>
+                    <div class="card2-content">
+                        <h2>¡Bienvenido!</h2>
+                        <p>Para lograr conseguir tu dieta con tus macronutrientes personalizados, necesitamos que rellenes los campos vacíos.</p>
+<hr>                
+ <label for="peson">PESO EN KG</label><br><br>
+<input class="card4" type="number" id="peso" name="peson"><br><br>
+<label for="estatua">ESTATURA EN CM</h4></label><br><br>
+<input  class="card4" type="number" id="estatura" name="estatua"><br><br>
+<label for="edadita">AÑOS</label><br><br>
+<input type="number" id="edad" name="edadita">
+<h4>NIVEL DE ACTIVIDAD FÍSICA</h4>
+<select id="actividad">
+<option>Nada de ejercicio</option>
+<option>Poco activo (1 hora de ejercicio y el resto del día sedentario)</option>
+<option>Ligeramente activo(Parte del día en movimiento y 1 o más horas de ejercicio)</option>
+<option>Muy activo(La mayoria parte del día activo y +1 hora de ejercicio)</option>
+<option>Extremadamente activo(Todo el día activo y +2 horas de ejercicio)</option>
+</select><br><br>
+<label for="grason">PORCENTAJE DE GRASA CORPORAL</label><br><br>
+<input type="number" id="grasa" name="grason">
+<h3>Si no sabes cual es tu porcentaje de grasa corporal, aquí te colocamos una imágen para que lo estimes si no lo sabes: </h3>
+<div class="cards3">
+    <div class="card3">
+        <div class="card3-image">
+    <h4>HOMBRES / MUJERES</h4>
+    </div>
+    <div class="card3-content">
+        <img style="padding:10px;border-radius: 20px;" src="src/img/GRASA2.jpg" height="250px">
+        <img style="padding:10px; border-radius: 20px;" src="src/img/GRASA1.jpg" height="250px">
+        </div>
+</div>
+<h4>¿Cómo quieres que sea tu dieta?</h4>
+<select id="tipo">
+<option>Alta en carbohidratos (bajarán los gramos de grasa)</option>
+<option>Baja en carbohidratos (subirán los gramos de grasa)</option>
+<option>Alta en proteína (bajarán los gramos de carbohidratos)</option>
+</select>
+<h4>¿Para qué objetivo quieres tu dieta?</h4>
+<select id="tipo2">
+<option >Mantenerte</option>
+<option >Definirte (Bajar grasa corporal)</option>
+<option >Volumen (Aumentar músculo)</option>
+</select>
+    <h4>¿Qué fórmula quieres usar?</h4>
+    <select id="formula">
+        <option>Fórmula sin usar porcentaje de grasa corporal</option>
+        <option>Fórmula usando porcentaje de grasa corporal</option>
+    </select>
+    <div>
+<input type="submit" class="botonon" id="dieta" value="OBTENER DIETA"></input>
+    </div>
+    
+
+<script type="text/javascript">
+
+</script>
+                    </div>
+           
+           
+        </main>
+</body>
+</html>

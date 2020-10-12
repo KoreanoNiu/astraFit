@@ -1,0 +1,211 @@
+
+      
+      .cardIm {
+        background: none;
+        color: black;
+        height: auto;
+        width:80px;
+        border:none;
+     
+       outline:0px;
+      border-bottom: 1px solid black;
+        font-family: Oxygen;
+        
+      }
+     select{
+       -webkit-appearance: none;
+       -moz-appearance: none;
+       -ms-appearance: none;
+       appearance: none;
+       outline: 0;
+      box-shadow:none;
+border:0!important;
+background:rgb(197, 196, 196);
+background-image:none;
+     }
+     select::-ms-expand{
+      display:none;
+     }
+     .select{
+       position:relative;
+       left:420px;
+       display:flex;
+       width:20em;
+       height:3em;
+       line-height: 3;
+       background:white;
+       overflow:hidden;
+       border-radius:.25em;
+     }
+     select{
+        flex:1;
+        padding:0 .5em;
+        color:black;
+        cursor:pointer;
+        border: 1px solid black;
+     }
+     .select::after{
+       content:"\25BC";
+       position:absolute;
+       top:0;
+       right:0;
+       padding:0 1em;
+       background: rgb(134, 132, 132);
+       cursor:pointer;
+       pointer-events:none;
+       transition:.25s all ease;
+     }
+
+
+      .cards2 {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-gap: 2rem; 
+        padding: 20px;
+        text-align:center;
+        
+      }
+      
+      .card2 {
+        
+        background-color: rgb(231, 226, 226);
+        color: black;
+        height: auto;
+        border-radius: 25px;
+        border-color: black;
+        -webkit-box-shadow: 0px 5px 15px 4px black;
+        text-align: center;
+        
+        
+        font-family: Oxygen;
+        overflow: hidden; }
+        .card div.card2-image {
+          height: min-content; }
+          .card div.card2-image img {
+            width: 100%; }
+        .card div.card2-content {
+          padding: 1rem;
+          font-size: 0.9rem; }
+      
+      
+          .cards3 {
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto;
+            display: grid;
+            grid-gap: 2rem; 
+            padding: 50px;
+            text-align:center;
+          }
+          
+          .card3 {
+            background-color: whitesmoke;
+            color: black;
+            height: auto;
+            border-radius: 4px;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            -ms-border-radius: 4px;
+            -o-border-radius: 4px;
+            filter: drop-shadow(0px 4px 4px black);
+            -webkit-filter: drop-shadow(0px 8px 8px black);
+            font-family: Oxygen;
+            overflow: hidden; }
+            .card div.card3-image {
+              height: min-content; }
+              .card div.card3-image img {
+                width: 100%; }
+            .card div.card3-content {
+              padding: 1rem;
+              font-size: 0.9rem; }
+      
+              .botonon{
+                cursor: pointer;
+                width: min-content;
+                background-color: darkcyan;
+                padding: 1rem 5rem 1rem 5rem;
+                text-decoration: none;
+                color: white;
+                filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+                -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+                border-radius: 4px;
+                -webkit-border-radius: 4px;
+                -moz-border-radius: 4px;
+                -ms-border-radius: 4px;
+                -o-border-radius: 4px;
+                transition: background-color, 0.7s;
+                -webkit-transition: background-color, 0.7s;
+                -moz-transition: background-color, 0.7s;
+                -ms-transition: background-color, 0.7s;
+                -o-transition: background-color, 0.7s; 
+              font-family: Roboto-italic;
+              }
+              
+                .botonon a:hover {
+                  background-color: #1250dc; 
+                }
+                input{
+                  text-align: center;
+                  background-color: whitesmoke;
+                  color: black;
+                  height: auto;
+                  border-radius: 4px;
+                  -webkit-border-radius: 4px;
+                  -moz-border-radius: 4px;
+                  -ms-border-radius: 4px;
+                  -o-border-radius: 4px;
+                  filter: drop-shadow(0px 4px 4px black);
+                  -webkit-filter: drop-shadow(0px 3px 3px black);
+                  font-family: Oxygen;
+                }
+               
+                .card5 {
+                  background-color: whitesmoke;
+                  color: black;
+                  height: auto;
+                 width: 50%;
+              
+                 text-align: center;
+                 position: fixed;
+                 left: 336px;
+                 bottom: 130px;
+                 transition: 1s;
+                 transform: scale(1.1);
+                 
+                 
+                  border-radius: 4px;
+                  -webkit-border-radius: 4px;
+                  -moz-border-radius: 4px;
+                  -ms-border-radius: 4px;
+                  -o-border-radius: 4px;
+                  filter: drop-shadow(0px 4px 4px black);
+                  -webkit-filter: drop-shadow(0px 8px 8px black);
+                  font-family: Oxygen;
+                  overflow: hidden; }
+                  .card div.card5-image {
+                    height: min-content; }
+                    .card div.card5-image img {
+                      width: 60%; }
+                  .card div.card5-content {
+                    padding: 1rem;
+                    font-size: 0.9rem; }
+                    .card8 {
+        
+                        background-color: rgb(214, 207, 207);
+                        color: black;
+                        height: auto;
+                        padding: 15px;
+                        width: 80%;
+                        margin-left: 120px;
+                        margin-right: 120px;
+                        border-radius: 5px;
+                        border-color: black;
+                        -webkit-box-shadow: 0px 2px 3px 4px black;
+                        text-align: center;
+                        
+                        
+                        font-family: Oxygen;
+                        overflow: hidden; 
+                    
+                    }
