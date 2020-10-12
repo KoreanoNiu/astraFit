@@ -216,6 +216,10 @@
             display: none;
         }
 
+        &:hover{
+            cursor: pointer;
+        }
+
         .photoSelectButton{
             margin-top: 1rem;
            width: 100%;
@@ -231,11 +235,17 @@
             .photoInput{
                 height: 100%;
                 width: 100%;
+                border: 3px;
                 border-style: dotted;
                 border-color: #ffffff;
                 display: flex;
                 align-items: center;
                 justify-content: center;
+
+                svg{
+                    fill: #ffffff;
+                    width: 7rem;
+                }
             }
         }
 

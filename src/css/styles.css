@@ -701,6 +701,8 @@ footer {
     display: grid; }
     .progress-container div.img-user-progress input[type="file"] {
       display: none; }
+    .progress-container div.img-user-progress:hover {
+      cursor: pointer; }
     .progress-container div.img-user-progress .photoSelectButton {
       margin-top: 1rem;
       width: 100%;
@@ -714,11 +716,15 @@ footer {
       .progress-container div.img-user-progress .photoSelectButton .photoInput {
         height: 100%;
         width: 100%;
+        border: 3px;
         border-style: dotted;
         border-color: #ffffff;
         display: flex;
         align-items: center;
         justify-content: center; }
+        .progress-container div.img-user-progress .photoSelectButton .photoInput svg {
+          fill: #ffffff;
+          width: 7rem; }
     .progress-container div.img-user-progress div.buttonImg {
       float: left;
       width: 100%;
