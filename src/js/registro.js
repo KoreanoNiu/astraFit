@@ -35,13 +35,10 @@ function siguiente(){
             formularioFinal.append("fecha", datosFormulario[0].value);
             formularioFinal.append("altura", datosFormulario[1].value);
             formularioFinal.append("peso", datosFormulario[2].value);
-            var IMC = (datosFormulario[1].value / 100)(datosFormulario[1].value / 100);
-            IMC = datosFormulario / IMC;
-            formularioFinal.append("IMC", IMC);
 
             nextForm(this);
         }
-
+        
     }
     if(this.getAttribute('ID') == "validarDatosCuenta"){
         var datosFormulario = document.querySelector("#formularioDatosCuenta").querySelectorAll('input');
