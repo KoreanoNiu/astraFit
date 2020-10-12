@@ -1,7 +1,6 @@
 
 var presionada = document.querySelectorAll('.buttonLabel');
 var formularioFinal = new FormData();
-
 const regresarAnteriorBoton = document.querySelector('.backForm');
 var contadorEstadoFormulario = 0;
 
@@ -96,27 +95,26 @@ function siguiente(){
         if(contadorDiagnostico > 2){
             document.querySelector('.sucess').querySelector('h1').innerHTML = "Hubo un error";
             document.querySelector('.sucess').querySelector('h3').innerHTML = "Se recomiende que visite a su médico familiar para que evalue su estado de salud";
-            document.querySelector('.sucess').querySelector('h1').style.color = "#ffffff";
-            document.querySelector('.sucess').querySelector('h3').style.color = "#ffffff";
             nextForm(this);
         }else{
 
-            document.querySelector('.form-container').style.backgroundImage = "url('../../src/img/background4.jpg')";
+            document.querySelector('.form-container').style.backgroundImage = "url('./src/img/background4.jpg')";
             this.parentNode.parentNode.parentNode.classList.toggle('hide');
             this.parentNode.parentNode.parentNode.nextElementSibling.classList.toggle('hide');
             document.querySelector('.status-bar').style.marginTop = "15rem";
             document.querySelector('.status-bar').querySelector('div').style.width = null;
             document.querySelector('.status-bar').querySelector('div').classList.add('loading-bar');
 
-            const xhr = new XMLHttpRequest();
+            setTimeout(function(){
+                const xhr = new XMLHttpRequest();
     
-            xhr.onload = function(){
-                const serverResponse = document.querySelector('#ServerResponse');
-                console.log(this.responseText);
-            }
-            xhr.open("POST", "registro.php");
-            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhr.send(formularioFinal);
+                xhr.onload = function(){
+                    const serverResponse = document.querySelector('#ServerResponse');
+                    console.log(this.responseText);
+                }
+                xhr.open("POST", "registro.php");
+                xhr.send(formularioFinal);
+            }, 10000);
         }
 
     }
