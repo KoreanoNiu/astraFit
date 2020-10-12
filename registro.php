@@ -1,6 +1,6 @@
 <?php 
     foreach ($_POST as $post_var){
-        echo $post_var . "<br/>"
+        echo $post_var . "<br/>";
     }
 ?>
 <!DOCTYPE html>
