@@ -1,4 +1,3 @@
-
 var presionada = document.querySelectorAll('.buttonLabel');
 var formularioFinal = new FormData();
 const regresarAnteriorBoton = document.querySelector('.backForm');
@@ -115,7 +114,7 @@ function siguiente(){
             xhr.send(formularioFinal);
 
             setTimeout(function(){
-                window.location.replace("astraFit/miprogreso.php");
+                window.location.replace("/astraFit/miprogreso.php");
             }, 10000);
         }
 
