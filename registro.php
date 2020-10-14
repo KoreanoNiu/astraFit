@@ -2,6 +2,10 @@
     foreach ($_POST as $post_var){
         echo $post_var . "<br/>";
     }
+    if(isset($_POST['IMC'])){
+        echo '<h1>' . $_POST['IMC'] . '</h1>';
+    }
+    
 ?>
 <!DOCTYPE html>
 <html lang = es>

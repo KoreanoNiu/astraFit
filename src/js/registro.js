@@ -34,6 +34,9 @@ function siguiente(){
             formularioFinal.append("fecha", datosFormulario[0].value);
             formularioFinal.append("altura", datosFormulario[1].value);
             formularioFinal.append("peso", datosFormulario[2].value);
+            
+            var IMC = datosFormulario[2].value / (datosFormulario[1].value / 100 * datosFormulario[1].value / 100);
+            formularioFinal.append("IMC", IMC.toFixed(2));
 
             nextForm(this);
         }

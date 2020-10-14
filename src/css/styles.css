@@ -638,8 +638,22 @@ main {
   .progress-container {
     grid-template-columns: repeat(3, 2fr); }
   .img-user-progress {
-    grid-template-columns: repeat(1, 2fr);
-    grid-gap: 1rem; } }
+    grid-template-columns: repeat(2, 2fr);
+    grid-gap: 1rem; }
+    .img-user-progress div:nth-child(1) {
+      grid-column-start: 1;
+      grid-column-end: 3; }
+    .img-user-progress div:nth-child(2) {
+      grid-column-start: 1;
+      grid-column-end: 3; }
+    .img-user-progress div:nth-child(3) {
+      margin-left: 1rem;
+      grid-column-start: 1;
+      grid-column-end: 2; }
+    .img-user-progress div:nth-child(4) {
+      margin-left: 0rem;
+      grid-column-start: 2;
+      grid-column-end: 2; } }
 
 @media (min-width: 1244px) {
   .cards {
@@ -696,13 +710,11 @@ footer {
   background-color: #333333;
   font-family: Roboto-italic; }
   .progress-container div.img-user-progress {
-    width: 95%;
+    width: 100%;
     margin: 0 auto;
     display: grid; }
     .progress-container div.img-user-progress input[type="file"] {
       display: none; }
-    .progress-container div.img-user-progress:hover {
-      cursor: pointer; }
     .progress-container div.img-user-progress .photoSelectButton {
       margin-top: 1rem;
       width: 100%;
@@ -713,23 +725,27 @@ footer {
       -moz-border-radius: 4px;
       -ms-border-radius: 4px;
       -o-border-radius: 4px; }
+      .progress-container div.img-user-progress .photoSelectButton:hover {
+        cursor: pointer; }
       .progress-container div.img-user-progress .photoSelectButton .photoInput {
         height: 100%;
         width: 100%;
         border: 3px;
-        border-style: dotted;
+        border-style: solid;
         border-color: #ffffff;
         display: flex;
         align-items: center;
-        justify-content: center; }
+        justify-content: center;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); }
         .progress-container div.img-user-progress .photoSelectButton .photoInput svg {
           fill: #ffffff;
           width: 7rem; }
     .progress-container div.img-user-progress div.buttonImg {
       float: left;
-      width: 100%;
+      width: 95%;
       height: 3rem;
-      margin-top: 1rem;
+      margin-top: 0.7rem;
       background-color: #126fbb;
       display: flex;
       align-items: center;
@@ -743,7 +759,9 @@ footer {
       -webkit-transition: background-color, 0.7s;
       -moz-transition: background-color, 0.7s;
       -ms-transition: background-color, 0.7s;
-      -o-transition: background-color, 0.7s; }
+      -o-transition: background-color, 0.7s;
+      filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+      -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); }
       .progress-container div.img-user-progress div.buttonImg label {
         color: #ffffff; }
         .progress-container div.img-user-progress div.buttonImg label:hover {
