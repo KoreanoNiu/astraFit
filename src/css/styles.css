@@ -716,6 +716,7 @@ footer {
     .progress-container div.img-user-progress input[type="file"] {
       display: none; }
     .progress-container div.img-user-progress div.formPhoto .img-Actual {
+      margin-top: 1rem;
       width: 100%;
       border-radius: 4px;
       -webkit-border-radius: 4px;
