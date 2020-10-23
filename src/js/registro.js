@@ -96,7 +96,7 @@ function siguiente(){
         });
         if(contadorDiagnostico > 2){
             document.querySelector('.sucess').querySelector('h1').innerHTML = "Hubo un error";
-            document.querySelector('.sucess').querySelector('h3').innerHTML = "Se recomiende que visite a su médico familiar para que evalue su estado de salud";
+            document.querySelector('.sucess').querySelector('h3').innerHTML = "Se recomiende que visite a su médico de confianza para que evalue su estado de salud";
             nextForm(this);
         }else{
 
@@ -108,12 +108,13 @@ function siguiente(){
             document.querySelector('.status-bar').querySelector('div').classList.add('loading-bar');
 
             const xhr = new XMLHttpRequest();
-    
+            xhr.open("POST", "registro.php", true);
+
             xhr.onload = function(){
                 const serverResponse = document.querySelector('#ServerResponse');
                 console.log(this.responseText);
             }
-            xhr.open("POST", "registro.php");
+            xhr.setRequestHeader("Content-Type", false); //posiblemente esto no jale
             xhr.send(formularioFinal);
 
             setTimeout(function(){

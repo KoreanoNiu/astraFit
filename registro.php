@@ -5,7 +5,6 @@
     if(isset($_POST['IMC'])){
         echo '<h1>' . $_POST['IMC'] . '</h1>';
     }
-    
 ?>
 <!DOCTYPE html>
 <html lang = es>
