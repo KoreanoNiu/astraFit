@@ -39,6 +39,8 @@ function subirFoto(){
     
             document.querySelector('.formPhoto').insertBefore(img, document.getElementById('frmImage'));
             document.getElementById('frmImage').classList.add('hide');
+
+            window.scrollTo(0, document.querySelector('.img-user-progress').offsetTop);
         });
     }else{
         console.log('Selecciona un archivo por fa');
@@ -63,6 +65,8 @@ function cambiarFoto(){
             if(fotoActual.previousElementSibling){
                 fotoActual.classList.remove('now');
                 fotoActual.classList.add('after');
+    
+                window.scrollTo(0, document.querySelector('.img-user-progress').offsetTop);
 
                 fotoActual.previousElementSibling.classList.remove('after');
                 fotoActual.previousElementSibling.classList.add('now');
@@ -77,6 +81,8 @@ function cambiarFoto(){
             if(!fotoActual.nextElementSibling.classList.contains('hide')){
                 fotoActual.classList.remove('now');
                 fotoActual.classList.add('after');
+
+                window.scrollTo(0, document.querySelector('.img-user-progress').offsetTop);
 
                 fotoActual.nextElementSibling.classList.remove('after');
                 fotoActual.nextElementSibling.classList.add('now');   
