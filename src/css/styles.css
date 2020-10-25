@@ -472,6 +472,18 @@ main {
       main section.background div h2 {
         font-size: 1.5rem; } }
 
+div.error-msg {
+  position: fixed;
+  z-index: 997;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(3px) brightness(93%);
+  -webkit-backdrop-filter: blur(3px) brightness(93%);
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
 .responsive-image {
   width: 100%; }
 
@@ -498,6 +510,9 @@ main {
 
 .text-align-end {
   text-align: end; }
+
+.after {
+  display: none; }
 
 .hide {
   display: none; }
@@ -709,13 +724,19 @@ footer {
   display: grid;
   background-color: #333333;
   font-family: Roboto-italic; }
+  .progress-container input[type=number]::-webkit-inner-spin-button,
+  .progress-container input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0; }
+  .progress-container input[type=number] {
+    -moz-appearance: textfield; }
   .progress-container div.img-user-progress {
     width: 100%;
     margin: 0 auto;
     display: grid; }
     .progress-container div.img-user-progress input[type="file"] {
       display: none; }
-    .progress-container div.img-user-progress div.formPhoto .img-Actual {
+    .progress-container div.img-user-progress div.formPhoto .img-user {
       margin-top: 1rem;
       width: 100%;
       border-radius: 4px;
@@ -725,6 +746,15 @@ footer {
       -o-border-radius: 4px;
       filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
       -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); }
+      .progress-container div.img-user-progress div.formPhoto .img-user.now {
+        animation-name: img-animation;
+        animation-duration: 1s; }
+
+@keyframes img-animation {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
     .progress-container div.img-user-progress .photoSelectButton {
       margin-top: 1rem;
       width: 100%;
@@ -801,6 +831,23 @@ footer {
         outline: none;
         background-color: transparent;
         border-color: #696969; }
+    .progress-container div form select {
+      position: absolute;
+      color: #ffffff;
+      font-size: 1rem;
+      padding: 0.4rem;
+      background-color: #353535;
+      border: 0;
+      margin-top: -0.7rem;
+      margin-left: -4.2rem;
+      padding-right: 1.2rem;
+      border-radius: 4px;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      -ms-border-radius: 4px;
+      -o-border-radius: 4px; }
+      .progress-container div form select:focus {
+        outline: none; }
 
 /*  .container{
     position: relative;

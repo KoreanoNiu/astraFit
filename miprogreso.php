@@ -1,3 +1,8 @@
+<?php 
+
+    $edad = 35;
+
+?>
 <!DOCTYPE html>
 <html lang = es>
 <html>
@@ -95,11 +100,11 @@
                         <div class="buttonImg" style="display: flex;" id="addNewPhoto">
                             <label for="addNewPhoto">Añadir otra foto</label>
                         </div>
-                        <div class="buttonImg">
+                        <div class="buttonImg" id="before">
                             <label for="Anterior">Anterior</label>
                         </div>
-                        <div class="buttonImg">
-                            <label for="Anterior">Actual</label>
+                        <div class="buttonImg" id="after">
+                            <label for="Anterior">Siguiente</label>
                         </div>
                     </div>
                     <div>
@@ -107,20 +112,26 @@
                             <label for="nombre">
                                 <p>Nombre</p>
                             </label>
-                            <input type="text" name="nombre" value="Invitado">
-                            <label for="nombre" name="edad" value="35">
+                            <input type="text" name="nombre" value="Invitado" readonly>
+                            <label for="Edad">
                                 <p>Edad</p>
                             </label>
-                            <input type="text" name="Edad" value="35">
-                            <label for="nombre">
+                            <input type="number" name="Edad" value="<?php echo $edad ?>">
+                            <label for="Peso">
                                 <p>Peso</p>
                             </label>
-                            <input type="text" name="Peso" value="65kg">
-                            <label for="nombre">
+                            <input type="number" name="Peso" value="65">
+                                <select name="weightUnit" id="weightUnit">
+                                    <option value="kg">kg</option>
+                                </select>
+                            <label for="Altira">
                                 <p>Altura</p>
                             </label>
-                            <input type="text" name="Altura" value="1.70m">
-                            <label for="nombre">
+                            <input type="number" name="Altura" value="1.70">
+                                <select name="heightUnit" id="heightUnit" readonly>
+                                    <option value="cm">cm</option>
+                                </select>
+                            <label for="IMC">
                                 <p>IMC</p>
                             </label>
                             <input type="number" name="IMC" value="22.49" readonly>
@@ -128,14 +139,14 @@
                     </div>
                     <div>
                         <form autocomplete="off">
-                            <label for="nombre">
+                            <label for="nivelEntrenamiento">
                                 <p>Nivel de entrenamiento</p>
                             </label>
-                            <input type="text" name="nombre" value="Nivel 6 aficionado">
-                            <label for="nombre">
+                            <input type="text" name="nivelEntrenamiento" value="Nivel 6 aficionado">
+                            <label for="Lesiones">
                                 <p>Lesiones</p>
                             </label>
-                            <input type="number" name="nombre" value="0">
+                            <input type="number" name="Lesiones" value="0" readonly>
                         </form>
                     </div>
                 </div>
@@ -167,5 +178,5 @@
             </footer>
         </main>
     </body>
-    <script src ="src/js/progreso.js"></script>
+    <script src ="src/js/progreso-images.js"></script>
 </html>

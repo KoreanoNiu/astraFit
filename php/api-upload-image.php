@@ -1,4 +1,4 @@
-<?php 
+<?php
     $uploadDir = "../users/uploads-progress-images/" . uniqid() . '.jpg';
     header('Content-Type: application/json');
     

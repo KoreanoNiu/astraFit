@@ -277,7 +277,7 @@
                                     <input type="number" name="Altura" id="Altura" pattern="[0-9]+(\.[0-9]*)?" required min="120" max="250">
                                     <select name="heightUnit" id="heightUnit">
                                         <option value="cm">cm</option>
-                                        <option value="cm">ft</option>
+                                        <option value="ft">ft</option>
                                     </select>
                                 </div>
                             </div>
