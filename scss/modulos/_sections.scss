@@ -243,9 +243,60 @@
         }
 
         div.formPhoto{
-            .img-user{
+            div.img-user{
+
+                img{
+                    width: 100%;
+                }
+                .header-img{
+                    position: absolute;
+                    display: inline-flex;
+                    align-items: center;
+                    align-content: center;
+                    width: 100%;
+                    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+                    -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+                    h2{
+                        margin-left: 1rem;
+                        font-size: 1.5rem;
+                        color: white;
+                    }
+
+                    opacity: 0;
+
+                    background-color: rgba(255, 255, 255, 0.3);
+                    backdrop-filter: blur(6px) brightness(90%);  
+                    -webkit-backdrop-filter: blur(6px) brightness(90%);
+
+                    .delete-img{
+                        position: relative;
+                        width: min-content;
+                        margin-right: 1rem;
+                        
+                        svg{
+                            left: 0;
+                            height: 2rem;
+
+                            &:hover{
+                                cursor: pointer;
+                            }    
+                        }
+                    }
+                }
+
+                &:hover .header-img{
+                    transition: opacity, 0.85s;
+                    -webkit-transition: opacity, 0.85s;
+                    -moz-transition: opacity, 0.85s;
+                    -ms-transition: opacity, 0.85s;
+                    -o-transition: opacity, 0.85s;
+                    opacity: 1;
+}
+
                 margin-top: 1rem;
                 width: 100%;
+                overflow: hidden;
                 
                 border-radius: 4px;
                 -webkit-border-radius: 4px;

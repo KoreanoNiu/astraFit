@@ -117,3 +117,89 @@
         }
     }
 }
+
+//para los errores
+div.error-msg{
+    font-family: Roboto-italic;
+    position: fixed;
+    z-index: 997;
+    width: 100vw;
+    height: 100vh;
+
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(6px) brightness(90%);  
+    -webkit-backdrop-filter: blur(6px) brightness(90%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    div.msg-container{
+        height: 20rem;
+        padding: 0 1rem 0 1rem;
+
+        background-color: rgba(255, 255, 255, 0.4);
+        text-align: center;
+
+        border-radius: 4px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        -o-border-radius: 4px;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+        .msg{
+            margin-top: 6rem;
+        }
+
+        .button-error-msg{
+            width: 15rem;
+            height: 3rem;
+            margin: 2rem auto;
+            background-color: #126fbb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            label{
+                color: #ffffff;
+    
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+    
+            border-radius: 4px;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            -ms-border-radius: 4px;
+            -o-border-radius: 4px;
+    
+            transition: background-color, 0.7s;
+            -webkit-transition: background-color, 0.7s;
+            -moz-transition: background-color, 0.7s;
+            -ms-transition: background-color, 0.7s;
+            -o-transition: background-color, 0.7s;
+            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+            -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    
+            &:hover{
+                background-color: rgba(18, 80, 220, 1);
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@media(min-width: 425px){
+    div.msg-container{
+        width: 30rem;
+    }
+}
+
+@media(max-width: 425px){
+    div.msg-container{
+        width: 20rem;
+    }
+}

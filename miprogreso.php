@@ -94,7 +94,7 @@
                                         </svg>
                                     </div>
                                 </div>
-                                <input type="file" name="image" id="Foto">
+                                <input type="file" name="image" id="Foto" accept=".jpg,.png">
                             </form>
                         </div>
                         <div class="buttonImg" style="display: flex;" id="addNewPhoto">
