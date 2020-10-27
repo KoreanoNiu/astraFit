@@ -29,7 +29,7 @@ function subirFoto(){
         
                 var date = new Date();
                 date = date.getHours() + ":" + date.getMinutes() + " " + date.getDay() + "/" + (date.getMonth() +1) + "/" + date.getFullYear();
-                console.log(date);
+                // console.log(date);
                 var datos = new FormData(document.getElementById('frmImage'));
                 datos.append("fechaCreacion", date);
             
@@ -115,8 +115,6 @@ function cambiarFoto(){
 
                 fotoActual.previousElementSibling.classList.remove('after');
                 fotoActual.previousElementSibling.classList.add('now');
-            }else{
-                console.log('no hay foto anterior');
             }
         }
     }else if(this.id == 'after'){
@@ -131,8 +129,6 @@ function cambiarFoto(){
 
                 fotoActual.nextElementSibling.classList.remove('after');
                 fotoActual.nextElementSibling.classList.add('now');   
-            }else{
-                console.log('no hay foto despues');
             }
         }
     }
@@ -144,11 +140,17 @@ function eliminarFoto(url, fechaCreacion){
 
         document.getElementById('frmImage').classList.remove('hide');
     }else{
+        actual = document.querySelector('.img-user.now');
+        
+        if (actual.previousElementSibling == null) {
+            actual.nextElementSibling.classList.add('now');
+            actual.nextElementSibling.classList.remove('after');
+        }else{
+            actual.previousElementSibling.classList.add('now');
+            actual.previousElementSibling.classList.remove('after');
+        }
 
-        actual = document.querySelectorAll('.img-user')[document.querySelectorAll('.img-user').length - 2];
-        actual.classList.remove('after');
-        document.querySelector('.img-user.now').remove();
-        actual.classList.add('now');
+        actual.remove();
     }
 
     var varDatosImagen = new FormData();
