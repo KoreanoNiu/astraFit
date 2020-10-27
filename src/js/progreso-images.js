@@ -28,7 +28,7 @@ function subirFoto(){
                 comprobarExisteImagenes();
         
                 var date = new Date();
-                date = date.getHours() + ":" + date.getMinutes() + date.getDay() + "/" + (date.getMonth() +1) + "/" + date.getFullYear();
+                date = date.getHours() + ":" + date.getMinutes() + " " + date.getDay() + "/" + (date.getMonth() +1) + "/" + date.getFullYear();
                 console.log(date);
                 var datos = new FormData(document.getElementById('frmImage'));
                 datos.append("fechaCreacion", date);
@@ -143,12 +143,12 @@ function eliminarFoto(url, fechaCreacion){
         document.querySelector('.img-user.now').remove();
 
         document.getElementById('frmImage').classList.remove('hide');
-
     }else{
-        document.querySelector('.img-user.now').remove();
-        actual = document.querySelector('.img-user.after');
-        actual.classList.add('now');
+
+        actual = document.querySelectorAll('.img-user')[document.querySelectorAll('.img-user').length - 2];
         actual.classList.remove('after');
+        document.querySelector('.img-user.now').remove();
+        actual.classList.add('now');
     }
 
     var varDatosImagen = new FormData();
