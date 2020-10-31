@@ -44,7 +44,7 @@ function iniciarSesion(){
 
                     setTimeout(function(){
                         window.location.replace("/astraFit/miprogreso.php");
-                    }, 10000);
+                    }, 5000);
                 }
             });
         }

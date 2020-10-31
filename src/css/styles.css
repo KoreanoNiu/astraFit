@@ -225,6 +225,7 @@ nav {
     nav .brand-logo img {
       width: 8%; }
   nav .sidenav-trigger {
+    width: 10rem;
     z-index: 999;
     position: absolute;
     margin: 5%; }
@@ -253,6 +254,17 @@ nav {
         height: 1.1rem; }
       nav .sidenav-trigger button.backForm:hover {
         fill: #8D8D8D; }
+    nav .sidenav-trigger a {
+      color: #8d8d8d;
+      padding: calc(var(--navbar-height) / 2.8) 10px;
+      margin: 0px 20px 0 0;
+      transition: color 0.5s;
+      -webkit-transition: color 0.5s;
+      -moz-transition: color 0.5s;
+      -ms-transition: color 0.5s;
+      -o-transition: color 0.5s; }
+      nav .sidenav-trigger a:hover {
+        color: white; }
   nav ul {
     position: absolute;
     list-style: none;
@@ -276,6 +288,9 @@ nav {
         -o-transition: color 0.5s; }
         nav ul li a:hover {
           color: white; }
+      nav ul li div {
+        margin-top: 70vh;
+        color: #8d8d8d; }
 
 .menu {
   background-color: transparent;

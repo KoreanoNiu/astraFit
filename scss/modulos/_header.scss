@@ -31,6 +31,7 @@ nav{
     }
 
     .sidenav-trigger{
+        width: 10rem;
         z-index: 999;
         position: absolute;
         margin: 5%;
@@ -70,6 +71,20 @@ nav{
                 fill: #8D8D8D;
             }
         }
+
+        a{
+            color: #8d8d8d;
+            padding: calc(var(--navbar-height) / 2.8) 10px;
+            margin: 0px 20px 0 0;
+            transition: color 0.5s;
+            -webkit-transition: color 0.5s;
+            -moz-transition: color 0.5s;
+            -ms-transition: color 0.5s;
+            -o-transition: color 0.5s;
+            &:hover{
+                color: white;
+            }
+        }
     }
 
     ul{
@@ -101,6 +116,11 @@ nav{
                 &:hover{
                     color: white;
                 }
+            }
+
+            div{
+                margin-top: 70vh;
+                color: #8d8d8d;
             }
         }
     }    

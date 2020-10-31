@@ -26,8 +26,8 @@
                         </svg>
                       </button>
                 </div>
-                <div class="sidenav-trigger left">
-                    <!--Aqui iria el icono del carrito xd-->
+                <div class="sidenav-trigger right">
+                    <a href="" class="hide-on-small-and-down">Cerrar sesión</a>
                 </div>
                 <!--ESta cerrado por el hide-->
                 <aside class="show">
@@ -37,6 +37,7 @@
                             <li><a href="">Nutrición</a></li>
                             <li><a href="">Motivación</a></li>
                             <li><a href="">Contacto</a></li>
+                            <li><div class="buttom"><a href="">Cerrar sesión</a></div></li>
                         </ul>
                     </div>
                     <div>
@@ -116,7 +117,7 @@
                             <label for="Edad">
                                 <p>Edad</p>
                             </label>
-                            <input type="number" name="Edad" value="<?php echo $edad ?>">
+                            <input type="number" name="Edad" value="<?php echo $edad?>">
                             <label for="Peso">
                                 <p>Peso</p>
                             </label>

@@ -44,6 +44,7 @@
                             <li><a href="">Nutrcición</a></li>
                             <li><a href="">Nosotros</a></li>
                             <li><a href="">Contacto</a></li>
+                            <li><div class="buttom"><a href="">Cerrar sesión</a></div></li>
                         </ul>
                     </div>
                     <div>
