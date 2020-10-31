@@ -21,8 +21,8 @@
                         </svg>
                       </button>
                 </div>
-                <div class="sidenav-trigger left">
-                    <!--Aqui iria el icono del carrito xd-->
+                <div class="sidenav-trigger right">
+                    <!--ESta cerrado por el hide-->
                 </div>
                 <!--ESta cerrado por el hide-->
                 <aside class="show">
