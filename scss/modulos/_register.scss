@@ -36,6 +36,11 @@
                     animation-duration: 10s;
                 }
 
+                &.loading-bar-login{
+                    animation-name: example;
+                    animation-duration: 5s;
+                }
+
                 @keyframes example {
                     0%{
                         width: 0;
@@ -56,6 +61,13 @@
             p{
                 color: #c8c8c8;
                 font-size: 1.1rem;
+                margin-bottom: 1rem;
+            }
+            a{
+                background-color: transparent;
+                &:hover{
+                    color: #8D8D8D;
+                }
             }
         }
 
@@ -65,6 +77,9 @@
                 
                 color: #000000;
             }
+        }
+        form#loginForm{
+            margin-top: 1rem;
         }
         form.inline-form, .columns-form{
             margin: 3rem auto;
@@ -360,6 +375,9 @@
             }
             h3{
                 font-size: 1.8rem;
+            }
+            &black{
+                color: #000000;
             }
         }
 

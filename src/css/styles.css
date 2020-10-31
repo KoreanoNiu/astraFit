@@ -995,6 +995,9 @@ footer {
         .register-container .form-container .status-bar div.loading-bar {
           animation-name: example;
           animation-duration: 10s; }
+        .register-container .form-container .status-bar div.loading-bar-login {
+          animation-name: example;
+          animation-duration: 5s; }
 
 @keyframes example {
   0% {
@@ -1006,10 +1009,17 @@ footer {
       font-size: 1.8rem; }
     .register-container .form-container header p {
       color: #c8c8c8;
-      font-size: 1.1rem; }
+      font-size: 1.1rem;
+      margin-bottom: 1rem; }
+    .register-container .form-container header a {
+      background-color: transparent; }
+      .register-container .form-container header a:hover {
+        color: #8D8D8D; }
     .register-container .form-container form label.selected {
       background-color: #696969;
       color: #000000; }
+    .register-container .form-container form#loginForm {
+      margin-top: 1rem; }
     .register-container .form-container form.inline-form, .register-container .form-container .columns-form {
       margin: 3rem auto;
       display: grid;
@@ -1232,6 +1242,8 @@ footer {
         font-size: 2.9rem; }
       .register-container .form-container .sucess h3 {
         font-size: 1.8rem; }
+      .register-container .form-container .sucessblack {
+        color: #000000; }
 
 @media (max-width: 900px) {
   .form-container {
