@@ -1,6 +1,14 @@
 <?php 
 
+    include_once('php/database.php');
+    $objeto = new Conexion();
+    $conexion = $objeto->Conectar();
+    
+    $nombre = 'invitado';
     $edad = 35;
+    $peso = 65;
+    $altura = 170;
+    $IMC = 22.49;
 
 ?>
 <!DOCTYPE html>
@@ -128,7 +136,7 @@
                             <label for="Altira">
                                 <p>Altura</p>
                             </label>
-                            <input type="number" name="Altura" value="1.70">
+                            <input type="number" name="Altura" value="170">
                                 <select name="heightUnit" id="heightUnit" readonly>
                                     <option value="cm">cm</option>
                                 </select>
@@ -180,4 +188,5 @@
         </main>
     </body>
     <script src ="src/js/progreso-images.js"></script>
+    <script src="src/js/progreso-app.js"></script>
 </html>
