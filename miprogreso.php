@@ -219,14 +219,14 @@
                             </label>
                             <input type="number" name="Peso" value="<?php echo $peso?>">
                                 <select name="weightUnit" id="weightUnit">
-                                    <option value="<?php echo $unidadPeso ?>"></option>
+                                    <option value="<?php echo $unidadPeso ?>"><?php echo $unidadPeso ?></option>
                                 </select>
                             <label for="Altira">
                                 <p>Altura</p>
                             </label>
                             <input type="number" name="Altura" value="<?php echo $altura?>">
                                 <select name="heightUnit" id="heightUnit" readonly>
-                                    <option value="<?php echo $unidadAltura ?>"></option>
+                                    <option value="<?php echo $unidadAltura ?>"><?php echo $unidadAltura ?></option>
                                 </select>
                             <label for="IMC">
                                 <p>IMC</p>
@@ -237,7 +237,7 @@
                     <div>
                         <form autocomplete="off">
                             <label for="objetivo">
-                                <p>Nivel de entrenamiento</p>
+                                <p>Objetivo</p>
                             </label>
                             <input type="text" name="objetivo" value="<?php echo $objetivo ?>">
                             <label for="nivelEntrenamiento">
