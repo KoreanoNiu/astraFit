@@ -3,7 +3,7 @@
     class Conexion{
         public static function Conectar(){
             define('servidor', 'localhost');
-            define('nombre_bd', 'astrafit');
+            define('nombre_bd', 'astrafitdb');
             define('usuario', 'root');
             define('password', '');
 

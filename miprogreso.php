@@ -1,20 +1,27 @@
 <?php 
+    session_start();
 
-    include_once('php/database.php');
-    $conexion = Conexion::Conectar();
+    if(isset($_SESSION['id_usuario']) && $_SESSION['id_usuario'] != ''){
+        include_once('php/database.php');
+        $conexion = Conexion::Conectar();
+    
+        $result = $conexion->prepare('SELECT nombre, unidadAltura, unidadPeso, fecha, altura, peso, objetivo, nivel FROM usuarios WHERE id_usuario=?');
+        $result->execute([$_SESSION['id_usuario']]);
+        $data = $result->fetchAll(PDO::FETCH_ASSOC);
 
-    $result = $conexion->prepare('SELECT * FROM usuarios');
-    $result->execute();
-    $data = $result->fetchAll(PDO::FETCH_ASSOC);
+        $nombre = $data[0]['nombre'];
+        $unidadAltura = $data[0]['unidadAltura'];
+        $unidadPeso = $data[0]['unidadPeso'];
+        $edad = $data[0]['fecha'];
+        $peso = $data[0]['peso'];
+        $altura = $data[0]['altura'];
+        $objetivo = $data[0]['objetivo'];
+        $nivelEntrenamiento = $data[0]['nivel'];
 
-    //var_dump($data);
-    // echo ($data[0]['id']);
-
-    $nombre = $data[0]['nombre'];
-    $edad = $data[0]['edad'];
-    $peso = $data[0]['peso'];
-    $altura = $data[0]['altura'];
-    $IMC = bcdiv($peso / ($altura / 100 * $altura / 100), '1', 2);
+        $IMC = bcdiv($peso / ($altura  / 100 * $altura / 100), '1', 2);
+    }else{
+        header('location: login.php');
+    }
 
 ?>
 <!DOCTYPE html>
@@ -41,7 +48,7 @@
                       </button>
                 </div>
                 <div class="sidenav-trigger right">
-                    <a href="" class="hide-on-small-and-down">Cerrar sesión</a>
+                    <a href="cerrarSesion.php" class="hide-on-small-and-down">Cerrar sesión</a>
                 </div>
                 <!--ESta cerrado por el hide-->
                 <aside class="show">
@@ -51,7 +58,7 @@
                             <li><a href="">Nutrición</a></li>
                             <li><a href="">Motivación</a></li>
                             <li><a href="">Contacto</a></li>
-                            <li><div class="buttom"><a href="">Cerrar sesión</a></div></li>
+                            <li><div class="buttom"><a href="cerrarSesion.php">Cerrar sesión</a></div></li>
                         </ul>
                     </div>
                     <div>
@@ -80,8 +87,8 @@
                         <div class="formPhoto">
                             <?php 
 
-                            $result = $conexion->prepare('SELECT * FROM imagenes');
-                            $result->execute();
+                            $result = $conexion->prepare('SELECT src, fechaCreacion FROM imagenes WHERE id_usuario=?');
+                            $result->execute([$_SESSION['id_usuario']]);
                             $data = $result->fetchAll(PDO::FETCH_ASSOC);
                             if(count($data) != 0){
                                 $template = '';
@@ -212,14 +219,14 @@
                             </label>
                             <input type="number" name="Peso" value="<?php echo $peso?>">
                                 <select name="weightUnit" id="weightUnit">
-                                    <option value="kg">kg</option>
+                                    <option value="<?php echo $unidadPeso ?>"></option>
                                 </select>
                             <label for="Altira">
                                 <p>Altura</p>
                             </label>
                             <input type="number" name="Altura" value="<?php echo $altura?>">
                                 <select name="heightUnit" id="heightUnit" readonly>
-                                    <option value="cm">cm</option>
+                                    <option value="<?php echo $unidadAltura ?>"></option>
                                 </select>
                             <label for="IMC">
                                 <p>IMC</p>
@@ -229,10 +236,14 @@
                     </div>
                     <div>
                         <form autocomplete="off">
+                            <label for="objetivo">
+                                <p>Nivel de entrenamiento</p>
+                            </label>
+                            <input type="text" name="objetivo" value="<?php echo $objetivo ?>">
                             <label for="nivelEntrenamiento">
                                 <p>Nivel de entrenamiento</p>
                             </label>
-                            <input type="text" name="nivelEntrenamiento" value="Nivel 6 aficionado">
+                            <input type="text" name="nivelEntrenamiento" value="<?php echo $nivelEntrenamiento ?>">
                             <label for="Lesiones">
                                 <p>Lesiones</p>
                             </label>

@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
     include_once('database.php');
     $conexion = Conexion::Conectar();
 
@@ -8,12 +10,16 @@
         
         $fechaCreacion = $_POST['fechaCreacion'];
 
-        $sql = "INSERT INTO imagenes (src, fechaCreacion) VALUES (:url, :fechaCreacion)";
+        $sql = "INSERT INTO imagenes (id_usuario, src, fechaCreacion) VALUES (:id_usuario, :url, :fechaCreacion)";
         $result = $conexion->prepare($sql);
-        $result->bindParam(':url', $uploadDir);
-        $result->bindParam(':fechaCreacion', $fechaCreacion);
 
-        $result->execute();
+        $data = [
+            ":id_usuario" => $_SESSION['id_usuario'],
+            ":url" => $uploadDir,
+            ":fechaCreacion" => $fechaCreacion,
+        ];
+
+        $result->execute($data);
 
         $json = array(
             "uploadDir" => $uploadDir,

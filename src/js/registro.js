@@ -31,7 +31,9 @@ function siguiente(){
             formularioFinal.append("unidadAltura", unidadMedida[0].value);
             formularioFinal.append("unidadPeso", unidadMedida[1].value);
 
-            formularioFinal.append("fecha", datosFormulario[0].value);
+            var date = new Date();
+            // console.log(parseInt(date.getFullYear()) - parseInt((datosFormulario[0].value).slice(0, 4)));
+            formularioFinal.append("fecha", parseInt(date.getFullYear()) - parseInt((datosFormulario[0].value).slice(0, 4)));
             formularioFinal.append("altura", datosFormulario[1].value);
             formularioFinal.append("peso", datosFormulario[2].value);
             
@@ -107,19 +109,15 @@ function siguiente(){
             document.querySelector('.status-bar').querySelector('div').style.width = null;
             document.querySelector('.status-bar').querySelector('div').classList.add('loading-bar');
 
-            const xhr = new XMLHttpRequest();
-            xhr.open("POST", "registro.php", true);
+            fetch('php/registro-api.php', {
+                method: "POST",
+                body: formularioFinal,
+                "Content-Type": "application/json"
+            }).then(response => response.json()).then(data => {obj = data
+                console.log(data);
+            });    
 
-            xhr.onload = function(){
-                const serverResponse = document.querySelector('#ServerResponse');
-                console.log(this.responseText);
-            }
-            xhr.setRequestHeader("Content-Type", false); //posiblemente esto no jale
-            xhr.send(formularioFinal);
 
-            setTimeout(function(){
-                window.location.replace("/astraFit/miprogreso.php");
-            }, 10000);
         }
 
     }

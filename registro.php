@@ -1,9 +1,8 @@
 <?php 
-    foreach ($_POST as $post_var){
-        echo $post_var . "<br/>";
-    }
-    if(isset($_POST['IMC'])){
-        echo '<h1>' . $_POST['IMC'] . '</h1>';
+    session_start();
+
+    if(isset($_SESSION['id_usuario']) && $_SESSION['id_usuario'] != ''){
+        header('location: miprogreso.php');
     }
 ?>
 <!DOCTYPE html>

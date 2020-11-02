@@ -126,16 +126,6 @@
                 </div>
             </footer>
         </main>
-        <div class="error-msg">
-            <div class="msg-container">
-                <div class="msg">
-                    <h2>Ingresa una imagen con el formato de archivo valido (.jpg, .png)</h2>
-                </div>
-                <div class="button-error-msg" onclick="this.parentNode.parentNode.remove();console.log(this);">
-                    <label for="button-error-msg">Aceptar</label>
-                </div>
-            </div>
-        </div>
     </body>
     <script src =""></script>
 </html>
