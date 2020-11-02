@@ -1,10 +1,5 @@
 <?php 
-    foreach ($_POST as $post_var){
-        echo $post_var . "<br/>";
-    }
-    if(isset($_POST['IMC'])){
-        echo '<h1>' . $_POST['IMC'] . '</h1>';
-    }
+    session_start();
 ?>
 <!DOCTYPE html>
 <html lang = es>
@@ -66,19 +61,19 @@
                         </header>
                         <form class="inline-form-text" autocomplete="off" id="loginForm">
                         <div>
-                                <label for="Correo">
+                                <label for="email">
                                     <p>Correo electrónico</p>
                                 </label>
                                 <div>
-                                    <input type="text" name="Correo" id="Correo" pattern="[0-9]+(\.[0-9]*)?" required min="">
+                                    <input type="text" name="email" id="email" pattern="[0-9]+(\.[0-9]*)?" required min="">
                                 </div>
                             </div>
                             <div>
-                                <label for="Contrasena">
+                                <label for="contrasena">
                                     <p>Contraseña</p>
                                 </label>
                                 <div>
-                                    <input type="password" name="Contrasena" id="Contrasena" pattern="[0-9]+(\.[0-9]*)?" required min="">
+                                    <input type="password" name="contrasena" id="contrasena" pattern="[0-9]+(\.[0-9]*)?" required min="">
                                 </div>
                                 <div class="next buttonLabel" id="validarDatosCuenta">
                                     <label for="validarDatosCuenta">Enviar</label>

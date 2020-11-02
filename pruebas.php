@@ -1,5 +1,7 @@
 <?php 
 
+    $session_start();
+
     include_once('php/database.php');
     $conexion = Conexion::Conectar();
 
@@ -23,6 +25,7 @@
         echo $key['nombre'];
     }
 
+    echo $_SESSION['id_usuario'];
     /* foreach ($data[0] as $dato) {
         echo $dato;
     } */
@@ -38,4 +41,27 @@
     
     echo json_encode($arraydb);
     */
+
+    /* if(isset($_POST['nombreUsuario'])) {
+        $query = "INSERT INTO usuarios (nombre, email, password, unidadAltura, unidadPeso, fecha, altura, peso, genero, objetivo, nivel) VALUES (:nombre, :email, :password, :unidadAltura, :unidadPeso, :fecha, :altura, :peso, :genero, :objetivo, :nivel)";
+        $result = $conexion->prepare($query);
+
+        $result->bindParam(':nombre', $_POST['nombreUsuario']);
+        $result->bindParam(':email', $_POST['email']);
+        $result->bindParam(':password', $_POST['contrasena']);
+        $result->bindParam(':unidadAltura', $_POST['unidadAltura']);
+        $result->bindParam(':unidadPeso', $_POST['unidadPeso']);
+        $result->bindParam(':fecha', $_POST['fecha']);
+        $result->bindParam(':altura', $_POST['altura']);
+        $result->bindParam(':peso', $_POST['peso']);
+        $result->bindParam(':genero', $_POST['genero']);
+        $result->bindParam(':objetivo', $_POST['objetivo']);
+        $result->bindParam(':nivel', $_POST['nivel']);
+
+        $result->execute();
+    }
+
+    setTimeout(function(){
+        window.location.replace("/astraFit/miprogreso.php");
+    }, 5000); */
 ?>

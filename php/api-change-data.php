@@ -1,30 +1,43 @@
-<?php 
+<?php
+    session_start();
     include_once('database.php');
     $conexion = Conexion::Conectar();
 
     if($_POST['nombre'] == 'Edad'){
-        $return = $_POST['Edad'];
-        $sql = "UPDATE usuarios SET edad=? WHERE nombre='Carlos'";
+        $sql = "UPDATE usuarios SET fecha=:edad WHERE id_usuario=:id_usuario";
         $result = $conexion->prepare($sql);
-        $result->execute([$return]);
+
+        $data = [
+            ":edad" => $_POST['Edad'],
+            ":id_usuario" => $_SESSION['id_usuario']
+        ];
+
+        $result->execute($data);
     }else if($_POST['nombre'] == 'Altura'){
-        $return = $_POST['Altura'];
-        $sql = "UPDATE usuarios SET altura=? WHERE nombre='Carlos'";
+        $sql = "UPDATE usuarios SET altura=:altura WHERE id_usuario=:id_usuario";
         $result = $conexion->prepare($sql);
-        $result->execute([$return]);
+
+        $data = [
+            ":altura" => $_POST['Altura'],
+            ":id_usuario" => $_SESSION['id_usuario']
+        ];
+
+        $result->execute($data);
 
     }else if($_POST['nombre'] == 'Peso'){
-        $return = $_POST['Peso'];
-        $sql = "UPDATE usuarios SET peso=? WHERE nombre='Carlos'";
+        $sql = "UPDATE usuarios SET peso=:peso WHERE id_usuario=:id_usuario";
         $result = $conexion->prepare($sql);
-        $result->execute([$return]);
-    }else{
-        $return = '';
+
+        $data = [
+            ":peso" => $_POST['Peso'],
+            ":id_usuario" => $_SESSION['id_usuario']
+        ];
+
+        $result->execute($data);
     }
-    
+
     $json = array(
         "error" => '',
-        $_POST['nombre'] => $return,
     );
 
     echo json_encode($json);
