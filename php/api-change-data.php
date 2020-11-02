@@ -35,7 +35,7 @@
 
         $result->execute($data);
     }
-    
+
     $json = array(
         "error" => '',
     );
