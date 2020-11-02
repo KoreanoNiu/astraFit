@@ -105,7 +105,7 @@
                                     $template .= '
                                     <div class="img-user ' .  $estado . '">
                                         <div class="header-img">
-                                            <h2>20:33 0/11/2020</h2>
+                                            <h2>' . $dato['fechaCreacion'] . '</h2>
                                             <div class="delete-img">
                                                 <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" onclick="eliminarFoto(\'' . $dato['src'] .'\', \''. $dato['fechaCreacion'] .'\')">
                                                     <path d="m256 0c-141.164062 0-256 114.835938-256 256s114.835938 256 256 256 256-114.835938 256-256-114.835938-256-256-256zm0 0" fill="#126fbb"></path>
