@@ -15,7 +15,8 @@ function funcionInputs(){
 
         fetch('php/api-change-data.php', {
             method: "POST",
-            body: data
+            body: data,
+            "Content-Type": "application/json"
         }).then(response => response.json()).then(data => {obj = data
             console.log(data);
         });    
@@ -63,5 +64,11 @@ function calcularIMC(){
     var peso = document.getElementsByName('Peso');
 
     var IMC = peso[0].value / (altura[0].value / 100 * altura[0].value / 100);
-    document.getElementsByName('IMC')[0].value = IMC.toFixed(2);
+    document.getElementsByName('IMC')[0].value = truncar(IMC);
 }
+
+function truncar(n){
+    let t=n.toString();
+    let regex=/(\d*.\d{0,2})/;
+    return t.match(regex)[0];
+  }
