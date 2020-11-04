@@ -29,6 +29,7 @@
         echo json_encode($json);
         
         move_uploaded_file($_FILES['image']['tmp_name'], $uploadDir);
+        
     }else if(isset($_POST['urlAEliminar'])){
 
         $sql = "DELETE FROM imagenes WHERE src=?";

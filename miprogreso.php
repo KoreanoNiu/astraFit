@@ -5,14 +5,14 @@
         include_once('php/database.php');
         $conexion = Conexion::Conectar();
     
-        $result = $conexion->prepare('SELECT nombre, unidadAltura, unidadPeso, fecha, altura, peso, objetivo, nivel FROM usuarios WHERE id_usuario=?');
+        $result = $conexion->prepare('SELECT nombre, unidadAltura, unidadPeso, edad, altura, peso, objetivo, nivel FROM usuarios WHERE id_usuario=?');
         $result->execute([$_SESSION['id_usuario']]);
         $data = $result->fetchAll(PDO::FETCH_ASSOC);
 
         $nombre = $data[0]['nombre'];
         $unidadAltura = $data[0]['unidadAltura'];
         $unidadPeso = $data[0]['unidadPeso'];
-        $edad = $data[0]['fecha'];
+        $edad = $data[0]['edad'];
         $peso = $data[0]['peso'];
         $altura = $data[0]['altura'];
         $objetivo = $data[0]['objetivo'];
@@ -206,10 +206,10 @@
                     </div>
                     <div>
                         <form autocomplete="off">
-                            <label for="nombre">
+                            <label for="Nombre">
                                 <p>Nombre</p>
                             </label>
-                            <input type="text" name="nombre" value="<?php echo $nombre?>" readonly>
+                            <input type="text" name="Nombre" value="<?php echo $nombre?>" readonly>
                             <label for="Edad">
                                 <p>Edad</p>
                             </label>
@@ -236,14 +236,43 @@
                     </div>
                     <div>
                         <form autocomplete="off">
-                            <label for="objetivo">
-                                <p>Objetivo</p>
-                            </label>
-                            <input type="text" name="objetivo" value="<?php echo $objetivo ?>">
-                            <label for="nivelEntrenamiento">
-                                <p>Nivel de entrenamiento</p>
-                            </label>
-                            <input type="text" name="nivelEntrenamiento" value="<?php echo $nivelEntrenamiento ?>">
+                            <div>
+                                <label for="Objetivo">
+                                    <p>Objetivo</p>
+                                </label>
+                                <select name="Objetivo">
+                                    <option value="<?php echo $objetivo ?>"><?php echo $objetivo ?></option>
+
+                                    <?php 
+                                        $result = $conexion->prepare('SELECT objetivo FROM objetivos WHERE objetivo!=?');
+                                        $result->execute([$objetivo]);
+                                        $data = $result->fetchAll(PDO::FETCH_ASSOC);
+
+                                        foreach ($data as $dato){
+                                            echo '<option value ="' . $dato['objetivo'].'">' .  $dato['objetivo']. '</option>';
+                                        }
+                                    ?>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="Nivel">
+                                    <p>Nivel actual</p>
+                                </label>
+                                <select name="Nivel">
+                                
+                                    <option value="<?php echo $nivelEntrenamiento ?>"><?php echo $nivelEntrenamiento ?></option>
+
+                                    <?php 
+                                        $result = $conexion->prepare('SELECT nivel FROM niveles_posibles WHERE nivel!=?');
+                                        $result->execute([$nivelEntrenamiento]);
+                                        $data = $result->fetchAll(PDO::FETCH_ASSOC);
+
+                                        foreach ($data as $dato){
+                                            echo '<option value ="' . $dato['nivel'].'">' .  $dato['nivel']. '</option>';
+                                        }
+                                    ?>
+                                </select>
+                            </div>
                             <label for="Lesiones">
                                 <p>Lesiones</p>
                             </label>

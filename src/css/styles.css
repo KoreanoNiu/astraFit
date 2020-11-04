@@ -568,8 +568,9 @@ main {
 
 div.error-msg {
   font-family: Roboto-italic;
+  top: -var(--navbar-height);
   position: fixed;
-  z-index: 997;
+  z-index: 999;
   width: 100vw;
   height: 100vh;
   background-color: rgba(255, 255, 255, 0.1);
@@ -933,23 +934,48 @@ footer {
         outline: none;
         background-color: transparent;
         border-color: #696969; }
-    .progress-container div form select {
-      position: absolute;
+  .progress-container div:nth-child(2) form select {
+    position: absolute;
+    color: #ffffff;
+    font-size: 1rem;
+    padding: 0.4rem;
+    background-color: #353535;
+    border: 0;
+    margin-top: -0.7rem;
+    margin-left: -4.2rem;
+    padding-right: 1.2rem;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px; }
+    .progress-container div:nth-child(2) form select:focus {
+      outline: none; }
+  .progress-container div:nth-child(3) div {
+    width: 100%; }
+    .progress-container div:nth-child(3) div select {
+      border-top: 0;
+      border-left: 0;
+      border-right: 0;
+      border-bottom: 2px;
+      border-style: solid;
+      padding: 0 0 0.4rem 0.7rem;
+      border-color: #126fbb;
       color: #ffffff;
-      font-size: 1rem;
-      padding: 0.4rem;
-      background-color: #353535;
-      border: 0;
-      margin-top: -0.7rem;
-      margin-left: -4.2rem;
-      padding-right: 1.2rem;
-      border-radius: 4px;
-      -webkit-border-radius: 4px;
-      -moz-border-radius: 4px;
-      -ms-border-radius: 4px;
-      -o-border-radius: 4px; }
-      .progress-container div form select:focus {
-        outline: none; }
+      background-color: transparent;
+      width: 100%;
+      font-size: 1.2rem;
+      margin-bottom: 0.7rem;
+      outline: 0px;
+      border-radius: 1px;
+      -webkit-border-radius: 1px;
+      -moz-border-radius: 1px;
+      -ms-border-radius: 1px;
+      -o-border-radius: 1px; }
+      .progress-container div:nth-child(3) div select:focus {
+        outline: none;
+        background-color: #353535;
+        border-color: none; }
 
 /*  .container{
     position: relative;

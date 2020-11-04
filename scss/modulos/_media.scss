@@ -121,8 +121,9 @@
 //para los errores
 div.error-msg{
     font-family: Roboto-italic;
+    top: -(var(--navbar-height));
     position: fixed;
-    z-index: 997;
+    z-index: 999;
     width: 100vw;
     height: 100vh;
 

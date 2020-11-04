@@ -79,15 +79,11 @@ function siguiente(){
             }
         });
 
-        var datosFormularioObjetivo = document.querySelector("#formObjetivo").querySelectorAll('input:checked');
-        datosFormularioObjetivo.forEach(dato =>{
-            formularioFinal.append("objetivo", dato.name);
-        });
+        var datosFormularioObjetivo = document.querySelector("#formObjetivo").querySelector('input:checked');
+        formularioFinal.append("objetivo", datosFormularioObjetivo.name);
 
-        var datosFormularioNivelEntrenamineto = document.querySelector("#formNivelEntrenamiento").querySelectorAll('input:checked');
-        datosFormularioNivelEntrenamineto.forEach(dato =>{
-            formularioFinal.append("nivel", dato.name);
-        });
+        var datosFormularioNivelEntrenamineto = document.querySelector("#formNivelEntrenamiento").querySelector('input:checked');
+        formularioFinal.append("nivel", datosFormularioNivelEntrenamineto.value);
 
         var datosFormularioDiagnostico = document.querySelector("#formDiagnostico").querySelectorAll('input:checked');
         var contadorDiagnostico = 0;
@@ -116,10 +112,7 @@ function siguiente(){
             }).then(response => response.json()).then(data => {obj = data
                 console.log(data);
             });    
-
-
         }
-
     }
     if(this.classList.contains('nosubmit')){
         nextForm(this);

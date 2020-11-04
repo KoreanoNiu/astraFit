@@ -1,19 +1,19 @@
 <?php
-
     include_once('database.php');
     $conexion = Conexion::Conectar();
 
-    if(isset($_POST['nombreUsuario'])) {
-        $query = "INSERT INTO usuarios (nombre, email, password, unidadAltura, unidadPeso, fecha, altura, peso, genero, objetivo, nivel) VALUES (:nombre, :email, :password, :unidadAltura, :unidadPeso, :fecha, :altura, :peso, :genero, :objetivo, :nivel)";
-        $result = $conexion->prepare($query);
+    if(isset($_POST['nombreUsuario'])){
 
+        $query = "INSERT INTO usuarios (nombre, email, password, unidadAltura, unidadPeso, edad, altura, peso, genero, objetivo, nivel) VALUES (:nombre, :email, :password, :unidadAltura, :unidadPeso, :edad, :altura, :peso, :genero, :objetivo, :nivel)";
+        $result = $conexion->prepare($query);
+        
         $data = [
             ":nombre" => $_POST['nombreUsuario'],
             ":email" => $_POST['email'],
-            ":password" => $_POST['contrasena'],
+            ":password" => md5($_POST['contrasena']),
             ":unidadAltura" => $_POST['unidadAltura'],
             ":unidadPeso" => $_POST['unidadPeso'],
-            ":fecha" => $_POST['fecha'],
+            ":edad" => $_POST['edad'],
             ":altura" => $_POST['altura'],
             ":peso" => $_POST['peso'],
             ":genero" => $_POST['genero'],

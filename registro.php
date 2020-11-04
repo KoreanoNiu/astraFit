@@ -101,7 +101,7 @@
                                 </label>
                             </div>
                             <div>
-                                <input type="radio" id="mejorarSalud" name="Mejorar salud">
+                                <input type="radio" id="mejorarSalud" name="Estar en forma">
                                 <label for="mejorarSalud" class="buttonLabel nosubmit">
                                     <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
                                     <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -184,7 +184,7 @@
                         </header>
                         <form class="inline-form" id="formNivelEntrenamiento">
                             <div>
-                                <input type="radio" id="nivel1" name="Nivel 1">
+                                <input type="radio" id="nivel1" name="Nivel 1" value="Nada en forma">
                                 <label for="nivel1" class="buttonLabel nosubmit">
                                     <svg viewBox="0 0 34 24" xmlns="http://www.w3.org/2000/svg">
                                         <rect fill="white" x="0" y="20" width="4" height="4"></rect><rect x="6" y="16" width="4" height="8"></rect><rect x="12" y="12" width="4" height="12"></rect><rect x="18" y="8" width="4" height="16"></rect><rect x="24" y="4" width="4" height="20"></rect><rect x="30" y="0" width="4" height="24"></rect>
@@ -196,7 +196,7 @@
                                 </label>
                             </div>
                             <div>
-                                <input type="radio" id="nivel2" name="Nivel 2">
+                                <input type="radio" id="nivel2" name="Nivel 2" value="Es mi primera vez con el Fitness">
                                 <label for="nivel2" class="buttonLabel nosubmit">
                                     <svg viewBox="0 0 34 24" xmlns="http://www.w3.org/2000/svg">
                                         <rect fill="white" x="0" y="20" width="4" height="4"></rect><rect fill = "white"x="6" y="16" width="4" height="8"></rect><rect x="12" y="12" width="4" height="12"></rect><rect x="18" y="8" width="4" height="16"></rect><rect x="24" y="4" width="4" height="20"></rect><rect x="30" y="0" width="4" height="24"></rect>
@@ -208,7 +208,7 @@
                                 </label>
                             </div>
                             <div>
-                                <input type="radio" id="nivel3" name="Nivel 3" >
+                                <input type="radio" id="nivel3" name="Nivel 3" value="Hago ejercicio ocasionalmente">
                                 <label for="nivel3" class="buttonLabel nosubmit">
                                     <svg viewBox="0 0 34 24" xmlns="http://www.w3.org/2000/svg">
                                         <rect fill="white" x="0" y="20" width="4" height="4"></rect><rect fill="white" x="6" y="16" width="4" height="8"></rect><rect fill="white" x="12" y="12" width="4" height="12"></rect><rect x="18" y="8" width="4" height="16"></rect><rect x="24" y="4" width="4" height="20"></rect><rect x="30" y="0" width="4" height="24"></rect>
@@ -220,7 +220,7 @@
                                 </label>
                             </div>
                             <div>
-                                <input type="radio" id="nivel4" name="Nivel 4">
+                                <input type="radio" id="nivel4" name="Nivel 4" value=">Hago ejercicio de forma regular">
                                 <label for="nivel4" class="buttonLabel nosubmit">
                                     <svg viewBox="0 0 34 24" xmlns="http://www.w3.org/2000/svg">
                                         <rect fill="white" x="0" y="20" width="4" height="4"></rect><rect fill="white" x="6" y="16" width="4" height="8"></rect><rect fill="white" x="12" y="12" width="4" height="12"></rect><rect fill="white" x="18" y="8" width="4" height="16"></rect><rect x="24" y="4" width="4" height="20"></rect><rect x="30" y="0" width="4" height="24"></rect>
@@ -232,7 +232,7 @@
                                 </label>
                             </div>
                             <div>
-                                <input type="radio" id="nivel5" name="Nivel 5">
+                                <input type="radio" id="nivel5" name="Nivel 5" value="Tengo experiencia entrenando">
                                 <label for="nivel5" class="buttonLabel nosubmit">
                                     <svg viewBox="0 0 34 24" xmlns="http://www.w3.org/2000/svg">
                                         <rect fill="white" x="0" y="20" width="4" height="4"></rect><rect fill="white" x="6" y="16" width="4" height="8"></rect><rect fill="white" x="12" y="12" width="4" height="12"></rect><rect fill="white" x="18" y="8" width="4" height="16"></rect><rect fill="white" x="24" y="4" width="4" height="20"></rect><rect x="30" y="0" width="4" height="24"></rect>
@@ -244,7 +244,7 @@
                                 </label>
                             </div>
                             <div>
-                                <input type="radio" id="nivel6" name="Nivel 6">
+                                <input type="radio" id="nivel6" name="Nivel 6" value="Atleta avanzado">
                                 <label for="nivel6" class="buttonLabel nosubmit">
                                     <svg viewBox="0 0 34 24" xmlns="http://www.w3.org/2000/svg">
                                         <rect fill="white" x="0" y="20" width="4" height="4"></rect><rect fill="white" x="6" y="16" width="4" height="8"></rect><rect fill="white" x="12" y="12" width="4" height="12"></rect><rect fill="white" x="18" y="8" width="4" height="16"></rect><rect fill="white" x="24" y="4" width="4" height="20"></rect><rect fill="white" x="30" y="0" width="4" height="24"></rect>

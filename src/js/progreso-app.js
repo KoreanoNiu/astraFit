@@ -1,5 +1,5 @@
-var inputs = document.querySelectorAll('input[type="text"],input[type="number"]');
-
+var inputs = document.querySelectorAll('input[type="text"],input[type="number"], select');
+console.log(inputs);
 inputs.forEach(input => {
     input.addEventListener('change', funcionInputs);
 });
@@ -28,8 +28,14 @@ function funcionInputs(){
 }
 
 function validarDatos(e){
+    if (e.readOnly == true || e.name == 'Nombre' && e.readOnly == true){
+        return false;
+    }
+    if(e.name == 'Nombre' || e.name == 'IMC' || e.name == 'Lesiones'){
+        return false;
+    }
     if(e.name == 'Altura'){
-        if(e.value < 200 && e.value > 120) {
+        if(e.value < 200 && e.value > 120 || isNaN(e.value) == true) {
             e.style.borderColor = "#126fbb";
             calcularIMC();
             return true;
@@ -39,7 +45,7 @@ function validarDatos(e){
         }
     }
     if(e.name == 'Peso'){
-        if(e.value > 30 && e.value < 150){
+        if(e.value > 30 && e.value < 150 || isNaN(e.value) == true){
             e.style.borderColor = "#126fbb";
             calcularIMC();
             return true;
@@ -49,13 +55,18 @@ function validarDatos(e){
         }
     }
     if(e.name == 'Edad'){
-        if(e.value > 10 && e.value < 90){
+        if(e.value > 10 && e.value < 90 || isNaN(e.value) == true){
             e.style.borderColor = "#126fbb";
             return true;
         }else{
             e.style.borderColor = "red";
             return false;
         }
+    }
+    if(e.name == 'Objetivo'){
+        return true;
+    }else if(e.name = 'Nivel'){
+        return true;
     }
 }
 
