@@ -1,9 +1,9 @@
 <?php 
 
     session_start();
-    $cadena = "Carlos Humberto dasasd pruebass Hola mundo@. robocharley.lego@gmail.com''''''==='asdas']";    
+    $cadena = "Carlos Humberto dasasd pruebass Hola mundo@. robocharley.lego@gmail.com''''''==='asdas ó,á,í,é,ú''''asd//?'']";    
 
-    $var = preg_replace("/[^A-Za-z0-9^$|\s+^@^.]/", '', $cadena);
+    $var = preg_replace("/[^A-Za-z0-9^$|\s+^@^.^áéíóúÁÉÍÓÚñÑ]/", '', $cadena);
 
     echo $var;
     

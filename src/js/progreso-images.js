@@ -162,3 +162,7 @@ function eliminarFoto(url, fechaCreacion){
         body: varDatosImagen,
     });
 }
+
+function fullview() {
+    console.log(this);
+}

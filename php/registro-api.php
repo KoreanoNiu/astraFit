@@ -9,8 +9,8 @@
         $result = $conexion->prepare($query);
 
         $data = [
-            ":nombre" => preg_replace("/[^A-Za-z0-9^$|\s+]/", '', $_POST['nombreUsuario']),
-            ":email" => preg_replace("/[^A-Za-z0-9^$|\s+^@^.]/", '', $_POST['email']),
+            ":nombre" => preg_replace("/[^A-Za-z0-9^$|\s+^áéíóúÁÉÍÓÚñÑ]/", '', $_POST['nombreUsuario']),
+            ":email" => preg_replace("/[^A-Za-z0-9^$|\s+^@^.^áéíóúÁÉÍÓÚñÑ]/", '', $_POST['email']),
             ":password" => md5(md5($_POST['contrasena'])),
             ":unidadAltura" => preg_replace("/[^A-Za-z0-9]/", '', $_POST['unidadAltura']),
             ":unidadPeso" => preg_replace("/[^A-Za-z0-9]/", '',$_POST['unidadPeso']),
