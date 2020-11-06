@@ -6,7 +6,7 @@
     if(isset($_POST['email'])){
         $query = "SELECT password FROM usuarios WHERE email=?";
         $result = $conexion->prepare($query);
-        $result->execute(preg_replace("/[^A-Za-z0-9^$|\s+^@^.]/", '', [$_POST['email']]));
+        $result->execute(preg_replace("/[^A-Za-z0-9^$|\s+^@^.]/", '', $_POST['email']));
         $passwordSQL = $result->fetchAll(PDO::FETCH_ASSOC);
 
         if(count($passwordSQL) == 0){
