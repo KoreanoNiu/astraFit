@@ -18,17 +18,8 @@
         $objetivo = $data[0]['objetivo'];
         $nivelEntrenamiento = $data[0]['nivel'];
 
-        $IMC = truncateFloat(($peso / ($altura  / 100 * $altura / 100)), 2);
-        // $IMC = bcdiv($peso / ($altura  / 100 * $altura / 100), '1', 2);
+        $IMC = number_format($peso / ($altura  / 100 * $altura / 100), 2);
 
-        function truncateFloat($number, $digitos)
-        {
-            $raiz = 10;
-            $multiplicador = pow ($raiz,$digitos);
-            $resultado = ((int)($number * $multiplicador)) / $multiplicador;
-            return number_format($resultado, $digitos);
-        
-        }
     }else{
         header('location: login.php');
     }
