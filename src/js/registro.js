@@ -17,32 +17,18 @@ function siguiente(){
     if (this.getAttribute('ID') == "validarPesoAltura") {
         
         var datosFormulario = document.querySelector("#formularioPesoAltura").querySelectorAll('input');
-        
-        datosFormulario.forEach(dato => {
-            if(dato.value === ""){
-                dato.style.borderColor = "red";
-            }else{
-                dato.style.borderColor = "#126fbb";
-            }
-        });
-
-        if(datosFormulario[0].value != "" && datosFormulario[1].value != "" && datosFormulario[2].value != ""){
+        if (validarDatosUsuario(datosFormulario)){
             var unidadMedida = document.querySelector("#formularioPesoAltura").querySelectorAll('select');
             formularioFinal.append("unidadAltura", unidadMedida[0].value);
             formularioFinal.append("unidadPeso", unidadMedida[1].value);
 
             var date = new Date();
-            // console.log(parseInt(date.getFullYear()) - parseInt((datosFormulario[0].value).slice(0, 4)));
-            formularioFinal.append("fecha", parseInt(date.getFullYear()) - parseInt((datosFormulario[0].value).slice(0, 4)));
+            formularioFinal.append("edad", parseInt(date.getFullYear()) - parseInt((datosFormulario[0].value).slice(0, 4)));
             formularioFinal.append("altura", datosFormulario[1].value);
             formularioFinal.append("peso", datosFormulario[2].value);
-            
-            var IMC = datosFormulario[2].value / (datosFormulario[1].value / 100 * datosFormulario[1].value / 100);
-            formularioFinal.append("IMC", IMC.toFixed(2));
 
             nextForm(this);
         }
-        
     }
     if(this.getAttribute('ID') == "validarDatosCuenta"){
         var datosFormulario = document.querySelector("#formularioDatosCuenta").querySelectorAll('input');
@@ -111,7 +97,11 @@ function siguiente(){
                 "Content-Type": "application/json"
             }).then(response => response.json()).then(data => {obj = data
                 console.log(data);
-            });    
+            });
+
+            setTimeout(function(){
+                window.location.replace("/astraFit/miprogreso.php");
+            }, 10000);
         }
     }
     if(this.classList.contains('nosubmit')){
@@ -149,4 +139,43 @@ function nextForm(e){
     e.parentNode.parentNode.parentNode.nextElementSibling.classList.toggle('hide');
     contadorEstadoFormulario += 16.666;
     document.querySelector('.status-bar').querySelector('div').style.width = "" + contadorEstadoFormulario + "%";
+}
+
+function validarDatosUsuario(array){
+    var errorCount = 0;
+    array.forEach(input => {
+        if(input.value === ""){
+            input.style.borderColor = "red";
+            errorCount++;
+        }else{
+            input.style.borderColor = "#126fbb";
+
+            if(input.name == 'Altura'){
+                if(input.value < 200 && input.value > 120 && isNaN(input.value) == false){
+                }else{
+                    input.style.borderColor = "red";
+                    errorCount++;
+                }
+            }
+            if(input.name == 'Peso'){
+                if(input.value > 30 && input.value < 150 && isNaN(input.value) == false){
+                }else{
+                    input.style.borderColor = "red";
+                    errorCount++;
+                }
+            }
+            if(input.name = 'fechaNacimiento'){
+                var date = new Date();
+                if (parseInt(date.getFullYear()) - parseInt((input.value).slice(0, 4)) < 11){
+                    input.style.borderColor = "red";
+                    errorCount++;
+                }
+            }
+        }
+    });
+    if (errorCount == 0) {
+        return true;
+    }else{
+        return false;
+    }
 }

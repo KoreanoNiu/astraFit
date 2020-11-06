@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include_once('database.php');
     $conexion = Conexion::Conectar();
 
@@ -6,19 +7,19 @@
 
         $query = "INSERT INTO usuarios (nombre, email, password, unidadAltura, unidadPeso, edad, altura, peso, genero, objetivo, nivel) VALUES (:nombre, :email, :password, :unidadAltura, :unidadPeso, :edad, :altura, :peso, :genero, :objetivo, :nivel)";
         $result = $conexion->prepare($query);
-        
+
         $data = [
-            ":nombre" => $_POST['nombreUsuario'],
-            ":email" => $_POST['email'],
-            ":password" => md5($_POST['contrasena']),
-            ":unidadAltura" => $_POST['unidadAltura'],
-            ":unidadPeso" => $_POST['unidadPeso'],
-            ":edad" => $_POST['edad'],
-            ":altura" => $_POST['altura'],
-            ":peso" => $_POST['peso'],
-            ":genero" => $_POST['genero'],
-            ":objetivo" => $_POST['objetivo'],
-            ":nivel" => $_POST['nivel']
+            ":nombre" => preg_replace("/[^A-Za-z0-9^$|\s+]/", '', $_POST['nombreUsuario']),
+            ":email" => preg_replace("/[^A-Za-z0-9^$|\s+^@^.]/", '', $_POST['email']),
+            ":password" => md5(md5($_POST['contrasena'])),
+            ":unidadAltura" => preg_replace("/[^A-Za-z0-9]/", '', $_POST['unidadAltura']),
+            ":unidadPeso" => preg_replace("/[^A-Za-z0-9]/", '',$_POST['unidadPeso']),
+            ":edad" => preg_replace("/[^A-Za-z0-9]/", '', $_POST['edad']),
+            ":altura" => preg_replace("/[^A-Za-z0-9]/", '', $_POST['altura']),
+            ":peso" => preg_replace("/[^A-Za-z0-9]/", '', $_POST['peso']),
+            ":genero" => preg_replace("/[^A-Za-z0-9]/", '', $_POST['genero']),
+            ":objetivo" => preg_replace("/[^A-Za-z0-9^$|\s+]/", '', $_POST['objetivo']),
+            ":nivel" => preg_replace("/[^A-Za-z0-9^$|\s+]/", '', $_POST['nivel'])
         ];
 
         $result->execute($data);
@@ -29,5 +30,16 @@
         $dataId = $result->fetchAll(PDO::FETCH_ASSOC);
         
         $_SESSION['id_usuario'] = $dataId[0]['id_usuario'];
+        
+        $json = array(
+            "error" => '',
+        );
+
+    }else{
+        $json = array(
+            'error' => 'No se pudo procesar tu solicitud'
+        );
     }
+
+    echo json_encode($json);
 ?>

@@ -1,5 +1,5 @@
 var inputs = document.querySelectorAll('input[type="text"],input[type="number"], select');
-console.log(inputs);
+
 inputs.forEach(input => {
     input.addEventListener('change', funcionInputs);
 });
@@ -18,8 +18,21 @@ function funcionInputs(){
             body: data,
             "Content-Type": "application/json"
         }).then(response => response.json()).then(data => {obj = data
-            console.log(data);
-        });    
+            if (obj['error'] != ''){
+                msgError = document.createElement('div');
+                msgError.classList.add('error-msg');
+                msgError.innerHTML = `
+                                        <div class="msg-container">
+                                            <div class="msg">
+                                                <h2>${obj['error']}</h2>
+                                            </div>
+                                            <div class="button-error-msg" onclick="this.parentNode.parentNode.remove();">
+                                                <label for="button-error-msg">Aceptar</label>
+                                            </div>
+                                        </div>`;
+                document.body.appendChild(msgError);
+            }
+            });
     }else{
         //console.log('algo ocurrio');
     }
@@ -35,7 +48,7 @@ function validarDatos(e){
         return false;
     }
     if(e.name == 'Altura'){
-        if(e.value < 200 && e.value > 120 || isNaN(e.value) == true) {
+        if(e.value < 200 && e.value > 120 && isNaN(e.value) == false) {
             e.style.borderColor = "#126fbb";
             calcularIMC();
             return true;
@@ -45,7 +58,7 @@ function validarDatos(e){
         }
     }
     if(e.name == 'Peso'){
-        if(e.value > 30 && e.value < 150 || isNaN(e.value) == true){
+        if(e.value > 30 && e.value < 150 && isNaN(e.value) == false){
             e.style.borderColor = "#126fbb";
             calcularIMC();
             return true;
@@ -55,7 +68,7 @@ function validarDatos(e){
         }
     }
     if(e.name == 'Edad'){
-        if(e.value > 10 && e.value < 90 || isNaN(e.value) == true){
+        if(e.value > 10 && e.value < 90 && isNaN(e.value) == false){
             e.style.borderColor = "#126fbb";
             return true;
         }else{

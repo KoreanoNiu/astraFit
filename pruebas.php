@@ -1,6 +1,20 @@
 <?php 
 
-    $session_start();
+    session_start();
+    $cadena = "Carlos Humberto dasasd pruebass Hola mundo@. robocharley.lego@gmail.com''''''==='asdas']";    
+
+    $var = preg_replace("/[^A-Za-z0-9^$|\s+^@^.]/", '', $cadena);
+
+    echo $var;
+    
+    echo '<br>' . $_SESSION['id_usuario'];
+    
+    /* foreach ($data[0] as $dato) {
+        echo $dato;
+    } */
+
+    /*
+        $session_start();
 
     include_once('php/database.php');
     $conexion = Conexion::Conectar();
@@ -26,11 +40,10 @@
     }
 
     echo $_SESSION['id_usuario'];
-    /* foreach ($data[0] as $dato) {
-        echo $dato;
-    } */
+    
+    
 
-    /* 
+
     $query = 'SELECT * FROM usuarios';
     $result = mysqli_query($conn, $query);
     $arraydb = array();
