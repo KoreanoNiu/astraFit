@@ -105,6 +105,8 @@ function comprobarExisteImagenes(){
 function cambiarFoto(){
     if (this.id == 'before') {
         if (document.querySelector('.img-user.now')){
+            this.style.backgroundColor = '#126fbb';
+            fotoDespuesButton.style.backgroundColor = '#126fbb';
             var fotoActual = document.querySelector('.img-user.now');
     
             if(fotoActual.previousElementSibling){
@@ -115,10 +117,14 @@ function cambiarFoto(){
 
                 fotoActual.previousElementSibling.classList.remove('after');
                 fotoActual.previousElementSibling.classList.add('now');
+            }else{
+                this.style.backgroundColor = 'red';
             }
         }
     }else if(this.id == 'after'){
         if (document.querySelector('.img-user.now')){
+            this.style.backgroundColor = '#126fbb';
+            fotoAnteriorButton.style.backgroundColor = '#126fbb';
             var fotoActual = document.querySelector('.img-user.now');
     
             if(!fotoActual.nextElementSibling.classList.contains('hide')){
@@ -129,6 +135,8 @@ function cambiarFoto(){
 
                 fotoActual.nextElementSibling.classList.remove('after');
                 fotoActual.nextElementSibling.classList.add('now');   
+            }else{
+                this.style.backgroundColor = 'red';
             }
         }
     }

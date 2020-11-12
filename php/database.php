@@ -14,6 +14,9 @@
                 die("El error de Conexion es: " . $e->getMessage());
             }
         }
+        public static function sanitizarVariables($var){
+            return preg_replace("/[^A-Za-z0-9^$|\s+^@^.^áéíóúÁÉÍÓÚñÑ]/", '', $var);
+        }
     }
     /* 
 

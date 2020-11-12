@@ -1,25 +1,25 @@
 <?php
     session_start();
-    include_once('database.php');
-    $conexion = Conexion::Conectar();
 
     if(isset($_POST['nombreUsuario'])){
+        include_once('database.php');
+        $conexion = Conexion::Conectar();
 
         $query = "INSERT INTO usuarios (nombre, email, password, unidadAltura, unidadPeso, edad, altura, peso, genero, objetivo, nivel) VALUES (:nombre, :email, :password, :unidadAltura, :unidadPeso, :edad, :altura, :peso, :genero, :objetivo, :nivel)";
         $result = $conexion->prepare($query);
 
         $data = [
-            ":nombre" => preg_replace("/[^A-Za-z0-9^$|\s+^áéíóúÁÉÍÓÚñÑ]/", '', $_POST['nombreUsuario']),
-            ":email" => preg_replace("/[^A-Za-z0-9^$|\s+^@^.^áéíóúÁÉÍÓÚñÑ]/", '', $_POST['email']),
+            ":nombre" => Conexion::sanitizarVariables($_POST['nombreUsuario']),
+            ":email" => Conexion::sanitizarVariables($_POST['email']),
             ":password" => md5(md5($_POST['contrasena'])),
-            ":unidadAltura" => preg_replace("/[^A-Za-z0-9]/", '', $_POST['unidadAltura']),
-            ":unidadPeso" => preg_replace("/[^A-Za-z0-9]/", '',$_POST['unidadPeso']),
-            ":edad" => preg_replace("/[^A-Za-z0-9]/", '', $_POST['edad']),
-            ":altura" => preg_replace("/[^A-Za-z0-9]/", '', $_POST['altura']),
-            ":peso" => preg_replace("/[^A-Za-z0-9]/", '', $_POST['peso']),
-            ":genero" => preg_replace("/[^A-Za-z0-9]/", '', $_POST['genero']),
-            ":objetivo" => preg_replace("/[^A-Za-z0-9^$|\s+]/", '', $_POST['objetivo']),
-            ":nivel" => preg_replace("/[^A-Za-z0-9^$|\s+]/", '', $_POST['nivel'])
+            ":unidadAltura" => Conexion::sanitizarVariables($_POST['unidadAltura']),
+            ":unidadPeso" => Conexion::sanitizarVariables($_POST['unidadPeso']),
+            ":edad" => Conexion::sanitizarVariables($_POST['edad']),
+            ":altura" => Conexion::sanitizarVariables($_POST['altura']),
+            ":peso" => Conexion::sanitizarVariables($_POST['peso']),
+            ":genero" => Conexion::sanitizarVariables($_POST['genero']),
+            ":objetivo" => Conexion::sanitizarVariables($_POST['objetivo']),
+            ":nivel" => Conexion::sanitizarVariables($_POST['nivel'])
         ];
 
         $result->execute($data);

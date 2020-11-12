@@ -1,10 +1,10 @@
 <?php
     session_start();
 
-    include_once('database.php');
-    $conexion = Conexion::Conectar();
-
     if(isset($_POST['fechaCreacion'])){
+        include_once('database.php');
+        $conexion = Conexion::Conectar();
+    
         $uploadDir = "../users/uploads-progress-images/" . uniqid() . '.jpg';
         header('Content-Type: application/json');
         
@@ -31,7 +31,9 @@
         move_uploaded_file($_FILES['image']['tmp_name'], $uploadDir);
         
     }else if(isset($_POST['urlAEliminar'])){
-
+        include_once('database.php');
+        $conexion = Conexion::Conectar();
+    
         $sql = "DELETE FROM imagenes WHERE src=?";
         $result = $conexion->prepare($sql);
         $result->execute([$_POST['urlAEliminar']]);

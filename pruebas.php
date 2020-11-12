@@ -1,9 +1,12 @@
 <?php 
 
     session_start();
-    $cadena = "Carlos Humberto dasasd pruebass Hola mundo@. robocharley.lego@gmail.com''''''==='asdas ó,á,í,é,ú''''asd//?'']";    
+    include_once('php/database.php');
+    $cadena = "Carlos Humberto dasasd prueb'ass Hola mundo@. //a1robocharley.lego@gmail.com''''''==='asdas ó,á,í,é,ú''''asd//?'']";    
 
-    $var = preg_replace("/[^A-Za-z0-9^$|\s+^@^.^áéíóúÁÉÍÓÚñÑ]/", '', $cadena);
+    // $var = preg_replace("/[^A-Za-z0-9^$|\s+^@^.^áéíóúÁÉÍÓÚñÑ]/", '', $cadena);
+
+    $var = Conexion::sanitizarVariables($cadena);
 
     echo $var;
     

@@ -6,7 +6,7 @@
     if(isset($_POST['email'])){
         $query = "SELECT password FROM usuarios WHERE email=?";
         $result = $conexion->prepare($query);
-        $result->execute([preg_replace("/[^A-Za-z0-9^$|\s+^@^.^áéíóúÁÉÍÓÚñÑ]/", '', $_POST['email'])]);
+        $result->execute([Conexion::sanitizarVariables($_POST['email'])]);
         $passwordSQL = $result->fetchAll(PDO::FETCH_ASSOC);
 
         if(count($passwordSQL) == 0){
@@ -22,7 +22,7 @@
             }else{
                 $query = "SELECT id_usuario FROM usuarios WHERE email=?";
                 $result = $conexion->prepare($query);
-                $result->execute([$_POST['email']]);
+                $result->execute([Conexion::sanitizarVariables($_POST['email'])]);
                 $dataId = $result->fetchAll(PDO::FETCH_ASSOC);
                 
                 $json = array(

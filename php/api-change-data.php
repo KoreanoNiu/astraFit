@@ -4,7 +4,7 @@
         include_once('database.php');
         $conexion = Conexion::Conectar();
         
-        $var = preg_replace("/[^A-Za-z0-9^$|\s+]/", '', $_POST['nombre']);
+        $var = Conexion::sanitizarVariables($_POST['nombre']);
     
         $sql = "UPDATE usuarios SET " . strtolower($var) ."=:data WHERE id_usuario=:id_usuario";
         $result = $conexion->prepare($sql);
