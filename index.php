@@ -30,8 +30,7 @@
                         <ul>
                             <li><a href="entrenamiento.html">Entrenamiento</a></li>
                             <li><a href="calculadora.html">Nutrición</a></li>
-                            <li><a href="motivacion.html">Motivación</a></li>
-                            <li><a href="">Contacto</a></li>
+                            <li><a href="motivaciones.html">Motivación</a></li>
                             <li><a href="calculadora.html">Calculadora</a></li>
                         </ul>
                     </div>
@@ -41,8 +40,8 @@
                 <ul class="hide-on-small-and-down">
                     <li><a href="entrenamiento.html">Entrenamiento</a></li>
                     <li><a href="calculadora.html">Nutrición</a></li>
-                    <li><a href="motivacion.html">Motivación</a></li>
-                    <li><a href="">Contacto</a></li>
+                    <li><a href="motivaciones.html">Motivación</a></li>
+                    <li><a href="calculadora.html">Calculadora</a></li>
                 </ul>
             </nav>
         </header>
