@@ -28,20 +28,20 @@
                 <aside class="show">
                     <div>
                         <ul>
-                            <li><a href="entrenamiento.html">Entrenamiento</a></li>
-                            <li><a href="calculadora.html">Nutrición</a></li>
-                            <li><a href="motivaciones.html">Motivación</a></li>
-                            <li><a href="calculadora.html">Calculadora</a></li>
+                            <li><a href="entrenamiento.php">Entrenamiento</a></li>
+                            <li><a href="calculadora.php">Nutrición</a></li>
+                            <li><a href="motivaciones.php">Motivación</a></li>
+                            <li><a href="calculadora.php">Calculadora</a></li>
                         </ul>
                     </div>
                     <div>
                     </div>
                 </aside>
                 <ul class="hide-on-small-and-down">
-                    <li><a href="entrenamiento.html">Entrenamiento</a></li>
-                    <li><a href="calculadora.html">Nutrición</a></li>
-                    <li><a href="motivaciones.html">Motivación</a></li>
-                    <li><a href="calculadora.html">Calculadora</a></li>
+                    <li><a href="entrenamiento.php">Entrenamiento</a></li>
+                    <li><a href="calculadora.php">Nutrición</a></li>
+                    <li><a href="motivaciones.php">Motivación</a></li>
+                    <li><a href="calculadora.php">Calculadora</a></li>
                 </ul>
             </nav>
         </header>

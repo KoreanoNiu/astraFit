@@ -82,7 +82,7 @@
                         </form>
                     </div>
                     <div class="form-content hide sucessblack">
-                        <h1>¡INICIANDO SESION!</h1>
+                        <h1>¡INICIANDO SESIÓN!</h1>
                         <h3>Serás direccionado a tu progeso...</h3>
                     </div>
                 </div>

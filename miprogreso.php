@@ -56,9 +56,9 @@
                     <div>
                         <ul>
                             <li><a href="index.php">Inicio</a></li>
-                            <li><a href="entrenamiento.html">Entrenamiento</a></li>
-                            <li><a href="calculadora.html">Nutrición</a></li>
-                            <li><a href="motivaciones.html">Motivación</a></li>
+                            <li><a href="entrenamiento.php">Entrenamiento</a></li>
+                            <li><a href="calculadora.php">Nutrición</a></li>
+                            <li><a href="motivaciones.php">Motivación</a></li>
                             <li><a href="cerrarSesion.php">Cerrar sesión</a></li>
                         </ul>
                     </div>
@@ -67,9 +67,9 @@
                 </aside>
                 <ul class="hide-on-small-and-down">
                         <li><a href="index.php">Inicio</a></li>
-                        <li><a href="entrenamiento.html">Entrenamiento</a></li>
-                        <li><a href="calculadora.html">Nutrición</a></li>
-                        <li><a href="motivaciones.html">Motivación</a></li>
+                        <li><a href="entrenamiento.php">Entrenamiento</a></li>
+                        <li><a href="calculadora.php">Nutrición</a></li>
+                        <li><a href="motivaciones.php">Motivación</a></li>
                 </ul>
             </nav>
         </header>

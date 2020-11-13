@@ -1,3 +1,13 @@
+<?php 
+
+    session_start();
+
+    if(isset($_SESSION['id_usuario']) && $_SESSION['id_usuario'] != ''){
+    }else{
+        header('location: login.php');
+    }
+?>
+
 <!DOCTYPE html>
 <html lang=es>
 <html>
@@ -37,8 +47,9 @@
                     <ul>
                         <li><a href="index.php">Inicio</a></li>
                         <li><a href="miprogreso.php">Mi progreso</a></li>
-                        <li><a href="entrenamiento.html">Entrenamiento</a></li>
-                        <li><a href="calculadora.html">Nutrición</a></li>
+                        <li><a href="entrenamiento.php">Entrenamiento</a></li>
+                        <li><a href="calculadora.php">Nutrición</a></li>
+                        <li><a href="cerrarSesion.php">Cerrar sesión</a></li>
                     </ul>
                 </div>
                 <div>
@@ -47,8 +58,8 @@
             <ul class="hide-on-small-and-down">
                 <li><a href="index.php">Inicio</a></li>
                 <li><a href="miprogreso.php">Mi progreso</a></li>
-                <li><a href="entrenamiento.html">Entrenamiento</a></li>
-                <li><a href="calculadora.html">Nutrición</a></li>
+                <li><a href="entrenamiento.php">Entrenamiento</a></li>
+                <li><a href="calculadora.php">Nutrición</a></li>
             </ul>
         </nav>
     </header>
