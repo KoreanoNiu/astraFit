@@ -74,9 +74,9 @@
             </nav>
         </header>
         <main>
-            <section class="background background-image-2">
+            <section class="background background-image-8">
                 <div class="background-filter"></div>
-                <div class="image-2">
+                <div class="image-8">
                     <h1>MI PROGRESO</h1>
                 </div>
             </section>

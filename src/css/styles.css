@@ -428,7 +428,7 @@ main {
       font-size: 3.5rem; }
   main section.background-image-8 {
     background-image: url("../../src/img/background8.jpg"); }
-    main section.background-image-8 div.image-4 h1 {
+    main section.background-image-8 div.image-8 h1 {
       font-size: 3.5rem; }
   main section.background {
     height: calc(100vh - var(--navbar-height));
