@@ -39,11 +39,11 @@
                 <aside class="show">
                     <div>
                         <ul>
-                            <li><a href="">Entrenamiento</a></li>
-                            <li><a href="">Nutrcición</a></li>
-                            <li><a href="">Nosotros</a></li>
-                            <li><a href="">Contacto</a></li>
-                            <li><div class="buttom"><a href="login.php">Iniciar sesión</a></div></li>
+                            <li><a href="index.php">Inicio</a></li>
+                            <li><a href="entrenamiento.html">Entrenamiento</a></li>
+                            <li><a href="calculadora.html">Nutrición</a></li>
+                            <li><a href="motivaciones.html">Motivación</a></li>
+                            <li><a href="login.php">Iniciar sesión</a></li>
                         </ul>
                     </div>
                     <div>

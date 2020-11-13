@@ -60,6 +60,14 @@ main{
             }
         }
     }
+    section.background-image-8{
+        background-image: url('../../src/img/background8.jpg');
+        div.image-4{
+            h1{
+                font-size: 3.5rem;
+            }
+        }
+    }
     section.background{
 
         height: calc(100vh - var(--navbar-height));

@@ -55,28 +55,29 @@
                 <aside class="show">
                     <div>
                         <ul>
+                            <li><a href="index.php">Inicio</a></li>
                             <li><a href="entrenamiento.html">Entrenamiento</a></li>
-                            <li><a href="">Nutrición</a></li>
-                            <li><a href="">Motivación</a></li>
-                            <li><a href="">Contacto</a></li>
-                            <li><div class="buttom"><a href="cerrarSesion.php">Cerrar sesión</a></div></li>
+                            <li><a href="calculadora.html">Nutrición</a></li>
+                            <li><a href="motivaciones.html">Motivación</a></li>
+                            <li><a href="cerrarSesion.php">Cerrar sesión</a></li>
                         </ul>
                     </div>
                     <div>
                     </div>
                 </aside>
                 <ul class="hide-on-small-and-down">
+                    <li><a href="index.php">Inicio</a></li>
                     <li><a href="entrenamiento.html">Entrenamiento</a></li>
-                    <li><a href="">Nutrición</a></li>
-                    <li><a href="">Motivación</a></li>
-                    <li><a href="">Contacto</a></li>
+                    <li><a href="calculadora.html">Nutrición</a></li>
+                    <li><a href="motivaciones.html">Motivación</a></li>
+                    <li><a href="cerrarSesion.php">Cerrar sesión</a></li>
                 </ul>
             </nav>
         </header>
         <main>
-            <section class="background background-image-2">
+            <section class="background background-image-8">
                 <div class="background-filter"></div>
-                <div class="image-2">
+                <div class="image-8">
                     <h1>MI PROGRESO</h1>
                 </div>
             </section>

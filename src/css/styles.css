@@ -288,10 +288,6 @@ nav {
         -o-transition: color 0.5s; }
         nav ul li a:hover {
           color: white; }
-      nav ul li div {
-        margin-top: 60vh;
-        margin-bottom: 100vh;
-        color: #8d8d8d; }
 
 .menu {
   background-color: transparent;
@@ -429,6 +425,10 @@ main {
   main section.background-image-4 {
     background-image: url("../../src/img/background6.jpg"); }
     main section.background-image-4 div.image-4 h1 {
+      font-size: 3.5rem; }
+  main section.background-image-8 {
+    background-image: url("../../src/img/background8.jpg"); }
+    main section.background-image-8 div.image-4 h1 {
       font-size: 3.5rem; }
   main section.background {
     height: calc(100vh - var(--navbar-height));
