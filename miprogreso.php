@@ -77,7 +77,8 @@
             <section class="background background-image-8">
                 <div class="background-filter"></div>
                 <div class="image-8">
-                    <h1>MI PROGRESO</h1>
+                    <h1>TU PROGRESO</h1>
+                    <h2><?php echo $nombre?></h2>
                 </div>
             </section>
             <section class="divider hide-on-small-and-down">

@@ -430,6 +430,8 @@ main {
     background-image: url("../../src/img/background8.jpg"); }
     main section.background-image-8 div.image-8 h1 {
       font-size: 3.5rem; }
+    main section.background-image-8 div.image-8 h2 {
+      font-size: 2.5rem; }
   main section.background {
     height: calc(100vh - var(--navbar-height));
     width: 100%;
