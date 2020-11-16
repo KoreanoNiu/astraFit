@@ -18,6 +18,7 @@ function funcionInputs(){
             body: data,
             "Content-Type": "application/json"
         }).then(response => response.json()).then(data => {obj = data
+            // console.log(data);
             if (obj['error'] != ''){
                 msgError = document.createElement('div');
                 msgError.classList.add('error-msg');
@@ -41,14 +42,8 @@ function funcionInputs(){
 }
 
 function validarDatos(e){
-    if (e.readOnly == true || e.name == 'Nombre' && e.readOnly == true){
-        return false;
-    }
-    if(e.name == 'Nombre' || e.name == 'IMC' || e.name == 'Lesiones'){
-        return false;
-    }
     if(e.name == 'Altura'){
-        if(e.value < 200 && e.value > 120 && isNaN(e.value) == false) {
+        if(e.value < 200 && e.value > 120 && comprobarNoEsNumero(e.value) == false) {
             e.style.borderColor = "#126fbb";
             calcularIMC();
             return true;
@@ -58,7 +53,7 @@ function validarDatos(e){
         }
     }
     if(e.name == 'Peso'){
-        if(e.value > 30 && e.value < 150 && isNaN(e.value) == false){
+        if(e.value > 30 && e.value < 150 && comprobarNoEsNumero(e.value) == false){
             e.style.borderColor = "#126fbb";
             calcularIMC();
             return true;
@@ -68,17 +63,22 @@ function validarDatos(e){
         }
     }
     if(e.name == 'Edad'){
-        if(e.value > 10 && e.value < 90 && isNaN(e.value) == false){
+        if(e.value > 10 && e.value < 90 && comprobarNoEsNumero(e.value) == false){
             e.style.borderColor = "#126fbb";
             return true;
         }else{
             e.style.borderColor = "red";
             return false;
         }
-    }
-    if(e.name == 'Objetivo'){
+    }if (e.name == 'Nombre'){
+        if (comprobarNoEsNumero(e.value)) {
+            return true;
+        }else{
+            return false;
+        }
+    }if(e.name == 'Objetivo'){
         return true;
-    }else if(e.name = 'Nivel'){
+    }if(e.name == 'Nivel'){
         return true;
     }
 }
@@ -95,4 +95,12 @@ function truncar(n){
     let t=n.toString();
     let regex=/(\d*.\d{0,2})/;
     return t.match(regex)[0];
-  }
+}
+
+function comprobarNoEsNumero(n){
+    if(/[0-9]/.test(n)){
+        return false;
+    }else{
+        return true;
+    }
+}

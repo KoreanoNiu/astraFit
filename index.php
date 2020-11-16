@@ -62,7 +62,7 @@
                         <div class="card-image">
                             <img src="src/img/NUTRICION.jpg" alt="">
                         </div>
-                        <div class="card-content" style="text-align:center;"">
+                        <div class="card-content" style="text-align:center;">
                             <h2>NUTRICIÓN</h2>
                             <p>Dietas totalmente libres de escoger a gusto propio.</p>
                         </div>

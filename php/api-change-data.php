@@ -10,7 +10,7 @@
         $result = $conexion->prepare($sql);
     
         $data = [
-            ":data" => $_POST[$var],
+            ":data" => Conexion::sanitizarVariables($_POST[$var]),
             ":id_usuario" => $_SESSION['id_usuario']
         ];
     

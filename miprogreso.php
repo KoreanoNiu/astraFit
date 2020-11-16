@@ -32,7 +32,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel = "stylesheet" href = "src/css/styles.css" type ="TEXT/CSS">
-        <title>Main index</title>
+        <title>Mi Progreso</title>
     </head>
 
     <body>
@@ -207,11 +207,11 @@
                         </div>
                     </div>
                     <div>
-                        <form autocomplete="off">
+                        <form name="form1" autocomplete="off">
                             <label for="Nombre">
                                 <p>Nombre</p>
                             </label>
-                            <input type="text" name="Nombre" value="<?php echo $nombre?>" readonly>
+                            <input type="text" name="Nombre" value="<?php echo $nombre?>">
                             <label for="Edad">
                                 <p>Edad</p>
                             </label>
@@ -223,7 +223,7 @@
                                 <select name="weightUnit" id="weightUnit">
                                     <option value="<?php echo $unidadPeso ?>"><?php echo $unidadPeso ?></option>
                                 </select>
-                            <label for="Altira">
+                            <label for="Altura">
                                 <p>Altura</p>
                             </label>
                             <input type="number" name="Altura" value="<?php echo $altura?>">
@@ -237,7 +237,7 @@
                         </form>
                     </div>
                     <div>
-                        <form autocomplete="off">
+                        <form name="form2" autocomplete="off">
                             <div>
                                 <label for="Objetivo">
                                     <p>Objetivo</p>
