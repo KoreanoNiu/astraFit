@@ -78,7 +78,7 @@
                 <div class="background-filter"></div>
                 <div class="image-8">
                     <h1>TU PROGRESO</h1>
-                    <h2><?php echo $nombre?></h2>
+                    <h2 class="nameUser"><?php echo $nombre?></h2>
                 </div>
             </section>
             <section class="divider hide-on-small-and-down">
@@ -207,7 +207,7 @@
                         </div>
                     </div>
                     <div>
-                        <form name="form1" autocomplete="off">
+                        <form autocomplete="off">
                             <label for="Nombre">
                                 <p>Nombre</p>
                             </label>
@@ -237,7 +237,7 @@
                         </form>
                     </div>
                     <div>
-                        <form name="form2" autocomplete="off">
+                        <form autocomplete="off">
                             <div>
                                 <label for="Objetivo">
                                     <p>Objetivo</p>

@@ -71,9 +71,12 @@ function validarDatos(e){
             return false;
         }
     }if (e.name == 'Nombre'){
-        if (comprobarNoEsNumero(e.value)) {
+        if (comprobarNoEsNumero(e.value) && e.value != '') {
+            e.style.borderColor = "#126fbb";
+            document.querySelector('.nameUser').innerHTML = e.value;
             return true;
         }else{
+            e.style.borderColor = "red";
             return false;
         }
     }if(e.name == 'Objetivo'){

@@ -1,5 +1,5 @@
 <?php
-    if(isset($_POST['nombre'])){
+    if(isset($_POST['nombre']) && !empty($_POST[$_POST['nombre']])){
         session_start();
         include_once('database.php');
         $conexion = Conexion::Conectar();
