@@ -6,12 +6,11 @@ var contadorEstadoFormulario = 0;
 presionada.forEach(boton => {
     boton.addEventListener('click', siguiente);
 });
-
 regresarAnteriorBoton.addEventListener('click', anterior);
 
 function siguiente(){
     if (this.getAttribute('for') == "gender1" || this.getAttribute('for') == "gender2"){
-        document.querySelectorAll('.sidenav-trigger')[1].classList.remove('hide')
+        document.querySelector('.sidenav-trigger').classList.remove('hide')
     }
     //Validar Formulario del peso nacimiento y altura
     if (this.getAttribute('ID') == "validarPesoAltura") {
@@ -96,7 +95,7 @@ function siguiente(){
                 body: formularioFinal,
                 "Content-Type": "application/json"
             }).then(response => response.json()).then(data => {obj = data
-                console.log(data);
+                //console.log(data);
             });
 
             setTimeout(function(){
@@ -118,7 +117,7 @@ function anterior(){
             contadorEstadoFormulario -= 16.666;
             document.querySelector('.status-bar').querySelector('div').style.width = "" + contadorEstadoFormulario + "%";
             if(actual.previousElementSibling.querySelector('form').classList.contains('columns-form')){
-                document.querySelectorAll('.sidenav-trigger')[1].classList.add('hide')
+                document.querySelector('.sidenav-trigger').classList.add('hide')
             }
         }
     });

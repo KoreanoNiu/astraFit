@@ -4,33 +4,55 @@
     if(isset($_POST['nombreUsuario'])){
         include_once('database.php');
         $conexion = Conexion::Conectar();
+        $funcionesDB = new funcionesDB;
 
-        $query = "INSERT INTO usuarios (nombre, email, password, unidadAltura, unidadPeso, edad, altura, peso, genero, objetivo, nivel) VALUES (:nombre, :email, :password, :unidadAltura, :unidadPeso, :edad, :altura, :peso, :genero, :objetivo, :nivel)";
-        $result = $conexion->prepare($query);
-
+        //Insert a la tabla de usuarios, datos en comun de los usuarios
         $data = [
-            ":nombre" => Conexion::sanitizarVariables($_POST['nombreUsuario']),
-            ":email" => Conexion::sanitizarVariables($_POST['email']),
+            ":nombre" => $funcionesDB->sanitizarVariables($_POST['nombreUsuario']),
+            ":email" => $funcionesDB->sanitizarVariables($_POST['email']),
             ":password" => md5(md5($_POST['contrasena'])),
-            ":unidadAltura" => Conexion::sanitizarVariables($_POST['unidadAltura']),
-            ":unidadPeso" => Conexion::sanitizarVariables($_POST['unidadPeso']),
-            ":edad" => Conexion::sanitizarVariables($_POST['edad']),
-            ":altura" => Conexion::sanitizarVariables($_POST['altura']),
-            ":peso" => Conexion::sanitizarVariables($_POST['peso']),
-            ":genero" => Conexion::sanitizarVariables($_POST['genero']),
-            ":objetivo" => Conexion::sanitizarVariables($_POST['objetivo']),
-            ":nivel" => Conexion::sanitizarVariables($_POST['nivel'])
+            ":tipoUsuario" => 'usuario',
+            ":src" => '../users/perfil-image/user-default.png',
         ];
 
-        $result->execute($data);
+        $funcionesDB->insertarDatosUsuario($conexion, $data);
 
-        $query = "SELECT id_usuario FROM usuarios WHERE email=?";
-        $result = $conexion->prepare($query);
-        $result->execute([$_POST['email']]);
-        $dataId = $result->fetchAll(PDO::FETCH_ASSOC);
         
-        $_SESSION['id_usuario'] = $dataId[0]['id_usuario'];
-        
+        //Trae datos utiles al session
+        $dataUser = $funcionesDB->obtenerDatosUsuario($conexion, $_POST['email']);
+
+        $_SESSION['idUsuario'] = $dataUser[0]['idUsuario'];
+        $_SESSION['nombreUsuario'] = $dataUser[0]['nombre'];
+        $_SESSION['rol'] = $dataUser[0]['tipoUsuario'];
+        $_SESSION['srcFotoPerfil'] = $dataUser[0]['srcFotoPerfil'];
+
+        //Selecciona un Coach nutriologo para el usuario
+        $idCoachNutriologo = $funcionesDB->obtenerIdCoach($conexion, 'Nutriologo');
+
+        //Selecciona un Coach entrenador para el usuario
+        $idCoachEntrenador = $funcionesDB->obtenerIdCoach($conexion, 'Entrenador');
+
+        //Insert a la tabla Clientes, datos utiles para la dieta, etc...
+        $data = [
+            ":idUsuario" => $dataUser[0]['idUsuario'],
+            ":unidadAltura" => $funcionesDB->sanitizarVariables($_POST['unidadAltura']),
+            ":unidadPeso" => $funcionesDB->sanitizarVariables($_POST['unidadPeso']),
+            ":edad" => $funcionesDB->sanitizarVariables($_POST['edad']),
+            ":altura" => $funcionesDB->sanitizarVariables($_POST['altura']),
+            ":peso" => $funcionesDB->sanitizarVariables($_POST['peso']),
+            ":genero" => $funcionesDB->sanitizarVariables($_POST['genero']),
+            ":objetivo" => $funcionesDB->sanitizarVariables($_POST['objetivo']),
+            ":nivel" => $funcionesDB->sanitizarVariables($_POST['nivel']),
+            ":lesiones" => 0,
+            ":porcentajeGrasa" => 12,
+            ":tipoDieta" => null,
+            ":tipoFormulaDieta" => null,
+            ":idCoachNutriologo" => $idCoachNutriologo[0]['idCoach'],
+            ":idCoachEntrenador" => $idCoachEntrenador[0]['idCoach']
+        ];
+
+        $funcionesDB->insertarDatosCliente($conexion, $data);
+
         $json = array(
             "error" => '',
         );

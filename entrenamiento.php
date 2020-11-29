@@ -20,6 +20,7 @@
     <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="src/img/logo.png" sizes="64x64">
     <title>ENTRENAMIENTOS</title>
 </head>
 

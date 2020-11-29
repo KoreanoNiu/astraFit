@@ -1,18 +1,17 @@
 .register-container{
+    margin-top: 2.6rem;
     font-family: Roboto-italic;
     width: 100%;
+    height: auto;
     background-color: #222222;
     display: grid;
     min-height: calc(100vh - var(--navbar-height));
-
     grid-template-columns: repeat(1, 2fr);
 
     .form-container{
-
         background-color: #222222;
         text-align: center;
         
-
         .status-bar{
             margin: 1rem auto 2rem auto;
             width: 15rem;
@@ -179,7 +178,37 @@
                     font-size: 0.8em;
                     margin-bottom: 0.3rem;
                 }
-                input[type="date"], input[type="text"], input[type="password"], input[type="password"], input[type="number"]{
+                label[for='FotoPerfil']{
+                    display: grid;
+                    grid-template-columns: repeat(1, 1fr);
+                    p{
+                        margin: 0 auto 1rem auto;
+                    }
+                    div.img-profile-coach{
+                        border-top-left-radius: 4px;
+                        border-top-right-radius: 4px;
+                        width: 15rem;
+                        height: auto;
+                        overflow: hidden;
+                        img{
+                            background-color: #ffffff;
+                            height: auto;
+                            width: 100%;
+                        }
+                    }
+                    div.next{
+                        margin-top: -0.20rem;
+                        width: 15rem;
+                        border-top-left-radius: 0px;
+                        border-top-right-radius: 0px;
+                        border-bottom-left-radius: 4px;
+                        border-bottom-right-radius: 4px;
+                    }
+                    input[type="file"]{
+                        display: none;
+                    }
+                }
+                input[type="date"], input[type="text"], input[type="password"], input[type="password"], input[type="number"], textarea{
                     border-top: 0;
                     border-left: 0;
                     border-right: 0;
@@ -189,11 +218,49 @@
                     background-color: transparent;
                     width: 100%;
                     font-size: 1.2rem;
+                    font-family: Oxygen;
 
                     &:focus{
                         outline: none;
                         background-color: transparent;
                         border-color: #696969;
+                    }
+                }
+
+                textarea{
+                    height: 6rem;
+                    resize: none;
+                }
+
+                div.selectFull{
+                    select{
+                        margin: -1rem auto 2rem auto;
+                        border-top: 0;
+                        border-left: 0;
+                        border-right: 0;
+                        border-bottom: 2px;
+                        border-style: solid;
+                        padding: 0 0 0.4rem 0.7rem;
+                        border-color: #126fbb;
+                        color: #ffffff;
+                        background-color: transparent;
+                        width: 90%;
+                        @media(max-width: 375px){
+                            width: 86%;
+                        }
+                        font-size: 1.2rem;
+                        outline:0px;
+                        border-radius: 1px;
+                        -webkit-border-radius: 1px;
+                        -moz-border-radius: 1px;
+                        -ms-border-radius: 1px;
+                        -o-border-radius: 1px;
+
+                        &:focus{
+                            outline: none;
+                            background-color: #353535;
+                            border-color: none;
+                        }
                     }
                 }
 

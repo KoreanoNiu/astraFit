@@ -2,11 +2,12 @@
     session_start();
     include_once('database.php');
     $conexion = Conexion::Conectar();
+    $funcionesDB = new funcionesDB;
 
     if(isset($_POST['email'])){
         $query = "SELECT password FROM usuarios WHERE email=?";
         $result = $conexion->prepare($query);
-        $result->execute([Conexion::sanitizarVariables($_POST['email'])]);
+        $result->execute([$funcionesDB->sanitizarVariables($_POST['email'])]);
         $passwordSQL = $result->fetchAll(PDO::FETCH_ASSOC);
 
         if(count($passwordSQL) == 0){
@@ -20,18 +21,18 @@
                 );
     
             }else{
-                $query = "SELECT id_usuario FROM usuarios WHERE email=?";
-                $result = $conexion->prepare($query);
-                $result->execute([Conexion::sanitizarVariables($_POST['email'])]);
-                $dataId = $result->fetchAll(PDO::FETCH_ASSOC);
-                
+                session_unset();
+
+                $dataUser = $funcionesDB->obtenerDatosUsuario($conexion, $_POST['email']);
+
+                $_SESSION['idUsuario'] = $dataUser[0]['idUsuario'];
+                $_SESSION['nombreUsuario'] = $dataUser[0]['nombre'];
+                $_SESSION['rol'] = $dataUser[0]['tipoUsuario'];
+                $_SESSION['srcFotoPerfil'] = $dataUser[0]['srcFotoPerfil'];
+
                 $json = array(
                     "error" => ''
                 );
-
-                unset($_SESSION['id_usuario']);
-    
-                $_SESSION['id_usuario'] = $dataId[0]['id_usuario'];
             }
         }
 

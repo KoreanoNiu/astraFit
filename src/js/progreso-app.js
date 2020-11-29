@@ -18,7 +18,7 @@ function funcionInputs(){
             body: data,
             "Content-Type": "application/json"
         }).then(response => response.json()).then(data => {obj = data
-            // console.log(data);
+            // console.log(data);   
             if (obj['error'] != ''){
                 msgError = document.createElement('div');
                 msgError.classList.add('error-msg');
@@ -82,6 +82,8 @@ function validarDatos(e){
     }if(e.name == 'Objetivo'){
         return true;
     }if(e.name == 'Nivel'){
+        return true;
+    }if(e.name == 'Lesiones'){
         return true;
     }
 }
