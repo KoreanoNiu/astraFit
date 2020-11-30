@@ -1,5 +1,5 @@
 <?php if (!isset($_SESSION['idUsuario'])) {
-    header('location: ../../index.php');
+    header('location: '. dirname("/handlebars/") . 'astraFit/index.php' . $directorio . '');
 }?>
 <header class="right main-header">
     <div class="full-menu">

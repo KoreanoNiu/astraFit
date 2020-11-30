@@ -60,6 +60,13 @@ CREATE TABLE objetivos(
     PRIMARY KEY(id) 
 )ENGINE = INNODB;
 
+CREATE TABLE dietas(
+    id INT NOT NULL AUTO_INCREMENT, 
+    tipoDieta ENUM('Alta en carbohidratos', 'Baja en carbohidratos', 'Alta en proteína');
+    tipoFormulaDieta ENUM('Con grasa corporal', 'Sin grasa corporal');
+    PRIMARY KEY(id) 
+)ENGINE = INNODB;
+
 INSERT INTO usuarios VALUES(1, 'admin', 'admin@astrafit.com', 'c3284d0f94606de1fd2af172aba15bf3', 'admin', '../users/perfil-image/user-default.png');
 INSERT INTO usuarios VALUES (2, 'Carlitos', 'carlitos@gmail.com', '123', 'usuario', 'Foto por defecto'), 
                             (3, 'niquito', 'niquito@gmail.com', '123', 'usuario', 'Foto por defecto'), 
