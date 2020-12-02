@@ -76,12 +76,6 @@ INSERT INTO usuarios VALUES (2, 'Carlitos', 'carlitos@gmail.com', '123', 'usuari
 INSERT INTO coaches VALUES (3, 'nutriologo', 'Hola soy juan bananas'), 
                             (4, 'entrenador', 'Hola soy luis');
 
-insert into clientes VALUES(1, 'cm', 'kg', 17, 170, 70, 'admin', 'Tonificar', 'Atleta avanzado', 0, 12, null, null);
-INSERT INTO clientes VALUES (2, 'cm', 'kg', '18', 165, 62, 'masculino', 'Tonificar', 'Atleta avanzado', '0', 12, 3, 4), 
-                            (3, 'cm', 'kg', '23', 160, 65, 'masculino', 'Reducir peso', 'Atleta intermedio', '0', 11, 3, 4);
-
-select * from usuarios JOIN clientes ON clientes.idUsuario = usuarios.idUsuario WHERE usuarios.idUsuario = 1;
-
-select * from usuarios JOIN coaches ON coaches.idCoach = usuarios.idUsuario WHERE coaches.idCoach = 3 OR coaches.idCoach = 4;
-
-select * from clientes where idUsuario = 1;
+insert into clientes VALUES(1, 'cm', 'kg', 17, 170, 70, 'admin', 'Tonificar', 'Atleta avanzado', 0, 12, 'Alta en carbohidratos', 'Con grasa corporal', null, null);
+INSERT INTO clientes VALUES (2, 'cm', 'kg', 18, 165, 62, 'masculino', 'Tonificar', 'Atleta avanzado', 0, 12, 'Alta en carbohidratos', 'Con grasa corporal', 3, 4), 
+                            (3, 'cm', 'kg', 23, 160, 65, 'masculino', 'Reducir peso', 'Atleta intermedio', 0, 11, 'Alta en carbohidratos', 'Con grasa corporal', 3, 4);
