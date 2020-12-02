@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang=es>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/css/stails.css" type="TEXT/CSS">
+    <link rel="stylesheet" href="src/css/styles.css" type="TEXT/CSS">
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
+    <title>ENTRENAMIENTOS</title>
+</head>
+
+<body>
+    <header>
+        <nav class="fixed closed">
+            <a href="" class="brand-logo center"><img src="src/img/logo.png" alt=""></a>
+            <div class="sidenav-trigger hide show-on-small-and-down right">
+                <button class="menu" onclick="this.parentNode.parentNode.classList.toggle('opened');this.parentNode.parentNode.classList.toggle('closed');this.setAttribute('aria-expanded', this.classList.contains('opened'))" aria-label="Main Menu">
+                    <svg width="40" height="40" viewBox="0 0 100 100">
+                        <path class="line line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
+                        <path class="line line2" d="M 20,50 H 80" />
+                        <path class="line line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
+                    </svg>
+                </button>
+            </div>
+            <div class="sidenav-trigger right">
+                <a href="cerrarSesion.php" class="hide-on-small-and-down">Cerrar sesión</a>
+            </div>
+            <!--ESta cerrado por el hide-->
+            <aside class="show">
+                <div>
+                    <ul>
+                        <li><a href="index.php">Inicio</a></li>
+                        <li><a href="calculadora.php">Nutrición</a></li>
+                        <li><a href="motivaciones.php">Motivación</a></li>
+                        <li><a href="miprogreso.php">Mi progreso</a></li>
+                        <li><a href="cerrarSesion.php">Cerrar sesión</a></li>
+                    </ul>
+                </div>
+                <div>
+                </div>
+            </aside>
+            <ul class="hide-on-small-and-down">
+                <li><a href="index.php">Inicio</a></li>
+                <li><a href="calculadora.php">Nutrición</a></li>
+                <li><a href="motivaciones.php">Motivación</a></li>
+                <li><a href="miprogreso.php">Mi progreso</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="desapareceC" style="display: block;" class="background background-image-3">
+           <div class="background-filter"></div>
+            <div class="image-3">
+                <h1>EJERCICIOS Y ENTRENAMIENTO</h1>
+                <H2>¡RUTINA DIARIA DEPENDIENDO A TU NIVEL!</H2>
+            </div>
+        </section>
+        <section class="divider hide-on-small-and-down">
+        </section>
+        <section class="information" >
+            <div id="desaparecer" style="display: block;">
+
+                <div class="cards" style="position:relative; left: 30%;">
+                    <div class="card">
+                        <div class="card-image">
+                            <img id="imagenp" src="src/img/FULLBODY.jpg" alt="">
+                        </div>
+                        <div class="card-content" style="text-align:center;">
+                            <div id="mostrar">
+                            <h2>Rutina para: </h2>
+                            <button class="botonon2" id="lunes">LUNES</button>
+                            <button class="botonon2" id="martes">MARTES</button>
+                            <button class="botonon2" id="miercoles">MIÉRCOLES</button>
+                            <button class="botonon2" id="jueves">JUEVES</button>
+                            <button class="botonon2" id="viernes">VIERNES</button>
+                            <button class="botonon2" id="sabado">SÁBADO</button>
+                        </div>
+                        <div id="mostrar2" style="display: none;" style="text-align: center; padding: 20px;">
+                            <h3 id="entrenamiento">Empecemos saltos de tijera para calentar.</h3>
+                            <h3 id="entrenamiento2">60 saltos</h3>
+                            <img src="src/entrenamientos/tijera.gif" id="imagen" height="220px">
+                            <button class="botonon4" id="SIG1">SIGUIENTE</button>
+                            <button class="botonon4" id="SIG2" style="display: none;">SIGUIENTE</button>
+                        </div>
+                        </div>
+                    </div>
+
+          
+
+        </section>
+    </main>
+
+<script type="text/javascript">
+ document.getElementById("lunes").onclick = function() {
+   document.getElementById("mostrar").style.display = "none";
+   document.getElementById("imagenp").style.display = "none";
+   document.getElementById("desapareceC").style.display = "none";
+   document.getElementById("mostrar2").style.display = "block";
+
+
+
+   var fotoMostrada = "src/entrenamientos/tijera";
+
+
+    
+        var imagen = document.getElementById("imagen");
+
+        document.getElementById("SIG1").onclick = function() {
+        if (fotoMostrada == "src/entrenamientos/tijera") {
+            imagen.src = "src/entrenamientos/correr.gif";
+            fotoMostrada = "src/entrenamientos/correr";
+            document.getElementById("entrenamiento").innerHTML = "Trotar";
+            document.getElementById("entrenamiento2").innerHTML = "30 segundos";
+        } else {
+            imagen.src = "src/entrenamientos/lagartijas.gif";
+            fotoMostrada = "src/entrenamientos/lagartijas";
+            document.getElementById("entrenamiento").innerHTML = "Lagartijas";
+            document.getElementById("entrenamiento2").innerHTML = "15 repeticiones en 4 series.";
+            document.getElementById("SIG1").style.display = "none";
+            document.getElementById("SIG2").style.display = "block";
+        }
+        }
+
+ }
+
+</script>
+
+
+
+
+
+</body>
+
+</html>
