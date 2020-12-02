@@ -71,10 +71,7 @@
                                 foreach ($dataCoaches as $dataCoach) {
 
                                     echo '
-                                        <div class="cardCoach">
-                                        <div>
-                                            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" style="background-image: url(\'' .  substr($dataCoach['srcFotoPerfil'], 3) . '\')" class="img-coach" onclick="fullview(e)">
-                                        </div>
+                                        <div class="cardCoach" style="background-image: url(\'' .  substr($dataCoach['srcFotoPerfil'], 3) . '\')">
                                         <div>
                                             <h2>' . $dataCoach['nombre'] . '</h2>
                                             <h3>' . $dataCoach['tipoCoach'] . '</h3>

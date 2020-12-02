@@ -4,7 +4,7 @@ CREATE TABLE usuarios(
     email VARCHAR(255) NOT NULL,
     password VARCHAR(255) NOT NULL,
     tipoUsuario ENUM('admin', 'usuario', 'coach'),
-    srcFotoPerfil VARCHAR(60) NOT NULL DEFAULT '../users/perfil-image/user-default.png',
+    srcFotoPerfil VARCHAR(255) NOT NULL DEFAULT '../users/perfil-image/user-default.png',
     PRIMARY KEY(idUsuario),
     CONSTRAINT email UNIQUE (email)
 )ENGINE InnoDB;
@@ -29,8 +29,8 @@ CREATE TABLE clientes(
     nivel VARCHAR(40),
     lesiones INT,
     porcentajeGrasa INT,
-    tipoDieta ENUM('Alta en carbohidratos', 'Baja en carbohidratos', 'Alta en proteína');
-    tipoFormulaDieta ENUM('Con grasa corporal', 'Sin grasa corporal');
+    tipo_dieta ENUM('Alta en carbohidratos', 'Baja en carbohidratos', 'Alta en proteína'),
+    tipo_formula ENUM('Con grasa corporal', 'Sin grasa corporal'),
     idCoachNutriologo INT,
     idCoachEntrenador INT,
     PRIMARY KEY (idUsuario),
@@ -62,8 +62,8 @@ CREATE TABLE objetivos(
 
 CREATE TABLE dietas(
     id INT NOT NULL AUTO_INCREMENT, 
-    tipoDieta ENUM('Alta en carbohidratos', 'Baja en carbohidratos', 'Alta en proteína');
-    tipoFormulaDieta ENUM('Con grasa corporal', 'Sin grasa corporal');
+    tipoDieta ENUM('Alta en carbohidratos', 'Baja en carbohidratos', 'Alta en proteína'),
+    tipoFormulaDieta ENUM('Con grasa corporal', 'Sin grasa corporal'),
     PRIMARY KEY(id) 
 )ENGINE = INNODB;
 

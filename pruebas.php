@@ -33,4 +33,7 @@
     //Incluir inicio de sesion con Facebook y Strava
     //Finalizar
 
+    $cadena = 'TIPO_DIETA';
+    echo strtolower($cadena);
+
 ?>
