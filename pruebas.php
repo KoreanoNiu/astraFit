@@ -26,12 +26,14 @@
     echo $dataCoach[1]['srcFotoPerfil'] . '<br>';
     echo $dataCoach[1]['tipoCoach'] . '<br>';
     echo $dataCoach[1]['descripcion'] . '<br>';
-
     //Acomodar la nueva version de la base de datos
     //Meterle esta putada del similudor al registro y mis datos
     //Jalar los datos de la dieta y calcularla
     //Darle toques finales
     //Incluir inicio de sesion con Facebook y Strava
     //Finalizar
+
+    $cadena = 'TIPO_DIETA';
+    echo strtolower($cadena);
 
 ?>

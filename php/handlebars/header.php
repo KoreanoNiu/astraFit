@@ -8,19 +8,23 @@
             <form class="img-perfil-container" onsubmit="return false" id="ProfilePhotoForm">
                 <img src="<?php 
                 
-                if (isset($_SESSION['srcFotoPerfil']) && $_SESSION['srcFotoPerfil'] != '') {
+                if (isset($_SESSION['srcFotoPerfil']) && $_SESSION['srcFotoPerfil'] != '' && !isset($_SESSION['access_token'])) {
                     echo substr($_SESSION['srcFotoPerfil'], 3);
-                }else{
+                }else if (isset($_SESSION['access_token'])){
+                    echo $_SESSION['srcFotoPerfil'];
+                } else{
                     $url = $funcionesDB->obtenerFotoDePerfil($conexion, $_SESSION['idUsuario']);
 
                     $_SESSION['srcFotoPerfil'] = $url[0]['srcFotoPerfil'];
                     echo substr($_SESSION['srcFotoPerfil'], 3);
                 }?>
-                " class="img-perfil">
-                <div class="buttonImg" id="changeProfilePhoto">
-                    <label for="changePhoto">Cambiar foto de perfil</label>
-                </div>
-                <input type="file" name="image-perfil" id="fotoPerfil" accept=".jpg,.png">
+                "class="img-perfil">
+                <?php if(!isset($_SESSION['access_token'])){
+                    echo '<div class="buttonImg" id="changeProfilePhoto">
+                            <label for="changePhoto">Cambiar foto de perfil</label>
+                        </div>
+                        <input type="file" name="image-perfil" id="fotoPerfil" accept=".jpg,.png">';
+                }?>
             </form>
             <ul class="">
                 <li><a href="miprogreso.php">MI CUENTA</a></li>

@@ -49,6 +49,12 @@
             $result->execute([$data]);
             return $result->fetchAll(PDO::FETCH_ASSOC);
         }
+        public function authUsuario($conexion, $data, $campo){
+            $query = "SELECT $campo FROM usuarios WHERE email=?";
+            $result = $conexion->prepare($query);
+            $result->execute([$data]);
+            return $result->fetchAll(PDO::FETCH_ASSOC);
+        }
         public function obtenerDatosCoaches($conexion, $data){
             $query = "SELECT usuarios.nombre, usuarios.srcFotoPerfil, usuarios.email, coaches.descripcion, coaches.tipoCoach 
                 from usuarios 
@@ -64,8 +70,8 @@
             $result->execute($data);  
         }
         public function insertarDatosCliente($conexion, $data){
-            $query = "INSERT INTO clientes (idUsuario, unidadAltura, unidadPeso, edad, altura, peso, genero, objetivo, nivel, lesiones, porcentajeGrasa, tipoDieta, tipoFormula, idCoachNutriologo, idCoachEntrenador) 
-            VALUES (:idUsuario, :unidadAltura, :unidadPeso, :edad, :altura, :peso, :genero, :objetivo, :nivel, :lesiones, :porcentajeGrasa, :tipoDieta, :tipoFormula, :idCoachNutriologo, :idCoachEntrenador)";
+            $query = "INSERT INTO clientes (idUsuario, unidadAltura, unidadPeso, edad, altura, peso, genero, objetivo, nivel, lesiones, porcentajeGrasa, idCoachNutriologo, idCoachEntrenador) 
+            VALUES (:idUsuario, :unidadAltura, :unidadPeso, :edad, :altura, :peso, :genero, :objetivo, :nivel, :lesiones, :porcentajeGrasa, :idCoachNutriologo, :idCoachEntrenador)";
             $result = $conexion->prepare($query);
             $result->execute($data);
         }

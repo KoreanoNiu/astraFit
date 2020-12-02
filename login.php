@@ -1,5 +1,9 @@
 <?php 
     session_start();
+
+    require 'php/fb-init.php';
+
+    $login_url = $helper->getLoginUrl('http://localhost/astraFit/php/api-login.php', $permissions);
 ?>
 <!DOCTYPE html>
 <html lang = es>
@@ -63,7 +67,10 @@
                                     <input type="password" name="contrasena" id="contrasena" pattern="[0-9]+(\.[0-9]*)?" required min="">
                                 </div>
                                 <div class="next buttonLabel" id="validarDatosCuenta">
-                                    <label for="validarDatosCuenta">Enviar</label>
+                                    <label for="validarDatosCuenta">Iniciar Sesión</label>
+                                </div>
+                                <div>
+                                    <?php echo '<a href="'. $login_url .'" class="facebook-login">Inicia sesión con Facebook <img src="src/img/logo-de-facebook.svg"></a>'; ?>
                                 </div>
                             </div>
                         </form>
