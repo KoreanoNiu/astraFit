@@ -1,3 +1,12 @@
+window.onload = function(){
+    fetch('php/api-traer-datos.php', {
+        method: "POST",
+        "Content-Type": "application/json"
+    }).then(response => response.json()).then(data => {obj = data
+        console.log(data);
+    });
+}
+
 document.getElementById("nivel1").onclick = function() {
 var modalidad;
 modalidad=document.getElementById("modalidad").value;

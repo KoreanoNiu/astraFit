@@ -117,6 +117,11 @@
             $result->execute([$data]);
             return $result->fetchAll(PDO::FETCH_ASSOC);
         }
+        public function obtenerDatoEspecifico($conexion, $campo, $tabla, $data){
+            $result = $conexion->prepare("SELECT $campo FROM $tabla WHERE idUsuario=?");
+            $result->execute([$data]);
+            return $result->fetchAll(PDO::FETCH_ASSOC);
+        }
     }
     
     /* 
