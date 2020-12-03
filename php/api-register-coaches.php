@@ -42,12 +42,15 @@
             ":altura" => null,
             ":peso" => null,
             ":genero" => $_POST['Genero'],
-            ":objetivo" => null,
-            ":nivel" => null,
+            ":objetivo" => '',
+            ":nivel" => '',
             ":lesiones" => null,
             ":porcentajeGrasa" => null,
+            ":tipoDieta" => '',
+            ":tipoFormula" => '',
             ":idCoachNutriologo" => null,
-            ":idCoachEntrenador" => null
+            ":idCoachEntrenador" => null,
+            ":stravaIdAthlete" => ''
         ];
     
         $funcionesDB->insertarDatosCliente($conexion, $data);

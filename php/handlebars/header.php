@@ -8,9 +8,9 @@
             <form class="img-perfil-container" onsubmit="return false" id="ProfilePhotoForm">
                 <img src="<?php 
                 
-                if (isset($_SESSION['srcFotoPerfil']) && $_SESSION['srcFotoPerfil'] != '' && !isset($_SESSION['access_token'])) {
+                if (isset($_SESSION['srcFotoPerfil']) && $_SESSION['srcFotoPerfil'] != '' && !isset($_SESSION['access_token']) && !isset($_SESSION['access_tokenStrava'])) {
                     echo substr($_SESSION['srcFotoPerfil'], 3);
-                }else if (isset($_SESSION['access_token'])){
+                }else if (isset($_SESSION['access_token']) || isset($_SESSION['access_tokenStrava'])){
                     echo $_SESSION['srcFotoPerfil'];
                 } else{
                     $url = $funcionesDB->obtenerFotoDePerfil($conexion, $_SESSION['idUsuario']);
@@ -19,7 +19,7 @@
                     echo substr($_SESSION['srcFotoPerfil'], 3);
                 }?>
                 "class="img-perfil">
-                <?php if(!isset($_SESSION['access_token'])){
+                <?php if(!isset($_SESSION['access_token']) && !isset($_SESSION['access_tokenStrava'])){
                     echo '<div class="buttonImg" id="changeProfilePhoto">
                             <label for="changePhoto">Cambiar foto de perfil</label>
                         </div>

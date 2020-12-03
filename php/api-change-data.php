@@ -17,9 +17,13 @@
             $tabla = 'usuarios';
         }else{
             $tabla = 'clientes';
+
+            if (!$var == 'tipoDieta' || !$var == 'tipoFormula'){
+                $var = strtolower($var);
+            }
         }
 
-        $funcionesDB->actualizarDatos($conexion, strtolower($var), $tabla, $data);
+        $funcionesDB->actualizarDatos($conexion, $var, $tabla, $data);
         
         $json = array(
             "error" => '',

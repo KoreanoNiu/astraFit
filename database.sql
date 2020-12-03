@@ -5,6 +5,7 @@ CREATE TABLE usuarios(
     password VARCHAR(255) NOT NULL,
     tipoUsuario ENUM('admin', 'usuario', 'coach'),
     srcFotoPerfil VARCHAR(255) NOT NULL DEFAULT '../users/perfil-image/user-default.png',
+    stravaIdAthlete VARCHAR(30),
     PRIMARY KEY(idUsuario),
     CONSTRAINT email UNIQUE (email)
 )ENGINE InnoDB;
@@ -29,8 +30,8 @@ CREATE TABLE clientes(
     nivel VARCHAR(40),
     lesiones INT,
     porcentajeGrasa INT,
-    tipo_dieta ENUM('Alta en carbohidratos', 'Baja en carbohidratos', 'Alta en proteína'),
-    tipo_formula ENUM('Con grasa corporal', 'Sin grasa corporal'),
+    tipoDieta ENUM('Alta en carbohidratos', 'Baja en carbohidratos', 'Alta en proteína'),
+    tipoFormula ENUM('Con grasa corporal', 'Sin grasa corporal'),
     idCoachNutriologo INT,
     idCoachEntrenador INT,
     PRIMARY KEY (idUsuario),
@@ -50,7 +51,7 @@ CREATE TABLE imagenes(
 
 CREATE TABLE niveles_posibles(
     id INT NOT NULL AUTO_INCREMENT,
-    nivel VARCHAR(30) NOT NULL,
+    nivel VARCHAR(40) NOT NULL,
     PRIMARY KEY(id)
 )ENGINE = INNODB;
 
@@ -63,15 +64,15 @@ CREATE TABLE objetivos(
 CREATE TABLE dietas(
     id INT NOT NULL AUTO_INCREMENT, 
     tipoDieta ENUM('Alta en carbohidratos', 'Baja en carbohidratos', 'Alta en proteína'),
-    tipoFormulaDieta ENUM('Con grasa corporal', 'Sin grasa corporal'),
+    tipoFormula ENUM('Con grasa corporal', 'Sin grasa corporal'),
     PRIMARY KEY(id) 
 )ENGINE = INNODB;
 
 INSERT INTO usuarios VALUES(1, 'admin', 'admin@astrafit.com', 'c3284d0f94606de1fd2af172aba15bf3', 'admin', '../users/perfil-image/user-default.png');
-INSERT INTO usuarios VALUES (2, 'Carlitos', 'carlitos@gmail.com', '123', 'usuario', 'Foto por defecto'), 
-                            (3, 'niquito', 'niquito@gmail.com', '123', 'usuario', 'Foto por defecto'), 
-                            (4, 'Juan', 'juan@gmail.com', '123', 'coach', 'Foto por defecto'), 
-                            (5, 'Luis', 'luis@gmail.com', '123', 'coach', 'Foto por defecto');
+INSERT INTO usuarios VALUES (2, 'Carlitos', 'carlitos@gmail.com', 'c3284d0f94606de1fd2af172aba15bf3', 'usuario', '../users/perfil-image/user-default.png'), 
+                            (3, 'niquito', 'niquito@gmail.com', 'c3284d0f94606de1fd2af172aba15bf3', 'usuario', '../users/perfil-image/user-default.png'), 
+                            (4, 'Juan', 'juan@gmail.com', 'c3284d0f94606de1fd2af172aba15bf3', 'coach', '../users/perfil-image/user-default.png'), 
+                            (5, 'Luis', 'luis@gmail.com', 'c3284d0f94606de1fd2af172aba15bf3', 'coach', '../users/perfil-image/user-default.png');
 
 INSERT INTO coaches VALUES (3, 'nutriologo', 'Hola soy juan bananas'), 
                             (4, 'entrenador', 'Hola soy luis');

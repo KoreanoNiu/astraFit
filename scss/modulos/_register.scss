@@ -328,7 +328,7 @@
             .facebook-login{
                 padding: 0.9rem;
                 font-size: 1rem;
-                margin: 1.2rem auto 0 auto;
+                margin: 4rem auto 0 auto;
                 width: 60%;
                 grid-column-start: span 2;
                 display: flex;
@@ -338,6 +338,22 @@
                 img{
                     margin-left: 0.5rem;
                     height: 1.3rem;
+                }
+            }
+            .strava-login{
+                padding: 0.5rem;
+                font-size: 1rem;
+                margin: 1.2rem auto 0 auto;
+                width: 60%;
+                grid-column-start: span 2;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #FC4C02;
+
+                img{
+                    margin-left: 0.5rem;
+                    height: 2rem;
                 }
             }
         }
@@ -450,8 +466,9 @@
             grid-template-columns: repeat(2, 2fr);
 
             .facebook-login{
-                margin: auto;
-                width: 26.2rem;
+                margin: 3rem auto 0 auto;
+                padding: 0.9rem;
+                width: 100%;
                 grid-column-start: span 2;
                 display: flex;
                 align-items: center;
@@ -460,6 +477,22 @@
                 img{
                     margin-left: 0.5rem;
                     height: 1.3rem;
+                }
+            }
+
+            .strava-login{
+                margin: 0.5rem auto;
+                padding: 0.5rem;
+                width: 100%;
+                grid-column-start: span 2;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #FC4C02;
+
+                img{
+                    margin-left: 0.5rem;
+                    height: 2rem;
                 }
             }
         }

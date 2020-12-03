@@ -881,6 +881,17 @@ footer {
         .progress-container div.cardsCoaches div.cardCoach div h4 {
           font-size: 1rem;
           margin-bottom: -0.5rem; }
+    .progress-container div.cardsCoaches a.strava-login {
+      margin: 2rem auto;
+      padding: 0.5rem;
+      width: 90%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #FC4C02; }
+      .progress-container div.cardsCoaches a.strava-login img {
+        margin-left: 0.5rem;
+        height: 2rem; }
   .progress-container div.img-user-progress {
     width: 100%;
     margin: 0 auto;
@@ -1361,7 +1372,7 @@ footer {
       .register-container .form-container form.inline-form-text .facebook-login {
         padding: 0.9rem;
         font-size: 1rem;
-        margin: 1.2rem auto 0 auto;
+        margin: 4rem auto 0 auto;
         width: 60%;
         grid-column-start: span 2;
         display: flex;
@@ -1370,6 +1381,19 @@ footer {
         .register-container .form-container form.inline-form-text .facebook-login img {
           margin-left: 0.5rem;
           height: 1.3rem; }
+      .register-container .form-container form.inline-form-text .strava-login {
+        padding: 0.5rem;
+        font-size: 1rem;
+        margin: 1.2rem auto 0 auto;
+        width: 60%;
+        grid-column-start: span 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #FC4C02; }
+        .register-container .form-container form.inline-form-text .strava-login img {
+          margin-left: 0.5rem;
+          height: 2rem; }
     .register-container .form-container form.inline-form-checkbox {
       margin: 3rem auto;
       display: grid;
@@ -1456,8 +1480,9 @@ footer {
     .register-container .form-container form.columns-form {
       grid-template-columns: repeat(2, 2fr); }
       .register-container .form-container form.columns-form .facebook-login {
-        margin: auto;
-        width: 26.2rem;
+        margin: 3rem auto 0 auto;
+        padding: 0.9rem;
+        width: 100%;
         grid-column-start: span 2;
         display: flex;
         align-items: center;
@@ -1465,6 +1490,18 @@ footer {
         .register-container .form-container form.columns-form .facebook-login img {
           margin-left: 0.5rem;
           height: 1.3rem; }
+      .register-container .form-container form.columns-form .strava-login {
+        margin: 0.5rem auto;
+        padding: 0.5rem;
+        width: 100%;
+        grid-column-start: span 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #FC4C02; }
+        .register-container .form-container form.columns-form .strava-login img {
+          margin-left: 0.5rem;
+          height: 2rem; }
     .register-container .form-container .sucess {
       color: #ffffff;
       filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); }

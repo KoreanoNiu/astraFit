@@ -279,6 +279,20 @@
                 }
             }
         }
+        a.strava-login{
+            margin: 2rem auto;
+            padding: 0.5rem;
+            width: 90%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #FC4C02;
+
+            img{
+                margin-left: 0.5rem;
+                height: 2rem;
+            }
+        }
     }
 
     div.img-user-progress{

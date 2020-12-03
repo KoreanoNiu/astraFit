@@ -19,6 +19,8 @@
         $nivelEntrenamiento = $data[0]['nivel'];
         $lesiones = $data[0]['lesiones'];
         $porcentajeGrasa = $data[0]['porcentajeGrasa'];
+        $tipoDieta = $data[0]['tipoDieta'];
+        $tipoFormula = $data[0]['tipoFormula'];
         $idCoachNutriologo = $data[0]['idCoachNutriologo'];
         $idCoachEntrenador = $data[0]['idCoachEntrenador'];
 
@@ -26,10 +28,19 @@
             $IMC = number_format($peso / ($altura  / 100 * $altura / 100), 2);
         }
 
+        if (!isset($_SESSION['access_tokenStrava'])) {
+            require 'php/strava-init.php';
+            define('redirect_url', 'http://localhost/astraFit/php/update-strava.php');
+            
+            //Strava Api
+            $api = new StravaApi(client_id, client_secret);
+            
+            $urlAuthStrava = $api->authenticationUrl(redirect_url, approvalPrompt, scope);
+        }
+
     }else{
         header('location: login.php');
     }
-    
 ?>
 <!DOCTYPE html>
 <html lang = es>
@@ -81,6 +92,9 @@
                                         </div>
                                     ';
                                 }
+                            }
+                            if (!isset($_SESSION['access_tokenStrava'])) {
+                                echo '<a href="'. $urlAuthStrava .'" class="strava-login">Vincula tu cuenta con Strava <img src="src/img/strava-logo.svg"></a>';
                             }
                         ?>
                     </div>
@@ -146,18 +160,18 @@
                                 </select>
                             </div>
                             <div>
-                                <label for="tipoDieta">
+                                <label for="TipoDieta">
                                     <p>Tipo de dieta</p>
                                 </label>
-                                <select name="tipoDieta">
+                                <select name="TipoDieta">
                                 
-                                    <option value="<?php echo $nivelEntrenamiento ?>"><?php echo $nivelEntrenamiento ?></option>
+                                    <option value="<?php echo $tipoDieta ?>"><?php echo $tipoDieta ?></option>
 
                                     <?php 
-                                        $data = $funcionesDB->obtenerDatosComunes($conexion, 'nivel', 'niveles_posibles', $objetivo);
+                                        $data = $funcionesDB->obtenerDatosComunes($conexion, 'tipoDieta', 'dietas', $tipoDieta);
 
                                         foreach ($data as $dato){
-                                            echo '<option value ="' . $dato['nivel'].'">' .  $dato['nivel']. '</option>';
+                                            echo '<option value ="' . $dato['tipoDieta'].'">' .  $dato['tipoDieta']. '</option>';
                                         }
                                     ?>
                                 </select>
@@ -168,13 +182,13 @@
                                 </label>
                                 <select name="tipoFormula">
                                 
-                                    <option value="<?php echo $nivelEntrenamiento ?>"><?php echo $nivelEntrenamiento ?></option>
+                                    <option value="<?php echo $tipoFormula ?>"><?php echo $tipoFormula ?></option>
 
                                     <?php 
-                                        $data = $funcionesDB->obtenerDatosComunes($conexion, 'nivel', 'niveles_posibles', $objetivo);
+                                        $data = $funcionesDB->obtenerDatosComunes($conexion, 'tipoFormula', 'dietas', $tipoFormula);
 
                                         foreach ($data as $dato){
-                                            echo '<option value ="' . $dato['nivel'].'">' .  $dato['nivel']. '</option>';
+                                            echo '<option value ="' . $dato['tipoFormula'].'">' .  $dato['tipoFormula']. '</option>';
                                         }
                                     ?>
                                 </select>
@@ -217,6 +231,7 @@
                 </div>
             </footer>
         </main>
+        <?php include_once('php/handlebars/error.php'); ?>
     </body>
     <script src="src/js/coaches-cards.js"></script>
     <script src="src/js/photo-profile.js"></script>

@@ -4,9 +4,18 @@
     if(isset($_SESSION['idUsuario']) && $_SESSION['idUsuario'] != ''){
         header('location: miprogreso.php');
     }else{
+        //Facebook api
         require 'php/fb-init.php';
-
         $login_url = $helper->getLoginUrl('http://localhost/astraFit/php/registro-api.php', $permissions);
+
+        require 'php/strava-init.php';
+        define('redirect_url', 'http://localhost/astraFit/php/registro-api.php');
+
+        //Strava Api
+        $api = new StravaApi(client_id, client_secret);
+        
+        $urlAuthStrava = $api->authenticationUrl(redirect_url, approvalPrompt, scope);
+
     }
     
 ?>
@@ -83,7 +92,8 @@
                                     <p>Hombre</p>
                                 </label>
                             </div>
-                            <?php echo '<a href="'. $login_url .'" class="facebook-login">Registrarte con Facebook <img src="src/img/logo-de-facebook.svg"></a>'; ?>
+                            <?php echo '<a href="'. $login_url .'" class="facebook-login">Registrate con Facebook <img src="src/img/logo-de-facebook.svg"></a>'; ?>
+                            <?php echo '<a href="'. $urlAuthStrava .'" class="strava-login">Registrate con Strava <img src="src/img/strava-logo.svg"></a>'; ?>
                         </form>
                     </div>
                     <div class="form-content hide">
@@ -379,20 +389,6 @@
                 </div>
             </section>
         </main>
-        <?php if(isset($_GET['error'])){
-                echo '
-                <div class="error-msg">
-                    <div class="msg-container">
-                        <div class="msg">
-                            <h2>'. preg_replace("/[^A-Za-z0-9^$|\s+^.^áéíóúÁÉÍÓÚñÑ]/", '', $_GET['error']) .'</h2>
-                        </div>
-                        <div class="button-error-msg" onclick="this.parentNode.parentNode.remove();">
-                            <label for="button-error-msg">Aceptar</label>
-                        </div>
-                    </div>
-                </div>
-                ';
-            } ?>
     </body>
     <script src ="src/js/registro.js"></script>
     <script src ="src/js/commun.js"></script>

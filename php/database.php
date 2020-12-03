@@ -3,7 +3,7 @@
     class Conexion{
         public static function Conectar(){
             define('servidor', 'localhost');
-            define('nombre_bd', 'astrafitdbv4');
+            define('nombre_bd', 'astrafitdbv5');
             define('usuario', 'root');
             define('password', '');
 
@@ -23,7 +23,7 @@
         public function obtenerDatosCompletos($conexion, $data){
             $query = "SELECT usuarios.tipoUsuario, 
                 clientes.unidadAltura, clientes.unidadPeso, clientes.edad, clientes.peso, clientes.altura, clientes.objetivo, clientes.nivel, clientes.lesiones, 
-                clientes.porcentajeGrasa, clientes.idCoachNutriologo, clientes.idCoachEntrenador 
+                clientes.porcentajeGrasa, clientes.tipoDieta, clientes.tipoFormula,clientes.idCoachNutriologo, clientes.idCoachEntrenador 
                 from usuarios 
                 JOIN clientes ON clientes.idUsuario = usuarios.idUsuario 
                 WHERE usuarios.idUsuario=?";
@@ -31,8 +31,8 @@
             $result->execute([$data]);
             return $result->fetchAll(PDO::FETCH_ASSOC);
         }
-        public function obtenerDatosUsuario($conexion, $data){
-            $query = "SELECT idUsuario, nombre, tipoUsuario, srcFotoPerfil FROM usuarios WHERE email=?";
+        public function obtenerDatosUsuario($conexion, $data, $campo = 'email'){
+            $query = "SELECT idUsuario, nombre, tipoUsuario, srcFotoPerfil, stravaIdAthlete FROM usuarios WHERE $campo=?";
             $result = $conexion->prepare($query);
             $result->execute([$data]);
             return $result->fetchAll(PDO::FETCH_ASSOC);
@@ -50,7 +50,7 @@
             return $result->fetchAll(PDO::FETCH_ASSOC);
         }
         public function authUsuario($conexion, $data, $campo){
-            $query = "SELECT $campo FROM usuarios WHERE email=?";
+            $query = "SELECT $campo FROM usuarios WHERE $campo=?";
             $result = $conexion->prepare($query);
             $result->execute([$data]);
             return $result->fetchAll(PDO::FETCH_ASSOC);
@@ -65,13 +65,13 @@
             return $result->fetchAll(PDO::FETCH_ASSOC);
         }
         public function insertarDatosUsuario($conexion, $data){
-            $query = "INSERT INTO usuarios (nombre, email, password, tipoUsuario, srcFotoPerfil) VALUES (:nombre, :email, :password, :tipoUsuario, :src)";
+            $query = "INSERT INTO usuarios (nombre, email, password, tipoUsuario, srcFotoPerfil, stravaIdAthlete) VALUES (:nombre, :email, :password, :tipoUsuario, :src, :stravaIdAthlete)";
             $result = $conexion->prepare($query);
             $result->execute($data);  
         }
         public function insertarDatosCliente($conexion, $data){
-            $query = "INSERT INTO clientes (idUsuario, unidadAltura, unidadPeso, edad, altura, peso, genero, objetivo, nivel, lesiones, porcentajeGrasa, idCoachNutriologo, idCoachEntrenador) 
-            VALUES (:idUsuario, :unidadAltura, :unidadPeso, :edad, :altura, :peso, :genero, :objetivo, :nivel, :lesiones, :porcentajeGrasa, :idCoachNutriologo, :idCoachEntrenador)";
+            $query = "INSERT INTO clientes (idUsuario, unidadAltura, unidadPeso, edad, altura, peso, genero, objetivo, nivel, lesiones, porcentajeGrasa, tipoDieta, tipoFormula, idCoachNutriologo, idCoachEntrenador) 
+            VALUES (:idUsuario, :unidadAltura, :unidadPeso, :edad, :altura, :peso, :genero, :objetivo, :nivel, :lesiones, :porcentajeGrasa, :tipoDieta, :tipoFormula, :idCoachNutriologo, :idCoachEntrenador)";
             $result = $conexion->prepare($query);
             $result->execute($data);
         }

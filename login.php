@@ -4,6 +4,14 @@
     require 'php/fb-init.php';
 
     $login_url = $helper->getLoginUrl('http://localhost/astraFit/php/api-login.php', $permissions);
+
+    require 'php/strava-init.php';
+    define('redirect_url', 'http://localhost/astraFit/php/api-login.php');
+
+    //Strava Api
+    $api = new StravaApi(client_id, client_secret);
+    
+    $urlAuthStrava = $api->authenticationUrl(redirect_url, approvalPrompt, scope);
 ?>
 <!DOCTYPE html>
 <html lang = es>
@@ -66,11 +74,12 @@
                                 <div>
                                     <input type="password" name="contrasena" id="contrasena" pattern="[0-9]+(\.[0-9]*)?" required min="">
                                 </div>
-                                <div class="next buttonLabel" id="validarDatosCuenta">
+                                <div class="next buttonLabel" id="validarDatosCuenta" style="margin-top: 2rem;">
                                     <label for="validarDatosCuenta">Iniciar Sesión</label>
                                 </div>
                                 <div>
                                     <?php echo '<a href="'. $login_url .'" class="facebook-login">Inicia sesión con Facebook <img src="src/img/logo-de-facebook.svg"></a>'; ?>
+                                    <?php echo '<a href="'. $urlAuthStrava .'" class="strava-login">Inicia sesión con Strava <img src="src/img/strava-logo.svg"></a>'; ?>
                                 </div>
                             </div>
                         </form>
@@ -82,6 +91,9 @@
                 </div>
             </section>
         </main>
+        <?php 
+            include_once('php/handlebars/error.php');
+        ?>
     </body>
     <script src ="src/js/login.js"></script>
     <script src ="src/js/commun.js"></script>
