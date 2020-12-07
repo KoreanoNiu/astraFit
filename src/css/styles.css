@@ -511,7 +511,7 @@ main {
     border-style: solid;
     border-width: 0 220rem 12vw 0;
     border-color: transparent transparent var(--colorSectionInformation) transparent; }
-  main section.information, main .footerInformation {
+  main section.information, main .footerInformation, main .strava-information {
     width: 100%;
     height: auto;
     background-color: var(--colorSectionInformation);
@@ -846,7 +846,8 @@ footer {
     -moz-appearance: textfield; }
   .progress-container div.cardsCoaches {
     width: 100%;
-    margin: 0 auto;
+    margin: auto;
+    margin-top: 0;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     padding-bottom: 1rem; }
@@ -894,7 +895,8 @@ footer {
         height: 2rem; }
   .progress-container div.img-user-progress {
     width: 100%;
-    margin: 0 auto;
+    margin: auto;
+    height: auto;
     display: grid; }
     .progress-container div.img-user-progress input[type="file"] {
       display: none; }
@@ -1028,75 +1030,115 @@ footer {
         outline: none;
         background-color: transparent;
         border-color: #696969; }
-  .progress-container div:nth-child(2) form select.unidadesSelect {
-    position: absolute;
-    color: #ffffff;
-    font-size: 1rem;
-    padding: 0.4rem;
-    background-color: #353535;
-    border: 0;
-    margin-top: -0.7rem;
-    margin-left: -4.2rem;
-    padding-right: 1.2rem;
-    border-radius: 4px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    -ms-border-radius: 4px;
-    -o-border-radius: 4px; }
-    .progress-container div:nth-child(2) form select.unidadesSelect:focus {
-      outline: none; }
-  .progress-container div:nth-child(2) form div {
-    margin: auto;
-    width: 100%; }
-    .progress-container div:nth-child(2) form div select {
+  .progress-container div:nth-child(2) {
+    margin-top: 0; }
+    .progress-container div:nth-child(2) form select.unidadesSelect {
+      position: absolute;
+      color: #ffffff;
+      font-size: 1rem;
+      padding: 0.4rem;
+      background-color: #353535;
+      border: 0;
+      margin-top: -0.7rem;
+      margin-left: -4.2rem;
+      padding-right: 1.2rem;
+      border-radius: 4px;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      -ms-border-radius: 4px;
+      -o-border-radius: 4px; }
+      .progress-container div:nth-child(2) form select.unidadesSelect:focus {
+        outline: none; }
+    .progress-container div:nth-child(2) form div {
       margin: auto;
-      border-top: 0;
-      border-left: 0;
-      border-right: 0;
-      border-bottom: 2px;
-      border-style: solid;
-      padding: 0 0 0.4rem 0.7rem;
-      border-color: #126fbb;
-      color: #ffffff;
-      background-color: transparent;
-      width: 100%;
-      font-size: 1.2rem;
-      margin-bottom: 0.7rem;
-      outline: 0px;
-      border-radius: 1px;
-      -webkit-border-radius: 1px;
-      -moz-border-radius: 1px;
-      -ms-border-radius: 1px;
-      -o-border-radius: 1px; }
-      .progress-container div:nth-child(2) form div select:focus {
-        outline: none;
-        background-color: #353535;
-        border-color: none; }
-  .progress-container div:nth-child(3) div {
-    width: 100%; }
-    .progress-container div:nth-child(3) div select {
-      border-top: 0;
-      border-left: 0;
-      border-right: 0;
-      border-bottom: 2px;
-      border-style: solid;
-      padding: 0 0 0.4rem 0.7rem;
-      border-color: #126fbb;
-      color: #ffffff;
-      background-color: transparent;
-      width: 100%;
-      font-size: 1.2rem;
-      margin-bottom: 0.7rem;
-      outline: 0px;
-      border-radius: 1px;
-      -webkit-border-radius: 1px;
-      -moz-border-radius: 1px;
-      -ms-border-radius: 1px;
-      -o-border-radius: 1px; }
-      .progress-container div:nth-child(3) div select:focus {
-        outline: none;
-        background-color: #353535;
-        border-color: none; }
+      width: 100%; }
+      .progress-container div:nth-child(2) form div select {
+        margin: auto;
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+        border-bottom: 2px;
+        border-style: solid;
+        padding: 0 0 0.4rem 0.7rem;
+        border-color: #126fbb;
+        color: #ffffff;
+        background-color: transparent;
+        width: 100%;
+        font-size: 1.2rem;
+        margin-bottom: 0.7rem;
+        outline: 0px;
+        border-radius: 1px;
+        -webkit-border-radius: 1px;
+        -moz-border-radius: 1px;
+        -ms-border-radius: 1px;
+        -o-border-radius: 1px; }
+        .progress-container div:nth-child(2) form div select:focus {
+          outline: none;
+          background-color: #353535;
+          border-color: none; }
+
+.strava-data-container {
+  font-family: Roboto-italic;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: grid; }
+  .strava-data-container .strava-login {
+    margin: 2rem auto;
+    padding: 0.5rem;
+    width: 20rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FC4C02; }
+    .strava-data-container .strava-login img {
+      margin-left: 0.5rem;
+      height: 2rem; }
+  .strava-data-container .container {
+    margin: 2rem auto;
+    width: 90%;
+    height: auto;
+    color: #000000;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    background-color: #ffffff;
+    filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.2));
+    -webkit-filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.2));
+    border-radius: 4px; }
+    .strava-data-container .container div {
+      padding: 1rem;
+      text-align: center;
+      align-content: center;
+      margin: 1rem auto 0 auto;
+      width: 95%; }
+      .strava-data-container .container div h1 {
+        font-weight: 600; }
+      .strava-data-container .container div table {
+        width: 100%;
+        border-collapse: collapse; }
+        .strava-data-container .container div table tr {
+          text-align: center; }
+        .strava-data-container .container div table th {
+          background-color: #FC4C02;
+          font-weight: 500;
+          color: #ffffff;
+          line-height: 2rem; }
+        .strava-data-container .container div table td {
+          padding: 0.7rem 3rem 0.7rem 3rem; }
+        .strava-data-container .container div table tr {
+          line-height: 2rem; }
+        .strava-data-container .container div table tr:nth-child(even) {
+          background-color: #FEFEFE; }
+        .strava-data-container .container div table tr:nth-child(odd) {
+          background-color: #F1F1F1; }
+        .strava-data-container .container div table tr:hover {
+          background-color: #D3D3D3; }
+    .strava-data-container .container > div:nth-child(2) {
+      overflow: auto;
+      white-space: nowrap; }
+    .strava-data-container .container > div:nth-child(3) {
+      overflow: auto;
+      white-space: nowrap; }
 
 /*  .container{
     position: relative;
@@ -1345,7 +1387,7 @@ footer {
               outline: none; }
       .register-container .form-container form.inline-form-text div.next {
         margin: auto;
-        width: 60%;
+        width: 80%;
         height: 3rem;
         margin-top: 1rem;
         background-color: #126fbb;
@@ -1373,7 +1415,7 @@ footer {
         padding: 0.9rem;
         font-size: 1rem;
         margin: 4rem auto 0 auto;
-        width: 60%;
+        width: 80%;
         grid-column-start: span 2;
         display: flex;
         align-items: center;
@@ -1385,7 +1427,7 @@ footer {
         padding: 0.5rem;
         font-size: 1rem;
         margin: 1.2rem auto 0 auto;
-        width: 60%;
+        width: 80%;
         grid-column-start: span 2;
         display: flex;
         align-items: center;

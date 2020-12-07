@@ -22,7 +22,6 @@
             curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
             curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
-
             return curl_exec($ch);
         }
 
@@ -85,6 +84,12 @@
 
             return($this->request($url, '', 'GET'));
         }
-        
+        public function post($access_token, $parameters, $action){
+            $parameters = array_merge($parameters, array($access_token));
+
+            $url = $this->authUrl . $action;
+
+            return($parameters);
+        }
     }
     

@@ -42,7 +42,7 @@
 
         echo json_encode($json);
     }else{
-        if (isset($_GET['code']) && isset($_GET['state']) && isset($_GET['scope'])){
+        if (isset($_GET['code']) && isset($_GET['state']) && isset($_GET['scope']) && !isset($_GET['error'])){
             include_once('database.php');
 
             $conexion = Conexion::Conectar();
@@ -65,7 +65,7 @@
                     $_SESSION['idUsuario'] = $dataUser[0]['idUsuario'];
                     $_SESSION['nombreUsuario'] = $dataUser[0]['nombre'];
                     $_SESSION['rol'] = $dataUser[0]['tipoUsuario'];
-                    $_SESSION['srcFotoPerfil'] = $dataUser[0]['srcFotoPerfil'];
+                    $_SESSION['srcFotoPerfil'] = $data['athlete']['profile'];
                     $_SESSION['access_tokenStrava'] = $data['access_token'];
 
                     header('Location: ../respaldoMiProgreso.php');
@@ -95,7 +95,7 @@
                 $accessToken = $helper->getAccessToken();
                 if (isset($accessToken)) {
 
-                    $res = $fb->get("/me?fields=email", $accessToken);
+                    $res = $fb->get("/me?fields=email, picture.width(720).height(720)", $accessToken);
                     $user = $res->getGraphUser();
                 
                     $token = $funcionesDB->authUsuario($conexion, $user['email'], 'email');
@@ -107,7 +107,7 @@
                             $_SESSION['idUsuario'] = $dataUser[0]['idUsuario'];
                             $_SESSION['nombreUsuario'] = $dataUser[0]['nombre'];
                             $_SESSION['rol'] = $dataUser[0]['tipoUsuario'];
-                            $_SESSION['srcFotoPerfil'] = $dataUser[0]['srcFotoPerfil'];
+                            $_SESSION['srcFotoPerfil'] = $user['picture']['url'];
                             $_SESSION['access_token'] = (string)$accessToken;
 
                             if ($dataUser[0]['stravaIdAthlete'] != '') {
@@ -130,7 +130,9 @@
 
             if (!isset($accessToken)) {
                 if (!isset($_POST)) {
-                    header('Location: registro.php');
+                    header('Location: ../login.php');
+                }else{
+                    header('Location: ../login.php');
                 }
               }
         }

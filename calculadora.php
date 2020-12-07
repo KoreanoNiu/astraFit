@@ -148,6 +148,91 @@
                 </div><br>
 
                 <script type="text/javascript">
+                    window.onload = function(){
+                        var data = new FormData();
+                        data.append('token', 'dieta')
+                        fetch('php/api-traer-datos.php', {
+                            method: "POST",
+                            body: data,
+                            "Content-Type": "application/json"
+                        }).then(response => response.json()).then(data => {obj = data
+                            console.log(data);
+                            obj.forEach(element => {
+                                if (comprobarDatos(element)) {
+                                    
+                                }else{
+                                    window.location.href = 'respaldoMiProgreso.php?error=Completa los campos faltantes: ' + concatenarError(obj) + 'por favor';
+                                }
+                            });
+                        });
+                    }
+                    function comprobarDatos(element){
+                        var contador = 0;
+                        if (element['edad'] == '' || element['edad'] == null || element['edad'] == 0) {
+                            contador++;
+                        }
+                        if (element['altura'] == '' || element['altura'] == null || element['edad'] == 0) {
+                            contador++;
+                        }
+                        if (element['peso'] == '' || element['peso'] == null || element['peso'] == 0) {
+                            contador++;
+                        }
+                        if (element['tipoDieta'] == '' || element['tipoDieta'] == null) {
+                            contador++;
+                        }
+                        if (element['nivel'] == '' || element['nivel'] == null) {
+                            contador++;
+                        }
+                        if (element['tipoFormula'] == '' || element['tipoFormula'] == null) {
+                            contador++;
+                        }
+                        if (element['porcentajeGrasa'] == '' || element['porcentajeGrasa'] == null || element['porcentajeGrasa'] == 0 || element['porcentajeGrasa'] < 3) {
+                            contador++;
+                        }
+                        if (contador == 0) {
+                            return true;
+                        }else{
+                            return false;
+                        }
+                    }
+                    function concatenarError(element) {
+                        let error = ''
+                            if (element[0]['edad'] == '' || element[0]['edad'] == null || element[0]['edad'] == 0) {
+                                error += 'Edad, ';
+                            }
+                            if (element[0]['altura'] == '' || element[0]['altura'] == null || element[0]['altura'] == 0) {
+                                if (element[0]['altura'] <= 120) {
+                                    error +=  'La Altura es menor a lo permitido, ';
+                                }else{
+                                    error +=  'Altura, ';
+                                }
+                            }
+                            if (element[0]['peso'] == '' || element[0]['peso'] == null || element[0]['peso'] == 0) {
+                                if (element[0]['peso'] <= 40) {
+                                    error += 'El peso es menor a lo permitido';
+                                }else{
+                                    error += 'Peso, ';
+                                }
+                            }
+                            if (element[0]['tipoDieta'] == '' || element[0]['tipoDieta'] == null) {
+                                error += 'Tipo dieta, ';
+                            }
+                            if (element[0]['nivel'] == '' || element[0]['nivel'] == null) {
+                                error += 'Nivel, ';
+                            }
+                            if (element[0]['tipoFormula'] == '' || element[0]['tipoFormula'] == null) {
+                                error += 'Tipo formula, ';
+                            }
+                            if (element[0]['porcentajeGrasa'] == '' || element[0]['porcentajeGrasa'] == null || element[0]['porcentajeGrasa'] < 3) {
+                                if (element[0]['porcentajeGrasa'] < 3) {
+                                    error += 'El porcentaje grasa es menor a 3, ';
+                                }else{
+                                    error += 'Porcentaje grasa, ';
+                                }
+                            }
+                        return error;
+                    }
+
                     document.getElementById("cerrar").onclick = function () {
                         document.getElementById("mostrar2").style.display = "none";
                     }
