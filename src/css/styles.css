@@ -9,11 +9,11 @@
 
 @font-face {
   font-family: Roboto-italic;
-  src: url("../../src/fonts/Roboto-BlackItalic.ttf"); }
+  src: url("../../src/fonts/Segoe UI.ttf"); }
 
 @font-face {
   font-family: Oxygen;
-  src: url("../../src/fonts/Oxygen-Bold.ttf"); }
+  src: url("../../src/fonts/Segoe UI.ttf"); }
 
 * {
   scroll-behavior: smooth;
@@ -198,198 +198,242 @@ template {
 [hidden] {
   display: none; }
 
-nav {
-  position: absolute;
-  font-family: Roboto-black;
+html {
+  scroll-behavior: smooth; }
+
+header.main-header {
+  font-family: Roboto-italic;
   width: 100%;
-  height: var(--navbar-height);
-  background-color: var(--colorHeader);
-  display: flex;
-  align-items: center;
-  z-index: 998;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); }
-  nav .brand-logo {
-    color: #8d8d8d;
-    font-size: 2rem;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    transition: color 0.5s;
-    -webkit-transition: color 0.5s;
-    -moz-transition: color 0.5s;
-    -ms-transition: color 0.5s;
-    -o-transition: color 0.5s; }
-    nav .brand-logo:hover {
-      color: white; }
-    nav .brand-logo img {
-      width: 8%; }
-  nav .sidenav-trigger {
-    width: 10rem;
-    z-index: 999;
+  height: 3rem;
+  background-color: #161616;
+  z-index: 999;
+  position: fixed;
+  filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.2));
+  -webkit-filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.2)); }
+  header.main-header.transparent {
+    background-color: rgba(255, 255, 255, 0); }
+    header.main-header.transparent .bars .line {
+      stroke: #000000; }
+    header.main-header.transparent .full-menu {
+      background-color: white; }
+      header.main-header.transparent .full-menu li a {
+        color: #000000; }
+  header.main-header .trigger {
+    margin-top: 1.6rem;
+    margin-left: 2rem; }
+  header.main-header nav button.backForm {
     position: absolute;
-    margin: 5%; }
-    nav .sidenav-trigger.center {
-      margin: 50%; }
-    @media (max-width: 768px) {
-      nav .sidenav-trigger.right {
-        margin: 90%; } }
-    @media (max-width: 425px) {
-      nav .sidenav-trigger.right {
-        margin: 85%; } }
-    @media (min-width: 769px) {
-      nav .sidenav-trigger.right {
-        margin: 88%; } }
-    nav .sidenav-trigger.left {
-      margin: 5%; }
-    nav .sidenav-trigger button.backForm {
-      background-color: transparent;
-      border: none;
-      cursor: pointer;
-      display: flex;
-      padding: 0;
-      outline: none;
-      fill: #ffffff; }
-      nav .sidenav-trigger button.backForm svg {
-        height: 1.1rem; }
-      nav .sidenav-trigger button.backForm:hover {
-        fill: #8D8D8D; }
-    nav .sidenav-trigger a {
-      color: #8d8d8d;
-      padding: calc(var(--navbar-height) / 2.8) 10px;
-      margin: 0px 20px 0 0;
-      transition: color 0.5s;
-      -webkit-transition: color 0.5s;
-      -moz-transition: color 0.5s;
-      -ms-transition: color 0.5s;
-      -o-transition: color 0.5s; }
-      nav .sidenav-trigger a:hover {
-        color: white; }
-  nav ul {
+    margin-top: 0.9rem;
+    margin-left: 4rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    padding: 0;
+    outline: none;
+    fill: #ffffff; }
+    header.main-header nav button.backForm svg {
+      height: 1.3rem; }
+    header.main-header nav button.backForm:hover {
+      fill: #8D8D8D; }
+  header.main-header ul.horizontal {
+    margin-top: 1rem;
     position: absolute;
     list-style: none;
-    align-self: center;
-    font-size: 0.9rem; }
-    nav ul.center {
-      margin: 50%; }
-    nav ul.right {
-      margin: 90%; }
-    nav ul li {
+    align-self: center; }
+    header.main-header ul.horizontal li {
       position: relative;
       float: left; }
-      nav ul li a {
-        color: #8d8d8d;
-        padding: calc(var(--navbar-height) / 2.8) 10px;
-        margin: 0px 20px 0 0;
-        transition: color 0.5s;
-        -webkit-transition: color 0.5s;
-        -moz-transition: color 0.5s;
-        -ms-transition: color 0.5s;
-        -o-transition: color 0.5s; }
-        nav ul li a:hover {
-          color: white; }
+    header.main-header ul.horizontal.white {
+      margin-left: 1.5rem; }
+      header.main-header ul.horizontal.white li a {
+        color: #ffffff; }
+  header.main-header ul li a {
+    font-weight: 900;
+    color: #000000;
+    margin: 0px 20px 0 0;
+    transition: color 0.3s;
+    -webkit-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    -ms-transition: color 0.3s;
+    -o-transition: color 0.3s; }
+    header.main-header ul li a:hover {
+      color: #8D8D8D; }
 
-.menu {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  padding: 0;
-  outline: none; }
-
-.line {
-  fill: none;
-  stroke: #8d8d8d;
-  stroke-width: 6;
-  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1); }
-
-.line1 {
-  stroke-dasharray: 60 207;
-  stroke-width: 6; }
-
-.line2 {
-  stroke-dasharray: 60 60;
-  stroke-width: 6; }
-
-.line3 {
-  stroke-dasharray: 60 207;
-  stroke-width: 6; }
-
-.opened .line1 {
-  stroke-dasharray: 90 207;
-  stroke-dashoffset: -134;
-  stroke-width: 6; }
-
-.opened .line2 {
-  stroke-dasharray: 1 60;
-  stroke-dashoffset: -30;
-  stroke-width: 6; }
-
-.opened .line3 {
-  stroke-dasharray: 90 207;
-  stroke-dashoffset: -134;
-  stroke-width: 6; }
-
-.opened {
-  transform: translateX(-13rem);
-  -webkit-transform: translateX(-13rem);
-  -moz-transform: translateX(-13rem);
-  -ms-transform: translateX(-13rem);
-  -o-transform: translateX(-13rem);
-  transition-duration: 0.3s; }
-  .opened .sidenav-trigger {
-    transform: translateX(5vw);
-    -webkit-transform: translateX(5vw);
-    -moz-transform: translateX(5vw);
-    -ms-transform: translateX(5vw);
-    -o-transform: translateX(5vw); }
-  .opened .brand-logo {
-    transform: translateX(25vw);
-    -webkit-transform: translateX(25vw);
-    -moz-transform: translateX(25vw);
-    -ms-transform: translateX(25vw);
-    -o-transform: translateX(25vw); }
-
-.closed {
-  transform: translateX(0%);
-  -webkit-transform: translateX(0%);
-  -moz-transform: translateX(0%);
-  -ms-transform: translateX(0%);
-  -o-transform: translateX(0%);
-  transition-duration: 0.3s; }
-  .closed .sidenav-trigger {
-    transform: translateX(0vw);
-    -webkit-transform: translateX(0vw);
-    -moz-transform: translateX(0vw);
-    -ms-transform: translateX(0vw);
-    -o-transform: translateX(0vw); }
-  .closed .brand-logo {
-    transform: translateX(0vw);
-    -webkit-transform: translateX(0vw);
-    -moz-transform: translateX(0vw);
-    -ms-transform: translateX(0vw);
-    -o-transform: translateX(0vw); }
-
-aside {
+.trigger {
   position: absolute;
-  z-index: 996;
-  top: 0;
-  margin: auto 100%;
-  width: 13rem;
-  height: 100vh;
-  background-color: var(--colorHeader);
-  color: #ffffff;
-  filter: drop-shadow(4px 0px 4px rgba(0, 0, 0, 0.25));
-  -webkit-filter: drop-shadow(4px 0px 4px rgba(0, 0, 0, 0.25)); }
-  aside ul li {
-    font-size: 1rem;
-    margin: 1.5rem 0 0 0; }
+  z-index: 2;
+  border-radius: 10px;
+  transform: translateX(-50%) translateY(-50%);
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px; }
+
+.bars {
+  width: 60px;
+  cursor: pointer; }
+
+.bars .line {
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 4;
+  stroke-linecap: square;
+  transition: stroke-dasharray 400ms,  stroke-dashoffset 400ms; }
+
+.bars.active .line {
+  stroke: #ffffff; }
+
+.bars .line.top {
+  stroke-dasharray: 40 172; }
+
+.bars .line.middle {
+  stroke-dasharray: 40 111; }
+
+.bars .line.bottom {
+  stroke-dasharray: 40 172; }
+
+.bars.active .top {
+  stroke-dashoffset: -132px; }
+
+.bars.active .middle {
+  stroke-dashoffset: -71px; }
+
+.bars.active .bottom {
+  stroke-dashoffset: -132px; }
+
+.full-menu {
+  z-index: 2;
+  position: absolute;
+  width: 50vw;
+  height: 0;
+  background-color: #161616;
+  transition: height 0.3s;
+  -webkit-transition: height 0.3s;
+  -moz-transition: height 0.3s;
+  -ms-transition: height 0.3s;
+  -o-transition: height 0.3s; }
+  @media (max-width: 768px) {
+    .full-menu {
+      width: 70vw; } }
+  .full-menu h3 {
+    display: none; }
+  .full-menu ul {
+    display: none;
+    list-style: none; }
+  .full-menu div {
+    height: 0;
+    display: none; }
+  .full-menu form.img-perfil-container {
+    height: 0; }
+  .full-menu img.img-perfil {
+    width: 0; }
+  .full-menu input[type='file'] {
+    display: none; }
+  .full-menu.opened {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+    height: 100vh;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s; }
+    .full-menu.opened div.menu-container {
+      text-align: center;
+      width: 90%;
+      height: 95%;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      color: #ffffff; }
+      .full-menu.opened div.menu-container h3 {
+        font-size: 2rem;
+        margin: auto;
+        margin-bottom: 1rem;
+        display: block; }
+      .full-menu.opened div.menu-container form.img-perfil-container {
+        margin: 1rem auto;
+        display: block;
+        width: 22.7rem;
+        height: auto; }
+        .full-menu.opened div.menu-container form.img-perfil-container img.img-perfil {
+          margin: auto;
+          width: 100%;
+          height: auto;
+          background-color: #ffffff;
+          border-top-left-radius: 4px;
+          border-top-right-radius: 4px; }
+        .full-menu.opened div.menu-container form.img-perfil-container div.buttonImg {
+          margin-top: -0.27rem;
+          float: left;
+          width: 22.7rem;
+          height: 3rem;
+          background-color: #126fbb;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-bottom-left-radius: 4px;
+          border-bottom-right-radius: 4px;
+          filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+          -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); }
+          .full-menu.opened div.menu-container form.img-perfil-container div.buttonImg label {
+            color: #ffffff; }
+            .full-menu.opened div.menu-container form.img-perfil-container div.buttonImg label:hover {
+              cursor: pointer; }
+          .full-menu.opened div.menu-container form.img-perfil-container div.buttonImg:hover {
+            background-color: #1250dc;
+            cursor: pointer; }
+      @media (max-width: 768px) and (min-width: 500px) {
+        .full-menu.opened div.menu-container form.img-perfil-container {
+          width: 20rem; }
+          .full-menu.opened div.menu-container form.img-perfil-container div.buttonImg {
+            width: 20rem; } }
+      @media (max-width: 500px) and (min-width: 380px) {
+        .full-menu.opened div.menu-container h3 {
+          font-size: 1.4rem; }
+        .full-menu.opened div.menu-container form.img-perfil-container {
+          width: 15rem; }
+          .full-menu.opened div.menu-container form.img-perfil-container div.buttonImg {
+            width: 15rem; } }
+      @media (max-width: 380px) {
+        .full-menu.opened div.menu-container h3 {
+          font-size: 1.4rem; }
+        .full-menu.opened div.menu-container form.img-perfil-container {
+          width: 11rem; }
+          .full-menu.opened div.menu-container form.img-perfil-container div.buttonImg {
+            width: 11rem; } }
+      .full-menu.opened div.menu-container ul {
+        margin: 0 auto;
+        display: block; }
+        .full-menu.opened div.menu-container ul li {
+          margin-left: -1rem; }
+          .full-menu.opened div.menu-container ul li a {
+            color: #ffffff;
+            font-size: 1.2rem;
+            line-height: 1.8rem; }
+            @media (max-width: 550px) {
+              .full-menu.opened div.menu-container ul li a {
+                font-size: 0.9rem;
+                line-height: 1.2rem; } }
+    .full-menu.opened ul {
+      display: block;
+      text-align: center; }
+      .full-menu.opened ul li {
+        margin-left: -1rem; }
+        .full-menu.opened ul li a {
+          color: #ffffff;
+          font-size: 1.5rem;
+          line-height: 4rem; }
+          @media (max-width: 550px) {
+            .full-menu.opened ul li a {
+              font-size: 1.2rem;
+              line-height: 3rem; } }
 
 main {
   margin: 0;
   width: 100%;
   overflow: hidden;
-  margin-top: var(--navbar-height);
   position: absolute;
   z-index: 1; }
   main section a {
@@ -569,10 +613,10 @@ main {
       display: inline; } }
 
 div.error-msg {
+  z-index: 1000;
+  top: 0;
   font-family: Roboto-italic;
-  top: -var(--navbar-height);
   position: fixed;
-  z-index: 999;
   width: 100vw;
   height: 100vh;
   background-color: rgba(255, 255, 255, 0.1);
@@ -800,6 +844,54 @@ footer {
     margin: 0; }
   .progress-container input[type=number] {
     -moz-appearance: textfield; }
+  .progress-container div.cardsCoaches {
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    padding-bottom: 1rem; }
+    .progress-container div.cardsCoaches div.cardCoach {
+      margin: 1rem auto 0 auto;
+      width: 90%;
+      height: 22rem;
+      background-color: white;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      overflow: hidden;
+      border-radius: 4px;
+      filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.25));
+      -webkit-filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.25));
+      background-position-y: center;
+      background-position-x: center;
+      background-size: cover;
+      background-repeat: no-repeat; }
+      .progress-container div.cardsCoaches div.cardCoach div {
+        background-color: rgba(255, 255, 255, 0.3);
+        padding: 0 0.7rem 0 0.7rem;
+        width: 100%;
+        height: min-content;
+        backdrop-filter: blur(6px); }
+        .progress-container div.cardsCoaches div.cardCoach div h2 {
+          font-size: 1.2rem;
+          margin-bottom: -0.5rem; }
+        .progress-container div.cardsCoaches div.cardCoach div h3 {
+          font-size: 1.1rem;
+          margin-bottom: -1rem; }
+        .progress-container div.cardsCoaches div.cardCoach div h4 {
+          font-size: 1rem;
+          margin-bottom: -0.5rem; }
+    .progress-container div.cardsCoaches a.strava-login {
+      margin: 2rem auto;
+      padding: 0.5rem;
+      width: 90%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #FC4C02; }
+      .progress-container div.cardsCoaches a.strava-login img {
+        margin-left: 0.5rem;
+        height: 2rem; }
   .progress-container div.img-user-progress {
     width: 100%;
     margin: 0 auto;
@@ -936,7 +1028,7 @@ footer {
         outline: none;
         background-color: transparent;
         border-color: #696969; }
-  .progress-container div:nth-child(2) form select {
+  .progress-container div:nth-child(2) form select.unidadesSelect {
     position: absolute;
     color: #ffffff;
     font-size: 1rem;
@@ -951,8 +1043,35 @@ footer {
     -moz-border-radius: 4px;
     -ms-border-radius: 4px;
     -o-border-radius: 4px; }
-    .progress-container div:nth-child(2) form select:focus {
+    .progress-container div:nth-child(2) form select.unidadesSelect:focus {
       outline: none; }
+  .progress-container div:nth-child(2) form div {
+    margin: auto;
+    width: 100%; }
+    .progress-container div:nth-child(2) form div select {
+      margin: auto;
+      border-top: 0;
+      border-left: 0;
+      border-right: 0;
+      border-bottom: 2px;
+      border-style: solid;
+      padding: 0 0 0.4rem 0.7rem;
+      border-color: #126fbb;
+      color: #ffffff;
+      background-color: transparent;
+      width: 100%;
+      font-size: 1.2rem;
+      margin-bottom: 0.7rem;
+      outline: 0px;
+      border-radius: 1px;
+      -webkit-border-radius: 1px;
+      -moz-border-radius: 1px;
+      -ms-border-radius: 1px;
+      -o-border-radius: 1px; }
+      .progress-container div:nth-child(2) form div select:focus {
+        outline: none;
+        background-color: #353535;
+        border-color: none; }
   .progress-container div:nth-child(3) div {
     width: 100%; }
     .progress-container div:nth-child(3) div select {
@@ -1011,8 +1130,10 @@ footer {
     }
 */
 .register-container {
+  margin-top: 2.6rem;
   font-family: Roboto-italic;
   width: 100%;
+  height: auto;
   background-color: #222222;
   display: grid;
   min-height: calc(100vh - var(--navbar-height));
@@ -1135,7 +1256,31 @@ footer {
           color: #8D8D8D;
           font-size: 0.8em;
           margin-bottom: 0.3rem; }
-        .register-container .form-container form.inline-form-text div input[type="date"], .register-container .form-container form.inline-form-text div input[type="text"], .register-container .form-container form.inline-form-text div input[type="password"], .register-container .form-container form.inline-form-text div input[type="password"], .register-container .form-container form.inline-form-text div input[type="number"] {
+        .register-container .form-container form.inline-form-text div label[for='FotoPerfil'] {
+          display: grid;
+          grid-template-columns: repeat(1, 1fr); }
+          .register-container .form-container form.inline-form-text div label[for='FotoPerfil'] p {
+            margin: 0 auto 1rem auto; }
+          .register-container .form-container form.inline-form-text div label[for='FotoPerfil'] div.img-profile-coach {
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            width: 15rem;
+            height: auto;
+            overflow: hidden; }
+            .register-container .form-container form.inline-form-text div label[for='FotoPerfil'] div.img-profile-coach img {
+              background-color: #ffffff;
+              height: auto;
+              width: 100%; }
+          .register-container .form-container form.inline-form-text div label[for='FotoPerfil'] div.next {
+            margin-top: -0.20rem;
+            width: 15rem;
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px; }
+          .register-container .form-container form.inline-form-text div label[for='FotoPerfil'] input[type="file"] {
+            display: none; }
+        .register-container .form-container form.inline-form-text div input[type="date"], .register-container .form-container form.inline-form-text div input[type="text"], .register-container .form-container form.inline-form-text div input[type="password"], .register-container .form-container form.inline-form-text div input[type="password"], .register-container .form-container form.inline-form-text div input[type="number"], .register-container .form-container form.inline-form-text div textarea {
           border-top: 0;
           border-left: 0;
           border-right: 0;
@@ -1144,11 +1289,41 @@ footer {
           color: #ffffff;
           background-color: transparent;
           width: 100%;
-          font-size: 1.2rem; }
-          .register-container .form-container form.inline-form-text div input[type="date"]:focus, .register-container .form-container form.inline-form-text div input[type="text"]:focus, .register-container .form-container form.inline-form-text div input[type="password"]:focus, .register-container .form-container form.inline-form-text div input[type="password"]:focus, .register-container .form-container form.inline-form-text div input[type="number"]:focus {
+          font-size: 1.2rem;
+          font-family: Oxygen; }
+          .register-container .form-container form.inline-form-text div input[type="date"]:focus, .register-container .form-container form.inline-form-text div input[type="text"]:focus, .register-container .form-container form.inline-form-text div input[type="password"]:focus, .register-container .form-container form.inline-form-text div input[type="password"]:focus, .register-container .form-container form.inline-form-text div input[type="number"]:focus, .register-container .form-container form.inline-form-text div textarea:focus {
             outline: none;
             background-color: transparent;
             border-color: #696969; }
+        .register-container .form-container form.inline-form-text div textarea {
+          height: 6rem;
+          resize: none; }
+        .register-container .form-container form.inline-form-text div div.selectFull select {
+          margin: -1rem auto 2rem auto;
+          border-top: 0;
+          border-left: 0;
+          border-right: 0;
+          border-bottom: 2px;
+          border-style: solid;
+          padding: 0 0 0.4rem 0.7rem;
+          border-color: #126fbb;
+          color: #ffffff;
+          background-color: transparent;
+          width: 90%;
+          font-size: 1.2rem;
+          outline: 0px;
+          border-radius: 1px;
+          -webkit-border-radius: 1px;
+          -moz-border-radius: 1px;
+          -ms-border-radius: 1px;
+          -o-border-radius: 1px; }
+          @media (max-width: 375px) {
+            .register-container .form-container form.inline-form-text div div.selectFull select {
+              width: 86%; } }
+          .register-container .form-container form.inline-form-text div div.selectFull select:focus {
+            outline: none;
+            background-color: #353535;
+            border-color: none; }
         .register-container .form-container form.inline-form-text div div {
           display: inline-block; }
           .register-container .form-container form.inline-form-text div div select {
@@ -1194,6 +1369,31 @@ footer {
         .register-container .form-container form.inline-form-text div.next:hover {
           background-color: #1250dc;
           cursor: pointer; }
+      .register-container .form-container form.inline-form-text .facebook-login {
+        padding: 0.9rem;
+        font-size: 1rem;
+        margin: 4rem auto 0 auto;
+        width: 60%;
+        grid-column-start: span 2;
+        display: flex;
+        align-items: center;
+        justify-content: center; }
+        .register-container .form-container form.inline-form-text .facebook-login img {
+          margin-left: 0.5rem;
+          height: 1.3rem; }
+      .register-container .form-container form.inline-form-text .strava-login {
+        padding: 0.5rem;
+        font-size: 1rem;
+        margin: 1.2rem auto 0 auto;
+        width: 60%;
+        grid-column-start: span 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #FC4C02; }
+        .register-container .form-container form.inline-form-text .strava-login img {
+          margin-left: 0.5rem;
+          height: 2rem; }
     .register-container .form-container form.inline-form-checkbox {
       margin: 3rem auto;
       display: grid;
@@ -1279,6 +1479,29 @@ footer {
           cursor: pointer; }
     .register-container .form-container form.columns-form {
       grid-template-columns: repeat(2, 2fr); }
+      .register-container .form-container form.columns-form .facebook-login {
+        margin: 3rem auto 0 auto;
+        padding: 0.9rem;
+        width: 100%;
+        grid-column-start: span 2;
+        display: flex;
+        align-items: center;
+        justify-content: center; }
+        .register-container .form-container form.columns-form .facebook-login img {
+          margin-left: 0.5rem;
+          height: 1.3rem; }
+      .register-container .form-container form.columns-form .strava-login {
+        margin: 0.5rem auto;
+        padding: 0.5rem;
+        width: 100%;
+        grid-column-start: span 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #FC4C02; }
+        .register-container .form-container form.columns-form .strava-login img {
+          margin-left: 0.5rem;
+          height: 2rem; }
     .register-container .form-container .sucess {
       color: #ffffff;
       filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); }

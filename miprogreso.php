@@ -1,15 +1,15 @@
 <?php 
     session_start();
 
-    if(isset($_SESSION['id_usuario']) && $_SESSION['id_usuario'] != ''){
+    if(isset($_SESSION['idUsuario']) && $_SESSION['idUsuario'] != ''){
         include_once('php/database.php');
         $conexion = Conexion::Conectar();
+        $funcionesDB = new funcionesDB;
     
-        $result = $conexion->prepare('SELECT nombre, unidadAltura, unidadPeso, edad, altura, peso, objetivo, nivel FROM usuarios WHERE id_usuario=?');
-        $result->execute([$_SESSION['id_usuario']]);
-        $data = $result->fetchAll(PDO::FETCH_ASSOC);
+    
+        $data = $funcionesDB->obtenerDatosCompletos($conexion, $_SESSION['idUsuario']);
 
-        $nombre = $data[0]['nombre'];
+        $rolUsuario = $data[0]['tipoUsuario'];
         $unidadAltura = $data[0]['unidadAltura'];
         $unidadPeso = $data[0]['unidadPeso'];
         $edad = $data[0]['edad'];
@@ -17,13 +17,19 @@
         $altura = $data[0]['altura'];
         $objetivo = $data[0]['objetivo'];
         $nivelEntrenamiento = $data[0]['nivel'];
+        $lesiones = $data[0]['lesiones'];
+        $porcentajeGrasa = $data[0]['porcentajeGrasa'];
+        $idCoachNutriologo = $data[0]['idCoachNutriologo'];
+        $idCoachNutriologo = $data[0]['idCoachEntrenador'];
 
-        $IMC = number_format($peso / ($altura  / 100 * $altura / 100), 2);
+        if ($altura != null && $peso != null && $altura != '' && $peso != '') {
+            $IMC = number_format($peso / ($altura  / 100 * $altura / 100), 2);
+        }
 
     }else{
         header('location: login.php');
     }
-
+    
 ?>
 <!DOCTYPE html>
 <html lang = es>
@@ -32,53 +38,18 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel = "stylesheet" href = "src/css/styles.css" type ="TEXT/CSS">
+        <link rel="icon" type="image/png" href="src/img/logo.png" sizes="64x64">
         <title>Mi Progreso</title>
     </head>
 
     <body>
-        <header>
-            <nav class="fixed closed">
-                <a href = "" class = "brand-logo center"><img src="src/img/logo.png" alt=""></a>
-                <div class="sidenav-trigger hide show-on-small-and-down right">
-                    <button class="menu" onclick="this.parentNode.parentNode.classList.toggle('opened');this.parentNode.parentNode.classList.toggle('closed');this.setAttribute('aria-expanded', this.classList.contains('opened'))" aria-label="Main Menu">
-                        <svg width="40" height="40" viewBox="0 0 100 100">
-                          <path class="line line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
-                          <path class="line line2" d="M 20,50 H 80" />
-                          <path class="line line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
-                        </svg>
-                      </button>
-                </div>
-                <div class="sidenav-trigger right">
-                    <a href="cerrarSesion.php" class="hide-on-small-and-down">Cerrar sesión</a>
-                </div>
-                <!--ESta cerrado por el hide-->
-                <aside class="show">
-                    <div>
-                        <ul>
-                            <li><a href="index.php">Inicio</a></li>
-                            <li><a href="entrenamiento.php">Entrenamiento</a></li>
-                            <li><a href="calculadora.php">Nutrición</a></li>
-                            <li><a href="motivaciones.php">Motivación</a></li>
-                            <li><a href="cerrarSesion.php">Cerrar sesión</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                    </div>
-                </aside>
-                <ul class="hide-on-small-and-down">
-                        <li><a href="index.php">Inicio</a></li>
-                        <li><a href="entrenamiento.php">Entrenamiento</a></li>
-                        <li><a href="calculadora.php">Nutrición</a></li>
-                        <li><a href="motivaciones.php">Motivación</a></li>
-                </ul>
-            </nav>
-        </header>
+        <?php include_once('php/handlebars/header.php')?>
         <main>
             <section class="background background-image-8">
                 <div class="background-filter"></div>
                 <div class="image-8">
                     <h1>TU PROGRESO</h1>
-                    <h2 class="nameUser"><?php echo $nombre?></h2>
+                    <h2 class="nameUser"><?php echo $_SESSION['nombreUsuario']?></h2>
                 </div>
             </section>
             <section class="divider hide-on-small-and-down">
@@ -89,9 +60,7 @@
                         <div class="formPhoto">
                             <?php 
 
-                            $result = $conexion->prepare('SELECT src, fechaCreacion FROM imagenes WHERE id_usuario=?');
-                            $result->execute([$_SESSION['id_usuario']]);
-                            $data = $result->fetchAll(PDO::FETCH_ASSOC);
+                            $data = $funcionesDB->obtenerImagenes($conexion, $_SESSION['idUsuario']);
                             if(count($data) != 0){
                                 $template = '';
 
@@ -211,7 +180,7 @@
                             <label for="Nombre">
                                 <p>Nombre</p>
                             </label>
-                            <input type="text" name="Nombre" value="<?php echo $nombre?>">
+                            <input type="text" name="Nombre" value="<?php echo $_SESSION['nombreUsuario']?>">
                             <label for="Edad">
                                 <p>Edad</p>
                             </label>
@@ -221,14 +190,14 @@
                             </label>
                             <input type="number" name="Peso" value="<?php echo $peso?>">
                                 <select name="weightUnit" id="weightUnit">
-                                    <option value="<?php echo $unidadPeso ?>"><?php echo $unidadPeso ?></option>
+                                    <option value="<?php echo $unidadPeso ?>"><?php echo $unidadPeso?></option>
                                 </select>
                             <label for="Altura">
                                 <p>Altura</p>
                             </label>
                             <input type="number" name="Altura" value="<?php echo $altura?>">
                                 <select name="heightUnit" id="heightUnit" readonly>
-                                    <option value="<?php echo $unidadAltura ?>"><?php echo $unidadAltura ?></option>
+                                    <option value="<?php echo $unidadAltura ?>"><?php echo $unidadAltura?></option>
                                 </select>
                             <label for="IMC">
                                 <p>IMC</p>
@@ -245,10 +214,8 @@
                                 <select name="Objetivo">
                                     <option value="<?php echo $objetivo ?>"><?php echo $objetivo ?></option>
 
-                                    <?php 
-                                        $result = $conexion->prepare('SELECT objetivo FROM objetivos WHERE objetivo!=?');
-                                        $result->execute([$objetivo]);
-                                        $data = $result->fetchAll(PDO::FETCH_ASSOC);
+                                    <?php
+                                        $data = $funcionesDB->obtenerDatosComunes($conexion, 'objetivo', 'objetivos', $objetivo);
 
                                         foreach ($data as $dato){
                                             echo '<option value ="' . $dato['objetivo'].'">' .  $dato['objetivo']. '</option>';
@@ -265,9 +232,7 @@
                                     <option value="<?php echo $nivelEntrenamiento ?>"><?php echo $nivelEntrenamiento ?></option>
 
                                     <?php 
-                                        $result = $conexion->prepare('SELECT nivel FROM niveles_posibles WHERE nivel!=?');
-                                        $result->execute([$nivelEntrenamiento]);
-                                        $data = $result->fetchAll(PDO::FETCH_ASSOC);
+                                        $data = $funcionesDB->obtenerDatosComunes($conexion, 'nivel', 'niveles_posibles', $objetivo);
 
                                         foreach ($data as $dato){
                                             echo '<option value ="' . $dato['nivel'].'">' .  $dato['nivel']. '</option>';
@@ -278,7 +243,7 @@
                             <label for="Lesiones">
                                 <p>Lesiones</p>
                             </label>
-                            <input type="number" name="Lesiones" value="0" readonly>
+                            <input type="number" name="Lesiones" value="<?php echo $lesiones?>">
                         </form>
                     </div>
                 </div>
@@ -310,6 +275,8 @@
             </footer>
         </main>
     </body>
+    <script src="src/js/photo-profile.js"></script>
     <script src ="src/js/progreso-images.js"></script>
     <script src="src/js/progreso-app.js"></script>
+    <script src ="src/js/commun.js"></script>
 </html>

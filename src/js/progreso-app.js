@@ -1,11 +1,9 @@
 var inputs = document.querySelectorAll('input[type="text"],input[type="number"], select');
-
 inputs.forEach(input => {
     input.addEventListener('change', funcionInputs);
 });
 
 function funcionInputs(){
-    //console.log(this);
 
     var data = new FormData();    
 
@@ -18,7 +16,6 @@ function funcionInputs(){
             body: data,
             "Content-Type": "application/json"
         }).then(response => response.json()).then(data => {obj = data
-            // console.log(data);
             if (obj['error'] != ''){
                 msgError = document.createElement('div');
                 msgError.classList.add('error-msg');
@@ -82,6 +79,12 @@ function validarDatos(e){
     }if(e.name == 'Objetivo'){
         return true;
     }if(e.name == 'Nivel'){
+        return true;
+    }if(e.name == 'Lesiones'){
+        return true;
+    }if(e.name == 'TipoDieta'){
+        return true;
+    }if(e.name == 'tipoFormula'){
         return true;
     }
 }

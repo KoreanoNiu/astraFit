@@ -3,18 +3,27 @@
         session_start();
         include_once('database.php');
         $conexion = Conexion::Conectar();
+        $funcionesDB = new funcionesDB;
         
-        $var = Conexion::sanitizarVariables($_POST['nombre']);
-    
-        $sql = "UPDATE usuarios SET " . strtolower($var) ."=:data WHERE id_usuario=:id_usuario";
-        $result = $conexion->prepare($sql);
-    
+        $var = $funcionesDB->sanitizarVariables($_POST['nombre']);
+
         $data = [
-            ":data" => Conexion::sanitizarVariables($_POST[$var]),
-            ":id_usuario" => $_SESSION['id_usuario']
+            ":data" => $funcionesDB->sanitizarVariables($_POST[$var]),
+            ":idUsuario" => $_SESSION['idUsuario']
         ];
-    
-        $result->execute($data);
+
+        if ($var == 'Nombre') {
+            $_SESSION['nombreUsuario'] = $funcionesDB->sanitizarVariables($_POST[$var]);
+            $tabla = 'usuarios';
+        }else{
+            $tabla = 'clientes';
+
+            if (!$var == 'tipoDieta' || !$var == 'tipoFormula'){
+                $var = strtolower($var);
+            }
+        }
+
+        $funcionesDB->actualizarDatos($conexion, $var, $tabla, $data);
         
         $json = array(
             "error" => '',

@@ -1,83 +1,39 @@
 <?php 
-
     session_start();
-    include_once('php/database.php');
-    $cadena = "Carlos Humberto dasasd prueb'ass Hola mundo@. //a1robocharley.lego@gmail.com''''''==='asdas ó,á,í,é,ú''''asd//?'']";    
-
-    // $var = preg_replace("/[^A-Za-z0-9^$|\s+^@^.^áéíóúÁÉÍÓÚñÑ]/", '', $cadena);
-
-    $var = Conexion::sanitizarVariables($cadena);
-
-    echo $var;
     
-    echo '<br>' . $_SESSION['id_usuario'];
-    
-    /* foreach ($data[0] as $dato) {
-        echo $dato;
-    } */
-
-    /*
-        $session_start();
-
     include_once('php/database.php');
     $conexion = Conexion::Conectar();
+    $funcionesDB = new funcionesDB;
 
-    $result = $conexion->prepare('SELECT * FROM usuarios');
-    $result->execute();
-    $data = $result->fetchAll(PDO::FETCH_ASSOC);
-    
-    var_dump($data);
-    // echo ($data[0]['id']);
+    //Selecciona un Coach nutriologo para el usuario
+    $idCoachNutriologo = $funcionesDB->obtenerIdCoach($conexion, 'Nutriologo');
+    //Selecciona un Coach entrenador para el usuario
+    $idCoachEntrenador = $funcionesDB->obtenerIdCoach($conexion, 'Entrenador');
 
-    $nombre = $data[0]['nombre'];
-    $edad = $data[0]['edad'];
-    $peso = $data[0]['peso'];
-    $altura = $data[0]['altura'];
-    $IMC = $data[0]['IMC'];
+    $data = [
+        ":idCoachNutriologo" => $idCoachNutriologo[0]['idCoach'],
+        ":idCoachEntrenador" => $idCoachEntrenador[0]['idCoach']
+    ];
 
-    echo $nombre, $edad, $peso, $altura, $IMC;
+    $dataCoach = $funcionesDB->obtenerDatosCoaches($conexion, $data);
 
-    foreach ($data as $key){
-    
-        echo $key['nombre'];
-    }
+    echo $dataCoach[0]['nombre'] . '<br>';
+    echo $dataCoach[0]['srcFotoPerfil'] . '<br>';
+    echo $dataCoach[0]['tipoCoach'] . '<br>';
+    echo $dataCoach[0]['descripcion'] . '<br>' . '<br>';
 
-    echo $_SESSION['id_usuario'];
-    
-    
+    echo $dataCoach[1]['nombre'] . '<br>';
+    echo $dataCoach[1]['srcFotoPerfil'] . '<br>';
+    echo $dataCoach[1]['tipoCoach'] . '<br>';
+    echo $dataCoach[1]['descripcion'] . '<br>';
+    //Acomodar la nueva version de la base de datos
+    //Meterle esta putada del similudor al registro y mis datos
+    //Jalar los datos de la dieta y calcularla
+    //Darle toques finales
+    //Incluir inicio de sesion con Facebook y Strava
+    //Finalizar
 
+    $cadena = 'tipoDieta';
+    echo strtolower($cadena);
 
-    $query = 'SELECT * FROM usuarios';
-    $result = mysqli_query($conn, $query);
-    $arraydb = array();
-    
-    foreach ($result as $key) {
-        $arraydb = $key;
-    }
-    
-    echo json_encode($arraydb);
-    */
-
-    /* if(isset($_POST['nombreUsuario'])) {
-        $query = "INSERT INTO usuarios (nombre, email, password, unidadAltura, unidadPeso, fecha, altura, peso, genero, objetivo, nivel) VALUES (:nombre, :email, :password, :unidadAltura, :unidadPeso, :fecha, :altura, :peso, :genero, :objetivo, :nivel)";
-        $result = $conexion->prepare($query);
-
-        $result->bindParam(':nombre', $_POST['nombreUsuario']);
-        $result->bindParam(':email', $_POST['email']);
-        $result->bindParam(':password', $_POST['contrasena']);
-        $result->bindParam(':unidadAltura', $_POST['unidadAltura']);
-        $result->bindParam(':unidadPeso', $_POST['unidadPeso']);
-        $result->bindParam(':fecha', $_POST['fecha']);
-        $result->bindParam(':altura', $_POST['altura']);
-        $result->bindParam(':peso', $_POST['peso']);
-        $result->bindParam(':genero', $_POST['genero']);
-        $result->bindParam(':objetivo', $_POST['objetivo']);
-        $result->bindParam(':nivel', $_POST['nivel']);
-
-        $result->execute();
-    }
-
-    setTimeout(function(){
-        window.location.replace("/astraFit/miprogreso.php");
-    }, 5000); */
 ?>

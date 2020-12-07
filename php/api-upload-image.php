@@ -1,25 +1,22 @@
 <?php
-    session_start();
-
     if(isset($_POST['fechaCreacion'])){
+        session_start();
         include_once('database.php');
         $conexion = Conexion::Conectar();
+        $funcionesDB = new funcionesDB;
     
         $uploadDir = "../users/uploads-progress-images/" . uniqid() . '.jpg';
         header('Content-Type: application/json');
         
         $fechaCreacion = $_POST['fechaCreacion'];
 
-        $sql = "INSERT INTO imagenes (id_usuario, src, fechaCreacion) VALUES (:id_usuario, :url, :fechaCreacion)";
-        $result = $conexion->prepare($sql);
-
         $data = [
-            ":id_usuario" => $_SESSION['id_usuario'],
+            ":idUsuario" => $_SESSION['idUsuario'],
             ":url" => $uploadDir,
             ":fechaCreacion" => $fechaCreacion,
         ];
 
-        $result->execute($data);
+        $funcionesDB->insertarImagen($conexion, $data);
 
         $json = array(
             "uploadDir" => $uploadDir,
@@ -31,12 +28,12 @@
         move_uploaded_file($_FILES['image']['tmp_name'], $uploadDir);
         
     }else if(isset($_POST['urlAEliminar'])){
+        session_start();
         include_once('database.php');
         $conexion = Conexion::Conectar();
-    
-        $sql = "DELETE FROM imagenes WHERE src=?";
-        $result = $conexion->prepare($sql);
-        $result->execute([$_POST['urlAEliminar']]);
+        $funcionesDB = new funcionesDB;
+        
+        $funcionesDB->eliminarImagen($conexion, $_POST['urlAEliminar']);
 
         unlink($_POST['urlAEliminar']);
     }

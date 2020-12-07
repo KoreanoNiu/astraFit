@@ -1,9 +1,23 @@
 <?php 
     session_start();
 
-    if(isset($_SESSION['id_usuario']) && $_SESSION['id_usuario'] != ''){
+    if(isset($_SESSION['idUsuario']) && $_SESSION['idUsuario'] != ''){
         header('location: miprogreso.php');
+    }else{
+        //Facebook api
+        require 'php/fb-init.php';
+        $login_url = $helper->getLoginUrl('http://localhost/astraFit/php/registro-api.php', $permissions);
+
+        require 'php/strava-init.php';
+        define('redirect_url', 'http://localhost/astraFit/php/registro-api.php');
+
+        //Strava Api
+        $api = new StravaApi(client_id, client_secret);
+        
+        $urlAuthStrava = $api->authenticationUrl(redirect_url, approvalPrompt, scope);
+
     }
+    
 ?>
 <!DOCTYPE html>
 <html lang = es>
@@ -12,43 +26,37 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel = "stylesheet" href = "src/css/styles.css" type ="TEXT/CSS">
-        <title>Main index</title>
+        <link rel="icon" type="image/png" href="src/img/logo.png" sizes="64x64">
+        <title>Registro</title>
     </head>
 
     <body>
-        <header>
-            <nav class="fixed closed">
-                <a href = "" class = "brand-logo center"><img src="src/img/logo.png" alt=""></a>
-                <div class="sidenav-trigger right">
-                    <button class="menu" onclick="this.parentNode.parentNode.classList.toggle('opened');this.parentNode.parentNode.classList.toggle('closed');this.setAttribute('aria-expanded', this.classList.contains('opened'))" aria-label="Main Menu">
-                        <svg width="40" height="40" viewBox="0 0 100 100">
-                          <path class="line line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
-                          <path class="line line2" d="M 20,50 H 80" />
-                          <path class="line line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
-                        </svg>
-                      </button>
+        <header class="right main-header">
+            <div class="full-menu">
+                <ul class="">
+                    <li><a href="index.php">INICIO</a></li>
+                    <li><a href="entrenamiento.php">ENTRENAMIENTO</a></li>
+                    <li><a href="calculadora.php">CALCULADORA</a></li>
+                    <li><a href="motivaciones.php">MOTIVACION</a></li>
+                    <li><a href="login.php">INICIAR SESIÓN</a></li>
+                </ul>
+            </div>
+            <nav>
+                <div class="trigger show">
+                    <svg class="bars white" viewBox="0 0 100 100" onclick="this.classList.toggle('active');document.querySelector('.full-menu').classList.toggle('opened');">
+                        <path class="line top" d="m 30,33 h 40 c 13.100415,0 14.380204,31.80258 6.899646,33.421777 -24.612039,5.327373 9.016154,-52.337577 -12.75751,-30.563913 l -28.284272,28.284272"></path>
+                        <path class="line middle" d="m 70,50 c 0,0 -32.213436,0 -40,0 -7.786564,0 -6.428571,-4.640244 -6.428571,-8.571429 0,-5.895471 6.073743,-11.783399 12.286435,-5.570707 6.212692,6.212692 28.284272,28.284272 28.284272,28.284272"></path>
+                        <path class="line bottom" d="m 69.575405,67.073826 h -40 c -13.100415,0 -14.380204,-31.80258 -6.899646,-33.421777 24.612039,-5.327373 -9.016154,52.337577 12.75751,30.563913 l 28.284272,-28.284272"></path>
+                    </svg>
+
                 </div>
-                <div class="sidenav-trigger left hide">
+                <div class="sidenav-trigger hide">
                     <button class="backForm">
                         <svg viewBox="0 0 100 152" xmlns="http://www.w3.org/2000/svg">
                             <path d="M0 76l79 76 19-18-61-59 63-56L80 0z"></path>
                         </svg>
                     </button>
                 </div>
-                <!--ESta cerrado por el hide-->
-                <aside class="show">
-                    <div>
-                        <ul>
-                            <li><a href="index.php">Inicio</a></li>
-                            <li><a href="entrenamiento.html">Entrenamiento</a></li>
-                            <li><a href="calculadora.html">Nutrición</a></li>
-                            <li><a href="motivaciones.html">Motivación</a></li>
-                            <li><a href="login.php">Iniciar sesión</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                    </div>
-                </aside>
             </nav>
         </header>
         <main>
@@ -59,6 +67,8 @@
                     </div>
                     <div class="form-content background-image-sucess">
                         <header>
+                            <p>¿Ya tienes cuenta?</p>
+                            <a href="login.php">¡Inicia sesión aquí!</a>
                             <h1>¿Eres hombre o mujer?</h1>
                             <p>Tu entrenador personalizado te espera. Este es tu primer paso</p>
                         </header>
@@ -82,6 +92,8 @@
                                     <p>Hombre</p>
                                 </label>
                             </div>
+                            <?php echo '<a href="'. $login_url .'" class="facebook-login">Registrate con Facebook <img src="src/img/logo-de-facebook.svg"></a>'; ?>
+                            <?php echo '<a href="'. $urlAuthStrava .'" class="strava-login">Registrate con Strava <img src="src/img/strava-logo.svg"></a>'; ?>
                         </form>
                     </div>
                     <div class="form-content hide">
@@ -379,4 +391,5 @@
         </main>
     </body>
     <script src ="src/js/registro.js"></script>
+    <script src ="src/js/commun.js"></script>
 </html>

@@ -234,6 +234,67 @@
     background-color: #333333;
     font-family: Roboto-italic;
 
+    div.cardsCoaches{
+        width: 100%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        padding-bottom: 1rem;
+
+        div.cardCoach{
+            margin: 1rem auto 0 auto;
+            width: 90%;
+            height: 22rem;
+            background-color: white;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            overflow: hidden;
+            border-radius: 4px;
+            filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.25));
+            -webkit-filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.25));
+                
+            background-position-y: center;
+            background-position-x: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+
+            div{
+                background-color: rgba(255, 255, 255, 0.3);
+                padding: 0 0.7rem 0 0.7rem;
+                width: 100%;
+                height: min-content;
+                backdrop-filter: blur(6px);
+                h2{
+                    font-size: 1.2rem;
+                    margin-bottom: -0.5rem;
+                }
+                h3{
+                    font-size: 1.1rem;
+                    margin-bottom: -1rem;
+                }
+                h4{
+                    font-size: 1rem;
+                    margin-bottom: -0.5rem;
+                }
+            }
+        }
+        a.strava-login{
+            margin: 2rem auto;
+            padding: 0.5rem;
+            width: 90%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #FC4C02;
+
+            img{
+                margin-left: 0.5rem;
+                height: 2rem;
+            }
+        }
+    }
+
     div.img-user-progress{
         width: 100%;
         margin: 0 auto;
@@ -292,7 +353,7 @@
                     -ms-transition: opacity, 0.85s;
                     -o-transition: opacity, 0.85s;
                     opacity: 1;
-}
+                }
 
                 margin-top: 1rem;
                 width: 100%;
@@ -427,7 +488,7 @@
     }
     div:nth-child(2){
         form{
-            select{
+            select.unidadesSelect{
                 position: absolute;
                 color: #ffffff;
                 font-size: 1rem;
@@ -437,7 +498,6 @@
                 margin-top: -0.7rem;
                 margin-left: -4.2rem;
                 padding-right: 1.2rem;
-
                 border-radius: 4px;
                 -webkit-border-radius: 4px;
                 -moz-border-radius: 4px;
@@ -446,6 +506,38 @@
 
                 &:focus{
                     outline: none;
+                }
+            }
+            div{
+                margin: auto;
+                width: 100%;
+
+                select{
+                    margin: auto;
+                    border-top: 0;
+                    border-left: 0;
+                    border-right: 0;
+                    border-bottom: 2px;
+                    border-style: solid;
+                    padding: 0 0 0.4rem 0.7rem;
+                    border-color: #126fbb;
+                    color: #ffffff;
+                    background-color: transparent;
+                    width: 100%;
+                    font-size: 1.2rem;
+                    margin-bottom: 0.7rem;
+                    outline:0px;
+                    border-radius: 1px;
+                    -webkit-border-radius: 1px;
+                    -moz-border-radius: 1px;
+                    -ms-border-radius: 1px;
+                    -o-border-radius: 1px;
+
+                    &:focus{
+                        outline: none;
+                        background-color: #353535;
+                        border-color: none;
+                    }
                 }
             }
         }

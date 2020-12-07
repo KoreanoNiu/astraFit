@@ -117,13 +117,12 @@
         }
     }
 }
-
 //para los errores
 div.error-msg{
+    z-index: 1000;
+    top: 0;
     font-family: Roboto-italic;
-    top: -(var(--navbar-height));
     position: fixed;
-    z-index: 999;
     width: 100vw;
     height: 100vh;
 
