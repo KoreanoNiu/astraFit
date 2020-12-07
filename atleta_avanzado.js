@@ -8,11 +8,14 @@ window.onload = function(){
 }
 
 document.getElementById("nivel1").onclick = function() {
-var modalidad;
+    document.getElementById("card1").style.display = "none";
+    document.getElementById("card2").style.display = "none";
+    var modalidad;
 modalidad=document.getElementById("modalidad").value;
 if(modalidad=="GYM"){
         var nivel;
     nivel=document.getElementById("nivel").value;
+ 
         document.getElementById("desaparecer").style.display = "block";
         document.getElementById("0").style.display = "block";
         document.getElementById("elselect").style.display = "none";
@@ -1330,6 +1333,7 @@ if(modalidad=="GYM"){
 if(modalidad=="CASA"){
     var nivel;
 nivel=document.getElementById("nivel").value;
+
     document.getElementById("desaparecer").style.display = "block";
     document.getElementById("0").style.display = "block";
     document.getElementById("elselect").style.display = "none";

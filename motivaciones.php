@@ -623,7 +623,7 @@
                     <span class="TituloInformacion"> <br>¿ Poque es importante liberar estres ? </span>
 
                     <div id="ContenidoTexto ContenidoTextoCompleto">
-                        <p class="TextoInformacion"> El extres es algo normal en nuestra vida diaria pero no es el
+                        <p class="TextoInformacion"> El estres es algo normal en nuestra vida diaria pero no es el
                             enemigo , es importante para nuestro crecimiento como personas , sirve para mantenerte
                             enfocada en el objetivo
                             pero cuando el extres es excesivo y no sabes manejarla y afecta a tu salud. existen varios
@@ -843,7 +843,7 @@
 
                 <img class="imagenLado imagenLadoContrario" src="imagenes/locus.jpg">
                 <div id="informacion" class="informacionContrario">
-                    <span class="TituloInformacion"> <br>¿ Que es el locus de control? </span>
+                    <span class="TituloInformacion"> <br>¿  Qué es el locus de control? </span>
                     <div id="ContenidoTexto ContenidoTextoCompleto">
                         <p class="TextoInformacion">Hasta que punto crees que tienes control sobre tu vida </p>
                         <p class="TextoInformacion"> <img class="flecha" src="src/img/flecha.png"> Locus de control
