@@ -417,8 +417,7 @@
                     <p class="TextoInformacion">  <img class="flecha"src="src/img/flecha.png"> Identidad
                         cuando tu identidad esta alineada con tus metas y habitos que intentas construir, la cantidad de voluntad que neceistas para mantenerlos disminuye
                         quieres divertirte o quieres generar un cambio .</p>
-                  <p class="TextoInformacion">  <img class="flecha"src="src/img/flecha.png"> Ambitos de alto nivel  ten pensamientos que te hagan iniciar un proyecto porque quiero  .</p>
-                    
+                  
                     </div>
                 </div>
 
