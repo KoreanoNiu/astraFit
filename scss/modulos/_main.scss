@@ -23,8 +23,7 @@ main{
             -webkit-transition: background-color, 0.7s;
             -moz-transition: background-color, 0.7s;
             -ms-transition: background-color, 0.7s;
-            -o-transition: background-color, 0.7s;
-    
+            -o-transition-webkit-transition: background-color, 0.7s;
             &:hover{
                 background-color: rgba(18, 80, 220, 1);
             }
@@ -118,7 +117,7 @@ main{
         border-color: transparent transparent var(--colorSectionInformation) transparent;
     }
 
-    section.information, .footerInformation{
+    section.information, .footerInformation, .strava-information{
         width: 100%;
         height: auto;
         background-color: var(--colorSectionInformation);

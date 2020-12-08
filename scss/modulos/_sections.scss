@@ -236,7 +236,8 @@
 
     div.cardsCoaches{
         width: 100%;
-        margin: 0 auto;
+        margin: auto;
+        margin-top: 0;
         display: grid;
         grid-template-columns: repeat(1, 1fr);
         padding-bottom: 1rem;
@@ -297,7 +298,9 @@
 
     div.img-user-progress{
         width: 100%;
-        margin: 0 auto;
+        margin: auto;
+        height: auto;
+        display: grid;
 
         input[type="file"]{
             display: none;
@@ -305,7 +308,6 @@
 
         div.formPhoto{
             div.img-user{
-
                 img{
                     width: 100%;
                 }
@@ -418,7 +420,6 @@
             }
         }
 
-        display: grid;
         div.buttonImg{
             float: left;
             width: 95%;
@@ -487,6 +488,7 @@
         }
     }
     div:nth-child(2){
+        margin-top: 0;
         form{
             select.unidadesSelect{
                 position: absolute;
@@ -542,39 +544,97 @@
             }
         }
     }
-    div:nth-child(3){
-        div{
-            width: 100%;
+  }
+  .strava-data-container{
+    font-family: Roboto-italic;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: grid;
 
-            select{
-                border-top: 0;
-                border-left: 0;
-                border-right: 0;
-                border-bottom: 2px;
-                border-style: solid;
-                padding: 0 0 0.4rem 0.7rem;
-                border-color: #126fbb;
-                color: #ffffff;
-                background-color: transparent;
+    .strava-login{
+        margin: 2rem auto;
+        padding: 0.5rem;
+        width: 20rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #FC4C02;
+
+        img{
+            margin-left: 0.5rem;
+            height: 2rem;
+        }
+    }
+
+    .container{
+        
+        margin: 2rem auto;
+        width: 90%;
+        height: auto;
+
+        color: #000000;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+
+        background-color: #ffffff;
+        filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.20));
+        -webkit-filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.20));
+        border-radius: 4px;
+        
+        div{
+            padding: 1rem;
+            text-align: center;
+            align-content: center;
+            margin: 1rem auto 0 auto;
+            width: 95%;
+
+            h1{
+                font-weight: 600;
+            }
+
+            table{
                 width: 100%;
-                font-size: 1.2rem;
-                margin-bottom: 0.7rem;
-                outline:0px;
-                border-radius: 1px;
-                -webkit-border-radius: 1px;
-                -moz-border-radius: 1px;
-                -ms-border-radius: 1px;
-                -o-border-radius: 1px;
-                
-                &:focus{
-                    outline: none;
-                    background-color: #353535;
-                    border-color: none;
+                border-collapse: collapse;
+                tr{
+                    text-align: center;
+                }
+
+                th{
+                    background-color: #FC4C02;
+                    font-weight: 500;
+                    color: #ffffff;
+                    line-height: 2rem;
+                }
+                td{
+                    padding: 0.7rem 3rem 0.7rem 3rem;
+                }
+                tr{
+                    line-height: 2rem;
+                }
+                tr:nth-child(even){
+                    background-color: #FEFEFE;
+                }
+                tr:nth-child(odd){
+                    background-color: #F1F1F1;
+                }
+                tr:hover{
+                    background-color: #D3D3D3;
                 }
             }
         }
+
+        >div:nth-child(2){
+            overflow: auto;
+            white-space: nowrap;  
+        }
+        >div:nth-child(3){
+            overflow: auto;
+            white-space: nowrap;  
+        }
+        
     }
-  }
+}
 /*  .container{
     position: relative;
     margin: auto;
