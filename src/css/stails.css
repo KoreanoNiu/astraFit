@@ -165,25 +165,27 @@ background-image:none;
                   background-color: whitesmoke;
                   color: black;
                   height: auto;
-                 width: 50%;
-              
-                 text-align: center;
-                 position: fixed;
-                 left: 336px;
-                 bottom: 130px;
-                 transition: 1s;
-                 transform: scale(1.1);
-                 
-                 
+                  width: 50%;
+                  text-align: center;
+                  position: fixed;
+                  top: 0;
+                  margin: 10rem auto;
+                  transition: 1s;
+                  transform: scale(1);
                   border-radius: 4px;
                   -webkit-border-radius: 4px;
                   -moz-border-radius: 4px;
                   -ms-border-radius: 4px;
                   -o-border-radius: 4px;
                   filter: drop-shadow(0px 4px 4px black);
-                  -webkit-filter: drop-shadow(0px 8px 8px black);
+                  -webkit-filter: drop-shadow(0px 4px 4px black);
                   font-family: Oxygen;
-                  overflow: hidden; }
+                  overflow: hidden;
+                  -webkit-transform: scale(1);
+                  -moz-transform: scale(1);
+                  -ms-transform: scale(1);
+                  -o-transform: scale(1);
+}
                   .card div.card5-image {
                     height: min-content; }
                     .card div.card5-image img {
