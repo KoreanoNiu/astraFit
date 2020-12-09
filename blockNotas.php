@@ -105,9 +105,9 @@
 
             <main>     
                 <div id="desaparecer" style="display: block;">   
-                <section class="background background-image-10">
+                <section class="background background-image-9">
                     <div class="background-filter"></div>
-                    <div class="image-7">
+                    <div class="image-9">
                         <h1 class="titulo">Bloc de Notas  </h1>
                     </div>
                 </section>
