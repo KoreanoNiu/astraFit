@@ -151,7 +151,7 @@
                             console.log(data);
                             obj.forEach(element => {
                                 if (!comprobarDatos(element)) {
-                                    window.location.href = 'respaldoMiProgreso.php?error=Completa los campos faltantes: ' + concatenarError(obj) + 'por favor';
+                                    window.location.href = 'respaldoMiProgreso.php?error=Completa los campos faltantes: ' + concatenarError(obj) + 'para poder obtener tu dieta';
                                 }
                             });
                             document.getElementById("peso").value = obj[0]['peso'];
@@ -209,7 +209,7 @@
                             }
                             if (element[0]['peso'] == '' || element[0]['peso'] == null || element[0]['peso'] == 0) {
                                 if (element[0]['peso'] <= 40) {
-                                    error += 'El peso es menor a lo permitido';
+                                    error += 'El peso es menor a lo permitido, ';
                                 }else{
                                     error += 'Peso, ';
                                 }

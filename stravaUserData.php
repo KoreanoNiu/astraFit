@@ -48,7 +48,7 @@
             <section class="strava-information" style="background-color: #ffffff;">
                 <div class="strava-data-container">
                     <div class="container">
-                        <?php if (isset($urlAuthStrava)) {
+                    <?php if (isset($urlAuthStrava)) {
                             echo '<div>
                                         <h1>
                                             No pudimos acceder al API de Strava, refresca tu sesión de Stava, por favor.
@@ -139,46 +139,7 @@
                                         }
                                     echo '</table>
                                 </div>';
-                                echo'
-                                <div>
-                                    <h1>Crear una nueva actividad</h1>
-                                    <form action="">
-                                        <div>
-                                            <label for="">
-                                                Distancia
-                                            </label>
-                                            <input type="number">
-                                            <select name="" id="">
-                                                <option value="">Kilometros</option>
-                                                <option value="">Metros</option>
-                                                <option value="">Millas</option>
-                                                <option value="">Yardas</option>
-                                            </select>
-                                        </div>
-                                        <div>
-                                            <label for="">
-                                                Duración
-                                            </label>
-                                            <input type="number">
-                                            <input type="number">
-                                            <input type="number">
-                                        </div>
-                                        <div>
-                                            <label for="">
-                                                Nombre actividad
-                                            </label>
-                                            <input type="text">
-                                        </div>
-                                        <div>
-                                            <label for="">
-                                                Nombre actividad
-                                            </label>
-                                            <input type="text">
-                                        </div>
-                                        <input type="submit" class="strava-login" value="Crear nueva actividad">
-                                    </form>
-                                </div>';
-                        }
+                            }
                         ?>
                     </div>
                 </div>
@@ -211,9 +172,6 @@
         </main>
         <?php include_once('php/handlebars/error.php'); ?>
     </body>
-    <script src="src/js/coaches-cards.js"></script>
     <script src="src/js/photo-profile.js"></script>
-    <script src ="src/js/progreso-images.js"></script>
-    <script src="src/js/progreso-app.js"></script>
     <script src ="src/js/commun.js"></script>
 </html>
