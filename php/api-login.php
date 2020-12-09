@@ -68,7 +68,7 @@
                     $_SESSION['srcFotoPerfil'] = $data['athlete']['profile'];
                     $_SESSION['access_tokenStrava'] = $data['access_token'];
 
-                    header('Location: ../respaldoMiProgreso.php');
+                    header('Location: ../miprogreso.php');
                 }else{
                     session_destroy();
                     header('Location: ../registro.php');
@@ -114,7 +114,7 @@
                                 $_SESSION['access_tokenStrava'] = $dataUser[0]['stravaIdAthlete'];
                             }            
                         
-                            header('Location: ../respaldoMiProgreso.php');
+                            header('Location: ../miprogreso.php');
                         }else{
                             session_destroy();
                             header('Location: ../registro.php');

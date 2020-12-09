@@ -19,17 +19,28 @@
         $nivelEntrenamiento = $data[0]['nivel'];
         $lesiones = $data[0]['lesiones'];
         $porcentajeGrasa = $data[0]['porcentajeGrasa'];
+        $tipoDieta = $data[0]['tipoDieta'];
+        $tipoFormula = $data[0]['tipoFormula'];
         $idCoachNutriologo = $data[0]['idCoachNutriologo'];
-        $idCoachNutriologo = $data[0]['idCoachEntrenador'];
+        $idCoachEntrenador = $data[0]['idCoachEntrenador'];
 
-        if ($altura != null && $peso != null && $altura != '' && $peso != '') {
+        if ($altura != null && $peso != null && $altura != '' && $peso != '' && $altura != 0 && $peso != 0) {
             $IMC = number_format($peso / ($altura  / 100 * $altura / 100), 2);
+        }
+         
+        if (!isset($_SESSION['access_tokenStrava'])) {
+            require 'php/strava-init.php';
+            define('redirect_url', 'http://localhost/astraFit/php/update-strava.php?action=link');
+            
+            //Strava Api
+            $api = new StravaApi(client_id, client_secret);
+            
+            $urlAuthStrava = $api->authenticationUrl(redirect_url, approvalPrompt, scope);
         }
 
     }else{
         header('location: login.php');
     }
-    
 ?>
 <!DOCTYPE html>
 <html lang = es>
@@ -56,6 +67,148 @@
             </section>
             <section class="information">
                 <div class="progress-container">
+                    <div class="cardsCoaches" <?php if ($rolUsuario == 'admin' || $rolUsuario == 'coach') {
+                        echo 'style="display: none;"';
+                    }?>>
+                        <?php 
+                            if ($_SESSION['rol'] == 'usuario'){
+                                $data = [
+                                    ":idCoachNutriologo" => $idCoachNutriologo,
+                                    ":idCoachEntrenador" => $idCoachEntrenador
+                                ];
+
+                                $dataCoaches = $funcionesDB->obtenerDatosCoaches($conexion, $data);
+
+                                foreach ($dataCoaches as $dataCoach) {
+
+                                    echo '
+                                        <div class="cardCoach" style="background-image: url(\'' .  substr($dataCoach['srcFotoPerfil'], 3) . '\')">
+                                        <div>
+                                            <h2>' . $dataCoach['nombre'] . '</h2>
+                                            <h3>' . $dataCoach['tipoCoach'] . '</h3>
+                                            <h4>' . $dataCoach['email'] . '</h4>
+                                            <p>' . $dataCoach['descripcion'] . '</p>
+                                        </div>
+                                        </div>
+                                    ';
+                                }
+                            }
+                            if (!isset($_SESSION['access_tokenStrava'])) {
+                                echo '<a href="'. $urlAuthStrava .'" class="strava-login">Vincula tu cuenta con Strava <img src="src/img/strava-logo.svg"></a>';
+                            }
+                            if (isset($_SESSION['access_tokenStrava'])) {
+                                echo '<a href="stravaUserData.php" class="strava-login">Ver datos de mi cuenta de Strava <img src="src/img/strava-logo.svg"></a>';
+                            }
+                        ?>
+                    </div>
+                    <div>
+                        <form autocomplete="off">
+                            <label for="Nombre">
+                                <p>Nombre</p>
+                            </label>
+                            <input type="text" name="Nombre" value="<?php echo $_SESSION['nombreUsuario']?>">
+                            <label for="Edad">
+                                <p>Edad</p>
+                            </label>
+                            <input type="number" name="Edad" value="<?php echo $edad?>">
+                            <label for="Peso">
+                                <p>Peso</p>
+                            </label>
+                            <input type="number" name="Peso" value="<?php echo $peso?>">
+                                <select name="weightUnit" id="weightUnit" class="unidadesSelect" readonly>
+                                    <option value="<?php echo $unidadPeso ?>"><?php echo $unidadPeso?></option>
+                                </select>
+                            <label for="Altura">
+                                <p>Altura</p>
+                            </label>
+                            <input type="number" name="Altura" value="<?php echo $altura?>">
+                                <select name="heightUnit" id="heightUnit" class="unidadesSelect" readonly >
+                                    <option value="<?php echo $unidadAltura ?>"><?php echo $unidadAltura?></option>
+                                </select>
+                            <label for="IMC">
+                                <p>IMC</p>
+                            </label>
+                            <input type="number" name="IMC" value="<?php echo $IMC?>" readonly>
+                            <label for="porcentajeGrasa">
+                                <p>Porcentaje de Grasa Corporal</p>
+                            </label>
+                            <input type="number" name="porcentajeGrasa" value="<?php echo $porcentajeGrasa?>">
+                            <select name="porcentajeGrasa" id="porcentajeGrasa" class="unidadesSelect" readonly >
+                                    <option value="%">%</option>
+                                </select>
+                            <div>
+                                <label for="Objetivo">
+                                    <p>Objetivo</p>
+                                </label>
+                                <select name="Objetivo" readonly>
+                                    <option value="<?php echo $objetivo ?>"><?php echo $objetivo ?></option>
+
+                                    <?php
+                                        $data = $funcionesDB->obtenerDatosComunes($conexion, 'objetivo', 'objetivos', $objetivo);
+
+                                        foreach ($data as $dato){
+                                            echo '<option value ="' . $dato['objetivo'].'">' .  $dato['objetivo']. '</option>';
+                                        }
+                                    ?>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="Nivel">
+                                    <p>Nivel actual</p>
+                                </label>
+                                <select name="Nivel">
+                                
+                                    <option value="<?php echo $nivelEntrenamiento ?>"><?php echo $nivelEntrenamiento ?></option>
+
+                                    <?php 
+                                        $data = $funcionesDB->obtenerDatosComunes($conexion, 'nivel', 'niveles_posibles', $objetivo);
+
+                                        foreach ($data as $dato){
+                                            echo '<option value ="' . $dato['nivel'].'">' .  $dato['nivel']. '</option>';
+                                        }
+                                    ?>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="TipoDieta">
+                                    <p>Tipo de dieta</p>
+                                </label>
+                                <select name="TipoDieta">
+                                
+                                    <option value="<?php echo $tipoDieta ?>"><?php echo $tipoDieta ?></option>
+
+                                    <?php 
+                                        $data = $funcionesDB->obtenerDatosComunes($conexion, 'tipoDieta', 'dietas', $tipoDieta);
+
+                                        foreach ($data as $dato){
+                                            echo '<option value ="' . $dato['tipoDieta'].'">' .  $dato['tipoDieta']. '</option>';
+                                        }
+                                    ?>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="tipoFormula">
+                                    <p>Formula de la dieta</p>
+                                </label>
+                                <select name="tipoFormula">
+                                
+                                    <option value="<?php echo $tipoFormula ?>"><?php echo $tipoFormula ?></option>
+
+                                    <?php 
+                                        $data = $funcionesDB->obtenerDatosComunes($conexion, 'tipoFormula', 'dietas', $tipoFormula);
+
+                                        foreach ($data as $dato){
+                                            echo '<option value ="' . $dato['tipoFormula'].'">' .  $dato['tipoFormula']. '</option>';
+                                        }
+                                    ?>
+                                </select>
+                            </div>
+                            <label for="Lesiones">
+                                <p>Lesiones</p>
+                            </label>
+                            <input type="number" name="Lesiones" value="<?php echo $lesiones?>">
+                        </form>
+                    </div>
                     <div class="img-user-progress">
                         <div class="formPhoto">
                             <?php 
@@ -175,77 +328,6 @@
                             <label for="Anterior">Siguiente</label>
                         </div>
                     </div>
-                    <div>
-                        <form autocomplete="off">
-                            <label for="Nombre">
-                                <p>Nombre</p>
-                            </label>
-                            <input type="text" name="Nombre" value="<?php echo $_SESSION['nombreUsuario']?>">
-                            <label for="Edad">
-                                <p>Edad</p>
-                            </label>
-                            <input type="number" name="Edad" value="<?php echo $edad?>">
-                            <label for="Peso">
-                                <p>Peso</p>
-                            </label>
-                            <input type="number" name="Peso" value="<?php echo $peso?>">
-                                <select name="weightUnit" id="weightUnit">
-                                    <option value="<?php echo $unidadPeso ?>"><?php echo $unidadPeso?></option>
-                                </select>
-                            <label for="Altura">
-                                <p>Altura</p>
-                            </label>
-                            <input type="number" name="Altura" value="<?php echo $altura?>">
-                                <select name="heightUnit" id="heightUnit" readonly>
-                                    <option value="<?php echo $unidadAltura ?>"><?php echo $unidadAltura?></option>
-                                </select>
-                            <label for="IMC">
-                                <p>IMC</p>
-                            </label>
-                            <input type="number" name="IMC" value="<?php echo $IMC?>" readonly>
-                        </form>
-                    </div>
-                    <div>
-                        <form autocomplete="off">
-                            <div>
-                                <label for="Objetivo">
-                                    <p>Objetivo</p>
-                                </label>
-                                <select name="Objetivo">
-                                    <option value="<?php echo $objetivo ?>"><?php echo $objetivo ?></option>
-
-                                    <?php
-                                        $data = $funcionesDB->obtenerDatosComunes($conexion, 'objetivo', 'objetivos', $objetivo);
-
-                                        foreach ($data as $dato){
-                                            echo '<option value ="' . $dato['objetivo'].'">' .  $dato['objetivo']. '</option>';
-                                        }
-                                    ?>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="Nivel">
-                                    <p>Nivel actual</p>
-                                </label>
-                                <select name="Nivel">
-                                
-                                    <option value="<?php echo $nivelEntrenamiento ?>"><?php echo $nivelEntrenamiento ?></option>
-
-                                    <?php 
-                                        $data = $funcionesDB->obtenerDatosComunes($conexion, 'nivel', 'niveles_posibles', $objetivo);
-
-                                        foreach ($data as $dato){
-                                            echo '<option value ="' . $dato['nivel'].'">' .  $dato['nivel']. '</option>';
-                                        }
-                                    ?>
-                                </select>
-                            </div>
-                            <label for="Lesiones">
-                                <p>Lesiones</p>
-                            </label>
-                            <input type="number" name="Lesiones" value="<?php echo $lesiones?>">
-                        </form>
-                    </div>
                 </div>
             </section>
             <footer>
@@ -274,7 +356,9 @@
                 </div>
             </footer>
         </main>
+        <?php include_once('php/handlebars/error.php'); ?>
     </body>
+    <script src="src/js/coaches-cards.js"></script>
     <script src="src/js/photo-profile.js"></script>
     <script src ="src/js/progreso-images.js"></script>
     <script src="src/js/progreso-app.js"></script>

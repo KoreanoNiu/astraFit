@@ -482,6 +482,42 @@ main {
       font-size: 3.5rem; }
     main section.background-image-9 div.image-9 h2 {
       font-size: 2.5rem; }
+  main section.background-image-11 {
+    background-image: url("../../src/img/motivaciones.jpg"); }
+    main section.background-image-11 div.image-8 h1 {
+      font-size: 3.5rem; }
+    main section.background-image-11 div.image-8 h2 {
+      font-size: 2.5rem; }
+  main section.background-image-12 {
+    background-image: url("../../src/img/meditacion.jpg"); }
+    main section.background-image-12 div.image-8 h1 {
+      font-size: 3.5rem; }
+    main section.background-image-12 div.image-8 h2 {
+      font-size: 2.5rem; }
+  main section.background-image-13 {
+    background-image: url("../../src/img/intenso.jpg"); }
+    main section.background-image-13 div.image-8 h1 {
+      font-size: 3.5rem; }
+    main section.background-image-13 div.image-8 h2 {
+      font-size: 2.5rem; }
+  main section.background-image-14 {
+    background-image: url("../../src/img/relajacion.jpg"); }
+    main section.background-image-14 div.image-8 h1 {
+      font-size: 3.5rem; }
+    main section.background-image-14 div.image-8 h2 {
+      font-size: 2.5rem; }
+  main section.background-image-15 {
+    background-image: url("../../src/img/experiencia.jpg"); }
+    main section.background-image-15 div.image-8 h1 {
+      font-size: 3.5rem; }
+    main section.background-image-15 div.image-8 h2 {
+      font-size: 2.5rem; }
+  main section.background-image-16 {
+    background-image: url("../../src/img/novato.jpg"); }
+    main section.background-image-16 div.image-8 h1 {
+      font-size: 3.5rem; }
+    main section.background-image-16 div.image-8 h2 {
+      font-size: 2.5rem; }
   main section.background {
     height: calc(100vh - var(--navbar-height));
     width: 100%;

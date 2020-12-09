@@ -151,7 +151,7 @@
                             console.log(data);
                             obj.forEach(element => {
                                 if (!comprobarDatos(element)) {
-                                    window.location.href = 'respaldoMiProgreso.php?error=Completa los campos faltantes: ' + concatenarError(obj) + 'para poder obtener tu dieta';
+                                    window.location.href = 'miprogreso.php?error=Completa los campos faltantes: ' + concatenarError(obj) + 'para poder obtener tu dieta';
                                 }
                             });
                             document.getElementById("peso").value = obj[0]['peso'];

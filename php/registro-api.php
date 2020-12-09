@@ -117,7 +117,7 @@
           
                 $funcionesDB->insertarDatosCliente($conexion, $dataClient);
 
-                header('Location: ../respaldoMiProgreso.php');
+                header('Location: ../miprogreso.php');
             } catch (Exception $e) {
                 session_destroy();
                 header("Location: ../login.php?error=Ya existe una cuenta asociada con esa cuenta de Strava.");
@@ -187,7 +187,7 @@
                 
                       $funcionesDB->insertarDatosCliente($conexion, $data);
                 
-                      header('Location: ../respaldoMiProgreso.php');
+                      header('Location: ../miprogreso.php');
                   } catch (Exception $e) {
                     if (isset($e)) {
                         session_destroy();

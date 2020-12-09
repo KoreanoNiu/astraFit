@@ -21,9 +21,9 @@
             $funcionesDB->actualizarDatos($conexion, 'stravaIdAthlete', 'usuarios', $dataUser);
 
             $_SESSION['access_tokenStrava'] = $data['access_token'];
-            header('location: ../respaldoMiProgreso.php');
+            header('location: ../miprogreso.php');
         }else{
-            header("location: ../respaldoMiProgreso.php?error='Esta cuenta de Strava ya está asociada a otra cuenta de AstraFit'");
+            header("location: ../miprogreso.php?error='Esta cuenta de Strava ya está asociada a otra cuenta de AstraFit'");
         }
     }else if(isset($_GET['action']) && $_GET['action'] == 'refresh'){
         require 'strava-init.php';
@@ -36,5 +36,5 @@
         $_SESSION['access_tokenStrava'] = $data['access_token'];
         header('location: ../stravaUserData.php');
     }else{
-        header('location: ../respaldoMiProgreso.php');
+        header('location: ../miprogreso.php');
     }
