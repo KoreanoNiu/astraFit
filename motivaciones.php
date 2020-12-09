@@ -30,9 +30,9 @@
 
             <main>     
                 <div id="desaparecer" style="display: block;">   
-                <section class="background background-image-6">
+                <section class="background background-image-9">
                     <div class="background-filter"></div>
-                    <div class="image-7">
+                    <div class="image-9">
                         <h1 class="titulo">Motivaciones</h1>
                         <h2>¿Piensas estarte quieto para siempre?</h2>
                     </div>
