@@ -69,6 +69,17 @@ main{
             }
         }
     }
+    section.background-image-9{
+        background-image: url('../../src/img/block.jpg');
+        div.image-8{
+            h1{
+                font-size: 3.5rem;
+            }
+            h2{
+                font-size: 2.5rem;
+            }
+        }
+    }
     section.background{
 
         height: calc(100vh - var(--navbar-height));
