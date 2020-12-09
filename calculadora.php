@@ -44,41 +44,32 @@
                 </div>
 
                 <label for="peson"><b>PESO EN KG</b></label><br><br>
-                <input class="cardIm" type="number" id="peso" name="peson"><br><br>
+                <input class="cardIm" type="number" id="peso" name="Peso"><br><br>
                 <label for="estatua"><b>ESTATURA EN CM</b></h4></label><br><br>
-                <input class="cardIm" type="number" id="estatura" name="estatua"><br><br>
+                <input class="cardIm" type="number" id="estatura" name="Altura"><br><br>
                 <label for="edadita"><b>EDAD</b></label><br><br>
-                <input class="cardIm" type="number" id="edad" name="edadita">
+                <input class="cardIm" type="number" id="edad" name="Edad">
                 <h4>NIVEL DE ACTIVIDAD FÍSICA</h4>
 
                 <div class="select">
-                    <select name="actividad" id="actividad">
+                    <select name="Nivel" id="actividad">
                         <option selected disabled>SELECCIONA TU ACTIVIDAD</option>
                         <option style="color:black; font-size: 20px; font-weight: bold; font-family: Oxygen;"
-                            value="Nada de ejercicio">Nada de ejercicio</option><br>
+                            value="Principiante">Principiante</option><br>
 
                         <option style="color:black; font-size: 20px; font-weight: bold; font-family: Oxygen;"
-                            value="Poco activo (1 hora de ejercicio y el resto del día sedentario)">Poco activo (1 hora
-                            de ejercicio y el resto del día sedentario)</option>
+                            value="Atleta intermedio">Atleta intermedio</option>
 
                         <option style="color:black; font-size: 20px; font-weight: bold; font-family: Oxygen;"
-                            value="Ligeramente activo (Parte del día en movimiento y 1 o más horas de ejercicio)">
-                            Ligeramente activo (Parte del día en movimiento y 1 o más horas de ejercicio)</option>
-
-                        <option style="color:black; font-size: 20px; font-weight: bold; font-family: Oxygen;"
-                            value="Muy activo (La mayoria parte del día activo y +1 hora de ejercicio)">Muy activo (La
-                            mayoria parte del día activo y +1 hora de ejercicio)</option>
-
-                        <option style="color:black; font-size: 20px; font-weight: bold; font-family: Oxygen;"
-                            value="Extremadamente activo (Todo el día activo y +2 horas de ejercicio)">Extremadamente
-                            activo (Todo el día activo y +2 horas de ejercicio)</option>
+                            value="Atleta avanzado">Atleta avanzado
+                        </option>
                     </select>
                 </div>
                 <br>
 
 
                 <label for="grason"><b>PORCENTAJE DE GRASA CORPORAL</b></label><br><br>
-                <input class="cardIm" type="number" id="grasa" name="grason">
+                <input class="cardIm" type="number" id="grasa" name="porcentajeGrasa">
                 <h3>Si no sabes cual es tu porcentaje de grasa corporal, aquí te colocamos una imágen para que lo
                     estimes si no lo sabes: </h3>
                 <div class="cards3">
@@ -94,28 +85,28 @@
                 </div>
                 <h4>¿Cómo quieres que sea tu dieta?</h4>
                 <div class="select">
-                    <select id="tipo">
+                    <select id="tipo" name="TipoDieta">
                         <option selected disabled>SELECCIONA TU TIPO</option>
-                        <option>Alta en carbohidratos (bajarán los gramos de grasa)</option>
-                        <option>Baja en carbohidratos (subirán los gramos de grasa)</option>
-                        <option>Alta en proteína (bajarán los gramos de carbohidratos)</option>
+                        <option>Alta en carbohidratos</option>
+                        <option>Baja en carbohidratos</option>
+                        <option>Alta en proteína</option>
                     </select>
                 </div>
                 <h4>¿Para qué objetivo quieres tu dieta?</h4>
                 <div class="select">
-                    <select id="tipo2">
+                    <select id="tipo2" name="Objetivo">
                         <option selected disabled>SELECCIONA TU OBJETIVO</option>
-                        <option>Mantenerte</option>
-                        <option>Definirte (Bajar grasa corporal)</option>
-                        <option>Volumen (Aumentar músculo)</option>
+                        <option>Ponerme en forma</option>
+                        <option>Perder peso</option>
+                        <option>Tonificar</option>
                     </select>
                 </div>
                 <h4>¿Qué fórmula quieres usar?</h4>
                 <div class="select">
-                    <select id="formula">
+                    <select id="formula" name="tipoFormula">
                         <option selected disabled>SELECCIONA FÓRMULA</option>
-                        <option>Fórmula sin usar porcentaje de grasa corporal</option>
-                        <option>Fórmula usando porcentaje de grasa corporal</option>
+                        <option>Con grasa corporal</option>
+                        <option>Sin grasa corporal</option>
                     </select>
                 </div>
                 <div id="mostrar2" style="display: none;">
@@ -144,6 +135,7 @@
                     </div>
                 </div>
                 <div><br><br>
+                <input type="number" name="IMC" value="0" readonly style="display: none">
                     <input type="submit" class="botonon" id="dieta" value="OBTENER DIETA"></input>
                 </div><br>
 
@@ -158,13 +150,21 @@
                         }).then(response => response.json()).then(data => {obj = data
                             console.log(data);
                             obj.forEach(element => {
-                                if (comprobarDatos(element)) {
-                                    
-                                }else{
-                                    window.location.href = 'respaldoMiProgreso.php?error=Completa los campos faltantes: ' + concatenarError(obj) + 'por favor';
+                                if (!comprobarDatos(element)) {
+                                    window.location.href = 'respaldoMiProgreso.php?error=Completa los campos faltantes: ' + concatenarError(obj) + 'para poder obtener tu dieta';
                                 }
                             });
+                            document.getElementById("peso").value = obj[0]['peso'];
+                            document.getElementById("estatura").value = obj[0]['altura'];
+                            document.getElementById("edad").value = obj[0]['edad'];
+                            document.getElementById("grasa").value = obj[0]['porcentajeGrasa'];
+                            document.getElementById("formula").querySelector('option').innerHTML = obj[0]['tipoFormula'];
+                            document.getElementById("actividad").querySelector('option').innerHTML = obj[0]['nivel'];
+                            document.getElementById("tipo").querySelector('option').innerHTML = obj[0]['tipoDieta'];
+                            document.getElementById("tipo2").querySelector('option').innerHTML = obj[0]['objetivo'];
+                            document.getElementById("dieta").click();
                         });
+                        
                     }
                     function comprobarDatos(element){
                         var contador = 0;
@@ -209,7 +209,7 @@
                             }
                             if (element[0]['peso'] == '' || element[0]['peso'] == null || element[0]['peso'] == 0) {
                                 if (element[0]['peso'] <= 40) {
-                                    error += 'El peso es menor a lo permitido';
+                                    error += 'El peso es menor a lo permitido, ';
                                 }else{
                                     error += 'Peso, ';
                                 }
@@ -336,9 +336,9 @@
                             document.getElementById("error5").innerHTML = "";
                             document.getElementById("error6").innerHTML = "";
                             document.getElementById("error7").innerHTML = "";
-                            if (formula == "Fórmula sin usar porcentaje de grasa corporal") {
+                            if (formula == "Sin grasa corporal") {
 
-                                if (actividad == "Nada de ejercicio") {
+                                if (actividad == "Principiante") {
                                     Math.round(calorias = peso * 22 * 1.2);
                                 }
                                 if (actividad ==
@@ -353,12 +353,12 @@
 
                                 }
                                 if (actividad ==
-                                    "Muy activo (La mayoria parte del día activo y +1 hora de ejercicio)") {
+                                    "Atleta intermedio") {
                                     Math.round(calorias = peso * 22 * 1.8);
 
                                 }
                                 if (actividad ==
-                                    "Extremadamente activo (Todo el día activo y +2 horas de ejercicio)") {
+                                    "Atleta avanzado") {
                                     Math.round(calorias = peso * 22 * 2.2);
 
                                 }
@@ -366,8 +366,8 @@
                                 var comida;
                                 var grasita;
                                 var carbos;
-                                if (tipo == "Alta en carbohidratos (bajarán los gramos de grasa)" && tipo2 ==
-                                    "Mantenerte") {
+                                if (tipo == "Alta en carbohidratos" && tipo2 ==
+                                    "Ponerme en forma") {
                                     proteina = Math.round(peso * 1.8);
                                     calorias2 = Math.round(calorias);
                                     comida = Math.round(calorias2 - (proteina * 4));
@@ -382,8 +382,8 @@
                                     document.getElementById("calorias").innerHTML = proteina * 4 + grasita * 9 +
                                         carbos * 4 + " calorías diarias.";
                                 }
-                                if (tipo == "Alta en carbohidratos (bajarán los gramos de grasa)" && tipo2 ==
-                                    "Definirte (Bajar grasa corporal)") {
+                                if (tipo == "Alta en carbohidratos" && tipo2 ==
+                                    "Perder peso") {
                                     proteina = Math.round(peso * 2);
                                     calorias2 = Math.round(calorias - 500);
                                     comida = Math.round(calorias2 - (proteina * 4));
@@ -398,8 +398,8 @@
                                     document.getElementById("calorias").innerHTML = proteina * 4 + grasita * 9 +
                                         carbos * 4 + " calorías diarias.";
                                 }
-                                if (tipo == "Alta en carbohidratos (bajarán los gramos de grasa)" && tipo2 ==
-                                    "Volumen (Aumentar músculo)") {
+                                if (tipo == "Alta en carbohidratos" && tipo2 ==
+                                    "Tonificar") {
                                     proteina = Math.round(peso * 2.2);
                                     calorias2 = Math.round(calorias + 500);
                                     comida = Math.round(calorias2 - (proteina * 4));
@@ -416,8 +416,8 @@
                                 }
                                 //_____________________________
 
-                                if (tipo == "Baja en carbohidratos (subirán los gramos de grasa)" && tipo2 ==
-                                    "Mantenerte") {
+                                if (tipo == "Baja en carbohidratos" && tipo2 ==
+                                    "Ponerme en forma") {
                                     proteina = Math.round(peso * 1.8);
                                     calorias2 = Math.round(calorias);
                                     comida = Math.round(calorias2 - (proteina * 4));
@@ -432,8 +432,8 @@
                                     document.getElementById("calorias").innerHTML = proteina * 4 + grasita * 9 +
                                         carbos * 4 + " calorías diarias.";
                                 }
-                                if (tipo == "Baja en carbohidratos (subirán los gramos de grasa)" && tipo2 ==
-                                    "Definirte (Bajar grasa corporal)") {
+                                if (tipo == "Baja en carbohidratos" && tipo2 ==
+                                    "Perder peso") {
                                     proteina = Math.round(peso * 2);
                                     calorias2 = Math.round(calorias - 500);
                                     comida = Math.round(calorias2 - (proteina * 4));
@@ -448,8 +448,8 @@
                                     document.getElementById("calorias").innerHTML = proteina * 4 + grasita * 9 +
                                         carbos * 4 + " calorías diarias.";
                                 }
-                                if (tipo == "Baja en carbohidratos (subirán los gramos de grasa)" && tipo2 ==
-                                    "Volumen (Aumentar músculo)") {
+                                if (tipo == "Baja en carbohidratos" && tipo2 ==
+                                    "Tonificar") {
                                     proteina = Math.round(peso * 2.2);
                                     calorias2 = Math.round(calorias + 500);
                                     comida = Math.round(calorias2 - (proteina * 4));
@@ -467,8 +467,8 @@
 
                                 //_________________________
 
-                                if (tipo == "Alta en proteína (bajarán los gramos de carbohidratos)" && tipo2 ==
-                                    "Mantenerte") {
+                                if (tipo == "Alta en proteína" && tipo2 ==
+                                    "Ponerme en forma") {
                                     proteina = Math.round(peso * 2.3);
                                     calorias2 = Math.round(calorias);
                                     comida = Math.round(calorias2 - (proteina * 4));
@@ -483,8 +483,8 @@
                                     document.getElementById("calorias").innerHTML = proteina * 4 + grasita * 9 +
                                         carbos * 4 + " calorías diarias.";
                                 }
-                                if (tipo == "Alta en proteína (bajarán los gramos de carbohidratos)" && tipo2 ==
-                                    "Definirte (Bajar grasa corporal)") {
+                                if (tipo == "Alta en proteína" && tipo2 ==
+                                    "Perder peso") {
                                     proteina = Math.round(peso * 2.4);
                                     calorias2 = Math.round(calorias - 500);
                                     comida = Math.round(calorias2 - (proteina * 4));
@@ -499,8 +499,8 @@
                                     document.getElementById("calorias").innerHTML = proteina * 4 + grasita * 9 +
                                         carbos * 4 + " calorías diarias.";
                                 }
-                                if (tipo == "Alta en proteína (bajarán los gramos de carbohidratos)" && tipo2 ==
-                                    "Volumen (Aumentar músculo)") {
+                                if (tipo == "Alta en proteína" && tipo2 ==
+                                    "Tonificar") {
                                     proteina = Math.round(peso * 2.5);
                                     calorias2 = Math.round(calorias + 500);
                                     comida = Math.round(calorias2 - (proteina * 4));
@@ -516,10 +516,10 @@
                                         carbos * 4 + " calorías diarias.";
                                 }
                             }
-                            if (formula == "Fórmula usando porcentaje de grasa corporal") {
+                            if (formula == "Con grasa corporal") {
                                 masaMagra = (peso * grasa) / 100;
                                 masaMagra2 = peso - masaMagra;
-                                if (actividad == "Nada de ejercicio") {
+                                if (actividad == "Principiante") {
                                     Math.round(calorias = (370 + (21.6 * masaMagra2)) * 1.2);
                                 }
                                 if (actividad ==
@@ -534,12 +534,12 @@
 
                                 }
                                 if (actividad ==
-                                    "Muy activo (La mayoria parte del día activo y +1 hora de ejercicio)") {
+                                    "Atleta intermedio") {
                                     Math.round(calorias = (370 + (21.6 * masaMagra2)) * 1.8);
 
                                 }
                                 if (actividad ==
-                                    "Extremadamente activo (Todo el día activo y +2 horas de ejercicio)") {
+                                    "Atleta avanzado") {
                                     Math.round(calorias = (370 + (21.6 * masaMagra2)) * 2.2);
 
                                 }
@@ -547,8 +547,8 @@
                                 var comida;
                                 var grasita;
                                 var carbos;
-                                if (tipo == "Alta en carbohidratos (bajarán los gramos de grasa)" && tipo2 ==
-                                    "Mantenerte") {
+                                if (tipo == "Alta en carbohidratos" && tipo2 ==
+                                    "Ponerme en forma") {
                                     proteina = Math.round(peso * 1.8);
                                     calorias2 = Math.round(calorias);
                                     comida = Math.round(calorias2 - (proteina * 4));
@@ -564,8 +564,8 @@
                                     document.getElementById("calorias").innerHTML = proteina * 4 + grasita * 9 +
                                         carbos * 4 + " calorías diarias.";
                                 }
-                                if (tipo == "Alta en carbohidratos (bajarán los gramos de grasa)" && tipo2 ==
-                                    "Definirte (Bajar grasa corporal)") {
+                                if (tipo == "Alta en carbohidratos" && tipo2 ==
+                                    "Perder peso") {
                                     proteina = Math.round(peso * 2);
                                     calorias2 = Math.round(calorias - 500);
                                     comida = Math.round(calorias2 - (proteina * 4));
@@ -581,8 +581,8 @@
                                     document.getElementById("calorias").innerHTML = proteina * 4 + grasita * 9 +
                                         carbos * 4 + " calorías diarias.";
                                 }
-                                if (tipo == "Alta en carbohidratos (bajarán los gramos de grasa)" && tipo2 ==
-                                    "Volumen (Aumentar músculo)") {
+                                if (tipo == "Alta en carbohidratos" && tipo2 ==
+                                    "Tonificar") {
                                     proteina = Math.round(peso * 2.2);
                                     calorias2 = Math.round(calorias + 500);
                                     comida = Math.round(calorias2 - (proteina * 4));
@@ -600,8 +600,8 @@
                                 }
                                 //_____________________________
 
-                                if (tipo == "Baja en carbohidratos (subirán los gramos de grasa)" && tipo2 ==
-                                    "Mantenerte") {
+                                if (tipo == "Baja en carbohidratos" && tipo2 ==
+                                    "Ponerme en forma") {
                                     proteina = Math.round(peso * 1.8);
                                     calorias2 = Math.round(calorias);
                                     comida = Math.round(calorias2 - (proteina * 4));
@@ -617,8 +617,8 @@
                                     document.getElementById("calorias").innerHTML = proteina * 4 + grasita * 9 +
                                         carbos * 4 + " calorías diarias.";
                                 }
-                                if (tipo == "Baja en carbohidratos (subirán los gramos de grasa)" && tipo2 ==
-                                    "Definirte (Bajar grasa corporal)") {
+                                if (tipo == "Baja en carbohidratos" && tipo2 ==
+                                    "Perder peso") {
                                     proteina = Math.round(peso * 2);
                                     calorias2 = Math.round(calorias - 500);
                                     comida = Math.round(calorias2 - (proteina * 4));
@@ -634,8 +634,8 @@
                                     document.getElementById("calorias").innerHTML = proteina * 4 + grasita * 9 +
                                         carbos * 4 + " calorías diarias.";
                                 }
-                                if (tipo == "Baja en carbohidratos (subirán los gramos de grasa)" && tipo2 ==
-                                    "Volumen (Aumentar músculo)") {
+                                if (tipo == "Baja en carbohidratos" && tipo2 ==
+                                    "Tonificar") {
                                     proteina = Math.round(peso * 2.2);
                                     calorias2 = Math.round(calorias + 500);
                                     comida = Math.round(calorias2 - (proteina * 4));
@@ -654,8 +654,8 @@
 
                                 //_________________________
 
-                                if (tipo == "Alta en proteína (bajarán los gramos de carbohidratos)" && tipo2 ==
-                                    "Mantenerte") {
+                                if (tipo == "Alta en proteína" && tipo2 ==
+                                    "Ponerme en forma") {
                                     proteina = Math.round(peso * 2.3);
                                     calorias2 = Math.round(calorias);
                                     comida = Math.round(calorias2 - (proteina * 4));
@@ -671,8 +671,8 @@
                                     document.getElementById("calorias").innerHTML = proteina * 4 + grasita * 9 +
                                         carbos * 4 + " calorías diarias.";
                                 }
-                                if (tipo == "Alta en proteína (bajarán los gramos de carbohidratos)" && tipo2 ==
-                                    "Definirte (Bajar grasa corporal)") {
+                                if (tipo == "Alta en proteína" && tipo2 ==
+                                    "Perder peso") {
                                     proteina = Math.round(peso * 2.4);
                                     calorias2 = Math.round(calorias - 500);
                                     comida = Math.round(calorias2 - (proteina * 4));
@@ -687,8 +687,8 @@
                                     document.getElementById("calorias").innerHTML = proteina * 4 + grasita * 9 +
                                         carbos * 4 + " calorías diarias.";
                                 }
-                                if (tipo == "Alta en proteína (bajarán los gramos de carbohidratos)" && tipo2 ==
-                                    "Volumen (Aumentar músculo)") {
+                                if (tipo == "Alta en proteína" && tipo2 ==
+                                    "Tonificar") {
                                     proteina = Math.round(peso * 2.5);
                                     calorias2 = Math.round(calorias + 500);
                                     comida = Math.round(calorias2 - (proteina * 4));
@@ -712,6 +712,7 @@
 
 
     </main>
+    <script src ="src/js/progreso-app.js"></script>
     <script src ="src/js/commun.js"></script>
     <script src="src/js/photo-profile.js"></script>
 </body>

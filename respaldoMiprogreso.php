@@ -129,6 +129,13 @@
                                 <p>IMC</p>
                             </label>
                             <input type="number" name="IMC" value="<?php echo $IMC?>" readonly>
+                            <label for="porcentajeGrasa">
+                                <p>Porcentaje de Grasa Corporal</p>
+                            </label>
+                            <input type="number" name="porcentajeGrasa" value="<?php echo $porcentajeGrasa?>">
+                            <select name="porcentajeGrasa" id="porcentajeGrasa" class="unidadesSelect" readonly >
+                                    <option value="%">%</option>
+                                </select>
                             <div>
                                 <label for="Objetivo">
                                     <p>Objetivo</p>

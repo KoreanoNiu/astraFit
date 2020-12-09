@@ -18,7 +18,7 @@
         }else{
             $tabla = 'clientes';
 
-            if (!$var == 'tipoDieta' || !$var == 'tipoFormula'){
+            if (!$var == 'tipoDieta' || !$var == 'tipoFormula' || !$var == 'porcentajeGrasa'){
                 $var = strtolower($var);
             }
         }

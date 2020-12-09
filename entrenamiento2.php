@@ -7,36 +7,9 @@
         $funcionesDB = new funcionesDB;
     
     
-        $data = $funcionesDB->obtenerDatosCompletos($conexion, $_SESSION['idUsuario']);
+        $data = $funcionesDB->obtenerDatoEspecifico($conexion, 'nivel', 'clientes', $_SESSION['idUsuario']);
 
-        $rolUsuario = $data[0]['tipoUsuario'];
-        $unidadAltura = $data[0]['unidadAltura'];
-        $unidadPeso = $data[0]['unidadPeso'];
-        $edad = $data[0]['edad'];
-        $peso = $data[0]['peso'];
-        $altura = $data[0]['altura'];
-        $objetivo = $data[0]['objetivo'];
         $nivelEntrenamiento = $data[0]['nivel'];
-        $lesiones = $data[0]['lesiones'];
-        $porcentajeGrasa = $data[0]['porcentajeGrasa'];
-        $tipoDieta = $data[0]['tipoDieta'];
-        $tipoFormula = $data[0]['tipoFormula'];
-        $idCoachNutriologo = $data[0]['idCoachNutriologo'];
-        $idCoachEntrenador = $data[0]['idCoachEntrenador'];
-
-        if ($altura != null && $peso != null && $altura != '' && $peso != '') {
-            $IMC = number_format($peso / ($altura  / 100 * $altura / 100), 2);
-        }
-
-        if (!isset($_SESSION['access_tokenStrava'])) {
-            require 'php/strava-init.php';
-            define('redirect_url', 'http://localhost/astraFit/php/update-strava.php');
-            
-            //Strava Api
-            $api = new StravaApi(client_id, client_secret);
-            
-            $urlAuthStrava = $api->authenticationUrl(redirect_url, approvalPrompt, scope);
-        }
 
     }else{
         header('location: login.php');
