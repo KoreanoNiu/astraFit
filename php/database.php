@@ -123,7 +123,7 @@
             return $result->fetchAll(PDO::FETCH_ASSOC);
         }
         public function obtenerDatosParaDieta($conexion, $data){
-            $result = $conexion->prepare("SELECT peso, altura, edad, nivel, porcentajeGrasa, tipoDieta, tipoFormula FROM CLIENTES WHERE idUsuario=?");
+            $result = $conexion->prepare("SELECT peso, altura, edad, objetivo, nivel, porcentajeGrasa, tipoDieta, tipoFormula FROM CLIENTES WHERE idUsuario=?");
             $result->execute([$data]);
             return $result->fetchAll(PDO::FETCH_ASSOC);
         }

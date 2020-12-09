@@ -892,7 +892,7 @@ if(modalidad=="GYM"){
     
     }
     //EXPERIENCIA
-    if(nivel=="Atleta medio"){
+    if(nivel=="Atleta intermedio"){
         var imagen = document.getElementById("imagen");
        imagen.src = "src/entrenamientos/correr.gif";
         document.getElementById("A").innerHTML = "Trotar";
@@ -2210,7 +2210,7 @@ document.getElementById("jueves").onclick = function() {
 
 }
 //EXPERIENCIA
-if(nivel=="Atleta medio"){
+if(nivel=="Atleta intermedio"){
     var imagen = document.getElementById("imagen");
     imagen.src = "src/entrenamientos/tijera.gif";
      document.getElementById("A").innerHTML = "Saltos de tijera";

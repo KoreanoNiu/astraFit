@@ -2,7 +2,7 @@ var inputs = document.querySelectorAll('input[type="text"],input[type="number"],
 inputs.forEach(input => {
     input.addEventListener('change', funcionInputs);
 });
-
+console.log(inputs);
 function funcionInputs(){
 
     var data = new FormData();    
@@ -85,6 +85,9 @@ function validarDatos(e){
     }if(e.name == 'TipoDieta'){
         return true;
     }if(e.name == 'tipoFormula'){
+        return true;
+    }
+    if(e.name == 'porcentajeGrasa'){
         return true;
     }
 }
