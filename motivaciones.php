@@ -30,19 +30,11 @@
 
             <main>     
                 <div id="desaparecer" style="display: block;">   
-<<<<<<< HEAD
-                <section class="background background-image-11">
-                    <div class="background-filter"></div>
-                    <div class="image-11">
-                        <h1 class="titulo">Motivaciones </h1>
-                        <h2>¿Piensas estarte quieto para siempre ?</h2>
-=======
                 <section class="background background-image-9">
                     <div class="background-filter"></div>
                     <div class="image-9">
                         <h1 class="titulo">Motivaciones</h1>
                         <h2>¿Piensas estarte quieto para siempre?</h2>
->>>>>>> c92a42468afa2477512fba58dc70e3167314a242
                     </div>
                 </section>
                 <section class="divider hide-on-small-and-down">
