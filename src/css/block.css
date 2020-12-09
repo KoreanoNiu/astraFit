@@ -1,0 +1,402 @@
+#information3
+{
+    width: 100%;
+    height: auto;
+    background-color:#333333 ;
+}
+
+
+#box
+{   
+    width:87.8%;
+    height:900px;
+    position: relative;
+    background-color: #222222;
+    border-width:5px;
+   clear:none;
+    left:6%;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    padding-left:26px;
+    padding-top:40px;
+
+}
+
+.TituloFormulario
+{
+    font-size:3.2vw;
+    font-family:Oxygen;
+    src: url('../../src/fonts/Oxygen-Bold.ttf');
+    padding-top:20vw;
+    color:white;
+}
+#TopDescripcion
+{
+    top:20px;
+    position: absolute;
+    
+}
+#TopContenido
+{
+    top:30px;
+    position: absolute;
+}
+
+.formulario 
+{
+    background-color:#333333 ;
+    width:95%;
+    font-family:Oxygen;
+    src: url('../../src/fonts/Oxygen-Bold.ttf');
+    height:4vw;
+    font-size:26px;
+    color:#191818;
+    margin-bottom:3%;
+
+}
+.formularioContenido
+{
+    background-color:#333333 ;
+    width:95%;
+    font-family:Oxygen;
+    src: url('../../src/fonts/Oxygen-Bold.ttf');
+    height:20vw;
+    font-size:20px;
+    padding-top:-100px;
+    color:#191818;
+    margin-bottom:3%;
+
+}
+.buttonCategoria
+{
+    width:20%;
+    height: 20vw;
+    background-color:#333333 ;
+    font-size:3.2vw;
+    font-family:Oxygen;
+    src: url('../../src/fonts/Oxygen-Bold.ttf');
+    color:white;
+}
+.ButtonInformacion
+{
+    width:40%;
+    height:5vw;
+    background-color: teal;
+    color:white;
+    left:24vw;
+    position: relative;
+    border-radius:15px;
+    font-size:2.8vw;
+    font-family:Oxygen;
+    src: url('../../src/fonts/Oxygen-Bold.ttf');
+   
+}
+@media screen and (max-width: 1280px){
+    #information3
+{
+    width: 100%;
+    height: auto;
+    background-color:#333333 ;
+}
+
+
+#box
+{   
+    width:87.8%;
+    height:900px;
+    position: relative;
+    background-color: #222222;
+    border-width:5px;
+   clear:none;
+    left:6%;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    padding-left:26px;
+    padding-top:40px;
+
+}
+
+.TituloFormulario
+{
+    font-size:3.2vw;
+    font-family:Oxygen;
+    src: url('../../src/fonts/Oxygen-Bold.ttf');
+    padding-top:20vw;
+    color:white;
+}
+#TopDescripcion
+{
+    top:20px;
+    position: absolute;
+    
+}
+#TopContenido
+{
+    top:30px;
+    position: absolute;
+}
+
+.formulario 
+{
+    background-color:#333333 ;
+    width:95%;
+    font-family:Oxygen;
+    src: url('../../src/fonts/Oxygen-Bold.ttf');
+    height:4vw;
+    font-size:26px;
+    color:#191818;
+    margin-bottom:3%;
+
+}
+.formularioContenido
+{
+    background-color:#333333 ;
+    width:95%;
+    font-family:Oxygen;
+    src: url('../../src/fonts/Oxygen-Bold.ttf');
+    height:20vw;
+    font-size:20px;
+    padding-top:-100px;
+    color:#191818;
+    margin-bottom:3%;
+
+}
+.buttonCategoria
+{
+    width:20%;
+    height: 20vw;
+    background-color:#333333 ;
+    font-size:3.2vw;
+    font-family:Oxygen;
+    src: url('../../src/fonts/Oxygen-Bold.ttf');
+    color:white;
+}
+.ButtonInformacion
+{
+    width:40%;
+    height:5vw;
+    background-color: teal;
+    color:white;
+    left:24vw;
+    position: relative;
+    border-radius:15px;
+    font-size:2.8vw;
+    font-family:Oxygen;
+    src: url('../../src/fonts/Oxygen-Bold.ttf');
+
+}
+@media screen and (max-width: 970px){
+    #information3
+    {
+        width: 100%;
+        height: 50vw;
+        background-color:#333333 ;
+    }
+    #box
+{   
+    width:92%;
+    height:900px;
+    position: relative;
+    background-color: #222222;
+    border-width:5px;
+   clear:none;
+    left:4%;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    padding-left:26px;
+    padding-top:40px;
+}
+
+    .ButtonInformacion
+{
+    width:60%;
+    height:6vw;
+    background-color: teal;
+    color:white;
+    left:17vw;
+    position: relative;
+    border-radius:15px;
+    font-size:3.1vw;
+    font-family:Oxygen;
+    src: url('../../src/fonts/Oxygen-Bold.ttf');
+
+}
+}
+    
+}
+
+@media screen and (max-width: 767px){
+    #information3
+    {
+        width: 100%;
+        height: 120vw;
+        background-color:#333333 ;
+    }
+   
+    #box
+    {   
+        width:101%;
+        height:900px;
+        top:80px;
+        position: relative;
+        background-color: #222222;
+        border-width:5px;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+        padding-top:40px;
+        left:-5px;
+    }
+    .TituloFormulario
+    {
+        font-size:5vw;
+        font-family:Oxygen;
+        src: url('../../src/fonts/Oxygen-Bold.ttf');
+        padding-top:20vw;
+        color:white;
+    }
+    .formulario 
+    {
+        background-color:#333333 ;
+        width:95%;
+        font-family:Oxygen;
+        src: url('../../src/fonts/Oxygen-Bold.ttf');
+        height:8vw;
+        font-size:26px;
+        color:#191818;
+        margin-bottom:3%;
+    
+    }
+    .formularioContenido
+{
+    background-color:#333333 ;
+    width:95%;
+    font-family:Oxygen;
+    src: url('../../src/fonts/Oxygen-Bold.ttf');
+    height:50vw;
+    font-size:20px;
+    padding-top:-100px;
+    color:#191818;
+    margin-bottom:3%;
+
+}
+.ButtonInformacion
+{
+    width:89%;
+    height:9vw;
+    background-color: teal;
+    color:white;
+    left:3vw;
+    position: relative;
+    border-radius:15px;
+    font-size:3.5vw;
+    font-family:Oxygen;
+    src: url('../../src/fonts/Oxygen-Bold.ttf');
+
+}
+    
+}
+@media screen and (max-width: 600px){
+    .TituloFormulario
+    {
+        font-size:5.2vw;
+        font-family:Oxygen;
+        src: url('../../src/fonts/Oxygen-Bold.ttf');
+        padding-top:20vw;
+        color:white;
+    }
+    .formulario 
+    {
+        background-color:#333333 ;
+        width:95%;
+        font-family:Oxygen;
+        src: url('../../src/fonts/Oxygen-Bold.ttf');
+        height:10vw;
+        font-size:26px;
+        color:#191818;
+        margin-bottom:3%;
+    
+    }
+
+    .formularioContenido
+    {
+        background-color:#333333 ;
+        width:95%;
+        font-family:Oxygen;
+        src: url('../../src/fonts/Oxygen-Bold.ttf');
+        height:60vw;
+        font-size:20px;
+        padding-top:-100px;
+        color:#191818;
+        margin-bottom:3%;
+    
+
+
+    }
+    .ButtonInformacion
+{
+    width:89%;
+    height:10vw;
+    background-color: teal;
+    color:white;
+    left:3vw;
+    position: relative;
+    border-radius:15px;
+    font-size:3.6vw;
+    font-family:Oxygen;
+    src: url('../../src/fonts/Oxygen-Bold.ttf');
+
+}
+
+}
+@media screen and (max-width: 400px){
+    #information3
+    {
+        width: 100%;
+        height: 130vw;
+        background-color:#333333 ;
+    }
+    .formularioContenido
+    {
+        background-color:#333333 ;
+        width:95%;
+        font-family:Oxygen;
+        src: url('../../src/fonts/Oxygen-Bold.ttf');
+        height:70vw;
+        font-size:20px;
+        padding-top:-100px;
+        color:#191818;
+        margin-bottom:3%;
+    
+
+
+    }
+    .ButtonInformacion
+{
+    width:89%;
+    height:14vw;
+    background-color: teal;
+    color:white;
+    left:3vw;
+    position: relative;
+    border-radius:15px;
+    font-size:4.2vw;
+    font-family:Oxygen;
+    src: url('../../src/fonts/Oxygen-Bold.ttf');
+
+}
+#box
+    {   
+        width:101%;
+        height:900px;
+        top:75px;
+        position: relative;
+        background-color: #222222;
+        border-width:5px;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+        padding-top:40px;
+        left:-5px;
+    }
+
+}
+
