@@ -30,9 +30,9 @@
 
             <main>     
                 <div id="desaparecer" style="display: block;">   
-                <section class="background background-image-6">
+                <section class="background background-image-11">
                     <div class="background-filter"></div>
-                    <div class="image-7">
+                    <div class="image-11">
                         <h1 class="titulo">Motivaciones </h1>
                         <h2>¿Piensas estarte quieto para siempre ?</h2>
                     </div>
@@ -125,9 +125,9 @@
 <!----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
                            <!--Motivaciones Intesas  -->
-                                <section class="background background-image-3">
+                                <section class="background background-image-13">
                                     <div class="background-filter"></div>
-                                    <div class="image-3">
+                                    <div class="image-13">
                                         <h1 >INTENSO </h1>
                                         <h2>Hagas lo que hagas, hazlo intensamente</h2>
                                     </div>
@@ -289,9 +289,9 @@
 
               <!--ESPIRITUAL DE MOTIVACION-->
              <div id="espiritualMotivacion" style="display: none; text-align: center;">
-                <section class="background background-image-3">
+                <section class="background background-image-12">
                     <div class="background-filter"></div>
-                    <div class="image-3">
+                    <div class="image-12">
                         <h1 >Espiritual </h1>
                         <h2>No se quien eres , sino quien puedes ser </h2>
                     </div>
@@ -470,9 +470,9 @@
 
  <!--RELAJADO  DE MOTIVACION-->
  <div id="relajadoMotivacion" style="display: none; text-align: center;">
-    <section class="background background-image-3">
+    <section class="background background-image-14">
         <div class="background-filter"></div>
-        <div class="image-3">
+        <div class="image-14">
             <h1 >Relajado </h1>
             <h2>Tan solo juega, diviértete, disfruta del juego </h2>
         </div>
@@ -640,9 +640,9 @@
 
  <!--NOVATO   DE MOTIVACION-->
  <div id="novatoMotivacion" style="display: none; text-align: center;">
-    <section class="background background-image-3">
+    <section class="background background-image-16">
         <div class="background-filter"></div>
-        <div class="image-3">
+        <div class="image-16">
             <h1 >Novato </h1>
             <h2>El comienzo es el momento más importante del trabajo </h2>
         </div>
@@ -827,9 +827,9 @@
 
  <!--EXPERIENCIA  DE MOTIVACION-->
  <div id="experienciaMotivacion" style="display: none; text-align: center;">
-    <section class="background background-image-3">
+    <section class="background background-image-15">
         <div class="background-filter"></div>
-        <div class="image-3">
+        <div class="image-15">
             <h1 >Experiencia </h1>
             <h2>Si entrenas lo suficiente, no solo te vas a endurecer, sino que además serás duro de derrotar </h2>
         </div>
