@@ -196,62 +196,26 @@
                         </header>
                         <form class="inline-form" id="formNivelEntrenamiento">
                             <div>
-                                <input type="radio" id="nivel1" name="Nivel 1" value="Nada en forma">
+                                <input type="radio" id="nivel1" name="Nivel 1" value="Principiante">
                                 <label for="nivel1" class="buttonLabel nosubmit">
                                     <svg viewBox="0 0 34 24" xmlns="http://www.w3.org/2000/svg">
                                         <rect fill="white" x="0" y="20" width="4" height="4"></rect><rect x="6" y="16" width="4" height="8"></rect><rect x="12" y="12" width="4" height="12"></rect><rect x="18" y="8" width="4" height="16"></rect><rect x="24" y="4" width="4" height="20"></rect><rect x="30" y="0" width="4" height="24"></rect>
                                     </svg>
                                     <div>
-                                        <p>Nada en forma</p>
+                                        <p>Principiante</p>
                                         <p>Si me siento en el suelo, tengo problemas para levantarme</p>
                                     </div>
                                 </label>
                             </div>
                             <div>
-                                <input type="radio" id="nivel2" name="Nivel 2" value="Es mi primera vez con el Fitness">
-                                <label for="nivel2" class="buttonLabel nosubmit">
-                                    <svg viewBox="0 0 34 24" xmlns="http://www.w3.org/2000/svg">
-                                        <rect fill="white" x="0" y="20" width="4" height="4"></rect><rect fill = "white"x="6" y="16" width="4" height="8"></rect><rect x="12" y="12" width="4" height="12"></rect><rect x="18" y="8" width="4" height="16"></rect><rect x="24" y="4" width="4" height="20"></rect><rect x="30" y="0" width="4" height="24"></rect>
-                                    </svg>
-                                    <div>
-                                        <p>Es mi primera vez con el Fitness</p>
-                                        <p>No suelo hacer ejercicio</p>
-                                    </div>
-                                </label>
-                            </div>
-                            <div>
-                                <input type="radio" id="nivel3" name="Nivel 3" value="Hago ejercicio ocasionalmente">
-                                <label for="nivel3" class="buttonLabel nosubmit">
-                                    <svg viewBox="0 0 34 24" xmlns="http://www.w3.org/2000/svg">
-                                        <rect fill="white" x="0" y="20" width="4" height="4"></rect><rect fill="white" x="6" y="16" width="4" height="8"></rect><rect fill="white" x="12" y="12" width="4" height="12"></rect><rect x="18" y="8" width="4" height="16"></rect><rect x="24" y="4" width="4" height="20"></rect><rect x="30" y="0" width="4" height="24"></rect>
-                                    </svg>
-                                    <div>
-                                        <p>Hago ejercicio ocasionalmente</p>
-                                        <p>Entreno hasta sudar de forma ocasional</p>
-                                    </div>
-                                </label>
-                            </div>
-                            <div>
-                                <input type="radio" id="nivel4" name="Nivel 4" value=">Hago ejercicio de forma regular">
+                                <input type="radio" id="nivel4" name="Nivel 4" value=">Atleta intermedio">
                                 <label for="nivel4" class="buttonLabel nosubmit">
                                     <svg viewBox="0 0 34 24" xmlns="http://www.w3.org/2000/svg">
                                         <rect fill="white" x="0" y="20" width="4" height="4"></rect><rect fill="white" x="6" y="16" width="4" height="8"></rect><rect fill="white" x="12" y="12" width="4" height="12"></rect><rect fill="white" x="18" y="8" width="4" height="16"></rect><rect x="24" y="4" width="4" height="20"></rect><rect x="30" y="0" width="4" height="24"></rect>
                                     </svg>
                                     <div>
-                                        <p>Hago ejercicio de forma regular</p>
+                                        <p>Atleta intermedio</p>
                                         <p>Hago ejercicio al menos dos veces por seamana</p>
-                                    </div>
-                                </label>
-                            </div>
-                            <div>
-                                <input type="radio" id="nivel5" name="Nivel 5" value="Tengo experiencia entrenando">
-                                <label for="nivel5" class="buttonLabel nosubmit">
-                                    <svg viewBox="0 0 34 24" xmlns="http://www.w3.org/2000/svg">
-                                        <rect fill="white" x="0" y="20" width="4" height="4"></rect><rect fill="white" x="6" y="16" width="4" height="8"></rect><rect fill="white" x="12" y="12" width="4" height="12"></rect><rect fill="white" x="18" y="8" width="4" height="16"></rect><rect fill="white" x="24" y="4" width="4" height="20"></rect><rect x="30" y="0" width="4" height="24"></rect>
-                                    </svg>
-                                    <div>
-                                        <p>Tengo experiencia entrenando</p>
-                                        <p>Me encanta el fitness y entreno casi todos los días</p>
                                     </div>
                                 </label>
                             </div>
@@ -302,6 +266,17 @@
                                     <select name="weightUnit" id="weightUnit">
                                         <option value="kg">kg</option>
                                         <option value="lbs">lbs</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="porcentajeGrasa">
+                                    <p>Porcentaje de Grasa Corporal</p>
+                                </label>
+                                <div>
+                                    <input type="number" name="porcentajeGrasa" id="porcentajeGrasa" pattern="[0-9]+(\.[0-9]*)?" required min="4" max="50">
+                                    <select name="porcentajeGrasaCount" id="porcentajeGrasaCount" style="padding-left: 0.9rem;">
+                                        <option value="%">%</option>
                                     </select>
                                 </div>
                                 <div class="next buttonLabel" id="validarPesoAltura">

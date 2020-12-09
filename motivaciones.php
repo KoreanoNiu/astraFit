@@ -33,8 +33,8 @@
                 <section class="background background-image-6">
                     <div class="background-filter"></div>
                     <div class="image-7">
-                        <h1 class="titulo">Motivaciones </h1>
-                        <h2>¿Piensas estarte quieto para siempre ?</h2>
+                        <h1 class="titulo">Motivaciones</h1>
+                        <h2>¿Piensas estarte quieto para siempre?</h2>
                     </div>
                 </section>
                 <section class="divider hide-on-small-and-down">

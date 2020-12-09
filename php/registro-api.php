@@ -45,7 +45,7 @@
             ":objetivo" => $funcionesDB->sanitizarVariables($_POST['objetivo']),
             ":nivel" => $funcionesDB->sanitizarVariables($_POST['nivel']),
             ":lesiones" => 0,
-            ":porcentajeGrasa" => 0,
+            ":porcentajeGrasa" => $funcionesDB->sanitizarVariables($_POST['porcentajeGrasa']),
             ":tipoDieta" => '',
             ":tipoFormula" => '',
             ":idCoachNutriologo" => $idCoachNutriologo[0]['idCoach'],

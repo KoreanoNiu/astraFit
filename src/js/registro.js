@@ -25,6 +25,7 @@ function siguiente(){
             formularioFinal.append("edad", parseInt(date.getFullYear()) - parseInt((datosFormulario[0].value).slice(0, 4)));
             formularioFinal.append("altura", datosFormulario[1].value);
             formularioFinal.append("peso", datosFormulario[2].value);
+            formularioFinal.append("porcentajeGrasa", datosFormulario[3].value);
 
             nextForm(this);
         }
@@ -147,10 +148,10 @@ function validarDatosUsuario(array){
             input.style.borderColor = "red";
             errorCount++;
         }else{
-            input.style.borderColor = "#126fbb";
 
             if(input.name == 'Altura'){
                 if(input.value < 200 && input.value > 120 && isNaN(input.value) == false){
+                    input.style.borderColor = "#126fbb";
                 }else{
                     input.style.borderColor = "red";
                     errorCount++;
@@ -158,14 +159,25 @@ function validarDatosUsuario(array){
             }
             if(input.name == 'Peso'){
                 if(input.value > 30 && input.value < 150 && isNaN(input.value) == false){
+                    input.style.borderColor = "#126fbb";
                 }else{
                     input.style.borderColor = "red";
                     errorCount++;
                 }
             }
-            if(input.name = 'fechaNacimiento'){
+            if(input.name == 'fechaNacimiento'){
                 var date = new Date();
                 if (parseInt(date.getFullYear()) - parseInt((input.value).slice(0, 4)) < 11){
+                    input.style.borderColor = "red";
+                    errorCount++;
+                }else{
+                    input.style.borderColor = "#126fbb";
+                }
+            }
+            if (input.name == 'porcentajeGrasa' && isNaN(input.value) == false) {
+                if (input.value >= 4 && input.value <= 50) {
+                    input.style.borderColor = "#126fbb";
+                }else{
                     input.style.borderColor = "red";
                     errorCount++;
                 }

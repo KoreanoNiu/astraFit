@@ -48,6 +48,7 @@
 
         </div>
         <ul class="hide-on-small-and-down horizontal white">
+            <li><a href="miprogreso.php">MI CUENTA</a></li>
             <li><a href="index.php">INICIO</a></li>
             <li><a href="entrenamiento2.php">ENTRENAMIENTO</a></li>
             <li><a href="calculadora.php">NUTRICIÓN</a></li>
