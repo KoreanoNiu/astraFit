@@ -2,7 +2,7 @@
 session_start();
 
 if (isset($_SESSION['idUsuario']) && $_SESSION['idUsuario'] != '') {
-    
+
 } else {
     header('location: login.php');
 }
@@ -41,7 +41,22 @@ if (isset($_SESSION['idUsuario']) && $_SESSION['idUsuario'] != '') {
             </section>
             <section class="information">
                 <!--FIN DE PORTADA  -->
+            
+          <!--PORTADA -->
 
+            <main>     
+                <div id="desaparecer" style="display: block;">   
+                <section class="background background-image-9">
+                    <div class="background-filter"></div>
+                    <div class="image-9">
+                        <h1 class="titulo">Bloc de Notas  </h1>
+                    </div>
+                </section>
+                <section class="divider hide-on-small-and-down">
+                </section>            
+                <section class="information">
+             <!--FIN DE PORTADA  -->            
+              
 
 
                 <!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
