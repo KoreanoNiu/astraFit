@@ -27,20 +27,6 @@ if (isset($_SESSION['idUsuario']) && $_SESSION['idUsuario'] != '') {
 <body>
     <?php include_once('php/handlebars/header.php'); ?>    
 
-    <!--PORTADA -->
-
-    <main>
-        <div id="desaparecer" style="display: block;">
-            <section class="background background-image-10">
-                <div class="background-filter"></div>
-                <div class="image-7">
-                    <h1 class="titulo">Bloc de Notas </h1>
-                </div>
-            </section>
-            <section class="divider hide-on-small-and-down">
-            </section>
-            <section class="information">
-                <!--FIN DE PORTADA  -->
             
           <!--PORTADA -->
 
