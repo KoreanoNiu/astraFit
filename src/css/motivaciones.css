@@ -185,6 +185,19 @@ div.imagen:active{
     position: relative;
     text-align: left;
 }
+.DeportesBoton
+{   
+    width:30%;
+    height:7vw;
+    background-color:#0A3F56;
+    font-size:3vw;
+    font-family:Oxygen;
+    src: url('../../src/fonts/Oxygen-Bold.ttf');
+    font-weight:700;
+    color:white;
+    margin-bottom:2vw;
+
+}
 
 
 
@@ -399,6 +412,22 @@ div.imagen{
     top:25%;
     position:absolute;
 }
+.DeportesBoton
+{   
+    width:60%;
+    height:9vw;
+    background-color:#0A3F56;
+    font-size:3vw;
+    font-family:Oxygen;
+    src: url('../../src/fonts/Oxygen-Bold.ttf');
+    font-weight:700;
+    color:white;
+    margin-bottom:2vw;
+    top:-30px;
+    position:relative;
+
+}
+
 
 }
 @media screen and (max-width: 767px){
@@ -501,7 +530,22 @@ div.contenidos{
     color:white;
 
 }
-    
+.DeportesBoton
+{   
+    width:70%;
+    height:7vw;
+    background-color:#0A3F56;
+    font-size:4.5vw;
+    font-family:Oxygen;
+    src: url('../../src/fonts/Oxygen-Bold.ttf');
+    font-weight:700;
+    color:white;
+    margin-bottom:7vw;
+    position: relative;
+    top:40px;
+
+}
+
 
 
     
@@ -612,6 +656,22 @@ div.contenidos{
     color:white;
 
 }
+.DeportesBoton
+{   
+    width:80%;
+    height:12vw;
+    background-color:#0A3F56;
+    font-size:5.5vw;
+    font-family:Oxygen;
+    src: url('../../src/fonts/Oxygen-Bold.ttf');
+    font-weight:700;
+    color:white;
+    margin-bottom:9vw;
+    position: relative;
+    top:40px;
+
+}
+
 
    
 }
@@ -716,6 +776,21 @@ div.contenidos{
     font-family:Oxygen;
     src: url('../../src/fonts/Oxygen-Bold.ttf');
     color:white;
+
+}
+.DeportesBoton
+{   
+    width:85%;
+    height:16vw;
+    background-color:#0A3F56;
+    font-size:6.6vw;
+    font-family:Oxygen;
+    src: url('../../src/fonts/Oxygen-Bold.ttf');
+    font-weight:700;
+    color:white;
+    margin-bottom:9vw;
+    position: relative;
+    top:30px;
 
 }
 
