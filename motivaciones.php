@@ -23,8 +23,6 @@
     </head>
 
     <body>
-        <?php include_once('php/handlebars/header.php'); ?>
-        <body>
             
           <!--PORTADA -->
 
@@ -277,7 +275,144 @@
 
 
                                         </div><!--FIN DE CARDS GIRATORIAS -->
+                                        <button class="DeportesBoton" id="ButtonIntenso">Deportes</button>
                                   </div> <!--FIN DE INTENSA DE MOTIVACION -->
+<!---*--------------------------------------------------------------------------------DEPORTES DE INTESOS ---------------------------------------------------------------------------------->
+<div id="deportesIntensos" style="display: none; text-align: center;">
+    <section class="background background-image-17">
+        <div class="background-filter"></div>
+        <div class="image-17">
+            <h1 > Deportes Intensos </h1>
+        
+        </div>
+    </section>
+    <section class="divider hide-on-small-and-down">
+    </section> 
+    <section class="information">
+        <!-- CARDS GIRATORIAS  -->
+    <div id="SecionTip">
+
+        <!--CARD GIRATORIA -->
+         <div class = "contenidos" style="margin-top: 7vw;">
+             <div class = "imagen">
+             <div class = "parteDelantera">
+                 <p class = "TituloGiratorio">Artes Marciales </p>
+             <img class = "derecha2" src="imagenes/deportes/artesMarciales.jpg" width="100%" height="100%">
+             </div>
+             <div class = "parteTrasera">
+                 <p class = "TituloGiratorio">Artes Marciales </p>
+                 <img class = "derecha2" src="imagenes/enfocarse.jpg" width="100%" height="100%">
+             </div>
+             </div>
+             </div><!--CARD GIRATORIA -->
+ 
+ 
+      <!--CARD GIRATORIA -->
+         <div class = "contenidos" style="margin-top: 7vw;">
+             <div class = "imagen">
+             <div class = "parteDelantera">
+                 <p class = "TituloGiratorio">Baloncesto </p>
+             <img class = "derecha2" src="imagenes/deportes/baloncesto.jpg" width="100%" height="100%">
+             </div>
+             <div class = "parteTrasera">
+                 <p class = "TituloGiratorio">Baloncesto  </p>
+                 <img class = "derecha2" src="imagenes/buenoshabitos.jpg" width="100%" height="100%">
+             </div>
+             </div>
+             </div><!--CARD GIRATORIA -->
+ 
+ 
+ 
+              <!--CARD GIRATORIA -->
+         <div class = "contenidos" style="margin-top: 7vw;">
+             <div class = "imagen">
+             <div class = "parteDelantera">
+                 <p class = "TituloGiratorio">Boxeo </p>
+             <img class = "derecha2" src="imagenes/deportes/boxeo.jpg" width="100%" height="100%">
+             </div>
+             <div class = "parteTrasera">
+                 <p class = "TituloGiratorio">Boxeo </p>
+                 <img class = "derecha2" src="imagenes/confianza.jpg" width="100%" height="100%">
+             </div>
+             </div>
+             </div><!--CARD GIRATORIA -->
+ 
+ 
+              <!--CARD GIRATORIA -->
+         <div class = "contenidos" style="margin-top: 7vw;">
+             <div class = "imagen">
+             <div class = "parteDelantera">
+                 <p class = "TituloGiratorio">Croosfit </p>
+             <img class = "derecha2" src="imagenes/deportes/croosfit.jpg" width="100%" height="100%">
+             </div>
+             <div class = "parteTrasera">
+                 <p class = "TituloGiratorio"> Croosfit</p>
+                 <img class = "derecha2" src="imagenes/persistencia.jpg" width="100%" height="100%">
+             </div>
+             </div>
+             </div><!--CARD GIRATORIA -->
+
+             <!--CARD GIRATORIA -->
+         <div class = "contenidos" style="margin-top: 7vw;">
+            <div class = "imagen">
+            <div class = "parteDelantera">
+                <p class = "TituloGiratorio">FutbolAmericano </p>
+            <img class = "derecha2" src="imagenes/deportes/futbolAmericano.jpg" width="100%" height="100%">
+            </div>
+            <div class = "parteTrasera">
+                <p class = "TituloGiratorio"> FutbolAmericano</p>
+                <img class = "derecha2" src="imagenes/persistencia.jpg" width="100%" height="100%">
+            </div>
+            </div>
+            </div><!--CARD GIRATORIA -->
+
+
+             <!--CARD GIRATORIA -->
+         <div class = "contenidos" style="margin-top: 7vw;">
+            <div class = "imagen">
+            <div class = "parteDelantera">
+                <p class = "TituloGiratorio">Hockey </p>
+            <img class = "derecha2" src="imagenes/deportes/hockey.jpg" width="100%" height="100%">
+            </div>
+            <div class = "parteTrasera">
+                <p class = "TituloGiratorio"> Hockey</p>
+                <img class = "derecha2" src="imagenes/persistencia.jpg" width="100%" height="100%">
+            </div>
+            </div>
+            </div><!--CARD GIRATORIA -->
+             <!--CARD GIRATORIA -->
+         <div class = "contenidos" style="margin-top: 7vw;">
+            <div class = "imagen">
+            <div class = "parteDelantera">
+                <p class = "TituloGiratorio">Lucha Libre </p>
+            <img class = "derecha2" src="imagenes/deportes/luchaLibre.jpg" width="100%" height="100%">
+            </div>
+            <div class = "parteTrasera">
+                <p class = "TituloGiratorio"> Lucha Libre </p>
+                <img class = "derecha2" src="imagenes/persistencia.jpg" width="100%" height="100%">
+            </div>
+            </div>
+            </div><!--CARD GIRATORIA -->
+
+
+             <!--CARD GIRATORIA -->
+         <div class = "contenidos" style="margin-top: 7vw;">
+            <div class = "imagen">
+            <div class = "parteDelantera">
+                <p class = "TituloGiratorio">Tenis </p>
+            <img class = "derecha2" src="imagenes/deportes/tenis.jpg" width="100%" height="100%">
+            </div>
+            <div class = "parteTrasera">
+                <p class = "TituloGiratorio"> Tenis </p>
+                <img class = "derecha2" src="imagenes/persistencia.jpg" width="100%" height="100%">
+            </div>
+            </div>
+            </div><!--CARD GIRATORIA -->
+            
+ 
+ 
+             </div><!--FIN DE CARDS GIRATORIAS -->
+        </section>
     
 
 
@@ -453,8 +588,147 @@
 
 
                         </div><!--FIN DE CARDS GIRATORIAS -->
+                        <button class="DeportesBoton" id="ButtonEspiritual">Deportes</button>
 
          </div> <!--FIN DE ESPIRITUAL DE MOTIVACION-->
+         
+<!---*--------------------------------------------------------------------------------DEPORTES DE ESPIRITUAL ---------------------------------------------------------------------------------->
+<div id="deportesEspiritual" style="display: none; text-align: center;">
+    <section class="background background-image-17">
+        <div class="background-filter"></div>
+        <div class="image-17">
+            <h1 > Deportes Espiritual </h1>
+        
+        </div>
+    </section>
+    <section class="divider hide-on-small-and-down">
+    </section> 
+    <section class="information">
+        <!-- CARDS GIRATORIAS  -->
+    <div id="SecionTip">
+
+        <!--CARD GIRATORIA -->
+         <div class = "contenidos" style="margin-top: 7vw;">
+             <div class = "imagen">
+             <div class = "parteDelantera">
+                 <p class = "TituloGiratorio">Mindfulness </p>
+             <img class = "derecha2" src="imagenes/deportes/mindfulness.jpg" width="100%" height="100%">
+             </div>
+             <div class = "parteTrasera">
+                 <p class = "TituloGiratorio">Mindfulness </p>
+                 <img class = "derecha2" src="imagenes/enfocarse.jpg" width="100%" height="100%">
+             </div>
+             </div>
+             </div><!--CARD GIRATORIA -->
+ 
+ 
+      <!--CARD GIRATORIA -->
+         <div class = "contenidos" style="margin-top: 7vw;">
+             <div class = "imagen">
+             <div class = "parteDelantera">
+                 <p class = "TituloGiratorio">Meditacion Bisapana </p>
+             <img class = "derecha2" src="imagenes/deportes/meditacionBisapana.jpg" width="100%" height="100%">
+             </div>
+             <div class = "parteTrasera">
+                 <p class = "TituloGiratorio">Meditacion Bisapana </p>
+                 <img class = "derecha2" src="imagenes/buenoshabitos.jpg" width="100%" height="100%">
+             </div>
+             </div>
+             </div><!--CARD GIRATORIA -->
+ 
+ 
+ 
+              <!--CARD GIRATORIA -->
+         <div class = "contenidos" style="margin-top: 7vw;">
+             <div class = "imagen">
+             <div class = "parteDelantera">
+                 <p class = "TituloGiratorio">Meditacion Budista </p>
+             <img class = "derecha2" src="imagenes/deportes/meditacionBudista.jpg" width="100%" height="100%">
+             </div>
+             <div class = "parteTrasera">
+                 <p class = "TituloGiratorio">Meditacion Budista  </p>
+                 <img class = "derecha2" src="imagenes/confianza.jpg" width="100%" height="100%">
+             </div>
+             </div>
+             </div><!--CARD GIRATORIA -->
+ 
+ 
+              <!--CARD GIRATORIA -->
+         <div class = "contenidos" style="margin-top: 7vw;">
+             <div class = "imagen">
+             <div class = "parteDelantera">
+                 <p class = "TituloGiratorio">Meditacion sonido Primordial </p>
+             <img class = "derecha2" src="imagenes/deportes/meditacionsonidoPrimordial.jpg" width="100%" height="100%">
+             </div>
+             <div class = "parteTrasera">
+                 <p class = "TituloGiratorio"> Meditacion sonido Primordial</p>
+                 <img class = "derecha2" src="imagenes/persistencia.jpg" width="100%" height="100%">
+             </div>
+             </div>
+             </div><!--CARD GIRATORIA -->
+
+             <!--CARD GIRATORIA -->
+         <div class = "contenidos" style="margin-top: 7vw;">
+            <div class = "imagen">
+            <div class = "parteDelantera">
+                <p class = "TituloGiratorio">Meditacion Tonglen </p>
+            <img class = "derecha2" src="imagenes/deportes/meditaciontonglen.jpg" width="100%" height="100%">
+            </div>
+            <div class = "parteTrasera">
+                <p class = "TituloGiratorio">Meditacion Tonglen </p>
+                <img class = "derecha2" src="imagenes/persistencia.jpg" width="100%" height="100%">
+            </div>
+            </div>
+            </div><!--CARD GIRATORIA -->
+
+
+             <!--CARD GIRATORIA -->
+         <div class = "contenidos" style="margin-top: 7vw;">
+            <div class = "imagen">
+            <div class = "parteDelantera">
+                <p class = "TituloGiratorio">Meditacion Metta </p>
+            <img class = "derecha2" src="imagenes/deportes/MeditacionMetta.jpg" width="100%" height="100%">
+            </div>
+            <div class = "parteTrasera">
+                <p class = "TituloGiratorio"> Meditacion Metta</p>
+                <img class = "derecha2" src="imagenes/persistencia.jpg" width="100%" height="100%">
+            </div>
+            </div>
+            </div><!--CARD GIRATORIA -->
+             <!--CARD GIRATORIA -->
+         <div class = "contenidos" style="margin-top: 7vw;">
+            <div class = "imagen">
+            <div class = "parteDelantera">
+                <p class = "TituloGiratorio">Meditacion Transcendental</p>
+            <img class = "derecha2" src="imagenes/deportes/MeditacionTranscendental.jpg" width="100%" height="100%">
+            </div>
+            <div class = "parteTrasera">
+                <p class = "TituloGiratorio"> Meditacion Transcendental </p>
+                <img class = "derecha2" src="imagenes/persistencia.jpg" width="100%" height="100%">
+            </div>
+            </div>
+            </div><!--CARD GIRATORIA -->
+
+
+             <!--CARD GIRATORIA -->
+         <div class = "contenidos" style="margin-top: 7vw;">
+            <div class = "imagen">
+            <div class = "parteDelantera">
+                <p class = "TituloGiratorio">Meditación Kundalini </p>
+            <img class = "derecha2" src="imagenes/deportes/Meditación Kundalini.png" width="100%" height="100%">
+            </div>
+            <div class = "parteTrasera">
+                <p class = "TituloGiratorio"> Meditación Kundalini </p>
+                <img class = "derecha2" src="imagenes/persistencia.jpg" width="100%" height="100%">
+            </div>
+            </div>
+            </div><!--CARD GIRATORIA -->
+            
+ 
+ 
+             </div><!--FIN DE CARDS GIRATORIAS -->
+        </section>
+
 
 
 
@@ -624,10 +898,93 @@
             </div>
             </div><!--CARD GIRATORIA -->
 
+            <button class="DeportesBoton" id="ButtonRelajado">Deportes</button>
+            
 
             </div><!--FIN DE CARDS GIRATORIAS -->
 
 </div> <!--FIN DE RELAJADO DE MOTIVACION-->
+<!---*--------------------------------------------------------------------------------DEPORTES DE Relajadps ---------------------------------------------------------------------------------->
+<div id="deportesNovatos" style="display: none; text-align: center;">
+    <section class="background background-image-17">
+        <div class="background-filter"></div>
+        <div class="image-17">
+            <h1 > Deportes Relajados </h1>
+        
+        </div>
+    </section>
+    <section class="divider hide-on-small-and-down">
+    </section> 
+    <section class="information">
+        <!-- CARDS GIRATORIAS  -->
+    <div id="SecionTip">
+
+        <!--CARD GIRATORIA -->
+         <div class = "contenidos" style="margin-top: 7vw;">
+             <div class = "imagen">
+             <div class = "parteDelantera">
+                 <p class = "TituloGiratorio">Baile </p>
+             <img class = "derecha2" src="imagenes/deportes/ligeroBaile.jpg" width="100%" height="100%">
+             </div>
+             <div class = "parteTrasera">
+                 <p class = "TituloGiratorio">Baile </p>
+                 <img class = "derecha2" src="imagenes/deportes/natacion.jpg" width="100%" height="100%">
+             </div>
+             </div>
+             </div><!--CARD GIRATORIA -->
+ 
+ 
+      <!--CARD GIRATORIA -->
+         <div class = "contenidos" style="margin-top: 7vw;">
+             <div class = "imagen">
+             <div class = "parteDelantera">
+                 <p class = "TituloGiratorio">Natacion </p>
+             <img class = "derecha2" src="imagenes/deportes/natacion.jpg" width="100%" height="100%">
+             </div>
+             <div class = "parteTrasera">
+                 <p class = "TituloGiratorio">Natacion </p>
+                 <img class = "derecha2" src="imagenes/buenoshabitos.jpg" width="100%" height="100%">
+             </div>
+             </div>
+             </div><!--CARD GIRATORIA -->
+ 
+ 
+ 
+              <!--CARD GIRATORIA -->
+         <div class = "contenidos" style="margin-top: 7vw;">
+             <div class = "imagen">
+             <div class = "parteDelantera">
+                 <p class = "TituloGiratorio">Bici </p>
+             <img class = "derecha2" src="imagenes/deportes/ligeroBici.jpg" width="100%" height="100%">
+             </div>
+             <div class = "parteTrasera">
+                 <p class = "TituloGiratorio">Bici</p>
+                 <img class = "derecha2" src="imagenes/confianza.jpg" width="100%" height="100%">
+             </div>
+             </div>
+             </div><!--CARD GIRATORIA -->
+ 
+ 
+              <!--CARD GIRATORIA -->
+         <div class = "contenidos" style="margin-top: 7vw;">
+             <div class = "imagen">
+             <div class = "parteDelantera">
+                 <p class = "TituloGiratorio">Yoga </p>
+             <img class = "derecha2" src="imagenes/deportes/ligeroYoga.jpg" width="100%" height="100%">
+             </div>
+             <div class = "parteTrasera">
+                 <p class = "TituloGiratorio"> Yoga</p>
+                 <img class = "derecha2" src="imagenes/persistencia.jpg" width="100%" height="100%">
+             </div>
+             </div>
+             </div><!--CARD GIRATORIA -->
+
+             
+            
+ 
+ 
+             </div><!--FIN DE CARDS GIRATORIAS -->
+        </section>
 
 
 <!------------------------------------------------------------------------------------NOVATO ------------------------------------------------------------------------------------------------------------------------------------------------->
@@ -809,8 +1166,98 @@
 
 
             </div><!--FIN DE CARDS GIRATORIAS -->
+           
+            <button class="DeportesBoton" id="ButtonNovato">Deportes</button>
+
+           
+            </div>
 
 </div> <!--FIN DE NOVATO DE MOTIVACION-->
+
+
+<!---*--------------------------------------------------------------------------------DEPORTES DE NOVATOS ---------------------------------------------------------------------------------->
+<div id="deportesNovatos" style="display: none; text-align: center;">
+    <section class="background background-image-17">
+        <div class="background-filter"></div>
+        <div class="image-17">
+            <h1 > Deportes Novato </h1>
+        
+        </div>
+    </section>
+    <section class="divider hide-on-small-and-down">
+    </section> 
+    <section class="information">
+        <!-- CARDS GIRATORIAS  -->
+    <div id="SecionTip">
+
+        <!--CARD GIRATORIA -->
+         <div class = "contenidos" style="margin-top: 7vw;">
+             <div class = "imagen">
+             <div class = "parteDelantera">
+                 <p class = "TituloGiratorio">Baile </p>
+             <img class = "derecha2" src="imagenes/deportes/ligeroBaile.jpg" width="100%" height="100%">
+             </div>
+             <div class = "parteTrasera">
+                 <p class = "TituloGiratorio">Baile </p>
+                 <img class = "derecha2" src="imagenes/deportes/natacion.jpg" width="100%" height="100%">
+             </div>
+             </div>
+             </div><!--CARD GIRATORIA -->
+ 
+ 
+      <!--CARD GIRATORIA -->
+         <div class = "contenidos" style="margin-top: 7vw;">
+             <div class = "imagen">
+             <div class = "parteDelantera">
+                 <p class = "TituloGiratorio">Natacion </p>
+             <img class = "derecha2" src="imagenes/deportes/natacion.jpg" width="100%" height="100%">
+             </div>
+             <div class = "parteTrasera">
+                 <p class = "TituloGiratorio">Natacion </p>
+                 <img class = "derecha2" src="imagenes/buenoshabitos.jpg" width="100%" height="100%">
+             </div>
+             </div>
+             </div><!--CARD GIRATORIA -->
+ 
+ 
+ 
+              <!--CARD GIRATORIA -->
+         <div class = "contenidos" style="margin-top: 7vw;">
+             <div class = "imagen">
+             <div class = "parteDelantera">
+                 <p class = "TituloGiratorio">Bici </p>
+             <img class = "derecha2" src="imagenes/deportes/ligeroBici.jpg" width="100%" height="100%">
+             </div>
+             <div class = "parteTrasera">
+                 <p class = "TituloGiratorio">Bici</p>
+                 <img class = "derecha2" src="imagenes/confianza.jpg" width="100%" height="100%">
+             </div>
+             </div>
+             </div><!--CARD GIRATORIA -->
+ 
+ 
+              <!--CARD GIRATORIA -->
+         <div class = "contenidos" style="margin-top: 7vw;">
+             <div class = "imagen">
+             <div class = "parteDelantera">
+                 <p class = "TituloGiratorio">Yoga </p>
+             <img class = "derecha2" src="imagenes/deportes/ligeroYoga.jpg" width="100%" height="100%">
+             </div>
+             <div class = "parteTrasera">
+                 <p class = "TituloGiratorio"> Yoga</p>
+                 <img class = "derecha2" src="imagenes/persistencia.jpg" width="100%" height="100%">
+             </div>
+             </div>
+             </div><!--CARD GIRATORIA -->
+
+             
+            
+ 
+ 
+             </div><!--FIN DE CARDS GIRATORIAS -->
+        </section>
+
+
 
 
 
@@ -994,12 +1441,151 @@ El ejercicio hace que los problemas cambia la bioquimica del cuerpo , esto hace 
 
 
             </div><!--FIN DE CARDS GIRATORIAS -->
-
+            <button class="DeportesBoton" id="ButtonExperiencia">Deportes</button>
 </div> <!--FIN DE EXPERIENCIA DE MOTIVACION-->
 
 
 
+<div id="deportesExperiencia" style="display: none; text-align: center;">
+    <section class="background background-image-17">
+        <div class="background-filter"></div>
+        <div class="image-17">
+            <h1 > Deportes Experiencia </h1>
+        
+        </div>
+    </section>
+    <section class="divider hide-on-small-and-down">
+    </section> 
+    <section class="information">
+        <!-- CARDS GIRATORIAS  -->
+    <div id="SecionTip">
 
+        <!--CARD GIRATORIA -->
+         <div class = "contenidos" style="margin-top: 7vw;">
+             <div class = "imagen">
+             <div class = "parteDelantera">
+                 <p class = "TituloGiratorio">Artes Marciales </p>
+             <img class = "derecha2" src="imagenes/deportes/artesMarciales.jpg" width="100%" height="100%">
+             </div>
+             <div class = "parteTrasera">
+                 <p class = "TituloGiratorio">Artes Marciales </p>
+                 <img class = "derecha2" src="imagenes/enfocarse.jpg" width="100%" height="100%">
+             </div>
+             </div>
+             </div><!--CARD GIRATORIA -->
+ 
+ 
+      <!--CARD GIRATORIA -->
+         <div class = "contenidos" style="margin-top: 7vw;">
+             <div class = "imagen">
+             <div class = "parteDelantera">
+                 <p class = "TituloGiratorio">Baloncesto </p>
+             <img class = "derecha2" src="imagenes/deportes/baloncesto.jpg" width="100%" height="100%">
+             </div>
+             <div class = "parteTrasera">
+                 <p class = "TituloGiratorio">Baloncesto  </p>
+                 <img class = "derecha2" src="imagenes/buenoshabitos.jpg" width="100%" height="100%">
+             </div>
+             </div>
+             </div><!--CARD GIRATORIA -->
+ 
+ 
+ 
+              <!--CARD GIRATORIA -->
+         <div class = "contenidos" style="margin-top: 7vw;">
+             <div class = "imagen">
+             <div class = "parteDelantera">
+                 <p class = "TituloGiratorio">Boxeo </p>
+             <img class = "derecha2" src="imagenes/deportes/boxeo.jpg" width="100%" height="100%">
+             </div>
+             <div class = "parteTrasera">
+                 <p class = "TituloGiratorio">Boxeo </p>
+                 <img class = "derecha2" src="imagenes/confianza.jpg" width="100%" height="100%">
+             </div>
+             </div>
+             </div><!--CARD GIRATORIA -->
+ 
+ 
+              <!--CARD GIRATORIA -->
+         <div class = "contenidos" style="margin-top: 7vw;">
+             <div class = "imagen">
+             <div class = "parteDelantera">
+                 <p class = "TituloGiratorio">Croosfit </p>
+             <img class = "derecha2" src="imagenes/deportes/croosfit.jpg" width="100%" height="100%">
+             </div>
+             <div class = "parteTrasera">
+                 <p class = "TituloGiratorio"> Croosfit</p>
+                 <img class = "derecha2" src="imagenes/persistencia.jpg" width="100%" height="100%">
+             </div>
+             </div>
+             </div><!--CARD GIRATORIA -->
+
+             <!--CARD GIRATORIA -->
+         <div class = "contenidos" style="margin-top: 7vw;">
+            <div class = "imagen">
+            <div class = "parteDelantera">
+                <p class = "TituloGiratorio">FutbolAmericano </p>
+            <img class = "derecha2" src="imagenes/deportes/futbolAmericano.jpg" width="100%" height="100%">
+            </div>
+            <div class = "parteTrasera">
+                <p class = "TituloGiratorio"> FutbolAmericano</p>
+                <img class = "derecha2" src="imagenes/persistencia.jpg" width="100%" height="100%">
+            </div>
+            </div>
+            </div><!--CARD GIRATORIA -->
+
+
+             <!--CARD GIRATORIA -->
+         <div class = "contenidos" style="margin-top: 7vw;">
+            <div class = "imagen">
+            <div class = "parteDelantera">
+                <p class = "TituloGiratorio">Hockey </p>
+            <img class = "derecha2" src="imagenes/deportes/hockey.jpg" width="100%" height="100%">
+            </div>
+            <div class = "parteTrasera">
+                <p class = "TituloGiratorio"> Hockey</p>
+                <img class = "derecha2" src="imagenes/persistencia.jpg" width="100%" height="100%">
+            </div>
+            </div>
+            </div><!--CARD GIRATORIA -->
+             <!--CARD GIRATORIA -->
+         <div class = "contenidos" style="margin-top: 7vw;">
+            <div class = "imagen">
+            <div class = "parteDelantera">
+                <p class = "TituloGiratorio">Lucha Libre </p>
+            <img class = "derecha2" src="imagenes/deportes/luchaLibre.jpg" width="100%" height="100%">
+            </div>
+            <div class = "parteTrasera">
+                <p class = "TituloGiratorio"> Lucha Libre </p>
+                <img class = "derecha2" src="imagenes/persistencia.jpg" width="100%" height="100%">
+            </div>
+            </div>
+            </div><!--CARD GIRATORIA -->
+
+
+             <!--CARD GIRATORIA -->
+         <div class = "contenidos" style="margin-top: 7vw;">
+            <div class = "imagen">
+            <div class = "parteDelantera">
+                <p class = "TituloGiratorio">Tenis </p>
+            <img class = "derecha2" src="imagenes/deportes/tenis.jpg" width="100%" height="100%">
+            </div>
+            <div class = "parteTrasera">
+                <p class = "TituloGiratorio"> Tenis </p>
+                <img class = "derecha2" src="imagenes/persistencia.jpg" width="100%" height="100%">
+            </div>
+            </div>
+            </div><!--CARD GIRATORIA -->
+            
+ 
+ 
+             </div><!--FIN DE CARDS GIRATORIAS -->
+        </section>
+    
+
+
+
+<!----------------------------------------EJERCICIOS INTENSOS (EJEMPLOS )------------------------------------------->
 
 
 
@@ -1077,6 +1663,71 @@ El ejercicio hace que los problemas cambia la bioquimica del cuerpo , esto hace 
     
                   
                 }
+               
+
+                document.getElementById("ButtonNovato").onclick=function()
+            {
+                document.getElementById("novatoMotivacion").style.display="none";
+                document.getElementById("deportesNovatos").style.display="block";
+                    document.getElementById("jeje").innerHTML="";
+                    
+                    
+                   
+    
+                  
+            
+                }
+
+                document.getElementById("ButtonEspiritual").onclick=function()
+            {
+                document.getElementById("espiritualMotivacion").style.display="none";
+                document.getElementById("deportesEspiritual ").style.display="block";
+                    document.getElementById("jeje").innerHTML="";
+                    
+                    
+                   
+    
+                  
+                }
+                document.getElementById("ButtonIntenso").onclick=function()
+            {
+                document.getElementById("intensaMotivacion").style.display="none";
+                document.getElementById("deportesIntensos").style.display="block";
+                    document.getElementById("jeje").innerHTML="";
+                    
+                    
+                   
+    
+                  
+            
+                }
+
+                document.getElementById("ButtonExperiencia").onclick=function()
+            {
+                document.getElementById("experienciaMotivacion").style.display="none";
+                document.getElementById("deportesExperiencia").style.display="block";
+                    document.getElementById("jeje").innerHTML="";
+            
+                }
+
+                document.getElementById("ButtonRelajado").onclick=function()
+            {
+                document.getElementById("novatoMotivacion").style.display="none";
+                document.getElementById("deportesRelajado").style.display="block";
+                    document.getElementById("jeje").innerHTML="";
+                    
+                    
+                   
+    
+                  
+            
+                }
+                    
+                    
+                   
+    
+                  
+        
          
          
             
