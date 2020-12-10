@@ -89,7 +89,91 @@
     font-size:2.8vw;
     font-family:Oxygen;
     src: url('../../src/fonts/Oxygen-Bold.ttf');
-   
+}
+ /* ----------------------------------------------------------------------------------NOTAS----------------------------------------------------------------------------------------------- */
+.buttonAgregar
+{
+    width:10%;
+    height:8vw;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    position: relative;
+    left:600px;
+    top:-70px;
+    background-color:#4F71E2;
+    margin: 0px , 0px , 0px 0px ;
+    
+}
+.imagencompleta
+{
+    width:100%;
+    height:100%;
+}
+#notas
+{
+    width:87.8%;
+    height:auto;
+    position: relative;
+    background-color: #222222;
+    border-width:5px;
+   clear:none;
+    top:-30px;
+    left:6%;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    padding-left:26px;
+    padding-top:40px;
+}
+#nota
+{
+    width:87.8%;
+    height:auto;
+    position: relative;
+    background-color:#333333;
+    border-width:5px;
+   clear:none;
+    top:-30px;
+    left:6%;
+    margin-top:20px;
+    padding-bottom: 0px;
+    margin-bottom: 10px;
+    padding-left:26px;
+    padding-top:50px;
+}
+.TituloNota
+{
+    font-size:2vw;
+    font-family:Oxygen;
+    src: url('../../src/fonts/Oxygen-Bold.ttf');
+    margin:20px;
+    color:white;
+}
+.TextoNota
+{
+   color:#A1A8B1;
+   font-size:1.7vw;
+    font-family:Oxygen;
+    src: url('../../src/fonts/Oxygen-Bold.ttf');
+    margin:20px;
+
+}
+.Fecha
+{
+    font-size:1.2vw;
+    font-family:Oxygen;
+    src: url('../../src/fonts/Oxygen-Bold.ttf');
+    margin:20px;
+    color:white;
+}
+.ContenidoFecha
+{
+    font-size:1.1vw;
+    font-family:Oxygen;
+    src: url('../../src/fonts/Oxygen-Bold.ttf');
+    margin:20px;
+    color:white:
+
+
 }
 @media screen and (max-width: 1280px){
     #information3
@@ -186,6 +270,67 @@
 
 }
 @media screen and (max-width: 970px){
+ #notas
+{
+    width:100%;
+    height:auto;
+    position: relative;
+    background-color: #222222;
+    border-width:5px;
+   clear:none;
+    top:-30px;
+    left:0%;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    padding-left:26px;
+    padding-top:40px;
+}
+#nota
+{
+    width:96%;
+    height:auto;
+    position: relative;
+    background-color:#333333;
+    border-width:5px;
+   clear:none;
+    top:-30px;
+    left:0.5%;
+    margin-top:20px;
+    padding-bottom: 0px;
+    margin-bottom: 10px;
+    padding-left:26px;
+    padding-top:14px;
+}
+.TituloNota
+{
+    font-size:2.2vw;
+    font-family:Oxygen;
+    src: url('../../src/fonts/Oxygen-Bold.ttf');
+    margin:20px;
+    color:white;
+}
+.TextoNota
+{
+   color:#A1A8B1;
+   font-size:1.9vw;
+    font-family:Oxygen;
+    src: url('../../src/fonts/Oxygen-Bold.ttf');
+    margin:20px;
+
+}
+.buttonAgregar
+{
+    width:11%;
+    height:9vw;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    position: relative;
+    left:450px;
+    top:-70px;
+    background-color:#4F71E2;
+    margin: 0px , 0px , 0px 0px ;
+    
+}
     #information3
     {
         width: 100%;
@@ -225,7 +370,88 @@
     
 }
 
+
+
+
 @media screen and (max-width: 767px){
+    #notas
+    {
+        width:100%;
+        height:auto;
+        position: relative;
+        background-color: #222222;
+        border-width:5px;
+       clear:none;
+        top:28px;
+        left:0%;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+        padding-left:26px;
+        padding-top:40px;
+    }
+    #nota
+    {
+        width:96%;
+        height:auto;
+        position: relative;
+        background-color:#333333;
+        border-width:5px;
+       clear:none;
+        top:-30px;
+        left:0.5%;
+        margin-top:20px;
+        padding-bottom: 0px;
+        margin-bottom: 10px;
+        padding-left:26px;
+        padding-top:14px;
+    }
+    .Fecha
+{
+    font-size:1.9vw;
+    font-family:Oxygen;
+    src: url('../../src/fonts/Oxygen-Bold.ttf');
+    margin:20px;
+    color:white;
+}
+.ContenidoFecha
+{
+    font-size:1.7vw;
+    font-family:Oxygen;
+    src: url('../../src/fonts/Oxygen-Bold.ttf');
+    margin:20px;
+    color:white:
+
+
+}
+.TituloNota
+{
+    font-size:2.5vw;
+    font-family:Oxygen;
+    src: url('../../src/fonts/Oxygen-Bold.ttf');
+    margin:20px;
+    color:white;
+}
+.TextoNota
+{
+   color:#A1A8B1;
+   font-size:2vw;
+    font-family:Oxygen;
+    src: url('../../src/fonts/Oxygen-Bold.ttf');
+    margin:20px;
+}
+.buttonAgregar
+{
+    width:12%;
+    height:10vw;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    position: relative;
+    left:340px;
+    top:10px;
+    background-color:#4F71E2;
+    margin: 0px , 0px , 0px 0px ;
+    
+}
     #information3
     {
         width: 100%;
@@ -296,6 +522,52 @@
     
 }
 @media screen and (max-width: 600px){
+    #nota
+    {
+        width:98%;
+        height:auto;
+        position: relative;
+        background-color:#333333;
+        border-width:5px;
+       clear:none;
+        top:-30px;
+        left:0.5%;
+        margin-top:20px;
+        padding-bottom: 0px;
+        margin-bottom: 9px;
+        padding-left:2px;
+        padding-top:14px;
+    }
+    #notas
+    {
+        width:100%;
+        height:auto;
+        position: relative;
+        background-color: #222222;
+        border-width:5px;
+       clear:none;
+        top:28px;
+        left:0%;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+        padding-left:4px;
+        padding-top:30px;
+    }
+    .buttonAgregar
+{
+    width:13%;
+    height:11vw;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    position: relative;
+    left:42vw;
+    top:10px;
+    background-color:#4F71E2;
+    margin: 0px , 0px , 0px 0px ;
+    
+}
+
+
     .TituloFormulario
     {
         font-size:5.2vw;
@@ -338,7 +610,7 @@
     height:10vw;
     background-color: teal;
     color:white;
-    left:3vw;
+    left:0vw;
     position: relative;
     border-radius:15px;
     font-size:3.6vw;
@@ -349,6 +621,40 @@
 
 }
 @media screen and (max-width: 400px){
+    .Fecha
+    {
+        font-size:3vw;
+        font-family:Oxygen;
+        src: url('../../src/fonts/Oxygen-Bold.ttf');
+        margin:20px;
+        color:white;
+    }
+    .ContenidoFecha
+    {
+        font-size:2.8vw;
+        font-family:Oxygen;
+        src: url('../../src/fonts/Oxygen-Bold.ttf');
+        margin:20px;
+        color:white:
+    
+    
+    }
+    .TituloNota
+    {
+        font-size:4vw;
+        font-family:Oxygen;
+        src: url('../../src/fonts/Oxygen-Bold.ttf');
+        margin:20px;
+        color:white;
+    }
+    .TextoNota
+    {
+       color:#A1A8B1;
+       font-size:2.5vw;
+        font-family:Oxygen;
+        src: url('../../src/fonts/Oxygen-Bold.ttf');
+        margin:20px;
+    }
     #information3
     {
         width: 100%;
@@ -387,7 +693,7 @@
 #box
     {   
         width:101%;
-        height:900px;
+        height:600px;
         top:75px;
         position: relative;
         background-color: #222222;
