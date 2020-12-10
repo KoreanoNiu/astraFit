@@ -11,6 +11,7 @@ createNote.onclick = function (){
     const noteForm = new FormData(document.getElementById("create-note-form"));
     if (validarDatos(noteForm)) {
         console.log("No esta vacio");
+        noteForm.append('peticion', 'crearNota');
         fetch('php/create-note-api.php', {
             method: "POST",
             body: noteForm,
@@ -65,21 +66,17 @@ function eliminarNota(e) {
 }
 
 function funcionInputs() {
-    console.log(this.parentNode);
+    if (this.parentNode.getAttribute('id') != 'id') {
+        let dataNote = new FormData();
+        dataNote.append('idNota', this.parentNode.getAttribute('id').slice(10));
+        dataNote.append('peticion', 'editarElemento');
+        dataNote.append(`${this.name}`, this.value);
+        dataNote.append('nombre', this.name);
 
-    let dataNote = new FormData();
-
-    dataNote.append('idNota', this.parentNode.getAttribute('id').slice(10));
-    dataNote.append('peticion', 'editarElemento');
-    dataNote.append(`${this.name}`, this.value);
-    dataNote.append('nombre', this.name);
-    console.log(dataNote.get('nombre'));
-
-    /* fetch('php/create-note-api.php', {
-        method: "POST",
-        body: dataNote,
-        "Content-Type": "application/json"
-    }).then(response => response.json()).then(data => {obj = data
-        console.log(data);
-    }); */
+        fetch('php/create-note-api.php', {
+            method: "POST",
+            body: dataNote,
+            "Content-Type": "application/json"
+        })   
+    }
 }

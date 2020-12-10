@@ -144,7 +144,7 @@
             $result->execute($data);
         }
         public function actualizarDatosNotas($conexion, $campo, $tabla, $data){
-            $query = "UPDATE $tabla SET $campo=:dataCampo WHERE idNota = :idNota";
+            $query = "UPDATE $tabla SET $campo=:dataCampo WHERE idNota = :idNota AND idUsuario = :idUsuario";
             $result = $conexion->prepare($query);
             $result->execute($data);
         }

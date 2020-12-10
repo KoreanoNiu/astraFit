@@ -17,7 +17,7 @@
             <div class="full-menu">
                 <ul class="">
                     <li><a href="index.php">INICIO</a></li>
-                    <li><a href="entrenamiento.php.php">ENTRENAMIENTO</a></li>
+                    <li><a href="entrenamiento.php">ENTRENAMIENTO</a></li>
                     <li><a href="calculadora.php" >CALCULADORA</a></li>
                     <li><a href="motivaciones.php" >MOTIVACION</a></li>
                     <?php 
@@ -41,7 +41,7 @@
 
                 <ul class="hide-on-small-and-down horizontal">
                     <li><a href="index.php">INICIO</a></li>
-                    <li><a href="entrenamiento.php.php">ENTRENAMIENTO</a></li>
+                    <li><a href="entrenamiento.php">ENTRENAMIENTO</a></li>
                     <li><a href="calculadora.php" >CALCULADORA</a></li>
                     <li><a href="motivaciones.php" >MOTIVACION</a></li>
                     <?php 

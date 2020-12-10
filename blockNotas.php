@@ -64,13 +64,13 @@ if (isset($_SESSION['idUsuario']) && $_SESSION['idUsuario'] != '') {
                                             echo '
                                                 <div class="note">
                                                     <form id="form-note-' . $nota['idNota'] . '" class="form-note" action="" name="crearNota">
-                                                        <label for="">Titulo</label>
-                                                        <input name="Titulo" type="text" value=' . $nota['titulo'] .'>
-                                                        <Label>Descripcion</Label>
-                                                        <input name="Descripcion" type="text" value=' . $nota['descripcion'] . '>
+                                                        <label for="Titulo">Titulo</label>
+                                                        <input name="Titulo" type="text" value="' . $nota['titulo'] .'">
+                                                        <Label for = "Descripcion">Descripcion</Label>
+                                                        <input name="Descripcion" type="text" value="' . $nota['descripcion'] . '">
                                                         <label for="">Contenido</label>
-                                                        <textarea name="Contenido" id="Contenido"> ' . $nota['contenido'] . '</textarea>
-                                                        <a id="createNote" class="strava-login" id="eliminarNota" style="background-color: #126fbb" onclick=(eliminarNota(this.parentNode))>Eliminar nota</a>
+                                                        <textarea name="Contenido" id="Contenido" value="'. $nota['contenido'] .'">'.$nota['contenido'].'</textarea>
+                                                        <a id="createNote" class="strava-login" id="eliminarNota" style="background-color: #126fbb" onclick=(eliminarNota(this.parentNode))>Eliminar nota <img src="src/img/signo-menos.svg"></a>
                                                     </form>
                                                 </div>
                                             ';

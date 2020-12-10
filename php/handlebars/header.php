@@ -28,9 +28,10 @@
             </form>
             <ul class="">
                 <li><a href="miprogreso.php">MI CUENTA</a></li>
-                <li><a href="entrenamiento.php.php">ENTRENAMIENTO</a></li>
+                <li><a href="entrenamiento.php">ENTRENAMIENTO</a></li>
                 <li><a href="calculadora.php">NUTRICIÓN</a></li>
                 <li><a href="motivaciones.php">MOTIVACIÓN</a></li>
+                <li><a href="blockNotas.php">MIS NOTAS</a></li>
                 <li><a href="cerrarSesion.php">CERRAR SESIÓN</a></li>
                 <?php if ($_SESSION['rol'] == 'admin') {
                     echo '<li><a href="registroCoaches.php" class="show-on-small-and-down">REGISTRAR COACHES</a></li>';
@@ -49,9 +50,11 @@
         </div>
         <ul class="hide-on-small-and-down horizontal white">
             <li><a href="index.php">INICIO</a></li>
-            <li><a href="entrenamiento.php.php">ENTRENAMIENTO</a></li>
+            <li><a href="miprogreso.php">MI CUENTA</a></li>
+            <li><a href="entrenamiento.php">ENTRENAMIENTO</a></li>
             <li><a href="calculadora.php">NUTRICIÓN</a></li>
             <li><a href="motivaciones.php">MOTIVACIÓN</a></li>
+            <li><a href="blockNotas.php">MIS NOTAS</a></li>
             <?php if ($_SESSION['rol'] == 'admin') {
                 echo '<li><a href="registroCoaches.php">REGISTRAR COACHES</a></li>';
             }?>
