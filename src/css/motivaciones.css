@@ -276,10 +276,7 @@ div.contenidos{
     width: 22.2%;
     height: 25vw;
    perspective: 100000px;
-    margin-left:2.2vw;
-    margin-right:0vw;
-    border-radius:15px;
-    margin-bottom:100px;
+    
     float:left;
     clear:none;
    
