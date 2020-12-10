@@ -7,28 +7,23 @@
 
 
 #box
-{   
-    width:87.8%;
-    height:900px;
+{
+    margin: auto;
+    width:100%;
     position: relative;
-    background-color: #222222;
-    border-width:5px;
-   clear:none;
-    left:6%;
-    padding-bottom: 0px;
-    margin-bottom: 0px;
-    padding-left:26px;
-    padding-top:40px;
-
+    background-color: #ffffff;
+    filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.25));
+    -webkit-filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.25));
+    padding: 0.7rem;
+    color: #000000;
+    font-family:Oxygen;
+    src: url('../../src/fonts/Oxygen-Bold.ttf');
 }
 
 .TituloFormulario
 {
-    font-size:3.2vw;
-    font-family:Oxygen;
-    src: url('../../src/fonts/Oxygen-Bold.ttf');
-    padding-top:20vw;
-    color:white;
+    font-size:2rem;
+
 }
 #TopDescripcion
 {
@@ -44,14 +39,13 @@
 
 .formulario 
 {
-    background-color:#333333 ;
-    width:95%;
-    font-family:Oxygen;
-    src: url('../../src/fonts/Oxygen-Bold.ttf');
-    height:4vw;
-    font-size:26px;
-    color:#191818;
+    border: 0;
+    background-color:#ffffff ;
+    width:100%;
+    font-size: 1rem;
+    color: #000000;
     margin-bottom:3%;
+    box-shadow: none;
 
 }
 .formularioContenido

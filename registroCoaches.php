@@ -89,7 +89,7 @@
                             </div>
                             <div>
                                 <label for="Descripcion">
-                                    <p>Descripcion</p>
+                                    <p>Descripción</p>
                                 </label>
                                 <div>
                                     <textarea type="text" name="Descripcion" id="Descripcion" required></textarea>

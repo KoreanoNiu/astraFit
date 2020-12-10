@@ -2,7 +2,6 @@ var inputs = document.querySelectorAll('input[type="text"],input[type="number"],
 inputs.forEach(input => {
     input.addEventListener('change', funcionInputs);
 });
-console.log(inputs);
 function funcionInputs(){
 
     var data = new FormData();    

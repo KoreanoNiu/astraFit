@@ -2,6 +2,9 @@
 session_start();
 
 if (isset($_SESSION['idUsuario']) && $_SESSION['idUsuario'] != '') {
+    include_once('php/database.php');
+    $conexion = Conexion::Conectar();
+    $funcionesDB = new funcionesDB;
 
 } else {
     header('location: login.php');
@@ -15,8 +18,6 @@ if (isset($_SESSION['idUsuario']) && $_SESSION['idUsuario'] != '') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="src/css/styles.css" type="TEXT/CSS">
-    <link rel="stylesheet" href="src/css/stails.css" type="TEXT/CSS">
-    <link rel="stylesheet" href="src/css/block.css" type="TEXT/CSS">
     <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
@@ -26,7 +27,6 @@ if (isset($_SESSION['idUsuario']) && $_SESSION['idUsuario'] != '') {
 
 <body>
     <?php include_once('php/handlebars/header.php'); ?>    
-
             
           <!--PORTADA -->
 
@@ -38,48 +38,55 @@ if (isset($_SESSION['idUsuario']) && $_SESSION['idUsuario'] != '') {
                         <h1 class="titulo">Bloc de Notas  </h1>
                     </div>
                 </section>
-                <section class="divider hide-on-small-and-down">
-                </section>            
-                <section class="information">
+                <section class="divider hide-on-small-and-down" style="border-color: transparent transparent #ffffff transparent;">
+                </section>
+                <section class="strava-information" style="background-color: #ffffff;">
+                    <div class="strava-data-container">
+                        <div class="container" >
+                            <div class="notes">
+                                <h1>Tus notas: <?php echo $_SESSION['nombreUsuario']?></h1>
+                                <a class="strava-login" id="AgregarNotas" style="background-color: #126fbb">Agregar una nueva nota <img src="imagenes/signo.png"></a>
+                                <div id="box" style="display: none;" class="note">
+                                    <form id="create-note-form" onsubmit="return false">
+                                        <label for="">Titulo</label>
+                                        <input type="text" name="Titulo">
+                                        <Label>Descripcion</Label>
+                                        <input type="text" name="Descripcion">
+                                        <label for="">Contenido</label>
+                                        <textarea name="Contenido" id="Contenidos"></textarea>
+                                        <a id="createNote" class="strava-login" id="AgregarNotas" style="background-color: #126fbb">Crear nota<img src="imagenes/signo.png"></a>
+                                    </form>
+                                </div>
+                                <?php 
+                                    $notas = $funcionesDB->obtenerNotasUsuario($conexion, $_SESSION['idUsuario']);
+                                    if (count($notas) > 0) {
+                                        foreach ($notas as $nota) {
+                                            echo '
+                                                <div class="note">
+                                                    <form id="form-note-' . $nota['idNota'] . '" class="form-note" action="" name="crearNota">
+                                                        <label for="">Titulo</label>
+                                                        <input name="Titulo" type="text" value=' . $nota['titulo'] .'>
+                                                        <Label>Descripcion</Label>
+                                                        <input name="Descripcion" type="text" value=' . $nota['descripcion'] . '>
+                                                        <label for="">Contenido</label>
+                                                        <textarea name="Contenido" id="Contenido"> ' . $nota['contenido'] . '</textarea>
+                                                        <a id="createNote" class="strava-login" id="eliminarNota" style="background-color: #126fbb" onclick=(eliminarNota(this.parentNode))>Eliminar nota</a>
+                                                    </form>
+                                                </div>
+                                            ';
+                                        }
+                                    }
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+                </section>
              <!--FIN DE PORTADA  -->            
               
 
 
                 <!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-                <div id="information3 ">
-                    <button id="AgregarNotas" class="buttonAgregar"> <img class="imagencompleta" src="imagenes/signo.png" >                 </button>
-                 <div id="notas">
-                <div id="nota">
-                    <span class="TituloNota">Titulo :</span> <span class="TextoNota">            </span> <br>
-                    <span class="TituloNota">Descripción :</span> <span class="TextoNota">              </span><br>
-                    <span class="TituloNota">Contenido </span> <br>  <span class="TextoNota">fhhfhfhhfhfs               </span><br>
-                    <span class="Fecha">Fecha</span> <span class="ContenidoFecha"> 13 /02 /Diciembre</span>
-                </div>
-                
-                
-                
-                </div>
-
-                    <div id="box" style="display: none; text-align: center;">
-
-                        <label for="Titulo"> <span class="TituloFormulario">Titulo</span> </label>
-                        <input type="text" class="formulario" name="titulo" id="Titulo">
-
-
-
-                        <label for="Descripcion" class="TopDescripcion"> <span class="TituloFormulario">Descripcion</span> </label><br>
-                        <input type="text" class="formulario" name="descripcion" id="Descripcion">
-
-                        <label for="Descripcion" class="TopContenido"> <span class="TituloFormulario">Contenido</span> </label><br>
-                        <input type="text" class="formularioContenido" name="descripcion" id="Descripcion">
-                        <button id="MandarInformacion" class="ButtonInformacion"> Enviar</button>
-
-
-                    </div>
-
-
-                </div>
             </section>
         </main>
     </body>
@@ -89,16 +96,14 @@ if (isset($_SESSION['idUsuario']) && $_SESSION['idUsuario'] != '') {
      document.getElementById("AgregarNotas").onclick=function()
      {
         document.getElementById("box").style.display="block";
-        document.getElementById("notas").style.display="none";
 
      }
 
-     document.getElementById("MandarInformacion").onclick=function()
+     document.getElementById("createNote").onclick=function()
      {
         document.getElementById("box").style.display="none";
-        document.getElementById("notas").style.display="block";
 
      }
-
-
 </script>
+
+<script src="src/js/create-note.js"></script>
