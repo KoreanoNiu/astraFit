@@ -29,10 +29,17 @@ createNote.onclick = function (){
                                         <input type="text" value=${obj['descripcion']}>
                                         <label for="">Contenido</label>
                                         <textarea name="Contenido" id="Contenidos" value=${obj['contenido']}>${obj['contenido']}</textarea>
-                                        <a id="createNote" class="strava-login" id="eliminarNota" style="background-color: #126fbb" onclick=(eliminarNota(this))>Eliminar nota</a>
+                                        <a id="createNote" class="strava-login" id="eliminarNota" style="background-color: #126fbb" onclick=(eliminarNota(this.parentNode))>Eliminar nota <img src="src/img/signo-menos.svg"></a>
                                     </form>
                                 `;
                 document.querySelector(".notes").appendChild(note);
+                document.getElementById("create-note-form").parentNode.style.display = "none";
+                let campos = document.getElementById("create-note-form").querySelectorAll('input, textarea');
+                campos.forEach(campo => {
+                    console.log(campo);
+                    campo.innerHTML = '';
+                    campo.value = "";
+                });
             }
         });
     }

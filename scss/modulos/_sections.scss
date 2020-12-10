@@ -565,6 +565,8 @@
             margin-left: 0.5rem;
             height: 2rem;
         }
+
+        cursor: pointer;
     }
 
     .container{
@@ -672,7 +674,10 @@
                             border-width: 2px;
                         }
                     }
-
+                    &.click-note{
+                        filter: drop-shadow(0px 0px 50px rgba(0, 0, 0, 0.20));
+                        -webkit-filter: drop-shadow(0px 0px 50px rgba(0, 0, 0, 0.20));
+}
                     @media(max-width:950px){
                         width: 100%;
                     }
