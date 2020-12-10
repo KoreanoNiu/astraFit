@@ -624,7 +624,61 @@
                 }
             }
         }
+        >div:nth-child(1){
+                div.note{
+                    padding-top: 2rem;
+                    padding-bottom: 2rem;
+                    text-align: start;
+                    width: 50%;
+                    background-color: #ffffff;
+                    filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.20));
+                    -webkit-filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.20));
+                    border-radius: 4px;
 
+                    form{
+                        margin: auto;
+                        display: grid;
+                        grid-template-columns: repeat(1, 1fr);
+                        label{
+                            margin-top: 1rem;
+                            font-size: 1.3rem;
+                        }
+
+                        input[type='text'], textarea{
+
+                            margin: 1rem auto;
+                            border-top: 0;
+                            border-left: 0;
+                            border-right: 0;
+                            padding: 0 0 0.5rem 0.7rem;
+                            border-color: #126fbb;
+                            color: #000000;
+                            line-height: 0.5rem;
+                            background-color: transparent;
+                            width: 100%;
+                            font-size: 1rem;
+                            font-family: Oxygen;
+        
+                            &:focus{
+                                outline: none;
+                                background-color: transparent;
+                                border-color: #696969;
+                            }
+                        }
+                        textarea{
+                            line-height: 1.5rem;
+                            height: 7rem;
+                            resize: none;
+                            border-width: 2px;
+                        }
+                    }
+
+                    @media(max-width:950px){
+                        width: 100%;
+                    }
+                    
+            }
+        }
         >div:nth-child(2){
             overflow: auto;
             white-space: nowrap;  

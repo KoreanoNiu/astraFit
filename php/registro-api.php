@@ -49,7 +49,7 @@
             ":tipoDieta" => '',
             ":tipoFormula" => '',
             ":idCoachNutriologo" => $idCoachNutriologo[0]['idCoach'],
-            ":idCoachEntrenador" => $idCoachEntrenador[0]['idCoach']
+            ":idCoachEntrenador" => $idCoachEntrenador[0]['idCoach'],
         ];
 
         $funcionesDB->insertarDatosCliente($conexion, $data);
@@ -102,13 +102,13 @@
                   ":unidadAltura" => 'cm',
                   ":unidadPeso" => 'kg',
                   ":edad" => '',
-                  ":altura" => null,
+                  ":altura" => '',
                   ":peso" => '',
                   ":genero" => $data['athlete']['sex'],
                   ":objetivo" => '',
-                  ":nivel" => null,
+                  ":nivel" => '',
                   ":lesiones" => 0,
-                  ":porcentajeGrasa" => null,
+                  ":porcentajeGrasa" => '',
                   ":tipoDieta" => '',
                   ":tipoFormula" => '',
                   ":idCoachNutriologo" => $idCoachNutriologo[0]['idCoach'],

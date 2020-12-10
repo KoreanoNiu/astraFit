@@ -28,7 +28,7 @@
             </form>
             <ul class="">
                 <li><a href="miprogreso.php">MI CUENTA</a></li>
-                <li><a href="entrenamiento2.php">ENTRENAMIENTO</a></li>
+                <li><a href="entrenamiento.php.php">ENTRENAMIENTO</a></li>
                 <li><a href="calculadora.php">NUTRICIÓN</a></li>
                 <li><a href="motivaciones.php">MOTIVACIÓN</a></li>
                 <li><a href="cerrarSesion.php">CERRAR SESIÓN</a></li>
@@ -48,9 +48,8 @@
 
         </div>
         <ul class="hide-on-small-and-down horizontal white">
-            <li><a href="miprogreso.php">MI CUENTA</a></li>
             <li><a href="index.php">INICIO</a></li>
-            <li><a href="entrenamiento2.php">ENTRENAMIENTO</a></li>
+            <li><a href="entrenamiento.php.php">ENTRENAMIENTO</a></li>
             <li><a href="calculadora.php">NUTRICIÓN</a></li>
             <li><a href="motivaciones.php">MOTIVACIÓN</a></li>
             <?php if ($_SESSION['rol'] == 'admin') {

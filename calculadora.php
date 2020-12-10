@@ -96,7 +96,7 @@
                 <div class="select">
                     <select id="tipo2" name="Objetivo">
                         <option selected disabled>SELECCIONA TU OBJETIVO</option>
-                        <option>Ponerme en forma</option>
+                        <option>Estar en forma</option>
                         <option>Perder peso</option>
                         <option>Tonificar</option>
                     </select>
@@ -367,7 +367,7 @@
                                 var grasita;
                                 var carbos;
                                 if (tipo == "Alta en carbohidratos" && tipo2 ==
-                                    "Ponerme en forma") {
+                                    "Estar en forma") {
                                     proteina = Math.round(peso * 1.8);
                                     calorias2 = Math.round(calorias);
                                     comida = Math.round(calorias2 - (proteina * 4));
@@ -417,7 +417,7 @@
                                 //_____________________________
 
                                 if (tipo == "Baja en carbohidratos" && tipo2 ==
-                                    "Ponerme en forma") {
+                                    "Estar en forma") {
                                     proteina = Math.round(peso * 1.8);
                                     calorias2 = Math.round(calorias);
                                     comida = Math.round(calorias2 - (proteina * 4));
@@ -468,7 +468,7 @@
                                 //_________________________
 
                                 if (tipo == "Alta en proteína" && tipo2 ==
-                                    "Ponerme en forma") {
+                                    "Estar en forma") {
                                     proteina = Math.round(peso * 2.3);
                                     calorias2 = Math.round(calorias);
                                     comida = Math.round(calorias2 - (proteina * 4));
@@ -548,7 +548,7 @@
                                 var grasita;
                                 var carbos;
                                 if (tipo == "Alta en carbohidratos" && tipo2 ==
-                                    "Ponerme en forma") {
+                                    "Estar en forma") {
                                     proteina = Math.round(peso * 1.8);
                                     calorias2 = Math.round(calorias);
                                     comida = Math.round(calorias2 - (proteina * 4));
@@ -601,7 +601,7 @@
                                 //_____________________________
 
                                 if (tipo == "Baja en carbohidratos" && tipo2 ==
-                                    "Ponerme en forma") {
+                                    "Estar en forma") {
                                     proteina = Math.round(peso * 1.8);
                                     calorias2 = Math.round(calorias);
                                     comida = Math.round(calorias2 - (proteina * 4));
@@ -655,7 +655,7 @@
                                 //_________________________
 
                                 if (tipo == "Alta en proteína" && tipo2 ==
-                                    "Ponerme en forma") {
+                                    "Estar en forma") {
                                     proteina = Math.round(peso * 2.3);
                                     calorias2 = Math.round(calorias);
                                     comida = Math.round(calorias2 - (proteina * 4));

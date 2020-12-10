@@ -68,7 +68,27 @@ CREATE TABLE dietas(
     PRIMARY KEY(id) 
 )ENGINE = INNODB;
 
-INSERT INTO usuarios VALUES(1, 'admin', 'admin@astrafit.com', 'c3284d0f94606de1fd2af172aba15bf3', 'admin', '../users/perfil-image/user-default.png');
+CREATE TABLE notas(
+    idNota INT NOT NULL AUTO_INCREMENT,
+    idUsuario INT NOT NULL,
+    titulo VARCHAR(255) NOT NULL,
+    descripcion VARCHAR(255) NOT NULL,
+    contenido VARCHAR(255) NOT NULL,
+    PRIMARY KEY (idNota),
+    FOREIGN KEY (idUsuario) REFERENCES usuarios(idUsuario)
+)ENGINE InnoDB;
+
+INSERT INTO usuarios VALUES(1, 'admin', 'admin@astrafit.com', 'c3284d0f94606de1fd2af172aba15bf3', 'admin', '../users/perfil-image/user-default.png', '');
+
+insert into clientes VALUES(1, 'cm', 'kg', 17, 170, 70, 'admin', 'Tonificar', 'Atleta avanzado', 0, 12, 'Alta en carbohidratos', 'Con grasa corporal', null, null);
+insert into niveles_posibles VALUES(1, 'Principiante'), (2, 'Atleta intermedio'), (3, 'Atleta avanzado');
+insert into objetivos VALUES(1, 'Tonificar'), (2, 'Estar en forma'), (3, 'Perder peso');
+insert into dietas VALUES(1, 'Alta en carbohidratos', 'Con grasa corporal'), (2, 'Baja en carbohidratos', 'Sin grasa corporal'), (3, 'Alta en proteína', null);
+
+
+
+
+
 INSERT INTO usuarios VALUES (2, 'Carlitos', 'carlitos@gmail.com', 'c3284d0f94606de1fd2af172aba15bf3', 'usuario', '../users/perfil-image/user-default.png'), 
                             (3, 'niquito', 'niquito@gmail.com', 'c3284d0f94606de1fd2af172aba15bf3', 'usuario', '../users/perfil-image/user-default.png'), 
                             (4, 'Juan', 'juan@gmail.com', 'c3284d0f94606de1fd2af172aba15bf3', 'coach', '../users/perfil-image/user-default.png'), 
@@ -77,6 +97,5 @@ INSERT INTO usuarios VALUES (2, 'Carlitos', 'carlitos@gmail.com', 'c3284d0f94606
 INSERT INTO coaches VALUES (3, 'nutriologo', 'Hola soy juan bananas'), 
                             (4, 'entrenador', 'Hola soy luis');
 
-insert into clientes VALUES(1, 'cm', 'kg', 17, 170, 70, 'admin', 'Tonificar', 'Atleta avanzado', 0, 12, 'Alta en carbohidratos', 'Con grasa corporal', null, null);
 INSERT INTO clientes VALUES (2, 'cm', 'kg', 18, 165, 62, 'masculino', 'Tonificar', 'Atleta avanzado', 0, 12, 'Alta en carbohidratos', 'Con grasa corporal', 3, 4), 
                             (3, 'cm', 'kg', 23, 160, 65, 'masculino', 'Reducir peso', 'Atleta intermedio', 0, 11, 'Alta en carbohidratos', 'Con grasa corporal', 3, 4);

@@ -127,8 +127,29 @@
             $result->execute([$data]);
             return $result->fetchAll(PDO::FETCH_ASSOC);
         }
+        public function insertarDatosNota($conexion, $data){
+            $result = $conexion->prepare("INSERT INTO notas (idUsuario, titulo, descripcion, contenido) VALUES (:idUsuario, :titulo, :descripcion, :contenido);");
+            $result->execute($data);
+            $result = $conexion->prepare("SELECT LAST_INSERT_ID() AS 'idNota';");
+            $result->execute();
+            return $result->fetchAll(PDO::FETCH_ASSOC);
+        }
+        public function obtenerNotasUsuario($conexion, $data){
+            $result = $conexion->prepare("SELECT idNota, titulo, descripcion, contenido FROM notas WHERE idUsuario=? ORDER BY idNota desc;");
+            $result->execute([$data]);
+            return $result->fetchAll(PDO::FETCH_ASSOC);
+        }
+        public function eliminarNotaUsuario($conexion, $data){
+            $result = $conexion->prepare("DELETE FROM notas WHERE idUsuario=:idUsuario AND idNota =:idNota");
+            $result->execute($data);
+        }
+        public function actualizarDatosNotas($conexion, $campo, $tabla, $data){
+            $query = "UPDATE $tabla SET $campo=:dataCampo WHERE idNota = :idNota";
+            $result = $conexion->prepare($query);
+            $result->execute($data);
+        }
     }
-    
+
     /* 
 
     define('servidor', 'bynxgl7z5woudf4e3x46-mysql.services.clever-cloud.com');

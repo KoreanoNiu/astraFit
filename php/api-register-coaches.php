@@ -19,7 +19,8 @@
             ":email" => $funcionesDB->sanitizarVariables($_POST['email']),
             ":password" => md5(md5($_POST['contrasena'])),
             ":tipoUsuario" => 'coach',
-            ":src" => $url
+            ":src" => $url,
+            ":stravaIdAthlete" => ''
         ];
     
         $funcionesDB->insertarDatosUsuario($conexion, $data);
@@ -50,7 +51,6 @@
             ":tipoFormula" => '',
             ":idCoachNutriologo" => null,
             ":idCoachEntrenador" => null,
-            ":stravaIdAthlete" => ''
         ];
     
         $funcionesDB->insertarDatosCliente($conexion, $data);
