@@ -30,7 +30,7 @@ if (isset($_SESSION['idUsuario']) && $_SESSION['idUsuario'] != '') {
             
           <!--PORTADA -->
 
-            <main>     
+          <main>     
                 <div id="desaparecer" style="display: block;">   
                 <section class="background background-image-9">
                     <div class="background-filter"></div>
@@ -47,8 +47,21 @@ if (isset($_SESSION['idUsuario']) && $_SESSION['idUsuario'] != '') {
 
                 <!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-                <div id="information3">
-                    <div id="box">
+                <div id="information3 ">
+                    <button id="AgregarNotas" class="buttonAgregar"> <img class="imagencompleta" src="imagenes/signo.png" >                 </button>
+                 <div id="notas">
+                <div id="nota">
+                    <span class="TituloNota">Titulo :</span> <span class="TextoNota">            </span> <br>
+                    <span class="TituloNota">Descripción :</span> <span class="TextoNota">              </span><br>
+                    <span class="TituloNota">Contenido </span> <br>  <span class="TextoNota">fhhfhfhhfhfs               </span><br>
+                    <span class="Fecha">Fecha</span> <span class="ContenidoFecha"> 13 /02 /Diciembre</span>
+                </div>
+                
+                
+                
+                </div>
+
+                    <div id="box" style="display: none; text-align: center;">
 
                         <label for="Titulo"> <span class="TituloFormulario">Titulo</span> </label>
                         <input type="text" class="formulario" name="titulo" id="Titulo">
@@ -71,3 +84,21 @@ if (isset($_SESSION['idUsuario']) && $_SESSION['idUsuario'] != '') {
         </main>
     </body>
 </html>
+
+<script type="text/javascript">
+     document.getElementById("AgregarNotas").onclick=function()
+     {
+        document.getElementById("box").style.display="block";
+        document.getElementById("notas").style.display="none";
+
+     }
+
+     document.getElementById("MandarInformacion").onclick=function()
+     {
+        document.getElementById("box").style.display="none";
+        document.getElementById("notas").style.display="block";
+
+     }
+
+
+</script>
