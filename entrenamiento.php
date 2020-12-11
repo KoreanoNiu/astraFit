@@ -56,15 +56,10 @@
                     <div class="card">
             <h4>TU NIVEL ACTUAL ES: </h4>
             </div></div></div><br>
-<<<<<<< HEAD
         </div>
             <div id="TopSelect">
             <div id="elselect" class="TopSelect"style="display: block; text-align: center; position:relative; left: 7%;">
             <div class="select" style="font-family: Roboto-italic;">
-=======
-            <div id="elselect" style="display: block; text-align: center; position:relative; left: 7%;">
-            <div class="select">
->>>>>>> parent of f580e18... Merge branch 'main' of https://github.com/KoreanoNiu/astraFit into main
             
                 <select id="nivel">
                     <option style="color:black; font-size: 20px; font-weight: bold; font-family: Oxygen;" value="<?php echo $nivelEntrenamiento ?>"><?php echo $nivelEntrenamiento ?></option><br>
