@@ -18,7 +18,7 @@
 
     class funcionesDB extends Conexion{
         public function sanitizarVariables($var){
-            return preg_replace("/[^A-Za-z0-9^$|\s+^@^.^áéíóúÁÉÍÓÚñÑ]/", '', $var);
+            return preg_replace("/[^A-Za-z0-9^$|\s+^@^.^_^áéíóúÁÉÍÓÚñÑ]/", '', $var);
         }
         public function obtenerDatosCompletos($conexion, $data){
             $query = "SELECT usuarios.tipoUsuario, 
