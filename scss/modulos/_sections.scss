@@ -457,17 +457,17 @@
             }
         }
     }
-    div:nth-child(2){
+    div{
         margin: 0 auto;
         width: 95%;
-        
+
         form{
             p{
                 color: #8D8D8D;
                 font-size: 0.8em;
                 margin-bottom: 0.3rem;
             }
-            input[type="date"], input[type="text"], input[type="password"], input[type="number"]{
+            input[type="date"], input[type="text"], input[type="password"], input[type="password"], input[type="number"]{
                 border-top: 0;
                 border-left: 0;
                 border-right: 0;
