@@ -99,12 +99,8 @@
             <div style="text-align: center;" id="botonx" style="display: block;">
                 <br><input type="submit" class="botonon" id="nivel1" value="OBTENER ENTRENAMIENTO"></input>
             </div>
-<<<<<<< HEAD
         </div>
             <div id="desaparecer" style="display: none; overflow: hidden; left: -15rem; position: relative;">
-=======
-            <div id="desaparecer" style="display: none;">
->>>>>>> parent of f580e18... Merge branch 'main' of https://github.com/KoreanoNiu/astraFit into main
 
                 <div class="cards" style="position:relative; left: 30%;">
                     <div class="card">
