@@ -278,7 +278,7 @@
                                                 </svg>
                                             </div>
                                         </div>
-                                        <input type="file" name="image" id="Foto" accept=".jpg,.png, .jfif">
+                                        <input type="file" name="image" id="Foto" accept=".jpg,.png">
                                     </form>';
                             }else{
                                 echo '
@@ -313,7 +313,7 @@
                                                 </svg>
                                             </div>
                                         </div>
-                                        <input type="file" name="image" id="Foto" accept=".jpg,.png, .jfif">
+                                        <input type="file" name="image" id="Foto" accept=".jpg,.png">
                                     </form>';
                             }
                             ?>

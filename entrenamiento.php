@@ -40,7 +40,7 @@
     
 
     <main>
-    <section id="desapareceC" style="display: block;" class="background background-image-3">
+        <section id="desapareceC" style="display: block;" class="background background-image-3">
            <div class="background-filter"></div>
             <div class="image-3" >
                 <h1>EJERCICIOS Y ENTRENAMIENTO</h1>
@@ -53,14 +53,18 @@
         <section class="information" >
         <div id="card1" style="display:block;">
         <div class="cards" style="position:relative; left: 30%; text-align:center;">
-            <div id="TopCard">
                     <div class="card">
             <h4>TU NIVEL ACTUAL ES: </h4>
             </div></div></div><br>
+<<<<<<< HEAD
         </div>
             <div id="TopSelect">
             <div id="elselect" class="TopSelect"style="display: block; text-align: center; position:relative; left: 7%;">
             <div class="select" style="font-family: Roboto-italic;">
+=======
+            <div id="elselect" style="display: block; text-align: center; position:relative; left: 7%;">
+            <div class="select">
+>>>>>>> parent of f580e18... Merge branch 'main' of https://github.com/KoreanoNiu/astraFit into main
             
                 <select id="nivel">
                     <option style="color:black; font-size: 20px; font-weight: bold; font-family: Oxygen;" value="<?php echo $nivelEntrenamiento ?>"><?php echo $nivelEntrenamiento ?></option><br>
@@ -71,15 +75,11 @@
                 
             </div>
            </div>
-        </div>
            <div id="card2" style="display:block;">
            <div class="cards" style="position:relative; left: 30%; text-align:center;">
-                   <div id="TopCard">
-            <div class="card">
+                    <div class="card">
             <h4>SELECCIONA TU MODALIDAD: </h4>
             </div></div></div><br>
-           </div>
-            <div id="TopSelect">
            <div id="elselect2" style="display: block; text-align: center; position:relative; left: 7%;">
             <div class="select" style="font-family: Roboto-italic;">
                 <select id="modalidad">
@@ -96,13 +96,15 @@
             </div>
             
             </div>
-        </div>
-        <div id="TopButton">
             <div style="text-align: center;" id="botonx" style="display: block;">
                 <br><input type="submit" class="botonon" id="nivel1" value="OBTENER ENTRENAMIENTO"></input>
             </div>
+<<<<<<< HEAD
         </div>
             <div id="desaparecer" style="display: none; overflow: hidden; left: -15rem; position: relative;">
+=======
+            <div id="desaparecer" style="display: none;">
+>>>>>>> parent of f580e18... Merge branch 'main' of https://github.com/KoreanoNiu/astraFit into main
 
                 <div class="cards" style="position:relative; left: 30%;">
                     <div class="card">
