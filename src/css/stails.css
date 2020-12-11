@@ -332,3 +332,85 @@ background-image:none;
                             .card div.card5-content {
                               padding: 1rem;
                               font-size: 0.9rem; }
+                              #TopSelect
+                              {
+                                 left:-11vw;
+                                 position: relative;
+                                 margin:10px;
+                              }
+                              #TopButton
+                              {
+                                left:-3vw;
+                                 position: relative;
+                              }
+
+ @media screen and (max-width: 1280px){
+  #TopSelect
+  {
+     left:-11vw;
+     position: relative;
+     margin:10px;
+  }
+  #TopButton
+  {
+    left:-3vw;
+     position: relative;
+  }
+  }
+  @media screen and (max-width: 970px){
+    #TopSelect
+    {
+       left:-20vw;
+       position: relative;
+       margin:10px;
+    }
+    #TopButton
+    {
+      left:0vw;
+       position: relative;
+    }
+
+  }
+  @media screen and (max-width: 767px){
+    #TopCard
+    {
+       left:-29vw;
+       position: relative;
+       margin:10px;
+    }
+    #TopSelect
+    {
+       left:-34vw;
+       position: relative;
+       margin:10px;
+    }
+    #TopButton
+    {
+      left:0vw;
+       position: relative;
+       margin-top:3vw;
+    }
+  }
+  @media screen and (max-width: 600px){
+    #TopSelect
+    {
+       left:-56vw;
+       position: relative;
+       margin:10px;
+    }
+    #TopButton
+    {
+      left:0vw;
+       position: relative;
+       margin-top:6vw;
+    }
+  }
+  @media screen and (max-width: 400px){
+    #TopSelect
+    {
+      left:-105vw;
+      position: relative;
+      margin:10px;
+   }
+  }
+
