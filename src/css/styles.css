@@ -1062,14 +1062,14 @@ footer {
       .progress-container div.img-user-progress div.buttonImg:hover {
         background-color: #1250dc;
         cursor: pointer; }
-  .progress-container div {
+  .progress-container div:nth-child(2) {
     margin: 0 auto;
     width: 95%; }
-    .progress-container div form p {
+    .progress-container div:nth-child(2) form p {
       color: #8D8D8D;
       font-size: 0.8em;
       margin-bottom: 0.3rem; }
-    .progress-container div form input[type="date"], .progress-container div form input[type="text"], .progress-container div form input[type="password"], .progress-container div form input[type="password"], .progress-container div form input[type="number"] {
+    .progress-container div:nth-child(2) form input[type="date"], .progress-container div:nth-child(2) form input[type="text"], .progress-container div:nth-child(2) form input[type="password"], .progress-container div:nth-child(2) form input[type="number"] {
       border-top: 0;
       border-left: 0;
       border-right: 0;
@@ -1080,7 +1080,7 @@ footer {
       width: 100%;
       font-size: 1.2rem;
       margin-bottom: 0.7rem; }
-      .progress-container div form input[type="date"]:focus, .progress-container div form input[type="text"]:focus, .progress-container div form input[type="password"]:focus, .progress-container div form input[type="password"]:focus, .progress-container div form input[type="number"]:focus {
+      .progress-container div:nth-child(2) form input[type="date"]:focus, .progress-container div:nth-child(2) form input[type="text"]:focus, .progress-container div:nth-child(2) form input[type="password"]:focus, .progress-container div:nth-child(2) form input[type="number"]:focus {
         outline: none;
         background-color: transparent;
         border-color: #696969; }

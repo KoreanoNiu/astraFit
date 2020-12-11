@@ -1,9 +1,5 @@
 <?php
-    session_start();    
-    
-    if (isset($_SESSION['rol']) && $_SESSION['rol'] != 'admin') {
-        header('location: index.php');
-    }
+    session_start();
 ?>
 <!DOCTYPE html>
 <html lang = es>
@@ -38,7 +34,7 @@
                                     <div class="next" id="seleccionarFotoPerfil">
                                         <label for="seleccionarFotoPerfil">Seleccionar foto de perfil</label>
                                     </div>
-                                    <input type="file" name="photo-coach" id="PhotoProfileCoach" value = "../users/perfil-image/user-default.png" accept=".jpg,.png, .jfif">
+                                    <input type="file" name="photo-coach" id="PhotoProfileCoach" value = "../users/perfil-image/user-default.png" accept=".jpg,.png">
                                 </label>
                             </div>
                             <div>
