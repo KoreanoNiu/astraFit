@@ -337,7 +337,6 @@
                         <li><a href="entrenamiento.php">ENTRENAMIENTO</a></li>
                         <li><a href="calculadora.php">NUTRICIÓN</a> </li>
                         <li><a href="blockNotas.php">NOTAS</a></li>
-                        <li><a href="stravaUserData.php">STRAVA</a></li>
                         <li><a href="motivaciones.php">MOTIVACIÓN</a></li>
                     </ul>
                 </div>

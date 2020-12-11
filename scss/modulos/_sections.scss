@@ -629,8 +629,6 @@
         >div.notes{
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            
-
 
             div:nth-child(1){
                 grid-column-start: span 3;

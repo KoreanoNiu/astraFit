@@ -18,6 +18,8 @@ if (isset($_SESSION['idUsuario']) && $_SESSION['idUsuario'] != '') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="src/css/styles.css" type="TEXT/CSS">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="src/img/logo.png" sizes="64x64">
     <title>Bloc de Notas </title>
 </head>
@@ -88,31 +90,6 @@ if (isset($_SESSION['idUsuario']) && $_SESSION['idUsuario'] != '') {
                 <!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
             </section>
-            <footer>
-                <div>
-                    <h3>Productos</h3>
-                    <ul>
-                        <li><a href="entrenamiento.php">ENTRENAMIENTO</a></li>
-                        <li><a href="calculadora.php">NUTRICIÓN</a> </li>
-                        <li><a href="blockNotas.php">NOTAS</a></li>
-                        <li><a href="stravaUserData.php">STRAVA</a></li>
-                        <li><a href="motivaciones.php">MOTIVACIÓN</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>Avisos</h3>
-                    <ul>
-                        <li><a href="">AVISO DE PRIVACIDAD</a></li>
-                        <li><a href="">AVISO LEGAL</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>Contacto</h3>
-                    <ul>
-                        <li><a href="index.php">QUIENES SOMOS</a></li>
-                    </ul>
-                </div>
-            </footer>
         </main>
     </body>
 </html>

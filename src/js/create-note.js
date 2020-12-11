@@ -5,6 +5,8 @@ inputs.forEach(input => {
     input.addEventListener('change', funcionInputs);
 });
 
+console.log(inputs);
+
 createNote.onclick = function (){
     const noteForm = new FormData(document.getElementById("create-note-form"));
     if (validarDatos(noteForm)) {
@@ -53,13 +55,13 @@ function validarDatos (noteForm){
 }
 
 function eliminarNota(e) {
-    // console.log(e);
+    console.log(e);
     let dataNote = new FormData();
 
     dataNote.append('idNota', e.getAttribute('id').slice(10));
     dataNote.append('peticion', 'eliminarNota');
 
-    //console.log(dataNote.get('idNota'));
+    console.log(dataNote.get('idNota'));
 
     fetch('php/create-note-api.php', {
         method: "POST",
@@ -82,6 +84,6 @@ function funcionInputs() {
             method: "POST",
             body: dataNote,
             "Content-Type": "application/json"
-        });
+        })   
     }
 }
