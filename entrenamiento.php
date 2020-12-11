@@ -40,7 +40,7 @@
     
 
     <main>
-        <section id="desapareceC" style="display: block;" class="background background-image-3">
+    <section id="desapareceC" style="display: block;" class="background background-image-3">
            <div class="background-filter"></div>
             <div class="image-3" >
                 <h1>EJERCICIOS Y ENTRENAMIENTO</h1>
@@ -53,10 +53,13 @@
         <section class="information" >
         <div id="card1" style="display:block;">
         <div class="cards" style="position:relative; left: 30%; text-align:center;">
+            <div id="TopCard">
                     <div class="card">
             <h4>TU NIVEL ACTUAL ES: </h4>
             </div></div></div><br>
-            <div id="elselect" style="display: block; text-align: center; position:relative; left: 7%;">
+        </div>
+            <div id="TopSelect">
+            <div id="elselect" class="TopSelect"style="display: block; text-align: center; position:relative; left: 7%;">
             <div class="select">
             
                 <select id="nivel">
@@ -68,11 +71,15 @@
                 
             </div>
            </div>
+        </div>
            <div id="card2" style="display:block;">
            <div class="cards" style="position:relative; left: 30%; text-align:center;">
-                    <div class="card">
+                   <div id="TopCard">
+            <div class="card">
             <h4>SELECCIONA TU MODALIDAD: </h4>
             </div></div></div><br>
+           </div>
+            <div id="TopSelect">
            <div id="elselect2" style="display: block; text-align: center; position:relative; left: 7%;">
             <div class="select">
                 <select id="modalidad">
@@ -89,9 +96,12 @@
             </div>
             
             </div>
+        </div>
+        <div id="TopButton">
             <div style="text-align: center;" id="botonx" style="display: block;">
                 <br><input type="submit" class="botonon" id="nivel1" value="OBTENER ENTRENAMIENTO"></input>
             </div>
+        </div>
             <div id="desaparecer" style="display: none;">
 
                 <div class="cards" style="position:relative; left: 30%;">
