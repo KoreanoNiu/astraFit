@@ -60,7 +60,7 @@
         </div>
             <div id="TopSelect">
             <div id="elselect" class="TopSelect"style="display: block; text-align: center; position:relative; left: 7%;">
-            <div class="select">
+            <div class="select" style="font-family: Roboto-italic;">
             
                 <select id="nivel">
                     <option style="color:black; font-size: 20px; font-weight: bold; font-family: Oxygen;" value="<?php echo $nivelEntrenamiento ?>"><?php echo $nivelEntrenamiento ?></option><br>
@@ -81,7 +81,7 @@
            </div>
             <div id="TopSelect">
            <div id="elselect2" style="display: block; text-align: center; position:relative; left: 7%;">
-            <div class="select">
+            <div class="select" style="font-family: Roboto-italic;">
                 <select id="modalidad">
                     <option selected disabled>SELECCIONA</option>
                     <option style="color:black; font-size: 20px; font-weight: bold; font-family: Oxygen;">GYM</option><br>
@@ -102,7 +102,7 @@
                 <br><input type="submit" class="botonon" id="nivel1" value="OBTENER ENTRENAMIENTO"></input>
             </div>
         </div>
-            <div id="desaparecer" style="display: none;">
+            <div id="desaparecer" style="display: none; overflow: hidden; left: -15rem; position: relative;">
 
                 <div class="cards" style="position:relative; left: 30%;">
                     <div class="card">

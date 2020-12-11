@@ -334,7 +334,7 @@ background-image:none;
                               font-size: 0.9rem; }
                               #TopSelect
                               {
-                                 left:-11vw;
+                                 left: 15rem;
                                  position: relative;
                                  margin:10px;
                               }
@@ -343,6 +343,14 @@ background-image:none;
                                 left:-3vw;
                                  position: relative;
                               }
+                              #TopCard{
+                                position: relative;
+                                left: -17.5rem;
+                              }
+  #terminar{
+    left: -35rem;
+    position: relative;
+}
 
  @media screen and (max-width: 1280px){
   #TopSelect
