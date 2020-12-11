@@ -68,7 +68,7 @@
             <section class="information">
                 <div class="progress-container">
                     <div class="cardsCoaches" <?php if ($rolUsuario == 'admin' || $rolUsuario == 'coach') {
-                        echo 'style="display: none;"';
+                        echo 'style="display: block;"';
                     }?>>
                         <?php 
                             if ($_SESSION['rol'] == 'usuario'){
