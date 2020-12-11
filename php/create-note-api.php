@@ -29,7 +29,7 @@
             
             $data = [
                 ':idNota' => $funcionesDB->sanitizarVariables($_POST['idNota']),
-                ":dataCampo" => $funcionesDB->sanitizarVariables($_POST['dataCampo']),
+                ":dataCampo" => $funcionesDB->sanitizarVariables($_POST[$var]),
                 ":idUsuario" => $_SESSION['idUsuario']
             ];
             
