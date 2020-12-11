@@ -18,7 +18,6 @@ if (isset($_SESSION['idUsuario']) && $_SESSION['idUsuario'] != '') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="src/css/styles.css" type="TEXT/CSS">
-    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="src/img/logo.png" sizes="64x64">
@@ -32,10 +31,11 @@ if (isset($_SESSION['idUsuario']) && $_SESSION['idUsuario'] != '') {
 
           <main>     
                 <div id="desaparecer" style="display: block;">   
-                <section class="background background-image-9">
+                <section class="background background-image-18">
                     <div class="background-filter"></div>
-                    <div class="image-9">
+                    <div class="image-18">
                         <h1 class="titulo">Bloc de Notas  </h1>
+                        <h2>¡Reflexiona un minuto, tomate un tiempo!</h2>
                     </div>
                 </section>
                 <section class="divider hide-on-small-and-down" style="border-color: transparent transparent #ffffff transparent;">
@@ -44,8 +44,10 @@ if (isset($_SESSION['idUsuario']) && $_SESSION['idUsuario'] != '') {
                     <div class="strava-data-container">
                         <div class="container" >
                             <div class="notes">
-                                <h1>Tus notas: <?php echo $_SESSION['nombreUsuario']?></h1>
-                                <a class="strava-login" id="AgregarNotas" style="background-color: #126fbb">Agregar una nueva nota <img src="imagenes/signo.png"></a>
+                                <div>
+                                    <h1>Tus notas: <?php echo $_SESSION['nombreUsuario']?></h1>
+                                    <a class="strava-login" id="AgregarNotas" style="background-color: #126fbb">Agregar una nueva nota <img src="imagenes/signo.png"></a>
+                                </div>
                                 <div id="box" style="display: none;" class="note">
                                     <form id="create-note-form" onsubmit="return false">
                                         <label for="">Titulo</label>

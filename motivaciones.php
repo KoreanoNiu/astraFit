@@ -25,7 +25,7 @@
     <body>
             
           <!--PORTADA -->
-
+          <?php include_once('php/handlebars/header.php'); ?>
             <main>     
                 <div id="desaparecer" style="display: block;">   
                 <section class="background background-image-9">

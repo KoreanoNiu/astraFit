@@ -25,11 +25,11 @@
         }
 
         if ($_POST['peticion'] == 'editarElemento') {
-            $var = $_POST['nombre'];
+            $var = $funcionesDB->sanitizarVariables($_POST['nombre']);
             
             $data = [
-                ':idNota' => $_POST['idNota'],
-                ":dataCampo" => $_POST[$var],
+                ':idNota' => $funcionesDB->sanitizarVariables($_POST['idNota']),
+                ":dataCampo" => $funcionesDB->sanitizarVariables($_POST['dataCampo']),
                 ":idUsuario" => $_SESSION['idUsuario']
             ];
             

@@ -135,7 +135,7 @@
             return $result->fetchAll(PDO::FETCH_ASSOC);
         }
         public function obtenerNotasUsuario($conexion, $data){
-            $result = $conexion->prepare("SELECT idNota, titulo, descripcion, contenido FROM notas WHERE idUsuario=? ORDER BY idNota desc;");
+            $result = $conexion->prepare("SELECT idNota, titulo, descripcion, contenido FROM notas WHERE idUsuario=? ORDER BY idNota asc;");
             $result->execute([$data]);
             return $result->fetchAll(PDO::FETCH_ASSOC);
         }

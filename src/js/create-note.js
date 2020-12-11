@@ -24,11 +24,11 @@ createNote.onclick = function (){
                 note.innerHTML = `
                                     <form id="form-note-${obj['idNota']}" class="form-note" action="">
                                         <label for="">Titulo</label>
-                                        <input type="text" value=${obj['titulo']}>
+                                        <input type="text" value="${obj['titulo']}">
                                         <Label>Descripcion</Label>
-                                        <input type="text" value=${obj['descripcion']}>
+                                        <input type="text" value="${obj['descripcion']}">
                                         <label for="">Contenido</label>
-                                        <textarea name="Contenido" id="Contenidos" value=${obj['contenido']}>${obj['contenido']}</textarea>
+                                        <textarea name="Contenido" id="Contenidos" value="${obj['contenido']}">${obj['contenido']}</textarea>
                                         <a id="createNote" class="strava-login" id="eliminarNota" style="background-color: #126fbb" onclick=(eliminarNota(this.parentNode))>Eliminar nota <img src="src/img/signo-menos.svg"></a>
                                     </form>
                                 `;

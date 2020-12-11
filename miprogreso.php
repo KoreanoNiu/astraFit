@@ -334,10 +334,10 @@
                 <div>
                     <h3>Productos</h3>
                     <ul>
-                        <li><a href="">ENTRENAMIENTO</a></li>
-                        <li><a href="">NUTRICIÓN</a> </li>
-                        <li><a href="">SUPLEMENTOS</a></li>
-                        <li><a href="">CALCULADORAS</a></li>
+                        <li><a href="entrenamiento.php">ENTRENAMIENTO</a></li>
+                        <li><a href="calculadora.php">NUTRICIÓN</a> </li>
+                        <li><a href="blockNotas.php">NOTAS</a></li>
+                        <li><a href="motivaciones.php">MOTIVACIÓN</a></li>
                     </ul>
                 </div>
                 <div>
@@ -350,8 +350,7 @@
                 <div>
                     <h3>Contacto</h3>
                     <ul>
-                        <li><a href="">QUIENES SOMOS</a></li>
-                        <li><a href="">PONTE EN CONTACTO CON NOSOTROS</a></li>
+                        <li><a href="index.php">QUIENES SOMOS</a></li>
                     </ul>
                 </div>
             </footer>

@@ -23,6 +23,7 @@
     </head>
 
     <body>
+        <?php include_once('php/handlebars/header.php'); ?>
             
           <!--PORTADA -->
 

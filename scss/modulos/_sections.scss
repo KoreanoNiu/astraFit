@@ -626,12 +626,26 @@
                 }
             }
         }
-        >div:nth-child(1){
+        >div.notes{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            div:nth-child(1){
+                grid-column-start: span 3;
+            }
+            div#box{
+                margin: auto;
+                grid-column-end: -2;
+            }
+            div#box + div.note{
+                grid-column-start: 1;
+            }
                 div.note{
+                    margin: 1rem auto;
                     padding-top: 2rem;
                     padding-bottom: 2rem;
                     text-align: start;
-                    width: 50%;
+                    width: 95%;
                     background-color: #ffffff;
                     filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.20));
                     -webkit-filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.20));

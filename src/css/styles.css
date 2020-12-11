@@ -524,6 +524,12 @@ main {
       font-size: 3.5rem; }
     main section.background-image-17 div.image-8 h2 {
       font-size: 2.5rem; }
+  main section.background-image-18 {
+    background-image: url("../../src/img/background18.png"); }
+    main section.background-image-18 div.image-18 h1 {
+      font-size: 3.5rem; }
+    main section.background-image-18 div.image-18 h2 {
+      font-size: 2.5rem; }
   main section.background {
     height: calc(100vh - var(--navbar-height));
     width: 100%;
@@ -1183,50 +1189,61 @@ footer {
           background-color: #F1F1F1; }
         .strava-data-container .container div table tr:hover {
           background-color: #D3D3D3; }
-    .strava-data-container .container > div:nth-child(1) div.note {
-      padding-top: 2rem;
-      padding-bottom: 2rem;
-      text-align: start;
-      width: 50%;
-      background-color: #ffffff;
-      filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.2));
-      -webkit-filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.2));
-      border-radius: 4px; }
-      .strava-data-container .container > div:nth-child(1) div.note form {
+    .strava-data-container .container > div.notes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); }
+      .strava-data-container .container > div.notes div:nth-child(1) {
+        grid-column-start: span 3; }
+      .strava-data-container .container > div.notes div#box {
         margin: auto;
-        display: grid;
-        grid-template-columns: repeat(1, 1fr); }
-        .strava-data-container .container > div:nth-child(1) div.note form label {
-          margin-top: 1rem;
-          font-size: 1.3rem; }
-        .strava-data-container .container > div:nth-child(1) div.note form input[type='text'], .strava-data-container .container > div:nth-child(1) div.note form textarea {
-          margin: 1rem auto;
-          border-top: 0;
-          border-left: 0;
-          border-right: 0;
-          padding: 0 0 0.5rem 0.7rem;
-          border-color: #126fbb;
-          color: #000000;
-          line-height: 0.5rem;
-          background-color: transparent;
-          width: 100%;
-          font-size: 1rem;
-          font-family: Oxygen; }
-          .strava-data-container .container > div:nth-child(1) div.note form input[type='text']:focus, .strava-data-container .container > div:nth-child(1) div.note form textarea:focus {
-            outline: none;
+        grid-column-end: -2; }
+      .strava-data-container .container > div.notes div#box + div.note {
+        grid-column-start: 1; }
+      .strava-data-container .container > div.notes div.note {
+        margin: 1rem auto;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        text-align: start;
+        width: 95%;
+        background-color: #ffffff;
+        filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.2));
+        -webkit-filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.2));
+        border-radius: 4px; }
+        .strava-data-container .container > div.notes div.note form {
+          margin: auto;
+          display: grid;
+          grid-template-columns: repeat(1, 1fr); }
+          .strava-data-container .container > div.notes div.note form label {
+            margin-top: 1rem;
+            font-size: 1.3rem; }
+          .strava-data-container .container > div.notes div.note form input[type='text'], .strava-data-container .container > div.notes div.note form textarea {
+            margin: 1rem auto;
+            border-top: 0;
+            border-left: 0;
+            border-right: 0;
+            padding: 0 0 0.5rem 0.7rem;
+            border-color: #126fbb;
+            color: #000000;
+            line-height: 0.5rem;
             background-color: transparent;
-            border-color: #696969; }
-        .strava-data-container .container > div:nth-child(1) div.note form textarea {
-          line-height: 1.5rem;
-          height: 7rem;
-          resize: none;
-          border-width: 2px; }
-      .strava-data-container .container > div:nth-child(1) div.note.click-note {
-        filter: drop-shadow(0px 0px 50px rgba(0, 0, 0, 0.2));
-        -webkit-filter: drop-shadow(0px 0px 50px rgba(0, 0, 0, 0.2)); }
-      @media (max-width: 950px) {
-        .strava-data-container .container > div:nth-child(1) div.note {
-          width: 100%; } }
+            width: 100%;
+            font-size: 1rem;
+            font-family: Oxygen; }
+            .strava-data-container .container > div.notes div.note form input[type='text']:focus, .strava-data-container .container > div.notes div.note form textarea:focus {
+              outline: none;
+              background-color: transparent;
+              border-color: #696969; }
+          .strava-data-container .container > div.notes div.note form textarea {
+            line-height: 1.5rem;
+            height: 7rem;
+            resize: none;
+            border-width: 2px; }
+        .strava-data-container .container > div.notes div.note.click-note {
+          filter: drop-shadow(0px 0px 50px rgba(0, 0, 0, 0.2));
+          -webkit-filter: drop-shadow(0px 0px 50px rgba(0, 0, 0, 0.2)); }
+        @media (max-width: 950px) {
+          .strava-data-container .container > div.notes div.note {
+            width: 100%; } }
     .strava-data-container .container > div:nth-child(2) {
       overflow: auto;
       white-space: nowrap; }
@@ -1277,6 +1294,7 @@ footer {
   .register-container .form-container {
     background-color: #222222;
     text-align: center;
+    background-size: cover;
     padding: 1rem; }
     .register-container .form-container .status-bar {
       margin: 1rem auto 2rem auto;
