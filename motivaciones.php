@@ -1032,6 +1032,7 @@ El ejercicio hace que los problemas cambia la bioquimica del cuerpo , esto hace 
              
     
                 </section>
+                <?php include_once('php/handlebars/footer.php'); ?>
               
     
                <script type="text/javascript">
@@ -1173,3 +1174,4 @@ El ejercicio hace que los problemas cambia la bioquimica del cuerpo , esto hace 
         </body>
         
         </html>
+        

@@ -710,7 +710,7 @@
                 </script>
             </div>
 
-
+            <?php include_once('php/handlebars/footer.php'); ?>
     </main>
     <script src ="src/js/progreso-app.js"></script>
     <script src ="src/js/commun.js"></script>

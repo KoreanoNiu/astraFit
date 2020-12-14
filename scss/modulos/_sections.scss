@@ -709,6 +709,99 @@
         
     }
 }
+
+section.contact{
+    font-family: Roboto-italic;
+    margin-top: 5rem;
+    width: 100%;
+    padding-bottom: 5rem;
+    height: auto;
+    h1{
+        font-size: 2.6rem;    
+        text-align: center;
+    }
+
+    form.contact-container{
+      margin-top: 5rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+  
+      @media(max-width: 768px){
+        grid-template-columns: repeat(1, 1fr);
+      }
+  
+      input[type="text"], [type="email"], textarea{
+        margin: 1rem auto;
+        width: 90%;
+  
+        background-color: transparent;
+        border-style: solid;
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+        border-width: 1px;
+        border-color: #000000;
+  
+        &:focus{
+          outline: none;
+          border-color: #8f8f8f;
+        }
+        line-height: 1rem;
+        padding: 0.5rem 0.5rem 0.4rem 0.5rem
+      }
+      textarea{
+        margin-top: 2rem;
+        resize: none;
+        height: 8rem;
+        @media(min-width: 768px){
+          width: 96%;
+          grid-column-start: span 3;
+        }
+      }
+      button[type="submit"]{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 1rem auto;
+        width: 9rem;
+        padding: 0.8rem;
+        font-weight: 500;
+        font-size: 1.5rem;
+        color: #212121;
+        border-color: #212121;
+        border-style: solid;
+        background-color: transparent;
+  
+        img{
+          margin-left: 0.3rem;
+          float: right;
+          width: 1.1rem;
+        }
+  
+        @media(min-width: 768px){
+          grid-column-start: 2;
+        }
+      }
+      p{
+        text-align: center;
+        font-size: 1.3rem;
+        margin: auto;
+        color: green;
+        grid-column-start: 1;
+        @media(min-width: 768px){
+          grid-column-start: 2;
+        }
+      }
+    }
+  
+  }
+
+  div.divisor{
+    width: min-content;
+    margin: auto;
+  }
+  
+
 /*  .container{
     position: relative;
     margin: auto;

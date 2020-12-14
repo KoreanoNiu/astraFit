@@ -1,16 +1,11 @@
 const createNote = document.getElementById("createNote");
-let inputs = document.querySelectorAll('input, textarea');
+var inputs = document.querySelectorAll('input, textarea');
 
-inputs.forEach(input => {
-    input.addEventListener('change', funcionInputs);
-});
-
-console.log(inputs);
+refrescarInputs();
 
 createNote.onclick = function (){
     const noteForm = new FormData(document.getElementById("create-note-form"));
     if (validarDatos(noteForm)) {
-        console.log("No esta vacio");
         noteForm.append('peticion', 'crearNota');
         fetch('php/create-note-api.php', {
             method: "POST",
@@ -23,23 +18,19 @@ createNote.onclick = function (){
                 note.classList.add('note');
                 note.innerHTML = `
                                     <form id="form-note-${obj['idNota']}" class="form-note" action="">
-                                        <label for="">Titulo</label>
-                                        <input type="text" value="${obj['titulo']}">
-                                        <Label>Descripcion</Label>
-                                        <input type="text" value="${obj['descripcion']}">
-                                        <label for="">Contenido</label>
-                                        <textarea name="Contenido" id="Contenidos" value="${obj['contenido']}">${obj['contenido']}</textarea>
+                                        <label for="Titulo">Titulo</label>
+                                        <input type="text" name="Titulo" value="${obj['titulo']}">
+                                        <Label for="Descripcion">Descripcion</Label>
+                                        <input type="text" name="Descripcion" value="${obj['descripcion']}">
+                                        <label for="Contenido">Contenido</label>
+                                        <textarea name="Contenido" id="Contenido" value="${obj['contenido']}">${obj['contenido']}</textarea>
                                         <a id="createNote" class="strava-login" id="eliminarNota" style="background-color: #126fbb" onclick=(eliminarNota(this.parentNode))>Eliminar nota <img src="src/img/signo-menos.svg"></a>
                                     </form>
                                 `;
                 document.querySelector(".notes").appendChild(note);
                 document.getElementById("create-note-form").parentNode.style.display = "none";
-                let campos = document.getElementById("create-note-form").querySelectorAll('input, textarea');
-                campos.forEach(campo => {
-                    console.log(campo);
-                    campo.innerHTML = '';
-                    campo.value = "";
-                });
+
+                refrescarInputs();
             }
         });
     }
@@ -54,14 +45,22 @@ function validarDatos (noteForm){
 
 }
 
+function refrescarInputs() {
+    inputs = document.querySelectorAll('input, textarea');
+
+    inputs.forEach(input => {
+        input.addEventListener('change', funcionInputs);
+    });
+
+    //console.log(inputs);
+}
+
 function eliminarNota(e) {
-    console.log(e);
+    //console.log(e);
     let dataNote = new FormData();
 
     dataNote.append('idNota', e.getAttribute('id').slice(10));
     dataNote.append('peticion', 'eliminarNota');
-
-    console.log(dataNote.get('idNota'));
 
     fetch('php/create-note-api.php', {
         method: "POST",
@@ -73,7 +72,9 @@ function eliminarNota(e) {
 }
 
 function funcionInputs() {
-    if (this.parentNode.getAttribute('id') != 'id') {
+    //console.log(inputs);
+
+    if (this.parentNode.getAttribute('id') != 'create-note-form') {
         let dataNote = new FormData();
         dataNote.append('idNota', this.parentNode.getAttribute('id').slice(10));
         dataNote.append('peticion', 'editarElemento');
@@ -84,6 +85,6 @@ function funcionInputs() {
             method: "POST",
             body: dataNote,
             "Content-Type": "application/json"
-        })   
+        });
     }
 }

@@ -155,3 +155,4 @@
  
              </div><!--FIN DE CARDS GIRATORIAS -->
         </section> 
+        <?php include_once('php/handlebars/footer.php'); ?>

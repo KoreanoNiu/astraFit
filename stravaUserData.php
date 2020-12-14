@@ -19,7 +19,7 @@
         }
             
     }else{
-        header('location: login.php');
+        header('location: miprogreso.php');
     }
 ?>
 <!DOCTYPE html>
@@ -120,11 +120,26 @@
                                             <th>Distancia Recorrida</th>
                                             <th>Descripción</th>
                                         </tr>';
-                                        $dataGear = [];
-                                        foreach ($gearId as $id) {
-                                            $dataGear[] = json_decode($api->get($_SESSION['access_tokenStrava'], 'gear/id=' . $id), true);
+                                        function funtionObtenerId($gearIDS){
+                                            foreach ($gearIDS as $id){
+                                                return $id;
+                                            }
                                         }
-                                                                             $contador = 0;
+
+                                        $dataGear = [];
+                                        $contador = 0;
+                                        foreach ($gearId as $id) {
+                                            if ($id == funtionObtenerId($gearId)){
+                                                if ($contador < 1) {
+                                                    $dataGear[] = json_decode($api->get($_SESSION['access_tokenStrava'], 'gear/id=' . $id), true);
+                                                    $contador++;
+                                                }
+                                            }else{
+                                                $dataGear[] = json_decode($api->get($_SESSION['access_tokenStrava'], 'gear/id=' . $id), true);
+                                            }
+                                        }
+
+                                            $contador = 0;
                                         foreach ($dataGear as $gear) {
                                             $contador++;
                                             echo '<tr>
@@ -144,31 +159,7 @@
                     </div>
                 </div>
             </section>
-            <footer>
-                <div>
-                    <h3>Productos</h3>
-                    <ul>
-                        <li><a href="">ENTRENAMIENTO</a></li>
-                        <li><a href="">NUTRICIÓN</a> </li>
-                        <li><a href="">SUPLEMENTOS</a></li>
-                        <li><a href="">CALCULADORAS</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>Avisos</h3>
-                    <ul>
-                        <li><a href="">AVISO DE PRIVACIDAD</a></li>
-                        <li><a href="">AVISO LEGAL</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>Contacto</h3>
-                    <ul>
-                        <li><a href="">QUIENES SOMOS</a></li>
-                        <li><a href="">PONTE EN CONTACTO CON NOSOTROS</a></li>
-                    </ul>
-                </div>
-            </footer>
+            <?php include_once('php/handlebars/footer.php'); ?>
         </main>
         <?php include_once('php/handlebars/error.php'); ?>
     </body>
