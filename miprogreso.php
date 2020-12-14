@@ -158,15 +158,15 @@
                                 </label>
                                 <select name="Nivel">
                                 
-                                    <option value="<?php echo $nivelEntrenamiento ?>"><?php echo $nivelEntrenamiento ?></option>
+                                <option value="<?php echo $nivelEntrenamiento ?>"><?php echo $nivelEntrenamiento ?></option>
 
-                                    <?php 
-                                        $data = $funcionesDB->obtenerDatosComunes($conexion, 'nivel', 'niveles_posibles', $objetivo);
+                                <?php
+                                    $data = $funcionesDB->obtenerDatosComunes($conexion, 'nivel', 'niveles_posibles', $nivelEntrenamiento);
 
-                                        foreach ($data as $dato){
-                                            echo '<option value ="' . $dato['nivel'].'">' .  $dato['nivel']. '</option>';
-                                        }
-                                    ?>
+                                    foreach ($data as $dato){
+                                        echo '<option value ="' . $dato['nivel'].'">' .  $dato['nivel']. '</option>';
+                                    }
+                                ?>
                                 </select>
                             </div>
                             <div>
