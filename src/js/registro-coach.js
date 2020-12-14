@@ -34,6 +34,13 @@ function registrarCoach(){
             "Content-Type": "application/json"
         }).then(response => response.json()).then(data => {obj = data
             console.log(data);
+
+            inputsFormCreate = document.getElementById("registerCoachForm").querySelectorAll('input, textarea');
+            inputsFormCreate.forEach(input => {
+                input.value = '';
+                input.innerHTML = ''; 
+            });
+
         });
     }
 }

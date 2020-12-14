@@ -29,6 +29,12 @@ createNote.onclick = function (){
                                 `;
                 document.querySelector(".notes").appendChild(note);
                 document.getElementById("create-note-form").parentNode.style.display = "none";
+                
+                inputsFormCreate = document.getElementById("create-note-form").querySelectorAll('input, textarea');
+                inputsFormCreate.forEach(input => {
+                    input.value = '';
+                    input.innerHTML = ''; 
+                });
 
                 refrescarInputs();
             }
