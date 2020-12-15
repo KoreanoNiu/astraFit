@@ -23,7 +23,7 @@
                     echo '<div class="buttonImg" id="changeProfilePhoto">
                             <label for="changePhoto">Cambiar foto de perfil</label>
                         </div>
-                        <input type="file" name="image-perfil" id="fotoPerfil" accept=".jpg,.png">';
+                        <input type="file" name="image-perfil" id="fotoPerfil" accept=".jpg,.png,.jfif">';
                 }?>
             </form>
             <ul class="">

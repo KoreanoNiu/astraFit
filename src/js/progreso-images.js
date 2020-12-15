@@ -66,7 +66,7 @@ function subirFoto(){
                 msgError.innerHTML = `
                                         <div class="msg-container">
                                             <div class="msg">
-                                                <h2>Ingresa una imagen con el formato de archivo valido (.jpg, .png)</h2>
+                                                <h2>Ingresa una imagen con el formato de archivo valido (.jpg, .png, .jfif)</h2>
                                             </div>
                                             <div class="button-error-msg" onclick="this.parentNode.parentNode.remove();">
                                                 <label for="button-error-msg">Aceptar</label>

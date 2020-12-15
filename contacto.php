@@ -13,7 +13,47 @@
     </head>
 
     <body>
-        <?php include_once('php/handlebars/header.php')?>
+    <header class="right main-header transparent">
+            <div class="full-menu">
+                <ul class="">
+                    <li><a href="index.php">INICIO</a></li>
+                    <li><a href="entrenamiento.php">ENTRENAMIENTO</a></li>
+                    <li><a href="calculadora.php" >CALCULADORA</a></li>
+                    <li><a href="motivaciones.php" >MOTIVACIÓN</a></li>
+                    <?php 
+                        if(isset($_SESSION['idUsuario'])){
+                            echo '<li><a href="cerrarSesion.php">CERRAR SESIÓN</a></li>';
+                        }else{
+                            echo '<li><a href="login.php">INICIAR SESIÓN</a></li>';
+                        }
+                    ?>
+                </ul>
+            </div>
+            <nav>
+                <div class="trigger hide show-on-small-and-down">
+                    <svg class="bars" viewBox="0 0 100 100" onclick="this.classList.toggle('active');document.querySelector('.full-menu').classList.toggle('opened');">
+                      <path class="line top" d="m 30,33 h 40 c 13.100415,0 14.380204,31.80258 6.899646,33.421777 -24.612039,5.327373 9.016154,-52.337577 -12.75751,-30.563913 l -28.284272,28.284272"></path>
+                      <path class="line middle" d="m 70,50 c 0,0 -32.213436,0 -40,0 -7.786564,0 -6.428571,-4.640244 -6.428571,-8.571429 0,-5.895471 6.073743,-11.783399 12.286435,-5.570707 6.212692,6.212692 28.284272,28.284272 28.284272,28.284272"></path>
+                      <path class="line bottom" d="m 69.575405,67.073826 h -40 c -13.100415,0 -14.380204,-31.80258 -6.899646,-33.421777 24.612039,-5.327373 -9.016154,52.337577 12.75751,30.563913 l 28.284272,-28.284272"></path>
+                    </svg>
+
+                </div>
+
+                <ul class="hide-on-small-and-down horizontal">
+                    <li><a href="index.php">INICIO</a></li>
+                    <li><a href="entrenamiento.php">ENTRENAMIENTO</a></li>
+                    <li><a href="calculadora.php" >CALCULADORA</a></li>
+                    <li><a href="motivaciones.php" >MOTIVACIÓN</a></li>
+                    <?php 
+                        if(isset($_SESSION['idUsuario'])){
+                            echo '<li><a href="cerrarSesion.php">CERRAR SESIÓN</a></li>';
+                        }else{
+                            echo '<li><a href="login.php">INICIAR SESIÓN</a></li>';
+                        }
+                    ?>
+                </ul>
+            </nav>
+        </header>
         <main>
             <section class="contact" id="contact">
                 <h1>CONTACTO</h1>
