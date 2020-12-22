@@ -23,7 +23,7 @@ function subirFoto(){
     // console.log(Math.round((this.files.item(0).size / 1024)));
     if (this.files.length > 0){
         if(Math.round((this.files.item(0).size / 1024)) < 8192){
-            if(this.files.item(0).type == 'image/jpeg' || this.files.item(0).type == 'image/png'){
+            if(this.files.item(0).type == 'image/jpeg' || this.files.item(0).type == 'image/png' || this.files.item(0).type == 'image/jfif'){
 
                 comprobarExisteImagenes();
         
