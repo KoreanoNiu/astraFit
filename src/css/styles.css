@@ -1192,13 +1192,17 @@ footer {
     .strava-data-container .container > div.notes {
       display: grid;
       grid-template-columns: repeat(3, 1fr); }
-      .strava-data-container .container > div.notes div:nth-child(1) {
-        grid-column-start: span 3; }
-      .strava-data-container .container > div.notes div#box {
-        margin: auto;
-        grid-column-end: -2; }
-      .strava-data-container .container > div.notes div#box + div.note {
-        grid-column-start: 1; }
+      @media (max-width: 1024px) {
+        .strava-data-container .container > div.notes {
+          grid-template-columns: repeat(1, 1fr); } }
+      @media (min-width: 1024px) {
+        .strava-data-container .container > div.notes div:nth-child(1) {
+          grid-column-start: span 3; }
+        .strava-data-container .container > div.notes div#box {
+          margin: auto;
+          grid-column-end: -2; }
+        .strava-data-container .container > div.notes div#box + div.note {
+          grid-column-start: 1; } }
       .strava-data-container .container > div.notes div.note {
         margin: 1rem auto;
         padding-top: 2rem;

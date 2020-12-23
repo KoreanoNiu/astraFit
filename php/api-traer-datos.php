@@ -2,7 +2,6 @@
     session_start();
     include_once('database.php');
 
-
     if ($_POST['token'] == 'entrenamiento') {
         $conexion = Conexion::Conectar();
         $funcionesDB = new funcionesDB;
