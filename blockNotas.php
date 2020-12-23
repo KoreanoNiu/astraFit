@@ -42,7 +42,7 @@ if (isset($_SESSION['idUsuario']) && $_SESSION['idUsuario'] != '') {
                 </section>
                 <section class="strava-information" style="background-color: #ffffff;">
                     <div class="strava-data-container">
-                        <div class="container" >
+                        <div class="container note-container" >
                             <div class="notes">
                                 <div>
                                     <h1>Tus notas: <?php echo $_SESSION['nombreUsuario']?></h1>

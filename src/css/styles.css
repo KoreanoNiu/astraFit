@@ -1161,12 +1161,18 @@ footer {
     filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.2));
     -webkit-filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.2));
     border-radius: 4px; }
+    @media (max-width: 425px) {
+      .strava-data-container .container.note-container {
+        width: 100%;
+        background-color: transparent;
+        filter: none;
+        -webkit-filter: none; } }
     .strava-data-container .container div {
       padding: 1rem;
       text-align: center;
       align-content: center;
       margin: 1rem auto 0 auto;
-      width: 95%; }
+      width: 100%; }
       .strava-data-container .container div h1 {
         font-weight: 600; }
       .strava-data-container .container div table {
@@ -1191,6 +1197,7 @@ footer {
           background-color: #D3D3D3; }
     .strava-data-container .container > div.notes {
       display: grid;
+      width: 100%;
       grid-template-columns: repeat(3, 1fr); }
       @media (max-width: 1024px) {
         .strava-data-container .container > div.notes {
