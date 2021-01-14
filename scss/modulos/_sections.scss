@@ -573,14 +573,19 @@
         
         margin: 2rem auto;
         width: 90%;
+        @media(max-width: 425px){
+            width: 100%;
+        }
 
         &.note-container{
             @media(max-width: 425px){
                 width: 100%;
+                padding: 0;
+                margin-left: 0;
                 background-color: transparent;
                 filter: none;
                 -webkit-filter: none;
-}
+        }
         }
         height: auto;
 
@@ -596,6 +601,9 @@
         
         div{
             padding: 1rem;
+            @media(max-width: 425px){
+                padding: 0;
+            }
             text-align: center;
             align-content: center;
             margin: 1rem auto 0 auto;
@@ -638,6 +646,11 @@
         >div.notes{
             display: grid;
             width: 100%;
+            margin: auto;
+            @media(max-width: 425px){
+                width: 90%;
+            }
+            
             grid-template-columns: repeat(3, 1fr);
             @media (max-width: 1024px) {
                 grid-template-columns: repeat(1, 1fr);
@@ -659,8 +672,16 @@
                     margin: 1rem auto;
                     padding-top: 2rem;
                     padding-bottom: 2rem;
+                    @media(max-width: 425px){
+                        padding-left: 0.5rem;
+                        padding-right: 0.5rem;
+                    }
                     text-align: start;
                     width: 95%;
+
+                    @media(max-width: 768px){
+                        width: 85%;
+                    }
 
                     background-color: #ffffff;
                     filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.20));
@@ -707,7 +728,7 @@
                     &.click-note{
                         filter: drop-shadow(0px 0px 50px rgba(0, 0, 0, 0.20));
                         -webkit-filter: drop-shadow(0px 0px 50px rgba(0, 0, 0, 0.20));
-}
+                    }
                     @media(max-width:950px){
                         width: 100%;
                     }
